@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+ h1.title {
+  margin: 0 0 1em;
+  padding: 10px;
+  background-color: darkred;
+  color: white;
+  border-bottom: 4px solid black;
+  font-size: 2em;
+  font-style: normal;
+}
