@@ -8,4 +8,10 @@ describe ProjectsController do
 			post :show, {:id => 1}
 		end
 	end
+	describe 'creating a new project' do
+		it 'should create a new project'
+			ProjectsController.stub(:create).and_return(mock('Project'))
+			post :create, {:id => "1"}
+		end
+	end
 end
