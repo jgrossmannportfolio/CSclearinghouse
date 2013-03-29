@@ -9,7 +9,7 @@ end
 Then /I should see project details/ do
 	project_attr = Project.accessible_attributes
 	project_attr.each do |attribute|
-		attribute = attribute.capitalize
+		attribute[0] = attribute[0].capitalize
 		page.body =~ /#{attribute}/
 	end
 end
