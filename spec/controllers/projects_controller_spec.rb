@@ -9,7 +9,7 @@ describe ProjectsController do
 		end
 	end
 	describe 'creating a new project' do
-		it 'should create a new project'
+		it 'should create a new project' do
 			ProjectsController.stub(:create).and_return(mock('Project'))
 			post :create, {:id => "1"}
 		end
