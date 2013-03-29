@@ -7,4 +7,3 @@ Given /the following projects exist/ do |projects_table|
 end
 
 #Then /I should see all of the projects/ do
-	
