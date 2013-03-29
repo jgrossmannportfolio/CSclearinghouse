@@ -1,0 +1,106 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/cosc480/Documents/CSclearinghouse/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/helpers/projects_helper.rb": [
+        1,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/controllers/projects_controller.rb": [
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/models/project.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1364571150
+  },
+  "RSpec": {
+    "coverage": {
+      "/home/cosc480/Documents/CSclearinghouse/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/helpers/projects_helper.rb": [
+        1,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/controllers/projects_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/cosc480/Documents/CSclearinghouse/app/models/project.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1364571189
+  }
+}

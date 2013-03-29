@@ -14,4 +14,3 @@ Background: projects on website
 
 Scenario: Display all posted projects
   When I go to the projects page
-  Then I should see all the projects
