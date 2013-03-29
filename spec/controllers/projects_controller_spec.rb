@@ -15,12 +15,19 @@ describe ProjectsController do
 		end
 
 		it 'delete a movie' do
-	      fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Your mom", :deadline => "12-Dec-2013", :id => "1")
-	      Project.stub!(:find).with("1").and_return(fake_project)
-	      fake_project.should_receive(:destroy)
-	      delete :destroy, {:id => "1"}
-	      response.should redirect_to("/projects")
-	      flash[:notice].should == "Fake Project 1 deleted."
+		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Your mom", :deadline => "12-Dec-2013", :id => "1")
+		    Project.stub!(:find).with("1").and_return(fake_project)
+		    fake_project.should_receive(:destroy)
+		    delete :destroy, {:id => "1"}
+		    response.should redirect_to("/projects")
+		    flash[:notice].should == "Fake Project 1 deleted."
     	end
 	end	
+
+	describe 'list all movies in the data base on the homepage' do
+    	it 'should pull the projects from the model' do
+      		Project.should_receive(:all)
+      		post :index
+    	end
+  	end
 end

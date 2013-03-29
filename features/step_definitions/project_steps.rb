@@ -18,8 +18,8 @@ When /^I confirm popup$/ do
 	page.click('Confirm')
 end
 
-#Then /^I should see (.*)$/ do |arg1|
-	#page.body =~ /.*arg1.*/
-#end
+Then /I should see all the projects/ do
+	(page.all('table#projects tr').count-1).should == Project.count
+end
 
 
