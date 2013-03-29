@@ -13,8 +13,14 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+<<<<<<< HEAD
     when /^the projects?\s?page$/ then '/projects'
 		when /^the details? page for (.*)$/ then "/projects/#{Project.find_by_title($1).id}"
+=======
+    when /^the projects?\s?page$/i then '/projects'
+    when /^the add project page$/i then '/projects/new'
+
+>>>>>>> addproject
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
