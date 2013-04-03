@@ -7,7 +7,7 @@
     = csrf_meta_tags
 
   %body
-    %h1.title Colgate's Computer Science Clearinghouse
+    %h1.title= link_to "Colgate's Computer Science Clearinghouse", '/home', :id => 'titlelink'
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]

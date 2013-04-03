@@ -1,20 +1,30 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/cosc480/Documents/CSclearinghouse/app/controllers/application_controller.rb": [
+      "/home/cosc480/CSclearinghouse/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/helpers/application_helper.rb": [
+      "/home/cosc480/CSclearinghouse/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/helpers/projects_helper.rb": [
+      "/home/cosc480/CSclearinghouse/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/controllers/projects_controller.rb": [
+      "/home/cosc480/CSclearinghouse/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/cosc480/CSclearinghouse/app/controllers/projects_controller.rb": [
         1,
         null,
         1,
@@ -43,30 +53,40 @@
         null,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/models/project.rb": [
+      "/home/cosc480/CSclearinghouse/app/models/project.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1364571958
+    "timestamp": 1364958337
   },
   "RSpec": {
     "coverage": {
-      "/home/cosc480/Documents/CSclearinghouse/app/controllers/application_controller.rb": [
+      "/home/cosc480/CSclearinghouse/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/helpers/application_helper.rb": [
+      "/home/cosc480/CSclearinghouse/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/helpers/projects_helper.rb": [
+      "/home/cosc480/CSclearinghouse/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/controllers/projects_controller.rb": [
+      "/home/cosc480/CSclearinghouse/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/cosc480/CSclearinghouse/app/controllers/projects_controller.rb": [
         1,
         null,
         1,
@@ -95,12 +115,12 @@
         null,
         null
       ],
-      "/home/cosc480/Documents/CSclearinghouse/app/models/project.rb": [
+      "/home/cosc480/CSclearinghouse/app/models/project.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1364571978
+    "timestamp": 1364958375
   }
 }

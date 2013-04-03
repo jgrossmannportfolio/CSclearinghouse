@@ -2976,3 +2976,410 @@ Processing by ProjectsController#destroy as HTML
 Redirected to http://test.host/projects
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (105.0ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 29 Mar 2013 16:42:22 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 4"], ["owner", "Fake Person 1"], ["title", "Project4"], ["updated_at", Fri, 29 Mar 2013 16:42:22 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 29 Mar 2013 16:42:22 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 5"], ["owner", "Fake Person 2"], ["title", "Project5"], ["updated_at", Fri, 29 Mar 2013 16:42:22 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" 
+Started GET "/projects" for 127.0.0.1 at 2013-03-29 12:42:23 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (43.7ms)
+Completed 200 OK in 548ms (Views: 537.3ms | ActiveRecord: 0.6ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-03-29 12:42:25 -0400
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.haml within layouts/application (37.0ms)
+Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-03-29 12:42:25 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"title"=>"Pancakes", "description"=>"An incredibly exciting project!", "owner"=>"Mrs. Buttersworth", "deadline"=>"5-Aug-2013"}, "commit"=>"Save Changes"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 29 Mar 2013 16:42:25 UTC +00:00], ["deadline", "5-Aug-2013"], ["description", "An incredibly exciting project!"], ["owner", "Mrs. Buttersworth"], ["title", "Pancakes"], ["updated_at", Fri, 29 Mar 2013 16:42:25 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects
+Completed 302 Found in 32ms (ActiveRecord: 1.8ms)
+Started GET "/projects" for 127.0.0.1 at 2013-03-29 12:42:25 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (18.3ms)
+Completed 200 OK in 48ms (Views: 29.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 29 Mar 2013 16:42:26 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 4"], ["owner", "Fake Person 1"], ["title", "Project4"], ["updated_at", Fri, 29 Mar 2013 16:42:26 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 29 Mar 2013 16:42:26 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 5"], ["owner", "Fake Person 2"], ["title", "Project5"], ["updated_at", Fri, 29 Mar 2013 16:42:26 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" 
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."title" = 'Project4' LIMIT 1[0m
+Started GET "/projects/1" for 127.0.0.1 at 2013-03-29 12:42:26 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.haml within layouts/application (43.5ms)
+Completed 200 OK in 88ms (Views: 68.7ms | ActiveRecord: 0.7ms)
+Started DELETE "/projects/1" for 127.0.0.1 at 2013-03-29 12:42:26 -0400
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.6ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects
+Completed 302 Found in 41ms (ActiveRecord: 6.6ms)
+Started GET "/projects" for 127.0.0.1 at 2013-03-29 12:42:26 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (15.2ms)
+Completed 200 OK in 51ms (Views: 38.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00], ["deadline", nil], ["description", "Test Project 4"], ["owner", nil], ["title", "Project4"], ["updated_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00], ["deadline", nil], ["description", "Test Project 5"], ["owner", nil], ["title", "Project5"], ["updated_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Load (10.5ms)[0m  SELECT "projects".* FROM "projects" 
+Started GET "/projects" for 127.0.0.1 at 2013-03-29 12:42:27 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 59ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects" 
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00], ["deadline", "May-10-2013"], ["description", "Test Project 4"], ["owner", "John"], ["title", "Project4"], ["updated_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.2ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00], ["deadline", "Jun-03-2014"], ["description", "Test Project 5"], ["owner", "Sean"], ["title", "Project5"], ["updated_at", Fri, 29 Mar 2013 16:42:27 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (9.0ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+Started GET "/projects" for 127.0.0.1 at 2013-03-29 12:42:27 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.5ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-03-29 12:42:28 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 41ms (Views: 35.8ms | ActiveRecord: 0.3ms)
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."title" = 'Project4' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.5ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 163ms (Views: 161.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (130.8ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 29 Mar 2013 16:44:05 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 29 Mar 2013 16:44:05 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 202ms (ActiveRecord: 144.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 157ms (Views: 154.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.0ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 01:17:13 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 01:17:13 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 94ms (ActiveRecord: 40.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 146ms (Views: 144.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (26.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 01:19:09 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 01:19:09 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 93ms (ActiveRecord: 41.4ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 141ms (Views: 139.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (25.8ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 01:21:43 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 01:21:43 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 95ms (ActiveRecord: 36.5ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 160ms (Views: 158.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (29.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 01:22:09 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 01:22:09 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 101ms (ActiveRecord: 44.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 118ms (Views: 116.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 149ms (Views: 147.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (29.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 01:24:09 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 01:24:09 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 103ms (ActiveRecord: 46.8ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (2.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 111ms (Views: 109.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 161ms (Views: 159.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (29.0ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 01:26:00 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 01:26:00 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 99ms (ActiveRecord: 41.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (2.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 111ms (Views: 109.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (47.5ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 03:05:34 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 4"], ["owner", "Fake Person 1"], ["title", "Project4"], ["updated_at", Wed, 03 Apr 2013 03:05:34 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Wed, 03 Apr 2013 03:05:34 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 5"], ["owner", "Fake Person 2"], ["title", "Project5"], ["updated_at", Wed, 03 Apr 2013 03:05:34 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" 
+Started GET "/projects" for 127.0.0.1 at 2013-04-02 23:05:34 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (21.1ms)
+Completed 200 OK in 221ms (Views: 215.5ms | ActiveRecord: 0.6ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-04-02 23:05:35 -0400
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.haml within layouts/application (16.4ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-04-02 23:05:35 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"title"=>"Pancakes", "description"=>"An incredibly exciting project!", "owner"=>"Mrs. Buttersworth", "deadline"=>"5-Aug-2013"}, "commit"=>"Save Changes"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 03:05:35 UTC +00:00], ["deadline", "5-Aug-2013"], ["description", "An incredibly exciting project!"], ["owner", "Mrs. Buttersworth"], ["title", "Pancakes"], ["updated_at", Wed, 03 Apr 2013 03:05:35 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects
+Completed 302 Found in 14ms (ActiveRecord: 2.3ms)
+Started GET "/projects" for 127.0.0.1 at 2013-04-02 23:05:35 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 03:05:35 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 4"], ["owner", "Fake Person 1"], ["title", "Project4"], ["updated_at", Wed, 03 Apr 2013 03:05:35 UTC +00:00]]
+  [1m[35m (4.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Wed, 03 Apr 2013 03:05:35 UTC +00:00], ["deadline", "21-Dec-2012"], ["description", "Test Project 5"], ["owner", "Fake Person 2"], ["title", "Project5"], ["updated_at", Wed, 03 Apr 2013 03:05:35 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" 
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."title" = 'Project4' LIMIT 1[0m
+Started GET "/projects/1" for 127.0.0.1 at 2013-04-02 23:05:36 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.haml within layouts/application (22.1ms)
+Completed 200 OK in 41ms (Views: 35.2ms | ActiveRecord: 0.6ms)
+Started DELETE "/projects/1" for 127.0.0.1 at 2013-04-02 23:05:36 -0400
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects
+Completed 302 Found in 38ms (ActiveRecord: 2.0ms)
+Started GET "/projects" for 127.0.0.1 at 2013-04-02 23:05:36 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00], ["deadline", nil], ["description", "Test Project 4"], ["owner", nil], ["title", "Project4"], ["updated_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.4ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00], ["deadline", nil], ["description", "Test Project 5"], ["owner", nil], ["title", "Project5"], ["updated_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" 
+Started GET "/projects" for 127.0.0.1 at 2013-04-02 23:05:36 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00], ["deadline", "May-10-2013"], ["description", "Test Project 4"], ["owner", "John"], ["title", "Project4"], ["updated_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00], ["deadline", "Jun-03-2014"], ["description", "Test Project 5"], ["owner", "Sean"], ["title", "Project5"], ["updated_at", Wed, 03 Apr 2013 03:05:36 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+Started GET "/projects" for 127.0.0.1 at 2013-04-02 23:05:36 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.haml within layouts/application (12.3ms)
+Completed 200 OK in 30ms (Views: 21.9ms | ActiveRecord: 0.5ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-04-02 23:05:36 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.haml within layouts/application (16.9ms)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+  [1m[35mProject Load (5.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."title" = 'Project4' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 148ms (Views: 144.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (26.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 03 Apr 2013 03:06:14 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Wed, 03 Apr 2013 03:06:14 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 206ms (ActiveRecord: 140.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (5.7ms)[0m  [1mrollback transaction[0m
