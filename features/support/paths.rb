@@ -16,7 +16,7 @@ module NavigationHelpers
     when /^the projects?\s?page$/i then '/projects'
 		when /^the details? page for (.*)$/ then "/projects/#{Project.find_by_title($1).id}"
     when /^the add project page$/i then '/projects/new'
-
+		when /^the home page$/i then '/home'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

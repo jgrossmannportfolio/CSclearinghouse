@@ -12,11 +12,6 @@ Background: projects on website
     | Project4    | Test Project 4 |
     | Project5    | Test Project 5 |
 
-Scenario: Go to projects page from home page
-	Given I am on the home page
-	When I follow "View Projects"
-	Then I should be on the projects page
-
 Scenario: Display all posted projects
   When I go to the projects page
   Then I should see all the projects
