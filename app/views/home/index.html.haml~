@@ -6,7 +6,7 @@
 = link_to 'View Projects', projects_path
 = link_to 'View Contributers', '/home'
 = link_to 'Add Project', '/home'
-%h3 Links
+%h3g Links
 %ul#links
 	%li
 		= link_to 'Colgate Computer Science', "http://cs.colgate.edu/"
