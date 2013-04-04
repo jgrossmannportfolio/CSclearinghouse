@@ -6,6 +6,7 @@
 = link_to 'View Projects', projects_path
 = link_to 'View Contributers', '/home'
 = link_to 'Add Project', new_project_path
+= link_to 'View Profile', '/home'
 %h3 Links
 %ul#links
 	%li
