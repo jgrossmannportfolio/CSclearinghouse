@@ -1,6 +1,6 @@
 Clearinghouse::Application.routes.draw do
-  resources :projects
-  root :to => redirect('/projects')
+  resources :projects, :home
+  root :to => redirect('/home')
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

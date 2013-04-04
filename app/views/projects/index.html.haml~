@@ -7,13 +7,18 @@
     %tr
       %th Title
       %th Description
+      %th Project Owner
+      %th Deadline
       %th Details
+
   %tbody
     - @projects.each do |project|
       %tr
         %td= project.title 
         %td= project.description
-	%td= link_to "More about #{project.title}", project_path(project)
+        %td= project.owner
+        %td= project.deadline
+        %td= link_to "More about #{project.title}", project_path(project)
 
 =link_to 'Add New Project', new_project_path
  
