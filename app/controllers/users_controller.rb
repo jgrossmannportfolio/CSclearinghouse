@@ -13,11 +13,21 @@ class UsersController < ApplicationController
 		@user = User.find(id)
 	end
 
+	def new
+	end
+
+	def create
+		@user = User.create!(params[:user])
+    	flash[:notice] = "Congratulations #{@user.username}! You have
+    	sucessfully registered to the CS clearinghouse!"
+    	redirect_to users_path
+	end
+
 	def update
-    @user = User.find params[:id]
-    @user.update_attributes!(params[:user])
-    flash[:notice] = "#{@user.username}'s profile was successfully updated."
-    redirect_to user_path(@user)
-  end
+	    @user = User.find params[:id]
+	    @user.update_attributes!(params[:user])
+	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
+	    redirect_to user_path(@user)
+  	end
 end
 
