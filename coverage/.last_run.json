@@ -1,9 +1,16 @@
 {
   "result": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "covered_percent": 97.56
 =======
     "covered_percent": 97.3
 >>>>>>> updateproject
+=======
+    "covered_percent": 100.0
+=======
+    "covered_percent": 97.56
+>>>>>>> 7250fc66c08f3bc39aa0950680f46c91d29606b8
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
   }
 }
