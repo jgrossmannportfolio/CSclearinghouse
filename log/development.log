@@ -7637,3 +7637,23 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
   [1m[36m (12.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m
+Connecting to database specified by database.yml
+  [1m[36m (5.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (101.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["deadline", "Jun-06-2013"], ["description", "Test project1"], ["owner", "Mrs. Buttersworth"], ["title", "Project1"], ["updated_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00]]
+  [1m[35m (134.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["deadline", "Jun-06-2013"], ["description", "Test project2"], ["owner", "Mrs. Buttersworth"], ["title", "Project2"], ["updated_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00]]
+  [1m[36m (35.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["deadline", "Jun-06-2013"], ["description", "Test project3"], ["owner", "Mrs. Buttersworth"], ["title", "Project3"], ["updated_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00]]
+  [1m[35m (39.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["email", "tcharron@colgate.edu"], ["firstname", "Thomas"], ["lastname", "Charron"], ["updated_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["username", "TCharron480"]]
+  [1m[36m (30.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["email", "jgrossmann@colgate.edu"], ["firstname", "John"], ["lastname", "Grossmann"], ["updated_at", Fri, 05 Apr 2013 02:16:33 UTC +00:00], ["username", "JGrossmann"]]
+  [1m[35m (31.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 02:16:34 UTC +00:00], ["email", "sbjornsson@colgate.edu"], ["firstname", "Sean"], ["lastname", "Bjornsson"], ["updated_at", Fri, 05 Apr 2013 02:16:34 UTC +00:00], ["username", "SBjornsson"]]
+  [1m[36m (28.9ms)[0m  [1mcommit transaction[0m
