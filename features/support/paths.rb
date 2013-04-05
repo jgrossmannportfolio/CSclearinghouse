@@ -18,6 +18,7 @@ module NavigationHelpers
     when /^the add project page$/i then '/projects/new'
     when /^the edit page for (.*)$/i then edit_project_path(Project.find_by_title($1).id)
 		when /^the home page$/i then '/home'
+    when /^the register page$/i then '/users/new'
 		when /^the profile page for (.*)$/ then "/users/#{User.find_by_username($1).id}"
 		when /^the edit profile page for (.*)$/ then "/users/#{User.find_by_username($1).id}/edit"
     # Add more mappings here.
