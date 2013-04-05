@@ -7570,6 +7570,7 @@ Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (29.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
   [1m[36m (27.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m
+<<<<<<< HEAD
 
 
 Started GET "/" for 127.0.0.1 at 2013-04-04 19:34:24 -0400
@@ -11224,6 +11225,8 @@ Served asset /projects.js - 304 Not Modified (6ms)
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 21:53:30 -0400
 Served asset /application.js - 304 Not Modified (1ms)
 >>>>>>> updateproject
+=======
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
 Connecting to database specified by database.yml
   [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.3ms)[0m  select sqlite_version(*)
@@ -11304,4 +11307,7 @@ Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 02:16:34 UTC +00:00], ["email", "sbjornsson@colgate.edu"], ["firstname", "Sean"], ["lastname", "Bjornsson"], ["updated_at", Fri, 05 Apr 2013 02:16:34 UTC +00:00], ["username", "SBjornsson"]]
   [1m[36m (28.9ms)[0m  [1mcommit transaction[0m
+<<<<<<< HEAD
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
+=======
 >>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9

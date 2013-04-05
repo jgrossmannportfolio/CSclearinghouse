@@ -24,12 +24,11 @@ class UsersController < ApplicationController
 	end
 
 	def update
-<<<<<<< HEAD
-    @user = User.find params[:id]
-    @user.update_attributes!(params[:user])
-    flash[:notice] = "#{@user.username}'s profile was successfully updated."
-    redirect_to user_path(@user)
-  end
+	    @user = User.find params[:id]
+	    @user.update_attributes!(params[:user])
+	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
+	    redirect_to user_path(@user)
+  	end
 
 	def destroy
     @user = User.find(params[:id])
@@ -37,13 +36,5 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@user.username} deleted."
     redirect_to users_path
   end
-
-=======
-	    @user = User.find params[:id]
-	    @user.update_attributes!(params[:user])
-	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
-	    redirect_to user_path(@user)
-  	end
->>>>>>> adduser
 end
 

@@ -51,6 +51,7 @@
         1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         0,
         null,
         null,
@@ -60,6 +61,14 @@
 =======
 =======
         6,
+=======
+        6,
+        null,
+        null,
+        1,
+        2,
+        2,
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
         null,
         null,
         1,
@@ -72,11 +81,15 @@
         1,
         1,
         1,
+<<<<<<< HEAD
 >>>>>>> updateproject
+=======
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
         null,
         null,
         1,
         1,
+<<<<<<< HEAD
         null,
         null,
         1,
@@ -87,6 +100,8 @@
         null,
         1,
         1,
+=======
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
         1,
         1,
         1,
@@ -103,10 +118,14 @@
         1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         0,
 =======
         1,
 >>>>>>> updateproject
+=======
+        3,
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
 =======
         3,
 >>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
@@ -164,10 +183,14 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1365122634
 =======
     "timestamp": 1365126887
 >>>>>>> updateproject
+=======
+    "timestamp": 1365126803
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
 =======
     "timestamp": 1365126803
 >>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
@@ -257,7 +280,12 @@
       "/home/cosc480/Documents/CSclearinghouse/app/controllers/users_controller.rb": [
         1,
         1,
-        0,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -281,11 +309,6 @@
         1,
         1,
         1,
-        null,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         null,
@@ -297,6 +320,16 @@
         1,
         null,
         null,
+<<<<<<< HEAD
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+=======
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
         null,
         null
       ],
@@ -308,15 +341,21 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1365126038
 =======
     "timestamp": 1365126741
 >>>>>>> updateproject
 =======
+=======
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
     "timestamp": 1365126854
 =======
     "timestamp": 1365126038
 >>>>>>> 7250fc66c08f3bc39aa0950680f46c91d29606b8
+<<<<<<< HEAD
+>>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
+=======
 >>>>>>> fe79b978da55a14aafef52be09c00873dd8686e9
   }
 }
