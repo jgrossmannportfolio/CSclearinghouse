@@ -16,3 +16,5 @@ Scenario: Go to project details page
 	And I follow "More about Project4"
 	Then I should be on the details page for Project4	
 	And I should see project details
+
+
