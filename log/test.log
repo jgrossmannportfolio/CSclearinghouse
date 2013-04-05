@@ -5251,6 +5251,7 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms)
   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
 Connecting to database specified by database.yml
+<<<<<<< HEAD
   [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
 Processing by UsersController#destroy as HTML
   Parameters: {"id"=>"1"}
@@ -5297,10 +5298,64 @@ Processing by ProjectsController#show as HTML
   Rendered projects/show.html.haml within layouts/application (0.9ms)
 Completed 200 OK in 60ms (Views: 59.7ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  rollback transaction
+=======
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 161ms (Views: 159.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.6ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:06:15 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:06:15 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 100ms (ActiveRecord: 45.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 152ms (Views: 150.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+>>>>>>> 7250fc66c08f3bc39aa0950680f46c91d29606b8
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
 Processing by ProjectsController#create as HTML
   Parameters: {"id"=>"1"}
   [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+<<<<<<< HEAD
   [1m[36mSQL (10.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:19:56 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:19:56 UTC +00:00]]
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
 Redirected to http://test.host/projects
@@ -6316,3 +6371,521 @@ Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
 Processing by ProjectsController#index as HTML
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+=======
+  [1m[36mSQL (29.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:14:41 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:14:41 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 96ms (ActiveRecord: 43.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:14:42 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:14:42 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:14:42 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:14:42 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 162ms (Views: 160.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (29.8ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:17:16 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:17:16 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 98ms (ActiveRecord: 42.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:17:16 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:17:16 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:17:17 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:17:17 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (2.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 179ms (Views: 177.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (30.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:19:25 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:19:25 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 105ms (ActiveRecord: 46.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:19:25 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:19:25 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:19:25 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:19:25 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (136.9ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:22:16 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:22:16 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:22:16 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:22:16 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 160ms (Views: 157.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:22:17 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:22:17 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 63ms (ActiveRecord: 3.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 154ms (Views: 152.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:23:30 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:23:30 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 97ms (ActiveRecord: 42.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:23:31 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:23:31 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:23:31 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:23:31 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (37.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:26:06 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:26:06 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 132ms (ActiveRecord: 51.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 175ms (Views: 173.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:26:06 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:26:06 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:26:06 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:26:06 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered projects/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 152ms (Views: 150.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.0ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:27:36 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:27:36 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 95ms (ActiveRecord: 38.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:27:36 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:27:36 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:27:36 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:27:36 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/users/1
+Completed 302 Found in 15ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.5ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered users/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 179ms (Views: 176.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:31:13 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:31:13 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:31:13 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:31:13 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/users/1
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+  [1m[35m (1.7ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:31:14 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:31:14 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 58ms (ActiveRecord: 4.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (131.0ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:31:59 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:31:59 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:32:00 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:32:00 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 160ms (Views: 155.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:32:00 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:32:00 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 53ms (ActiveRecord: 3.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (129.0ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:35:16 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:35:16 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:35:17 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:35:17 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 161ms (Views: 159.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:35:17 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:35:17 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 164ms (ActiveRecord: 3.3ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered users/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 162ms (Views: 160.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (29.9ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:40:37 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:40:37 UTC +00:00], ["username", "fakeusername"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 05 Apr 2013 01:40:37 UTC +00:00], ["email", "fakeuser@gmail.com"], ["firstname", "fakefirstname"], ["lastname", "fakelastname"], ["updated_at", Fri, 05 Apr 2013 01:40:37 UTC +00:00], ["username", "fakeusername"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#update as HTML
+  Parameters: {"firstname"=>"John", "lastname"=>"Doe", "email"=>"JDoe@colgate.edu", "id"=>"1"}
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#index as HTML
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 05 Apr 2013 01:40:37 UTC +00:00], ["deadline", nil], ["description", nil], ["owner", nil], ["title", nil], ["updated_at", Fri, 05 Apr 2013 01:40:37 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects
+Completed 302 Found in 173ms (ActiveRecord: 3.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/projects
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+>>>>>>> 7250fc66c08f3bc39aa0950680f46c91d29606b8
