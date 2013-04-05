@@ -13,18 +13,18 @@ Background:
 
 Scenario: Add a new user to the website
 	Given I am on the Home Page
-	And I follow Register
+	When I follow "Register"
 	Then I should be on the Register New User Page
 
 Scenario: Add a new user to the website
 	 Given I am on the Register New User Page
-	 When I fill in "Title" with "Pancakes"
-	 And I fill in "Description" with "An incredibly exciting project!"
-	 And I fill in "Owner" with "Mrs. Buttersworth"
-	 And I fill in "Deadline" with "5-Aug-2013"
-	 And I press "Save Changes"
-	 Then I should be on the Projects Page
-	 And I should see "Pancakes"
-	 And I should see "An incredibly exciting project!"
-	 And I should see "Mrs. Buttersworth"
-	 And I should see "5-Aug-2013"
+	 When I fill in "Username" with "testuser4"
+	 And I fill in "First Name" with "user4first"
+	 And I fill in "Last Name" with "user4last"
+	 And I fill in "Email" with "user4@yahoo.com"
+	 And I press "Register!"
+	 Then I should be on the Users Page
+	 And I should see "testuser4"
+	 And I should see "user4first"
+	 And I should see "user4last"
+	 And I should see "user4@yahoo.com"

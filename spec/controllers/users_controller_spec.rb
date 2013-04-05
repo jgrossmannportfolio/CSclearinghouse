@@ -9,6 +9,13 @@ describe UsersController do
 		end
 	end
 
+	describe 'register a new user profile' do
+		it 'should register a new user successfully' do
+			UsersController.stub(:create).and_return(mock('User1'))
+			post :create, {:id => "1"}
+		end
+	end
+
 	describe 'list all users in the data base on the users page' do
     	it 'should pull the users from the model' do
       		User.should_receive(:all)
