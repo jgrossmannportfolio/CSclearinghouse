@@ -1,0 +1,8 @@
+FactoryGirl.define do
+	factory :user do
+		username 'fakeuser'
+		firstname 'John'
+		lastname 'Doe'
+		email 'JDoe@colgate.edu'
+	end
+end

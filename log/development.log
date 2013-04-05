@@ -7525,3 +7525,55 @@ Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("created_at", "email", "firstname", "lastname", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Thu, 04 Apr 2013 21:02:41 UTC +00:00], ["email", "sbjornsson@colgate.edu"], ["firstname", "Sean"], ["lastname", "Bjornsson"], ["updated_at", Thu, 04 Apr 2013 21:02:41 UTC +00:00], ["username", "SBjornsson"]]
   [1m[36m (26.0ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (6.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.7ms)[0m  select sqlite_version(*)
+  [1m[36m (79.0ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "owner" varchar(255), "deadline" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (23.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (24.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (25.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (23.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
+  [1m[36m (23.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (7.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (39.1ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "owner" varchar(255), "deadline" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (26.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (27.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (26.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (25.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
+  [1m[36m (28.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m
+Connecting to database specified by database.yml
+  [1m[36m (6.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.7ms)[0m  select sqlite_version(*)
+  [1m[36m (80.5ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "owner" varchar(255), "deadline" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (26.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (27.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (25.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (26.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
+  [1m[36m (29.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m
+Connecting to database specified by database.yml
+  [1m[36m (5.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.7ms)[0m  select sqlite_version(*)
+  [1m[36m (47.1ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "owner" varchar(255), "deadline" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (22.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (29.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (25.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (24.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
+  [1m[36m (22.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m
+Connecting to database specified by database.yml
+  [1m[36m (9.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.7ms)[0m  select sqlite_version(*)
+  [1m[36m (37.4ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "owner" varchar(255), "deadline" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (27.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (26.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (30.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (29.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130404001559')
+  [1m[36m (27.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130323183206')[0m

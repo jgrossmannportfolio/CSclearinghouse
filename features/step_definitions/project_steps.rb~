@@ -1,15 +1,29 @@
 
-Given /the following projects exist/ do |projects_table|
-	projects_table.hashes.each do |project|
-		Project.create!(project)
+Given /the following (.*) exist/ do |model, models_table|
+	if ("#{model}" =~ /s$/)
+		model = model.sub(/s$/, '')
 	end
-	projects_table.hashes.size.should == Project.all.count
+	model = model.capitalize
+	models_table.hashes.each do |object|
+		model.create!(object)
+	end
+	models_table.hashes.size.should == model.all.count
 end
 
 Then /I should see project details/ do
 	project_attr = Project.accessible_attributes
 	project_attr.each do |attribute|
-		attribute[0] = attribute[0].capitalize
+		attribute = attribute.capitalize
 		page.body =~ /#{attribute}/
 	end
 end
+
+When /^I confirm popup$/ do
+	page.click('Confirm')
+end
+
+Then /I should see all the projects/ do
+	(page.all('table#projects tr').count-1).should == Project.count
+end
+
+
