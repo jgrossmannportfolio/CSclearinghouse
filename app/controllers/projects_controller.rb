@@ -18,6 +18,17 @@ class ProjectsController < ApplicationController
     	redirect_to projects_path
 	end
 
+  def edit
+      @project = Project.find params[:id] 
+  end
+
+  def update
+      @project = Project.find params[:id] 
+      @project.update_attributes! params[:project] 
+      flash[:notice] = "#{@project.title} was successfully updated."
+      redirect_to project_path(@project)
+  end
+
 	def destroy
     	@project = Project.find(params[:id])
     	@project.destroy

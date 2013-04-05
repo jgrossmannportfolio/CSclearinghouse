@@ -4,10 +4,21 @@ describe ProjectsController do
 	describe 'going to a project details page' do
 		it 'should return the project details' do
 			fake_project = mock("project1")
-			Project.should_receive(:find).with("1").and_return(fake_project)
+			Project.should_receive(:find).with("1").and_return(@fake_project)
 			post :show, {:id => 1}
 		end
 	end
+	describe 'updating a project' do
+		it 'should update a project' do
+			@fake_project = mock(Project, :title => "project1", :id =>"1")
+			Project.stub!(:find).with("1").and_return(@fake_project)
+			@fake_project.stub!(:update_attributes!).and_return(true)
+      		put :update, {:id => "1", :project => @fake_project}
+     		response.should redirect_to(project_path(@fake_project))
+     		flash[:notice].should == "project1 was successfully updated."
+		end
+	end
+
 	describe 'creating and deleting projects' do
 		it 'should create a new project' do
 			ProjectsController.stub(:create).and_return(mock('Project'))
