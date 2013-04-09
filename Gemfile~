@@ -54,9 +54,4 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-linkedin'
 gem 'haml'
