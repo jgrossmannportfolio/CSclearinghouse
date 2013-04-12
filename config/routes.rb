@@ -1,4 +1,6 @@
 Clearinghouse::Application.routes.draw do
+  devise_for :users
+
   resources :projects, :users
   resources :home, :only => [:index]
   root :to => redirect('/home')
