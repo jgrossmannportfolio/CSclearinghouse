@@ -28,6 +28,7 @@ module NavigationHelpers
 		when /^the profile page for (.*)$/ then "/users/#{User.find_by_username($1).id}"
 		when /^the edit profile page for (.*)$/ then edit_user_path(User.find_by_username($1).id)
 		when /^the edit account info page for (.*)$/ then "/users/edit"
+		when /^the login page$/i then "/users/sign_in"
 
     else
       begin

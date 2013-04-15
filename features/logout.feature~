@@ -1,8 +1,8 @@
-Feature: edit my account info
+Feature: logging out of the website
 
 As a User
-So that I can manage my website account
-I want to edit my account info
+So that I do not leave my account open when I am not using it
+I want to logout of the website
 
 Background: users registered
 
@@ -17,20 +17,15 @@ Background: users registered
 		|username |firstname |lastname |email          |password|password_confirmation|
 		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
 
-Scenario: Go to the edit account info page
-	When I follow "Edit account info"
-	Then I should be on the edit account info page for testuser1
-
-Scenario: Edit account info
-	Given I am on the edit account info page for testuser1
-	When I fill in the following:
-		|user_email|editemail@gmail.com|
-		|username|edituser|
-		|user_password|editpassword|
-		|user_password_confirmation|editpassword|
-		|user_current_password|password|
-	And I press "Update"
+Scenario: log out of the website
+	Given I am on the Home Page
+	When I follow "Logout"
 	Then I should be on the Home Page
-	And I should see "Signed in as edituser"
+	And I am not signed in
 
+Scenario: can't log out if you are not logged in
+	Given I am on the Home Page
+	And I am not signed in
+	Then I should not see "Logout"
+	
 
