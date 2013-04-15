@@ -1,18 +1,17 @@
 require 'spec_helper'
 
 describe UsersController do
+	include Devise::TestHelpers
+	before(:each) do
+		@fake_user = FactoryGirl.create(:user)
+		sign_in @fake_user
+	end
+
 	describe 'going to a user profile page' do
 		it 'should return the user info' do
 			fake_user = mock("user1")
 			User.should_receive(:find).with("1").and_return(fake_user)
 			post :show, {:id => 1}
-		end
-	end
-
-	describe 'register a new user profile' do
-		it 'should register a new user successfully' do
-			UsersController.stub(:create).and_return(mock('User1'))
-			post :create, {:id => "1"}
 		end
 	end
 
@@ -35,9 +34,6 @@ describe UsersController do
 	
 
 	describe 'updating a user profile page' do
-		before :each do
-			@fake_user = FactoryGirl.create(:user)
-		end
 		it 'should access the user information to edit' do
 			User.should_receive(:find).with("#{@fake_user.id}").and_return(@fake_user)
 			post :edit, {:id => @fake_user.id}

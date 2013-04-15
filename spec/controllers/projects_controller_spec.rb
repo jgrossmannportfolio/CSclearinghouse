@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe ProjectsController do
+	include Devise::TestHelpers
+	before(:each) do
+		@fake_user = FactoryGirl.create(:user)
+		sign_in @fake_user
+	end
+		
 	describe 'going to a project details page' do
 		it 'should return the project details' do
 			fake_project = mock("project1")

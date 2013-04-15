@@ -7,22 +7,22 @@ I want to be able to delete my profile
 Background: users registered
 
 	Given the following users exist: 
+	  | username | firstname | lastname | email           | password | password_confirmation|
+		|testuser1 |user1first |user1last |user1@gmail.com  | password | password             |
+		|testuser2 |user2first |user2last |user2@colgate.edu| password | password             |
+		|testuser3 |user3first |user3last |user3@yahoo.com  | password | password             |
+		
 
-		| username	| firstname	| lastname	| email	|
-    | seanbjornsson | Sean | Bjornsson | seanbjornsson@gmail.com |
-    | testuser1	| Test1 | User1 | testuser1@gmail.com |
-    | testuser2	| Test2 | User2 | testuser2@gmail.com |
-    | testuser3	| Test3 | User3 | testuser3@gmail.com |
+	Given I am signed in as the following authenticated user:
+		|username |firstname |lastname |email          |password|password_confirmation|
+		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
 
-Scenario: Go to the user profile page from the users page
-	Given I am on the users page
-	When I follow "More about seanbjornsson"
-	Then I should be on the profile page for seanbjornsson
-	Then I should see "seanbjornsson's Profile"
+Scenario: Go to the edit account info page
+	When I follow "Edit account info"
+	Then I should be on the edit account info page for testuser1
 
-Scenario: Delete user from their profile page
-	Given I am on the profile page for seanbjornsson
-	When I press "Delete"
-	Then I should be on the users page
-	Then I should see "seanbjornsson deleted."
-	And I should not see "seanbjornsson@gmail.com"
+Scenario: Delete user from their edit account info page
+	Given I am on the edit account info page for testuser1
+	And I press "Cancel my account"
+	#Then I should see "testuser1 deleted."
+	And I should not see "Signed in as testuser1"
