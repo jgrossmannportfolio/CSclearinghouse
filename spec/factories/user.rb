@@ -3,6 +3,8 @@ FactoryGirl.define do
 		username 'fakeusername'
 		firstname 'fakefirstname'
 		lastname 'fakelastname'
-		email 'fakeuser@gmail.com'
+		email 'fakeuser1@gmail.com'
+		password 'password'
+		password_confirmation 'password'
 	end
 end

@@ -1,20 +1,37 @@
 require 'spec_helper'
 
 describe ProjectsController do
+	include Devise::TestHelpers
+	before(:each) do
+		@fake_user = FactoryGirl.create(:user)
+		sign_in @user, :user
+	end
+		
 	describe 'going to a project details page' do
 		it 'should return the project details' do
 			fake_project = mock("project1")
-			Project.should_receive(:find).with("1").and_return(fake_project)
+			Project.should_receive(:find).with("1").and_return(@fake_project)
 			post :show, {:id => 1}
 		end
 	end
+	describe 'updating a project' do
+		it 'should update a project' do
+			@fake_project = mock(Project, :title => "project1", :id =>"1")
+			Project.stub!(:find).with("1").and_return(@fake_project)
+			@fake_project.stub!(:update_attributes!).and_return(true)
+      		put :update, {:id => "1", :project => @fake_project}
+     		response.should redirect_to(project_path(@fake_project))
+     		flash[:notice].should == "project1 was successfully updated."
+		end
+	end
+
 	describe 'creating and deleting projects' do
 		it 'should create a new project' do
 			ProjectsController.stub(:create).and_return(mock('Project'))
 			post :create, {:id => "1"}
 		end
 
-		it 'delete a movie' do
+		it 'delete a project' do
 		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Your mom", :deadline => "12-Dec-2013", :id => "1")
 		    Project.stub!(:find).with("1").and_return(fake_project)
 		    fake_project.should_receive(:destroy)
@@ -24,7 +41,7 @@ describe ProjectsController do
     	end
 	end	
 
-	describe 'list all movies in the data base on the homepage' do
+	describe 'list all projects in the data base on the projects page' do
     	it 'should pull the projects from the model' do
       		Project.should_receive(:all)
       		post :index

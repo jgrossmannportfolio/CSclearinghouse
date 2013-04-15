@@ -12,3 +12,18 @@ Then /I should see user details/ do
 		page.body =~ /#{attribute}/
 	end
 end
+
+Given /I am signed in as the following authenticated user/ do |user_table|
+	user_table.hashes.each do |user|
+		visit '/users/sign_in'
+		fill_in "user_password", :with => user[:password]
+		fill_in "user_login", :with => user[:username]
+		click_button "Sign in"
+	end
+end
+
+Then /I should be signed in as (.*)/ do |username|
+	assert page.body =~ /^Signed in as #{username}/
+end
+
+	

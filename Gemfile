@@ -7,6 +7,8 @@ gem 'rails', '3.2.11'
 
 group :development, :test do
   gem 'sqlite3'
+	gem 'hpricot'
+	gem 'ruby_parser'
   gem 'debugger'
   gem 'database_cleaner'
   gem 'capybara'
@@ -53,10 +55,14 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+<<<<<<< HEAD
 
 
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+=======
+gem 'devise'
+>>>>>>> f9dc8f976a44d6693d35c22127001073729a74a1
 gem 'haml'

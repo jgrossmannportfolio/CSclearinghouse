@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_filter :auth_user
 	def index 
 		usersort = params[:usersort] || session[:usersort]
     case usersort
@@ -33,12 +34,12 @@ class UsersController < ApplicationController
 	def new
 	end
 
-	def create
-		@user = User.create!(params[:user])
-    	flash[:notice] = "Congratulations #{@user.username}! You have
-    	sucessfully registered to the CS clearinghouse!"
-    	redirect_to users_path
-	end
+	#def create
+	#	@user = User.create!(params[:user])
+   # 	flash[:notice] = "Congratulations #{@user.username}! You have
+   # 	sucessfully registered to the CS clearinghouse!"
+   # 	redirect_to users_path
+	#end
 
 	def update
   	@user = User.find params[:id]

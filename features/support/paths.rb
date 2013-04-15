@@ -24,9 +24,10 @@ module NavigationHelpers
 		
     #users controller
     when /^the users?\s?page$/i then users_path
-    when /^the register new user page$/i then new_user_path
+    when /^the register new user page$/i then new_user_registration_path
 		when /^the profile page for (.*)$/ then "/users/#{User.find_by_username($1).id}"
-		when /^the edit profile page for (.*)$/ then "/users/#{User.find_by_username($1).id}/edit"
+		when /^the edit profile page for (.*)$/ then edit_user_path(User.find_by_username($1).id)
+		when /^the edit account info page for (.*)$/ then "/users/edit"
 
     else
       begin

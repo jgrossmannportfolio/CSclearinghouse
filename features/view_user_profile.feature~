@@ -14,6 +14,6 @@ Background:
 Scenario: View a user's profile
 	Given I am on the users page
 	When I follow "More about testuser2"
-	Then I should be on profile page for testuser2
+	Then I should be on the profile page for testuser2
 	And I should see user details
 

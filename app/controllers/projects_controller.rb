@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+	before_filter :auth_user
 	def index
 		projectsort = params[:projectsort] || session[:projectsort]
     case projectsort
