@@ -1,12 +1,26 @@
 class ProjectsController < ApplicationController
-
 	def index
-		@projects = Project.all
+		projectsort = params[:projectsort] || session[:projectsort]
+    case projectsort
+    when 'title'
+      ordering,@title_header = :title, 'hilite'
+    when 'owner'
+      ordering,@owner_header = :owner, 'hilite'
+    when 'deadline'
+      ordering,@deadline_header = :deadline, 'hilite'
+    end
+      
+    if params[:projectsort] != session[:projectsort]
+      session[:projectsort] = projectsort
+      flash.keep
+      redirect_to :projectsort => projectsort and return
+    end
+    @projects = Project.order(ordering)
 	end
 	
 	def show   
 		id = params[:id]
-    	@project = Project.find(id)		
+    @project = Project.find(id)		
 	end
 	
 	def new
