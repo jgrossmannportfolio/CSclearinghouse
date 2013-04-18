@@ -55,14 +55,6 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-<<<<<<< HEAD
 
-
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-linkedin'
-=======
 gem 'devise'
->>>>>>> f9dc8f976a44d6693d35c22127001073729a74a1
 gem 'haml'
