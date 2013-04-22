@@ -32,6 +32,8 @@ end
 
 group :production do
   gem 'pg'
+	gem 'hpricot'
+	gem 'ruby_parser'
 end
 
 # Gems used only for assets and not required
@@ -43,7 +45,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -23,7 +23,13 @@ Given /I am signed in as the following authenticated user/ do |user_table|
 end
 
 Then /I should be signed in as (.*)/ do |username|
-	assert page.body =~ /^Signed in as #{username}/
+	step %{I should see "Signed in as #{username}"}
+	step %{I should not see "Login"}
+end
+
+Then /I am not signed in/ do
+	step %{I should see "Currently not signed in"}
+	step %{I should not see "Logout"}
 end
 
 	

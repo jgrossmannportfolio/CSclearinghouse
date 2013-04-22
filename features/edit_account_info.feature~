@@ -25,11 +25,11 @@ Scenario: Edit account info
 	Given I am on the edit account info page for testuser1
 	When I fill in the following:
 		|user_email|editemail@gmail.com|
-		|user_username|edituser|
+		|username|edituser|
 		|user_password|editpassword|
 		|user_password_confirmation|editpassword|
 		|user_current_password|password|
-	And I click on "Update"
+	And I press "Update"
 	Then I should be on the Home Page
 	And I should see "Signed in as edituser"
 
