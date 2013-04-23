@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 	#virtual attribute for authenticating by either username or email
   attr_accessor :login
 	attr_accessible :login
+	validates_uniqueness_of :username
 
 	#creating log_in authentication by username or email
 	def self.find_first_by_auth_conditions(warden_conditions)

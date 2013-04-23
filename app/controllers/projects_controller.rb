@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
 	
 	def show   
 		id = params[:id]
-    	@project = Project.find(id)		
+    @project = Project.find(id)
+		@update_and_delete = (@project.user == current_user)		
 	end
 	
 	def new
@@ -30,7 +31,9 @@ class ProjectsController < ApplicationController
   def update
       @project = Project.find params[:id] 
       @project.update_attributes! params[:project] 
-			@project.tags.create!(params[:tag])
+			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@project.tags.create!(params[:tag])
+			end
       flash[:notice] = "#{@project.title} was successfully updated."
       redirect_to project_path(@project)
   end
