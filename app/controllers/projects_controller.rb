@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.create!(params[:project])
-		@project.tags.create!(:name => "fuck")
+		@project.tags.create!(params[:tag])
     	flash[:notice] = "#{@project.title} was successfully created."
     	redirect_to projects_path
 	end
@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
   def update
       @project = Project.find params[:id] 
       @project.update_attributes! params[:project] 
+			@project.tags.create!(params[:tag])
       flash[:notice] = "#{@project.title} was successfully updated."
       redirect_to project_path(@project)
   end

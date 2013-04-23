@@ -1,7 +1,6 @@
-%h1 Create New Project
+%h1 Update  #{@project.title}
 
-
-= form_tag projects_path do
+= form_tag project_path(@project), :method => :put do
 
   = label :project, :title, 'Title'
   = text_field :project, 'title'
@@ -15,8 +14,4 @@
   = label :project, :deadline, 'Deadline'
   = text_field :project, 'deadline'
 
-  = label :tag, :name, "Tag"
-  = text_field :tag, 'name'
-
-
-  = submit_tag 'Save Changes'
+  = submit_tag 'Update Project Info'
