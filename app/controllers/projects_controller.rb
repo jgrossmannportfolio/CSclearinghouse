@@ -14,7 +14,11 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.create!(params[:project])
-		@project.tags.create!(params[:tag])
+		if (params[:tag][:name] != '' && params[:tag][:name] != nil)
+			@project.tags.create!(params[:tag])
+		end
+		@user = current_user
+		@user.projects << @project
     	flash[:notice] = "#{@project.title} was successfully created."
     	redirect_to projects_path
 	end

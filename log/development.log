@@ -52025,3 +52025,991 @@ Served asset /projects.js - 304 Not Modified (6ms)
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-04-22 23:41:43 -0400
 Served asset /users.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (17.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProjects (20130323183206)
+Migrating to CreateUsers (20130404001559)
+Migrating to AddDeviseToUsers (20130412011817)
+Migrating to AddProjectsTagsTable (20130423024107)
+Migrating to CreateTags (20130423024419)
+Migrating to AddUserIdToProjects (20130423051318)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "projects" ADD "user_id" integer
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130423051318')[0m
+  [1m[35m (45.4ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-23 01:16:45 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (68.6ms)
+Completed 200 OK in 998ms (Views: 995.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /defaults.js - 404 Not Found (22ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /projects.css - 200 OK (132ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /users.css - 200 OK (31ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /jquery.js - 200 OK (56ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /jquery_ujs.js - 200 OK (36ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /projects.js - 200 OK (32ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-04-23 01:16:47 -0400
+Served asset /users.js - 200 OK (17ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-04-23 01:16:52 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.haml (19.3ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (220.6ms)
+Completed 200 OK in 1166ms (Views: 317.5ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:16:53 -0400
+Served asset /defaults.js - 404 Not Found (16ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-04-23 01:16:59 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "user"=>{"login"=>"jgrossmann@colgate.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE (lower(username) = 'jgrossmann@colgate.edu' OR lower(email) = 'jgrossmann@colgate.edu') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (17.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2013-04-23 05:17:00.156108', "sign_in_count" = 2, "updated_at" = '2013-04-23 05:17:00.187810' WHERE "users"."id" = 1[0m
+  [1m[35m (59.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 665ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-23 01:17:00 -0400
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-23 01:17:00 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered home/index.html.haml within layouts/application (38.1ms)
+Completed 200 OK in 364ms (Views: 96.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:17:00 -0400
+Served asset /defaults.js - 404 Not Found (28ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:17:05 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  [1m[35mTag Load (5.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 1
+  Rendered projects/index.html.haml within layouts/application (852.6ms)
+Completed 200 OK in 1049ms (Views: 916.1ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:17:06 -0400
+Served asset /defaults.js - 404 Not Found (35ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2013-04-23 01:17:11 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 1[0m
+  Rendered projects/show.html.haml within layouts/application (39.8ms)
+Completed 200 OK in 128ms (Views: 96.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:17:11 -0400
+Served asset /defaults.js - 404 Not Found (25ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started DELETE "/projects/1" for 127.0.0.1 at 2013-04-23 01:17:18 -0400
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 1[0m
+  [1m[35m (0.9ms)[0m  DELETE FROM "projects_tags" WHERE "projects_tags"."project_id" = 1 AND "projects_tags"."tag_id" IN (1)
+  [1m[36mSQL (7.3ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 1]]
+  [1m[35m (48.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 142ms (ActiveRecord: 58.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:17:18 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.haml within layouts/application (18.3ms)
+Completed 200 OK in 185ms (Views: 159.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:17:19 -0400
+Served asset /defaults.js - 404 Not Found (37ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-04-23 01:17:21 -0400
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered projects/new.html.haml within layouts/application (41.6ms)
+Completed 200 OK in 116ms (Views: 103.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:17:21 -0400
+Served asset /defaults.js - 404 Not Found (31ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-23 01:22:27 -0400
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (33.8ms)
+Completed 200 OK in 338ms (Views: 108.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:22:28 -0400
+Served asset /defaults.js - 404 Not Found (35ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:22:33 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 185ms (Views: 159.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:22:33 -0400
+Served asset /defaults.js - 404 Not Found (26ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-04-23 01:22:36 -0400
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered projects/new.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 103ms (Views: 80.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:22:36 -0400
+Served asset /defaults.js - 404 Not Found (37ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-04-23 01:22:46 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "project"=>{"title"=>"test", "description"=>"", "owner"=>"", "deadline"=>""}, "tag"=>{"name"=>""}, "commit"=>"Save Changes"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.1ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 23 Apr 2013 05:22:46 UTC +00:00], ["deadline", ""], ["description", ""], ["owner", ""], ["title", "test"], ["updated_at", Tue, 23 Apr 2013 05:22:46 UTC +00:00], ["user_id", nil]]
+  [1m[36m (40.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (6.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 23 Apr 2013 05:22:46 UTC +00:00], ["name", ""], ["updated_at", Tue, 23 Apr 2013 05:22:46 UTC +00:00]]
+  [1m[35m (8.0ms)[0m  INSERT INTO "projects_tags" ("project_id", "tag_id") VALUES (2, 2)
+  [1m[36m (24.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mUPDATE "projects" SET "user_id" = 1, "updated_at" = '2013-04-23 05:22:46.930908' WHERE "projects"."id" = 2[0m
+  [1m[35m (26.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 436ms (ActiveRecord: 116.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:22:47 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (1.5ms)[0m  SELECT "projects".* FROM "projects" 
+  [1m[36mTag Load (2.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 2[0m
+  Rendered projects/index.html.haml within layouts/application (21.3ms)
+Completed 200 OK in 122ms (Views: 100.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:22:47 -0400
+Served asset /defaults.js - 404 Not Found (25ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2013-04-23 01:23:02 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered devise/registrations/edit.html.haml within layouts/application (70.1ms)
+Completed 200 OK in 192ms (Views: 167.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:23:03 -0400
+Served asset /defaults.js - 404 Not Found (20ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.0ms)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2013-04-23 01:23:09 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (11.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 1
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 2[0m
+  [1m[35m (4.4ms)[0m  DELETE FROM "projects_tags" WHERE "projects_tags"."project_id" = 2 AND "projects_tags"."tag_id" IN (2)
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (59.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 167ms (ActiveRecord: 78.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-04-23 01:23:10 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :auth_user rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-04-23 01:23:10 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.haml (2.8ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (42.0ms)
+Completed 200 OK in 163ms (Views: 151.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:23:10 -0400
+Served asset /defaults.js - 404 Not Found (32ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-04-23 01:23:15 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.haml (2.5ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (58.1ms)
+Completed 200 OK in 174ms (Views: 162.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:23:15 -0400
+Served asset /defaults.js - 404 Not Found (23ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (14.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-04-23 01:23:26 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "user"=>{"firstname"=>"", "lastname"=>"", "email"=>"jgrossmann@students.colgate.edu", "username"=>"jgrossmann", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'jgrossmann@students.colgate.edu' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (11.2ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 23 Apr 2013 05:23:27 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "jgrossmann@students.colgate.edu"], ["encrypted_password", "$2a$10$71DWyJewyWDZLfp5yI7a7OgWjkUuEMWB3rZ7vR1PfO.jUmYKXFb2G"], ["firstname", ""], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", ""], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 23 Apr 2013 05:23:27 UTC +00:00], ["username", "jgrossmann"]]
+  [1m[35m (46.7ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-04-23 05:23:27.617279', "current_sign_in_at" = '2013-04-23 05:23:27.617279', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2013-04-23 05:23:27.627873' WHERE "users"."id" = 2
+  [1m[36m (27.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1071ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-23 01:23:27 -0400
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-23 01:23:27 -0400
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.haml within layouts/application (53.1ms)
+Completed 200 OK in 215ms (Views: 204.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:23:28 -0400
+Served asset /defaults.js - 404 Not Found (29ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:23:30 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (12.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 105ms (Views: 86.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:23:31 -0400
+Served asset /defaults.js - 404 Not Found (21ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-04-23 01:25:47 -0400
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered projects/new.html.haml within layouts/application (26.9ms)
+Completed 200 OK in 108ms (Views: 97.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:25:47 -0400
+Served asset /defaults.js - 404 Not Found (20ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-04-23 01:25:53 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "project"=>{"title"=>"test", "description"=>"", "owner"=>"", "deadline"=>""}, "tag"=>{"name"=>""}, "commit"=>"Save Changes"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.4ms)[0m  INSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 23 Apr 2013 05:25:53 UTC +00:00], ["deadline", ""], ["description", ""], ["owner", ""], ["title", "test"], ["updated_at", Tue, 23 Apr 2013 05:25:53 UTC +00:00], ["user_id", nil]]
+  [1m[36m (48.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 23 Apr 2013 05:25:53 UTC +00:00], ["name", ""], ["updated_at", Tue, 23 Apr 2013 05:25:53 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  INSERT INTO "projects_tags" ("project_id", "tag_id") VALUES (4, 3)
+  [1m[36m (27.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "projects" SET "user_id" = 2, "updated_at" = '2013-04-23 05:25:53.577179' WHERE "projects"."id" = 4[0m
+  [1m[35m (31.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 201ms (ActiveRecord: 116.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:25:53 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" 
+  [1m[36mTag Load (5.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 4[0m
+  Rendered projects/index.html.haml within layouts/application (30.6ms)
+Completed 200 OK in 579ms (Views: 553.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:25:54 -0400
+Served asset /defaults.js - 404 Not Found (25ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (25.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-04-23 01:27:10 -0400
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (6.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered projects/new.html.haml within layouts/application (29.9ms)
+Completed 200 OK in 430ms (Views: 147.0ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:27:11 -0400
+Served asset /defaults.js - 404 Not Found (23ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-04-23 01:27:15 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "project"=>{"title"=>"test2", "description"=>"", "owner"=>"", "deadline"=>""}, "tag"=>{"name"=>""}, "commit"=>"Save Changes"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 23 Apr 2013 05:27:16 UTC +00:00], ["deadline", ""], ["description", ""], ["owner", ""], ["title", "test2"], ["updated_at", Tue, 23 Apr 2013 05:27:16 UTC +00:00], ["user_id", nil]]
+  [1m[35m (47.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 198ms
+
+NoMethodError (undefined method `name' for {"name"=>""}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/projects_controller.rb:17:in `create'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.6ms)
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.9ms)
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (61.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-04-23 01:27:54 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFj4ISnfhOipjpffo3UKUDRwiqWvwtcXFsEsWjIpGsA=", "project"=>{"title"=>"test2", "description"=>"", "owner"=>"", "deadline"=>""}, "tag"=>{"name"=>""}, "commit"=>"Save Changes"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (6.8ms)[0m  [1mINSERT INTO "projects" ("created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 23 Apr 2013 05:27:55 UTC +00:00], ["deadline", ""], ["description", ""], ["owner", ""], ["title", "test2"], ["updated_at", Tue, 23 Apr 2013 05:27:55 UTC +00:00], ["user_id", nil]]
+  [1m[35m (48.3ms)[0m  commit transaction
+  [1m[36m (2.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.3ms)[0m  UPDATE "projects" SET "user_id" = 2, "updated_at" = '2013-04-23 05:27:55.466645' WHERE "projects"."id" = 6
+  [1m[36m (29.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 471ms (ActiveRecord: 108.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:27:55 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  [1m[35mTag Load (1.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 4
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 5[0m
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "projects_tags" ON "tags"."id" = "projects_tags"."tag_id" WHERE "projects_tags"."project_id" = 6
+  Rendered projects/index.html.haml within layouts/application (126.6ms)
+Completed 200 OK in 295ms (Views: 261.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:27:56 -0400
+Served asset /defaults.js - 404 Not Found (25ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-23 01:28:29 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.haml within layouts/application (25.4ms)
+Completed 200 OK in 393ms (Views: 378.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:28:30 -0400
+Served asset /defaults.js - 404 Not Found (20ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-04-23 01:28:32 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 95ms (Views: 78.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-04-23 01:28:32 -0400
+Served asset /defaults.js - 404 Not Found (21ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/cosc480/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/cosc480/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (12.3ms)

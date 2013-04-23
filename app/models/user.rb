@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :firstname, :lastname, :username, :tag_ids
 
-
+	has_many :projects, :dependent => :destroy
 
 	#virtual attribute for authenticating by either username or email
   attr_accessor :login
