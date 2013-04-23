@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.create!(params[:project])
+		@project.tags.create!(:name => "fuck")
     	flash[:notice] = "#{@project.title} was successfully created."
     	redirect_to projects_path
 	end
