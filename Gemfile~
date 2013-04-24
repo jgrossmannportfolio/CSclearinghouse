@@ -56,6 +56,8 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-gem 'rails_admin'
+gem 'sass-rails'
+gem "meta_search"
+gem 'activeadmin'
 gem 'devise'
 gem 'haml'

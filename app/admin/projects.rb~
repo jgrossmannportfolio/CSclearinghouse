@@ -1,0 +1,16 @@
+ActiveAdmin.register Project do
+  show do |ad|
+		attributes_table do
+			row :id
+			row :title
+			row :description
+			row :owner
+			row :deadline
+			row :user
+			row :created_at
+			row :updated_at
+			row "stuff"
+		end
+		active_admin_comments
+	end
+end
