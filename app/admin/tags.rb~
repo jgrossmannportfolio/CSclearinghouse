@@ -11,12 +11,4 @@ ActiveAdmin.register Tag do
       end
       active_admin_comments
   end
-
-form do |f|
-      f.inputs do
-        f.input :name
-				f.input :projects, :as => :check_boxes
-      end
-		f.actions
-end
 end

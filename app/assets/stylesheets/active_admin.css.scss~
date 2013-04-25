@@ -11,6 +11,10 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+form.formtastic fieldset > ol > li.check_box fieldset ol li { 
+	margin:0.1em 0.5em 0.5em 0;
+	display: inline-block;
+}
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:

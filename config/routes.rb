@@ -9,6 +9,18 @@ Clearinghouse::Application.routes.draw do
 
   resources :projects, :users
   resources :home, :only => [:index]
+
+	namespace :admin do
+		resources :projects do 
+			resources :tags
+		end
+		resources :tags do
+			resources :projects
+		end
+		resources :users do
+			resources :projects
+		end
+	end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
