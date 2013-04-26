@@ -8,5 +8,23 @@
 
 	= label :user, :lastname, 'Last Name'
 	= text_field :user, :lastname
+	
+	= label :user, :aboutme, 'About Me'
+	= text_field :user, :aboutme
 
 	= submit_tag 'Update Profile Page'
+
+= form_tag user_path(@user), :method => :put do
+	%h4 Tags:
+	Check to Delete:
+	- @tags.each do |tag|
+		= tag.name
+		= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+	%br/
+	= label :tag, :name, 'New Tag'
+	= text_field :tag, :name
+
+	= submit_tag 'Update Tags'
+
+	
+

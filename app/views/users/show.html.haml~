@@ -14,6 +14,10 @@
     Projects:
     - @user.projects.each do |project|
       = link_to "#{project.title}", project_path(project)
+  %li
+    Tags:
+    - @user.tags.each do |tag|
+      = tag.name
 
 -if @edit_and_delete
   = link_to 'Edit Profile', edit_user_path(@user)

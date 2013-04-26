@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424024149) do
+ActiveRecord::Schema.define(:version => 20130426193933) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(:version => 20130424024149) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "tags_users", :id => false, :force => true do |t|
+    t.integer "tag_id"
+    t.integer "user_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "firstname"
@@ -83,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20130424024149) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.text     "aboutme"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
