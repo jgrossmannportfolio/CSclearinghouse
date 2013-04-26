@@ -15,6 +15,9 @@
     - @user.projects.each do |project|
       = link_to "#{project.title}", project_path(project)
   %li
+    About Me:
+    - @user.aboutme
+  %li
     Tags:
     - @user.tags.each do |tag|
       = tag.name

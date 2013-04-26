@@ -14,12 +14,6 @@
   = label :project, :deadline, 'Deadline'
   = text_field :project, 'deadline'
 
-  = label :tag, :name, 'Tag'
-  = text_field :tag, 'name'
-
-  = submit_tag 'Update Project Info'
-
-= form_tag project_path(@project), :method => :put do
   %h4 Tags:
   Check to Delete:
   - @tags.each do |tag|
@@ -29,4 +23,4 @@
   = label :tag, :name, 'New Tag'
   = text_field :tag, :name
 
-  = submit_tag 'Update Tags'
+  = submit_tag 'Update Project Info'

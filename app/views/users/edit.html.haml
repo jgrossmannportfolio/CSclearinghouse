@@ -12,9 +12,6 @@
 	= label :user, :aboutme, 'About Me'
 	= text_field :user, :aboutme
 
-	= submit_tag 'Update Profile Page'
-
-= form_tag user_path(@user), :method => :put do
 	%h4 Tags:
 	Check to Delete:
 	- @tags.each do |tag|
@@ -23,8 +20,7 @@
 	%br/
 	= label :tag, :name, 'New Tag'
 	= text_field :tag, :name
-
-	= submit_tag 'Update Tags'
-
+	%br/
+	= submit_tag 'Update Profile Page'
 	
 
