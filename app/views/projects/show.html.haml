@@ -10,7 +10,11 @@
   %li
     Deadline:
     = @project.deadline
-
-= link_to 'Update', edit_project_path(@project)
-= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'
+  %li
+    Tags:
+    - @project.tags.each do |tag|
+      = tag.name
+-if @update_and_delete
+  = link_to 'Update', edit_project_path(@project)
+  = button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to project list', projects_path

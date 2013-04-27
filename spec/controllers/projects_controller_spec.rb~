@@ -4,13 +4,14 @@ describe ProjectsController do
 	include Devise::TestHelpers
 	before(:each) do
 		@fake_user = FactoryGirl.create(:user)
-		sign_in @user, :user
+		sign_in @fake_user
 	end
 		
 	describe 'going to a project details page' do
 		it 'should return the project details' do
 			fake_project = mock("project1")
 			Project.should_receive(:find).with("1").and_return(@fake_project)
+			Project.stub(:user).and_return(@fake_user)
 			post :show, {:id => 1}
 		end
 	end
@@ -19,7 +20,7 @@ describe ProjectsController do
 			@fake_project = mock(Project, :title => "project1", :id =>"1")
 			Project.stub!(:find).with("1").and_return(@fake_project)
 			@fake_project.stub!(:update_attributes!).and_return(true)
-      		put :update, {:id => "1", :project => @fake_project}
+      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}}
      		response.should redirect_to(project_path(@fake_project))
      		flash[:notice].should == "project1 was successfully updated."
 		end
@@ -28,7 +29,7 @@ describe ProjectsController do
 	describe 'creating and deleting projects' do
 		it 'should create a new project' do
 			ProjectsController.stub(:create).and_return(mock('Project'))
-			post :create, {:id => "1"}
+			post :create, {:id => "1", :tag => {:name => ""}}
 		end
 
 		it 'delete a project' do

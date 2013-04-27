@@ -7,11 +7,14 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :firstname, :lastname, :username
+  attr_accessible :firstname, :lastname, :username, :tag_ids, :project_ids
+
+	has_many :projects, :dependent => :destroy
 
 	#virtual attribute for authenticating by either username or email
   attr_accessor :login
 	attr_accessible :login
+	validates_uniqueness_of :username
 
 	#creating log_in authentication by username or email
 	def self.find_first_by_auth_conditions(warden_conditions)

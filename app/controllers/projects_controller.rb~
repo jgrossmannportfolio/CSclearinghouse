@@ -1,21 +1,44 @@
 class ProjectsController < ApplicationController
 	before_filter :auth_user
 	def index
-		@projects = Project.all
+		projectsort = params[:projectsort] || session[:projectsort]
+    case projectsort
+    when 'title'
+      ordering,@title_header = :title, 'hilite'
+    when 'owner'
+      ordering,@owner_header = :owner, 'hilite'
+    when 'deadline'
+      ordering,@deadline_header = :deadline, 'hilite'
+    end
+      
+    if params[:projectsort] != session[:projectsort]
+      session[:projectsort] = projectsort
+      flash.keep
+      redirect_to :projectsort => projectsort and return
+    end
+    @projects = Project.order(ordering)
 	end
 	
 	def show   
 		id = params[:id]
-    	@project = Project.find(id)		
+<<<<<<< HEAD
+    @project = Project.find(id)		
+=======
+    @project = Project.find(id)
+		@update_and_delete = (@project.user == current_user)		
+>>>>>>> de918cf503bf686f1ec41ab23977eca3dccbc761
 	end
 	
 	def new
 	end
 
 	def create
-		@project_params = params[:project]
-		@project_params.merge(:users_id => current_user.id)
-		@project = Project.create!(@project_params)
+		@project = Project.create!(params[:project])
+		if (params[:tag][:name] != '' && params[:tag][:name] != nil)
+			@project.tags.create!(params[:tag])
+		end
+		@user = current_user
+		@user.projects << @project
     	flash[:notice] = "#{@project.title} was successfully created."
     	redirect_to projects_path
 	end
@@ -27,6 +50,9 @@ class ProjectsController < ApplicationController
   def update
       @project = Project.find params[:id] 
       @project.update_attributes! params[:project] 
+			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@project.tags.create!(params[:tag])
+			end
       flash[:notice] = "#{@project.title} was successfully updated."
       redirect_to project_path(@project)
   end

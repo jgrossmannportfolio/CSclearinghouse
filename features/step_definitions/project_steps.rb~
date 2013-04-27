@@ -1,15 +1,24 @@
 
-Given /the following (.*) exist/ do |model, models_table|
-	if ("#{model}" =~ /s$/)
-		model = model.sub(/s$/, '')
+Given /the following projects exist/ do |projects_table|
+	projects_table.hashes.each do |project|
+		Project.create!(project)
 	end
-	model = model.capitalize
-	models_table.hashes.each do |object|
-		model.create!(object)
-	end
-	models_table.hashes.size.should == model.all.count
+	projects_table.hashes.size.should == Project.all.count
 end
 
+Given /(.*) has not created (.*)/ do |username, project_title|
+	project = Project.find_by_title(project_title)
+	user = User.find_by_username(username)
+	if (project.user == user)
+		assert false
+	end
+end
+
+Given /(.*) has created (.*)/ do |username, project_title|
+	project = Project.find_by_title(project_title)
+	user = User.find_by_username(username)
+	user.projects << project
+	
 Then /I should see project details/ do
 	project_attr = Project.accessible_attributes
 	project_attr.each do |attribute|

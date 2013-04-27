@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 	def show
 		id = params[:id]
 		@user = User.find(id)
+		@edit_and_delete = (@user == current_user)
 	end
 	
 	def edit

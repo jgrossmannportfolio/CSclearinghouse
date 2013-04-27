@@ -1,9 +1,26 @@
 Clearinghouse::Application.routes.draw do
+	root :to => redirect('/home')
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users
+  ActiveAdmin.routes(self)
 
   resources :projects, :users
   resources :home, :only => [:index]
-  root :to => redirect('/home')
+
+	namespace :admin do
+		resources :projects do 
+			resources :tags
+		end
+		resources :tags do
+			resources :projects
+		end
+		resources :users do
+			resources :projects
+		end
+	end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

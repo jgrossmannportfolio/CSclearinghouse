@@ -10,6 +10,7 @@
       %th{:class => @owner_header}= link_to 'Project Owner', projects_path( :projectsort => 'owner')
       %th{:class => @deadline_header}= link_to 'Deadline', projects_path( :projectsort => 'deadline')
       %th Details
+      %th Tags
 
   %tbody
     - @projects.each do |project|
@@ -19,6 +20,9 @@
         %td= project.owner
         %td= project.deadline
         %td= link_to "More about #{project.title}", project_path(project)
+        - project.tags.each do |tag|
+          %td= tag.name
+        
 
 =link_to 'Add New Project', new_project_path
 =link_to "Back to Clearinghouse Home", home_index_path

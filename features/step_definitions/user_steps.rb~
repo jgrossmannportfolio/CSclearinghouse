@@ -13,6 +13,10 @@ Then /I should see user details/ do
 	end
 end
 
+Then /I should not be able to click (.*)/ do |button|
+	page.should_not have_button(button)
+end
+	
 Given /I am signed in as the following authenticated user/ do |user_table|
 	user_table.hashes.each do |user|
 		visit '/users/sign_in'
@@ -24,6 +28,7 @@ end
 
 Then /I should be signed in as (.*)/ do |username|
 	step %{I should see "Signed in as #{username}"}
+	step %{I should not see "Login"}
 end
 
 Then /I am not signed in/ do

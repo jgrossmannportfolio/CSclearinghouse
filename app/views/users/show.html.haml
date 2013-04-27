@@ -10,7 +10,12 @@
   %li
     Email:
     = @user.email
-#footer
+  %li
+    Projects:
+    - @user.projects.each do |project|
+      = link_to "#{project.title}", project_path(project)
+
+-if @edit_and_delete
   = link_to 'Edit Profile', edit_user_path(@user)
   = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
-  = link_to 'Back to user list', users_path
+= link_to 'Back to user list', users_path

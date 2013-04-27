@@ -1,6 +1,10 @@
 
 %h1 All Projects
 
+= link_to "Back to Clearinghouse Home", home_index_path
+
+
+
 %table#projects
 
   %thead
@@ -10,6 +14,7 @@
       %th Project Owner
       %th Deadline
       %th Details
+      %th Tags
 
   %tbody
     - @projects.each do |project|
@@ -19,6 +24,9 @@
         %td= project.owner
         %td= project.deadline
         %td= link_to "More about #{project.title}", project_path(project)
+        - project.tags.each do |tag|
+          %td  tag.name
+        
 
 =link_to 'Add New Project', new_project_path
  
