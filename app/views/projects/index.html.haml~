@@ -1,18 +1,14 @@
 
 %h1 All Projects
 
-= link_to "Back to Clearinghouse Home", home_index_path
-
-
-
 %table#projects
 
   %thead
     %tr
-      %th Title
+      %th{:class => @title_header}= link_to 'Title', projects_path( :projectsort => 'title')
       %th Description
-      %th Project Owner
-      %th Deadline
+      %th{:class => @owner_header}= link_to 'Project Owner', projects_path( :projectsort => 'owner')
+      %th{:class => @deadline_header}= link_to 'Deadline', projects_path( :projectsort => 'deadline')
       %th Details
       %th Tags
 
@@ -22,11 +18,12 @@
         %td= project.title 
         %td= project.description
         %td= project.owner
-        %td= project.deadline
+        %td= project.deadline.to_formatted_s(:long) unless project.deadline == nul
         %td= link_to "More about #{project.title}", project_path(project)
         - project.tags.each do |tag|
-          %td  tag.name
+          %td= tag.name
         
 
 =link_to 'Add New Project', new_project_path
+=link_to "Back to Clearinghouse Home", home_index_path
  
