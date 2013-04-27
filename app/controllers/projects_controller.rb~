@@ -22,11 +22,16 @@ class ProjectsController < ApplicationController
 	def show   
 		id = params[:id]
 <<<<<<< HEAD
+<<<<<<< HEAD
     @project = Project.find(id)		
 =======
     @project = Project.find(id)
 		@update_and_delete = (@project.user == current_user)		
 >>>>>>> de918cf503bf686f1ec41ab23977eca3dccbc761
+=======
+    @project = Project.find(id)
+		@update_and_delete = (@project.user == current_user)		
+>>>>>>> 64028305db472e00bef5d5a394bb26a122a6268c
 	end
 	
 	def new
@@ -45,14 +50,22 @@ class ProjectsController < ApplicationController
 
   def edit
       @project = Project.find params[:id] 
+			@tags = @project.tags
   end
 
   def update
       @project = Project.find params[:id] 
       @project.update_attributes! params[:project] 
+			if(params[:tags] != nil)
+				tags = params[:tags].keys
+				tags.each do |tag|
+					@project.tags.find_by_name(tag).delete
+				end
+			end
 			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
 				@project.tags.create!(params[:tag])
 			end
+			@tags = @project.tags
       flash[:notice] = "#{@project.title} was successfully updated."
       redirect_to project_path(@project)
   end

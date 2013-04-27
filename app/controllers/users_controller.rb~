@@ -1,19 +1,36 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
-		@users = User.all
+		usersort = params[:usersort] || session[:usersort]
+    case usersort
+    when 'username'
+    	ordering,@username_header = :username, 'hilite'
+    when 'first_name'
+    	ordering,@first_name_header = :firstname, 'hilite'
+    when 'last_name'
+      ordering,@last_name_header = :lastname, 'hilite'
+    when 'email'
+      ordering,@email_header = :email, 'hilite'
+    end
+    	
+    if params[:usersort] != session[:usersort]
+      session[:usersort] = usersort
+			flash.keep
+      redirect_to :usersort => usersort and return
+    end
+    @users = User.order(ordering)
 	end
 	
 	def show
 		id = params[:id]
 		@user = User.find(id)
-		@cuser = current_user
 		@edit_and_delete = (@user == current_user)
 	end
 	
 	def edit
 		id = params[:id]
 		@user = User.find(id)
+		@tags = @user.tags
 	end
 
 	def new
@@ -27,17 +44,35 @@ class UsersController < ApplicationController
 	#end
 
 	def update
+<<<<<<< HEAD
+  	@user = User.find params[:id]
+	  @user.update_attributes!(params[:user])
+	  flash[:notice] = "#{@user.username}'s profile was successfully updated."
+	  redirect_to user_path(@user)
+  end
+=======
 	    @user = User.find params[:id]
 	    @user.update_attributes!(params[:user])
+			if(params[:tags] != nil)
+				tags = params[:tags].keys
+				tags.each do |tag|
+					@user.tags.find_by_name(tag).delete
+				end
+			end
+			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@user.tags.create!(params[:tag])
+			end
+			@tags = @user.tags
 	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
-	    redirect_to user_path(@user)
+	    redirect_to edit_user_path(@user)
   	end
+>>>>>>> 64028305db472e00bef5d5a394bb26a122a6268c
 
 	def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    flash[:notice] = "#{@user.username} deleted."
-    redirect_to users_path
+  	@user = User.find(params[:id])
+  	@user.destroy
+  	flash[:notice] = "#{@user.username} deleted."
+  	redirect_to users_path
   end
 end
 

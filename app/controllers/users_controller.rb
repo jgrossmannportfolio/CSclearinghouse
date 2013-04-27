@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 	def edit
 		id = params[:id]
 		@user = User.find(id)
+		@tags = @user.tags
 	end
 
 	def new
@@ -43,11 +44,21 @@ class UsersController < ApplicationController
 	#end
 
 	def update
-  	@user = User.find params[:id]
-	  @user.update_attributes!(params[:user])
-	  flash[:notice] = "#{@user.username}'s profile was successfully updated."
-	  redirect_to user_path(@user)
-  end
+	    @user = User.find params[:id]
+	    @user.update_attributes!(params[:user])
+			if(params[:tags] != nil)
+				tags = params[:tags].keys
+				tags.each do |tag|
+					@user.tags.find_by_name(tag).delete
+				end
+			end
+			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@user.tags.create!(params[:tag])
+			end
+			@tags = @user.tags
+	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
+	    redirect_to edit_user_path(@user)
+  	end
 
 	def destroy
   	@user = User.find(params[:id])
