@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string 'title'
       t.text 'description'
       t.string 'owner'
-      t.string 'deadline'
+      t.date 'deadline'
       t.timestamps
     end
   end

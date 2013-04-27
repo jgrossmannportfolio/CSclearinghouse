@@ -58,7 +58,7 @@ class ProjectsController < ApplicationController
 			end
 			@tags = @project.tags
       flash[:notice] = "#{@project.title} was successfully updated."
-      redirect_to edit_project_path(@project)
+      redirect_to project_path(@project)
   end
 
 	def destroy

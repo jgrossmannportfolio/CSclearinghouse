@@ -12,7 +12,7 @@
   = text_field :project, 'owner'
 
   = label :project, :deadline, 'Deadline'
-  = text_field :project, 'deadline'
+  = text_field :project, 'deadline', :value => "#{@project.deadlineslash}"
 
   %h4 Tags:
   Check to Delete:
