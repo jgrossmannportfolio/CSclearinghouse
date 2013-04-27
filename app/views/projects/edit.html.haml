@@ -24,3 +24,4 @@
   = text_field :tag, :name
   %br/
   = submit_tag 'Update Project Info'
+= link_to "Back to #{@project.title}", project_path(@project)

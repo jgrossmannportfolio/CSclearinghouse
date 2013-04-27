@@ -32,7 +32,8 @@ Scenario: Update a project from projects page
 	Then I should be on the Edit Page for Project4
 	And I fill in "Owner" with "Santa Claus"
 	When I press "Update Project Info"
-	Then I should be on the Detail Page for Project4
+	Then I should be on the Edit Page for Project4
+	Then I follow "Back to Project4"
 	And I should see "Santa Claus"
 	And I should not see "Mrs. Buttersworth"
 

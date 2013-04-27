@@ -20,15 +20,14 @@ Scenario: Go to edit profile page
 	When I follow "Edit Profile"
 	Then I should be on the edit profile page for testuser1
 
-Scenario: unauthorized user should not be able to edit or delete my profile
+Scenario: unauthorized user should not be able to edit a profile
 	Given I am on the profile page for testuser2
 	Then I should not be able to follow Edit Profile
-	And I should not be able to click Delete
 
 Scenario: Edit a user's profile page
 	Given I am on the edit profile page for testuser1
 	When I fill in "Last Name" with "user1last"
 	And I press "Update Profile Page"
-	Then I should be on the profile page for testuser1
+	Then I should be on the edit profile page for testuser1
 	And I should see "user1last"
 

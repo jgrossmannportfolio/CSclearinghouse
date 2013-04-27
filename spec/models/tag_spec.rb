@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Tags do
+describe Tag do
 end
