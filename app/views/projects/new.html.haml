@@ -5,18 +5,21 @@
 
   = label :project, :title, 'Title'
   = text_field :project, 'title'
-
+  %br/
   = label :project, :description, 'Description'
   = text_field :project, 'description'
-
+  %br/
   = label :project, :owner, 'Owner'
   = text_field :project, 'owner'
-
-  = label :project, :deadline, 'Deadline'
+  %br/
+  = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
   = text_field :project, 'deadline'
-
+  %br/
   = label :tag, :name, "Tag"
   = text_field :tag, 'name'
-
+  %br/
 
   = submit_tag 'Save Changes'
+
+=link_to 'Back to all projects', projects_path
+=link_to "Back to Clearinghouse Home", home_index_path
