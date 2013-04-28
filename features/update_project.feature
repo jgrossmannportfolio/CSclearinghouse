@@ -31,11 +31,16 @@ Scenario: Update a project from projects page
 	When I follow "Update"
 	Then I should be on the Edit Page for Project4
 	And I fill in "Owner" with "Santa Claus"
+	And I fill in "New Tag" with "testtag"
 	When I press "Update Project Info"
 	Then I should be on the Edit Page for Project4
+	And I should see "testtag"
+	When I check "testtag"
+	And I press "Update Project Info"
 	Then I follow "Back to Project4"
 	And I should see "Santa Claus"
 	And I should not see "Mrs. Buttersworth"
+	And I should not see "testtag"
 
 Scenario: unauthorized user should not be able to update a project
 	Given I am on the Projects Page
