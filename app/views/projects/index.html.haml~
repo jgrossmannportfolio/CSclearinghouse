@@ -18,7 +18,7 @@
         %td= project.title 
         %td= project.description
         %td= project.owner
-        %td= project.deadline.to_formatted_s(:long) unless project.deadline == nul
+        %td= project.deadline.to_formatted_s(:long) unless project.deadline == nil
         %td= link_to "More about #{project.title}", project_path(project)
         - project.tags.each do |tag|
           %td= tag.name

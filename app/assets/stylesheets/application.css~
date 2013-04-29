@@ -10,32 +10,95 @@
  *
  *= require_self
  *= require_tree .
- */
+771D1C */
 
-
-body{
-  background-image: url(red-grid-tile.png);
-	background-repeat: repeat;
+#homeimage{
+background-image: url(cslounge.jpeg);
+height:300px;
+width:100%;
 }
+
+th{
+	margin-right: 10px;
+}
+
+.bottomlinks a{
+margin-right:15px;
+}
+
+.bottomlinks{
+margin-top:20px;
+}
+
+#account_info{
+position:relative;
+top:-15px;
+}
+
+th{
+margin-right: 5px;
+}
+
+h1{
+color:white;
+}
+
+a{
+color:orange;
+text-decoration: none;
+}
+
+#sidebar{
+padding: 7px;
+margin-right:20px;
+float:left;
+position:relative;
+top:57px;
+
+height: 100%;
+list-style-type: none;
+}
+
+
+.content{
+float:left;
+margin-left: 15px;
+position:relative;
+top:-30px;
+}
+
+#account_info{
+float:right;
+}
+
+#header{
+clear: left;
+}
+
+#sidebar li{
+width: 100%;	
+border-left: 4px;
+margin-top:1em;
+font-weight:bold;
+}
+
 
  h1.title {
   margin: 0 0 1em;
   padding: 10px;
-	/*background-color: darkred;*/
-  background-image: url(rails.png);
-	background-repeat: repeat;
+	background-image: url(red-grid-tile.png);
   color: white;
   border-bottom: 4px solid black;
   font-size: 2em;
   font-style: normal;
+	margin-bottom:0px;
 }
  #titlelink {
   text-decoration: none;
 	color: white;
+	padding-left: 0px;
+	
 }
- table#users th.hilite {
-	background-color: pink;
-}
-table#projects th.hilite {
-	background-color: pink;
+ table#users th.hilite,table#projects th.hilite  {
+	background-color: #992020;
 }
