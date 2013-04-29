@@ -24,9 +24,9 @@ Clearinghouse::Application.configure do
 		:address => "smtp.gmail.com",
 		:port => 587,
 		:authentication => "plain",
-		:domain => ENV['GMAIL_SMTP_USER'],
-		:user_name => ENV['GMAIL_SMTP_USER'],
-		:password => ENV['GMAIL_SMTP_PASSWORD'],
+		:domain => ENV["GMAIL_USER"],
+		:user_name => ENV["GMAIL_USER"],
+		:password => ENV["GMAIL_PASSWORD"],
 		:enable_starttls_auto => true
 	}
 		
