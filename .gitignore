@@ -1,2 +1,3 @@
-log
-coverage
+/log
+/coverage
+/config/local_env.yml

@@ -49,7 +49,7 @@ Clearinghouse::Application.configure do
   config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-	config.action_mailer.default_url_options = {:host => 'http://radiant-crag1186.herokuapp.com'}
+	config.action_mailer.default_url_options = {:host => 'radiant-crag-1186.herokuapp.com'}
   config.action_mailer.raise_delivery_errors = true
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.perform_deliveries = true
@@ -61,7 +61,8 @@ Clearinghouse::Application.configure do
 		:authentication => :plain,
 		:domain => ENV['GMAIL_SMTP_USER'],
 		:user_name => ENV['GMAIL_SMTP_USER'],
-		:password => ENV['GMAIL_SMTP_PASSWORD']
+		:password => ENV['GMAIL_SMTP_PASSWORD'],
+		:enable_starttls_auto => true
 	}
 
   # Enable threaded mode
