@@ -12,10 +12,16 @@
  *= require_tree .
  */
 
+
+body{
+  background-image: url(red-grid-tile.png);
+	background-repeat: repeat;
+}
+
  h1.title {
   margin: 0 0 1em;
   padding: 10px;
-  background-color: darkred;
+	background-color: darkred;
   color: white;
   border-bottom: 4px solid black;
   font-size: 2em;
@@ -24,4 +30,10 @@
  #titlelink {
   text-decoration: none;
 	color: white;
+}
+ table#users th.hilite {
+	background-color: pink;
+}
+table#projects th.hilite {
+	background-color: pink;
 }
