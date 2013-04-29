@@ -13,6 +13,7 @@ Background:
 	Given the following admins exist:
 		|	email							|password|
 		|testadmin@gmail.com|password|
+		|testadmin2@gmail.com|password|
 	Given I am logged in as the following authenticated admin:
 		|email 							|password |
 		|testadmin@gmail.com|password |
@@ -23,39 +24,35 @@ Scenario: creating a new admin user
 	Then I should be on the admin adminusers page
 	When I follow "New Admin User"
 	And I fill in the following:
-		|Email|testadmin2@gmail.com|
+		|Email|testadmin3@gmail.com|
 		|admin_user_password|password|
 		|admin_user_password_confirmation|password|
 	And I press "Create Admin user"
-	Then I should be on the admin adminuser page for testadmin2@gmail.com
+	Then I should be on the admin adminuser page for testadmin3@gmail.com
 	And I should see "Admin user was successfully created."
 
 Scenario: Viewing admin user attributes
 	Given I am on the admin adminusers page
-	When I follow "View"
+	When I follow View for admin adminuser testadmin@gmail.com
 	Then I should be on the admin adminuser page for testadmin@gmail.com
 	And I should see "testadmin@gmail.com"
 
 Scenario: editing an admin user
 	Given I am on the admin adminusers page
-	When I follow "Edit"
-	Then I should be on the edit admin adminuser page for testadmin@gmail.com
+	When I follow Edit for admin adminuser testadmin2@gmail.com
+	Then I should be on the edit admin adminuser page for testadmin2@gmail.com
 	When I fill in the following:
 		|Email|edittestadmin@gmail.com|
 		|admin_user_password|password|
 		|admin_user_password_confirmation|password|
 	And I press "Update Admin user"
-	Then I should be on the admin login page
-	When I fill in the following:
-		|Login|edittestadmin@gmail.com|
-		|admin_user_password|password|
-	And I press "Login"
 	Then I should be on the admin adminuser page for edittestadmin@gmail.com
+	And I should see "edittestadmin@gmail.com"
 
 Scenario: deleting an admin user
 	Given I am on the admin adminusers page
-	When I follow "View"
-	Then I should be on the admin adminuser page for testadmin@gmail.com
-	When I follow "Delete Admin User"
-	Then I should be on the admin login page
+	When I follow Delete for admin adminuser testadmin2@gmail.com
+	Then I should be on the admin adminusers page
+	And I should see "Admin user was successfully destroyed"
+	And I should not see "testadmin2@gmail.com"
 	

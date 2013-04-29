@@ -15,7 +15,7 @@
  h1.title {
   margin: 0 0 1em;
   padding: 10px;
-  background-color: darkred;
+  background-color: pink;
   color: white;
   border-bottom: 4px solid black;
   font-size: 2em;
@@ -23,4 +23,5 @@
 }
  #titlelink {
   text-decoration: none;
+	color: white;
 }
