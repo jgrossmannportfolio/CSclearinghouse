@@ -21,7 +21,7 @@ Background:
 
 	Given I am signed in as the following authenticated user:
 		|username |firstname |lastname |email          |password|password_confirmation|
-		|testuser1|user1first|user1last|user1@gmail.com|password|password   |
+		|atestuser1|buser1first|cuser1last|user1@gmail.com|password|password   |
 
 Scenario: Sort all users by username
 	Given I am on the users page

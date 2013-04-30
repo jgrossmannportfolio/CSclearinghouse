@@ -34,7 +34,9 @@ Scenario: creating a new admin project
 		|Title|adminproject|
 		|Description|admins rock|
 		|Owner|admin|
-		|Deadline|now|
+	And I select "2000" from "Year"
+	And I select "June" from "Month"
+	And I select "1" from "Day"
 	And I check "testtag1"
 	And I press "Create Project"
 	Then I should be on the admin project page for adminproject
@@ -55,7 +57,9 @@ Scenario: editing an admin project
 		|Title|adminproject|
 		|Description|admins rock|
 		|Owner|admin|
-		|Deadline|now|
+	
+	And I select "June" from "Month"
+	And I select "1" from "Day"
 	And I check "testtag1"
 	And I press "Update Project"
 	Then I should be on the admin project page for adminproject
