@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
       flash.keep
       redirect_to :projectsort => projectsort and return
     end
-    @projects = Project.order(ordering)
+    @projects = Project.order("lower(#{ordering})")
 	end
 	
 	def show   

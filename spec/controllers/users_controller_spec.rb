@@ -19,21 +19,21 @@ describe UsersController do
       describe 'should order the users based on current sort' do
 				it 'when sort is -username-' do
 					session[:usersort] = 'username'
-					User.should_receive(:order).with(:username)
+					User.should_receive(:order).with("lower(username)")
 					post :index, {:usersort=>'username'}
 				end
 				it 'when sort is -firstname-' do
-					User.should_receive(:order).with(:firstname)
+					User.should_receive(:order).with("lower(firstname)")
 					session[:usersort] = 'firstname'
 					post :index, {:usersort=>'firstname'}
 				end
 				it 'when sort is -lastname-' do
-					User.should_receive(:order).with(:lastname)
+					User.should_receive(:order).with("lower(lastname)")
 					session[:usersort] = 'lastname'
 					post :index, {:usersort=>'lastname'}
 				end
 				it 'when sort is -email-' do
-					User.should_receive(:order).with(:email)
+					User.should_receive(:order).with("lower(email)")
 					session[:usersort] = 'email'
 					post :index, {:usersort=>'email'}
 				end

@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
 	before_filter :auth_user
 	def index
-		puts("params[:projectsort] = #{params[:projectsort]} session[:projectsort]= #{session[:projectsort]}")
 		projectsort = params[:projectsort] || session[:projectsort]
     case projectsort
     when 'title'
@@ -11,14 +10,12 @@ class ProjectsController < ApplicationController
     when 'deadline'
       ordering,@deadline_header = :deadline, 'hilite'
     end
-      puts('\nhello\n')
     if params[:projectsort] != session[:projectsort]
-			puts('\ngoodbye\n')
       session[:projectsort] = projectsort
       flash.keep
       redirect_to :projectsort => projectsort and return
     end
-    @projects = Project.order(ordering)
+    @projects = Project.order(lower(ordering))
 	end
 	
 	def show   

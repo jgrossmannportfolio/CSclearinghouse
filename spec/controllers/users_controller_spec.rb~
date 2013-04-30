@@ -25,7 +25,6 @@ describe UsersController do
 				it 'when sort is -firstname-' do
 					User.should_receive(:order).with(:firstname)
 					session[:usersort] = 'firstname'
-					ordering = :firstname
 					post :index, {:usersort=>'firstname'}
 				end
 				it 'when sort is -lastname-' do

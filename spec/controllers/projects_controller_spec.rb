@@ -48,16 +48,16 @@ describe ProjectsController do
 			describe 'should order the projects based on current sort' do
 				it 'when sort is -title-' do
 					session[:projectsort] = 'title'
-					Project.should_receive(:order).with(:title)
+					Project.should_receive(:order).with("lower(title)")
 					post :index, {:projectsort=>'title'}
 				end
 				it 'when sort is -owner-' do
-					Project.should_receive(:order).with(:owner)
+					Project.should_receive(:order).with("lower(owner)")
 					session[:projectsort] = 'owner'
 					post :index, {:projectsort=>'owner'}
 				end
 				it 'when sort is -deadline-' do
-					Project.should_receive(:order).with(:deadline)
+					Project.should_receive(:order).with("lower(deadline)")
 					session[:projectsort] = 'deadline'
 					post :index, {:projectsort=>'deadline'}
 				end

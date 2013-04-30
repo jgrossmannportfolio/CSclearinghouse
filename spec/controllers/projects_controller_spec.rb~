@@ -65,7 +65,7 @@ describe ProjectsController do
 			it 'should update the session if params and session sort are not =' do
 				post :index, {:projectsort=>'owner'}
 				response.should redirect_to("/projects?projectsort=owner")
-				assigns(:session['title']).should_not be_nil
+				assigns(:session['owner']).should_not be_nil
 			end
  	end
 		

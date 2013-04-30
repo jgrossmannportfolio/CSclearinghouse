@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
-		puts("params[:usersort] = #{params[:usersort]}  session[:usersort] = #{session[:usersort]}")
 		usersort = params[:usersort] || session[:usersort]
-    puts("usersort = #{usersort}")
 		case usersort
     when 'username'
     	ordering,@username_header = :username, 'hilite'
@@ -14,8 +12,6 @@ class UsersController < ApplicationController
     when 'email'
       ordering,@email_header = :email, 'hilite'
     end
-    	puts("params[:usersort] = #{params[:usersort]}  session[:usersort] = #{session[:usersort]}")
-			puts("ordering = #{ordering}")
     if params[:usersort] != session[:usersort]
       session[:usersort] = usersort
 			flash.keep
