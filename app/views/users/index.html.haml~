@@ -5,10 +5,10 @@
 
   %thead
     %tr
-      %th Username
-      %th First Name
-      %th Last Name
-      %th Email
+      %th{:class => @username_header}= link_to 'Username', users_path( :usersort => 'username')
+      %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'first_name')
+      %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'last_name')
+      %th{:class => @email_header}= link_to 'Email', users_path(:usersort => 'email')
 
   %tbody
     - @users.each do |user|
@@ -19,7 +19,7 @@
         %td= user.email
         %td= link_to "More about #{user.username}", user_path(user)
 
-=link_to 'Register', new_user_path
+=link_to 'Create an Account', new_user_path
 
 =link_to 'Back to Clearinghouse Home', home_index_path
  

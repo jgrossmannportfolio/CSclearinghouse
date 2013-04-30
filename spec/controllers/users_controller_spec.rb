@@ -16,11 +16,34 @@ describe UsersController do
 	end
 
 	describe 'list all users in the data base on the users page' do
-    	it 'should pull the users from the model' do
-      		User.should_receive(:all)
-      		post :index
-    	end
-  	end
+      describe 'should order the users based on current sort' do
+				it 'when sort is -username-' do
+					session[:usersort] = 'username'
+					User.should_receive(:order).with(:username)
+					post :index, {:usersort=>'username'}
+				end
+				it 'when sort is -firstname-' do
+					User.should_receive(:order).with(:firstname)
+					session[:usersort] = 'firstname'
+					post :index, {:usersort=>'firstname'}
+				end
+				it 'when sort is -lastname-' do
+					User.should_receive(:order).with(:lastname)
+					session[:usersort] = 'lastname'
+					post :index, {:usersort=>'lastname'}
+				end
+				it 'when sort is -email-' do
+					User.should_receive(:order).with(:email)
+					session[:usersort] = 'email'
+					post :index, {:usersort=>'email'}
+				end
+			end
+			it 'should update the session if params and session sort are not =' do
+				post :index, {:usersort=>'firstname'}
+				response.should redirect_to("/users?usersort=firstname")
+				assigns(:session['firstname']).should_not be_nil
+			end
+  end
   	describe 'deleting user profiles' do
   		it 'delete a user' do
 		    fake_user = mock(User, :username => "fakeuser1", :firstname => "Fake" , :lastname => "User1", :email => "fakeuser1@gmail.com", :id => "1")

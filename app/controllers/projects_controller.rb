@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
     when 'deadline'
       ordering,@deadline_header = :deadline, 'hilite'
     end
-      
     if params[:projectsort] != session[:projectsort]
       session[:projectsort] = projectsort
       flash.keep

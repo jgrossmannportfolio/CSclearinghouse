@@ -15,6 +15,7 @@ describe ProjectsController do
 			post :show, {:id => 1}
 		end
 	end
+
 	describe 'updating a project' do
 		it 'should update a project' do
 			@fake_project = mock(Project, :title => "project1", :id =>"1")
@@ -44,9 +45,28 @@ describe ProjectsController do
 	end	
 
 	describe 'list all projects in the data base on the projects page' do
-    	it 'should pull the projects from the model' do
-      		Project.should_receive(:all)
-      		post :index
-    	end
-  	end
+			describe 'should order the projects based on current sort' do
+				it 'when sort is -title-' do
+					session[:projectsort] = 'title'
+					Project.should_receive(:order).with(:title)
+					post :index, {:projectsort=>'title'}
+				end
+				it 'when sort is -owner-' do
+					Project.should_receive(:order).with(:owner)
+					session[:projectsort] = 'owner'
+					post :index, {:projectsort=>'owner'}
+				end
+				it 'when sort is -deadline-' do
+					Project.should_receive(:order).with(:deadline)
+					session[:projectsort] = 'deadline'
+					post :index, {:projectsort=>'deadline'}
+				end
+			end
+			it 'should update the session if params and session sort are not =' do
+				post :index, {:projectsort=>'owner'}
+				response.should redirect_to("/projects?projectsort=owner")
+				assigns(:session['title']).should_not be_nil
+			end
+ 	end
+		
 end

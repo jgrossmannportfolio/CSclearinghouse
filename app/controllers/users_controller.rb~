@@ -1,18 +1,21 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
+		puts("params[:usersort] = #{params[:usersort]}  session[:usersort] = #{session[:usersort]}")
 		usersort = params[:usersort] || session[:usersort]
-    case usersort
+    puts("usersort = #{usersort}")
+		case usersort
     when 'username'
     	ordering,@username_header = :username, 'hilite'
-    when 'first_name'
+    when 'firstname'
     	ordering,@first_name_header = :firstname, 'hilite'
-    when 'last_name'
+    when 'lastname'
       ordering,@last_name_header = :lastname, 'hilite'
     when 'email'
       ordering,@email_header = :email, 'hilite'
     end
-    	
+    	puts("params[:usersort] = #{params[:usersort]}  session[:usersort] = #{session[:usersort]}")
+			puts("ordering = #{ordering}")
     if params[:usersort] != session[:usersort]
       session[:usersort] = usersort
 			flash.keep
@@ -44,13 +47,6 @@ class UsersController < ApplicationController
 	#end
 
 	def update
-<<<<<<< HEAD
-  	@user = User.find params[:id]
-	  @user.update_attributes!(params[:user])
-	  flash[:notice] = "#{@user.username}'s profile was successfully updated."
-	  redirect_to user_path(@user)
-  end
-=======
 	    @user = User.find params[:id]
 	    @user.update_attributes!(params[:user])
 			if(params[:tags] != nil)
@@ -66,7 +62,6 @@ class UsersController < ApplicationController
 	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
 	    redirect_to edit_user_path(@user)
   	end
->>>>>>> 64028305db472e00bef5d5a394bb26a122a6268c
 
 	def destroy
   	@user = User.find(params[:id])

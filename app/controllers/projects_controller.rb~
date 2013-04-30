@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	before_filter :auth_user
 	def index
+		puts("params[:projectsort] = #{params[:projectsort]} session[:projectsort]= #{session[:projectsort]}")
 		projectsort = params[:projectsort] || session[:projectsort]
     case projectsort
     when 'title'
@@ -10,8 +11,9 @@ class ProjectsController < ApplicationController
     when 'deadline'
       ordering,@deadline_header = :deadline, 'hilite'
     end
-      
+      puts('\nhello\n')
     if params[:projectsort] != session[:projectsort]
+			puts('\ngoodbye\n')
       session[:projectsort] = projectsort
       flash.keep
       redirect_to :projectsort => projectsort and return
@@ -58,7 +60,7 @@ class ProjectsController < ApplicationController
 			end
 			@tags = @project.tags
       flash[:notice] = "#{@project.title} was successfully updated."
-      redirect_to edit_project_path(@project)
+      redirect_to project_path(@project)
   end
 
 	def destroy

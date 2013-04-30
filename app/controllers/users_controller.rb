@@ -2,17 +2,16 @@ class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
 		usersort = params[:usersort] || session[:usersort]
-    case usersort
+		case usersort
     when 'username'
     	ordering,@username_header = :username, 'hilite'
-    when 'first_name'
+    when 'firstname'
     	ordering,@first_name_header = :firstname, 'hilite'
-    when 'last_name'
+    when 'lastname'
       ordering,@last_name_header = :lastname, 'hilite'
     when 'email'
       ordering,@email_header = :email, 'hilite'
     end
-    	
     if params[:usersort] != session[:usersort]
       session[:usersort] = usersort
 			flash.keep
