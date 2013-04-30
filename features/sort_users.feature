@@ -27,3 +27,18 @@ Scenario: Sort all users by username
 	Given I am on the users page
 	And I follow "Username"
 	Then I should see "atestuser1" before "ctestuser3"
+
+Scenario: Sort all users by firstname
+	Given I am on the users page
+	And I follow "First Name"
+	Then I should see "ctestuser3" before "atestuser1"
+
+Scenario: Sort all users by lastname
+	Given I am on the users page
+	And I follow "Last Name"
+	Then I should see "ctestuser3" before "atestuser1"
+
+Scenario: Sort all users by email
+	Given I am on the users page
+	And I follow "Email"
+	Then I should see "atestuser1" before "ctestuser3"

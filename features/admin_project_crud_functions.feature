@@ -34,7 +34,8 @@ Scenario: creating a new admin project
 		|Title|adminproject|
 		|Description|admins rock|
 		|Owner|admin|
-	And I select "2000" from "Year"
+
+	#And I select "2000" from "Year"
 	And I select "June" from "Month"
 	And I select "1" from "Day"
 	And I check "testtag1"
@@ -58,6 +59,7 @@ Scenario: editing an admin project
 		|Description|admins rock|
 		|Owner|admin|
 	
+	#And I select "2000" from "Year"
 	And I select "June" from "Month"
 	And I select "1" from "Day"
 	And I check "testtag1"
