@@ -5,7 +5,11 @@ class CreateProjects < ActiveRecord::Migration
       t.text 'description'
       t.string 'owner'
       t.string 'deadline'
+			
+		#devise confirmable
+			t.string   :confirmation_token
       t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
 
       t.timestamps
     end

@@ -9,7 +9,9 @@ Clearinghouse::Application.routes.draw do
 
   resources :projects, :users, :notifications
   resources :home, :only => [:index]
-	match "notifications.:id" => "notifications#destroy"	
+	resources :admin_notifications, :controller => "admin_notifications_controller"
+	match "notifications.:id" => "notifications#destroy"
+	match "admin_notifications.:id" => "admin_notifications#destroy"	
 
 	namespace :admin do
 		resources :projects do 

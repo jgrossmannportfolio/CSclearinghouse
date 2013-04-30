@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+
 	actions :all, :except => :new
 	filter :username
 	filter :firstname
@@ -17,7 +18,7 @@ ActiveAdmin.register User do
 		column :id
 		column "Status" do |user|
 			if user.confirmed_at == nil
-				link_to("Confirm", notifications_path(user.admin_notification, :path => "/admin/users", :status => true), :method => :delete) + "  " + link_to("Deny", notifications_path(user.admin_notification, :path => "/admin/users", :status => false), :method => :delete)
+				link_to("Confirm", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => true, :user => user), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user), :method => :delete)
 			else
 				"CONFIRMED"
 			end
@@ -37,7 +38,7 @@ ActiveAdmin.register User do
 				row :id
 				row "Status" do |user|
 			if user.confirmed_at == nil
-				link_to("Confirm", notifications_path(user.admin_notification, :path => "/admin/users/#{user.id}", :status => true), :method => :delete) + "  " + link_to("Deny", notifications_path(user.admin_notification, :path => "/admin/users", :status => false), :method => :delete)
+				link_to("Confirm", admin_notifications_path(user.admin_notification, :path => "/admin/users/#{user.id}", :status => true, :user => user), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user), :method => :delete)
 			else
 				"CONFIRMED"
 			end

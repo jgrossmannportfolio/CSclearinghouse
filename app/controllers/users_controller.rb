@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
+	before_filter :confirmed_user, :except => [:index, :create, :new, :destroy]
 	def index 
-		@users = User.all
+		@users = User.where("users.confirmed_at IS NOT NULL")
 	end
 	
 	def show
@@ -45,6 +46,9 @@ class UsersController < ApplicationController
 
 	def destroy
     @user = User.find(params[:id])
+		if @notification = @user.admin_notification
+			@notification.destroy
+		end
     @user.destroy
     flash[:notice] = "#{@user.username} deleted."
     redirect_to users_path

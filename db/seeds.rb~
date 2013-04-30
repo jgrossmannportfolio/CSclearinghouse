@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-	projects = [{:title => 'Project1',:description => 'Test project1', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013' },
+	projects = [{:title => 'Project1',:description => 'Test project1', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013', :confirmed_at => '2013-04-03 13:13:04'},
 								{:title => 'Project2',:description => 'Test project2', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013'},
 								{:title => 'Project3',:description => 'Test project3', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013'}]
 

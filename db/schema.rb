@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20130430021909) do
     t.string   "type"
     t.string   "message"
     t.integer  "user_id"
+    t.integer  "project_id"
+    t.string   "admin_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -59,8 +61,9 @@ ActiveRecord::Schema.define(:version => 20130430021909) do
     t.text     "description"
     t.string   "owner"
     t.string   "deadline"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "confirmed_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "user_id"
   end
 
@@ -84,7 +87,6 @@ ActiveRecord::Schema.define(:version => 20130430021909) do
     t.string   "username"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "type"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false

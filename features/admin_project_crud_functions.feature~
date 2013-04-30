@@ -67,4 +67,4 @@ Scenario: deleting an admin project
 	When I follow Delete for admin project Project4
 	Then I should be on the admin projects page
 	And I should see "Project was successfully destroyed"
-	And I should not see "testtag1"
+	And I should not see "Project4"

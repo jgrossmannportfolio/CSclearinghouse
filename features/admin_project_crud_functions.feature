@@ -25,21 +25,7 @@ Background:
 		|testtag1|
 		|testtag2|
 
-Scenario: creating a new admin project
-	Given I am on the admin dashboard
-	When I follow "Projects"
-	Then I should be on the admin projects page
-	When I follow "New Project"
-	And I fill in the following:
-		|Title|adminproject|
-		|Description|admins rock|
-		|Owner|admin|
-		|Deadline|now|
-	And I check "testtag1"
-	And I press "Create Project"
-	Then I should be on the admin project page for adminproject
-	And I should see "Project was successfully created."
-	And I should see "testtag1"
+#Admin can not make new projects from admin page
 
 Scenario: Viewing admin project attributes
 	Given I am on the admin projects page

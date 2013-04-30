@@ -14,8 +14,18 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	
-	def after_sign_in_path_for(user)
-		user_path(user)
+	def confirmed_project
+		if(!Project.find(params[:id]).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to '/projects'
+		end
+	end
+
+	def confirmed_user
+		if(!User.find(params[:id]).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to path
+		end
 	end
 
 end
