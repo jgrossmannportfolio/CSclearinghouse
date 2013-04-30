@@ -9,9 +9,8 @@
       = csrf_meta_tags 
 
   %body
-    
     %h1.title= link_to "Colgate's Computer Science Clearinghouse", '/home', :id => 'titlelink'
-    %div#homeimage
+    
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
@@ -30,5 +29,6 @@
           = link_to 'Login', new_user_session_path 
           = link_to 'Create an Account', new_user_registration_path
         %br/
+      %div#homeimage
       = render "shared/sidebar"
   = yield

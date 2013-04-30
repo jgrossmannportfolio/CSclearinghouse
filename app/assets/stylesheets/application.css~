@@ -14,8 +14,11 @@
 
 #homeimage{
 background-image: url(cslounge.jpeg);
-height:300px;
+background-size: ;
+background-position: 0  -70 ;
+height:270px;
 width:100%;
+border-bottom: 4px solid black;
 }
 
 th{
@@ -31,16 +34,9 @@ margin-top:20px;
 }
 
 #account_info{
+float:right;
 position:relative;
-top:-15px;
-}
-
-th{
-margin-right: 5px;
-}
-
-h1{
-color:white;
+top:-25px;
 }
 
 a{
@@ -53,23 +49,16 @@ padding: 7px;
 margin-right:20px;
 float:left;
 position:relative;
-top:57px;
-
 height: 100%;
 list-style-type: none;
 }
-
 
 .content{
 float:left;
 margin-left: 15px;
 position:relative;
-top:-30px;
 }
 
-#account_info{
-float:right;
-}
 
 #header{
 clear: left;

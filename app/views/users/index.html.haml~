@@ -21,5 +21,4 @@
   %hr
   %div{:class=> 'bottomlinks'}
     =link_to 'Create an Account', new_user_path 
-    =link_to 'Back to Clearinghouse Home', home_index_path
  
