@@ -1,7 +1,6 @@
 = javascript_include_tag :defaults
+= devise_error_messages!
 %h1 Home Page
-#{@sign_in_status}
-%br/
 = link_to 'View Projects', projects_path
 = link_to 'View Contributors', users_path
 = link_to 'Add Project', new_project_path

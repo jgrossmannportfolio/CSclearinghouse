@@ -15,6 +15,13 @@ ActiveAdmin.register User do
 	index do
 		selectable_column
 		column :id
+		column "Status" do |user|
+			if user.confirmed_at == nil
+				link_to("Confirm", notifications_path(user.admin_notification, :path => "/admin/users", :status => true), :method => :delete) + "  " + link_to("Deny", notifications_path(user.admin_notification, :path => "/admin/users", :status => false), :method => :delete)
+			else
+				"CONFIRMED"
+			end
+		end
 		column :username
 		column :firstname
 		column :lastname
@@ -28,6 +35,13 @@ ActiveAdmin.register User do
     show do |ad|
       attributes_table do
 				row :id
+				row "Status" do |user|
+			if user.confirmed_at == nil
+				link_to("Confirm", notifications_path(user.admin_notification, :path => "/admin/users/#{user.id}", :status => true), :method => :delete) + "  " + link_to("Deny", notifications_path(user.admin_notification, :path => "/admin/users", :status => false), :method => :delete)
+			else
+				"CONFIRMED"
+			end
+		end
         row :username
         row :firstname
 				row :lastname

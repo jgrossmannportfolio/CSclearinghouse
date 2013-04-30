@@ -7,8 +7,9 @@ Clearinghouse::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
-  resources :projects, :users
+  resources :projects, :users, :notifications
   resources :home, :only => [:index]
+	match "notifications.:id" => "notifications#destroy"	
 
 	namespace :admin do
 		resources :projects do 
@@ -19,6 +20,9 @@ Clearinghouse::Application.routes.draw do
 		end
 		resources :users do
 			resources :projects
+		end
+		resources :users do
+			resources :admin_notifications
 		end
 	end
   # The priority is based upon order of creation:

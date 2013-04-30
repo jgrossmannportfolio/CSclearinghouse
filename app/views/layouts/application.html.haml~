@@ -16,6 +16,9 @@
         #warning.message= flash[:warning]
       - elsif flash[:alert]
         #alert.message= flash[:alert]
+
+      #{@sign_in_status}
+      %br/
       - if user_signed_in?
         = link_to 'Logout', destroy_user_session_path, :method => :delete
         = link_to 'Edit account info', edit_user_registration_path

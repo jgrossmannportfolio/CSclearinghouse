@@ -13,5 +13,6 @@ class ApplicationController < ActionController::Base
 			@sign_in_status = "Currently not signed in"
 		end
 	end
+	
 
 end

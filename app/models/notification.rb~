@@ -1,0 +1,4 @@
+class Notification < ActiveRecord::Base
+  attr_accessible :message, :type, :unconfirmed_user_id
+	belongs_to :unconfirmed_user
+end

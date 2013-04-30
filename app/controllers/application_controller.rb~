@@ -1,14 +1,9 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery
 	before_filter :sign_in_status_message
-	before_filter :render_user_session_nav
 
 	def auth_user
 		redirect_to new_user_session_path unless user_signed_in?
-	end
-
-	def render_user_session_nav
-		render :partial => '_user_session_nav.html.haml'
 	end
 
 	def sign_in_status_message
@@ -17,6 +12,10 @@ class ApplicationController < ActionController::Base
 		else
 			@sign_in_status = "Currently not signed in"
 		end
+	end
+	
+	def after_sign_in_path_for(user)
+		user_path(user)
 	end
 
 end
