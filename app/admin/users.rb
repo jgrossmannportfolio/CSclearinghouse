@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-
+	actions :all, :except => :new
 	filter :username
 	filter :firstname
 	filter :lastname
@@ -21,9 +21,6 @@ ActiveAdmin.register User do
 		column :created_at
 		column :updated_at
 		column :email
-		column :reset_password_token
-		column :reset_password_sent_at
-		column :remember_created_at
 		column :current_sign_in_at
 		column :last_sign_in_at
 		default_actions
@@ -59,14 +56,7 @@ ActiveAdmin.register User do
 				f.input :lastname
 				f.input :projects, :as => :check_boxes
 				f.input :email
-				f.input :encrypted_password
 				f.input :reset_password_token
-				f.input :reset_password_sent_at, :as => :datetime_select
-				f.input :remember_created_at, :as => :datetime_select
-				f.input :current_sign_in_at, :as => :datetime_select
-				f.input :last_sign_in_at, :as => :datetime_select
-				f.input :current_sign_in_ip
-				f.input :last_sign_in_ip
       end
 		f.actions
 	end

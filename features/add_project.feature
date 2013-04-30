@@ -38,9 +38,11 @@ Scenario: Add project to projects page
  And I fill in "Description" with "An incredibly exciting project!"
  And I fill in "Owner" with "Mrs. Buttersworth"
  And I fill in "Deadline" with "5-Aug-2013"
+ And I fill in "Tag" with "new tag"
  And I press "Save Changes"
  Then I should be on the Projects Page
  And I should see "Pancakes"
  And I should see "An incredibly exciting project!"
  And I should see "Mrs. Buttersworth"
  And I should see "5-Aug-2013"
+ And I should see "new tag"

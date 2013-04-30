@@ -11,7 +11,7 @@ describe ProjectsController do
 		it 'should return the project details' do
 			fake_project = mock("project1")
 			Project.should_receive(:find).with("1").and_return(@fake_project)
-			Project.stub(:user).and_return(@fake_user)
+			@project.stub(:user).and_return(@fake_user)
 			post :show, {:id => 1}
 		end
 	end
@@ -20,7 +20,8 @@ describe ProjectsController do
 			@fake_project = mock(Project, :title => "project1", :id =>"1")
 			Project.stub!(:find).with("1").and_return(@fake_project)
 			@fake_project.stub!(:update_attributes!).and_return(true)
-      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}}
+			@tags = @fake_project.stub!(:tags).and_return([])
+      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}, :tags => {}}
      		response.should redirect_to(project_path(@fake_project))
      		flash[:notice].should == "project1 was successfully updated."
 		end

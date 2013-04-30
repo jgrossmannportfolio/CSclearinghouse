@@ -42,7 +42,9 @@ describe UsersController do
 		it 'should update the user information in the database' do
 			fake_user2 = FactoryGirl.build(:user, :username =>'fuser2', :firstname =>'John', :lastname => 'Doe', :email => 'JDoe@colgate.edu')
 			User.should_receive(:find).with("#{@fake_user.id}").and_return(@fake_user)
-			put :update, {:id => @fake_user, :firstname => fake_user2.firstname, :lastname => fake_user2.lastname, :email => fake_user2.email}
+			@tags= @fake_user.stub!(:tags).and_return([])
+			put :update, {:id => @fake_user, :firstname => fake_user2.firstname, :lastname => fake_user2.lastname, :email => fake_user2.email, :tag => {:name => ""}, :tags => {}}
+			response.should redirect_to(edit_user_path(@fake_user))
 			flash[:notice].should == "#{@fake_user.username}'s profile was successfully updated."
 		end
 	end

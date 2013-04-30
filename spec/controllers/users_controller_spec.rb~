@@ -15,14 +15,6 @@ describe UsersController do
 		end
 	end
 
-	describe 'register a new user profile' do
-		it 'should register a new user successfully' do
-			user1 = FactoryGirl.build(:user, :username =>'fuser2', :firstname =>'John', :lastname => 'Doe', :email => 'JDoe@colgate.edu', :password => 'password', :password_confirmation => 'password')
-			UsersController.stub(:create).and_return(user1)
-			post :create, {:user => user1}
-		end
-	end
-
 	describe 'list all users in the data base on the users page' do
     	it 'should pull the users from the model' do
       		User.should_receive(:all)
@@ -50,7 +42,8 @@ describe UsersController do
 		it 'should update the user information in the database' do
 			fake_user2 = FactoryGirl.build(:user, :username =>'fuser2', :firstname =>'John', :lastname => 'Doe', :email => 'JDoe@colgate.edu')
 			User.should_receive(:find).with("#{@fake_user.id}").and_return(@fake_user)
-			put :update, {:id => @fake_user, :firstname => fake_user2.firstname, :lastname => fake_user2.lastname, :email => fake_user2.email}
+			@tags= @fake_user.stub!(:tags).and_return([])
+			put :update, {:id => @fake_user, :firstname => fake_user2.firstname, :lastname => fake_user2.lastname, :email => fake_user2.email, :tag => {:name => ""}, :tags => {}}
 			flash[:notice].should == "#{@fake_user.username}'s profile was successfully updated."
 		end
 	end

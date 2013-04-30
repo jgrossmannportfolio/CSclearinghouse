@@ -20,8 +20,9 @@ describe ProjectsController do
 			@fake_project = mock(Project, :title => "project1", :id =>"1")
 			Project.stub!(:find).with("1").and_return(@fake_project)
 			@fake_project.stub!(:update_attributes!).and_return(true)
-      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}}
-     		response.should redirect_to(project_path(@fake_project))
+			@tags = @fake_project.stub!(:tags).and_return([])
+      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}, :tags => {}}
+     		response.should redirect_to(edit_project_path(@fake_project))
      		flash[:notice].should == "project1 was successfully updated."
 		end
 	end

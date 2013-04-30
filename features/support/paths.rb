@@ -30,6 +30,31 @@ module NavigationHelpers
 		when /^the edit account info page for (.*)$/ then "/users/edit"
 		when /^the login page$/i then "/users/sign_in"
 
+		#admin
+		when /^the admin login page$/i then "/admin/login"
+		when /^the admin dashboard$/i then "/admin"
+
+		#admin adminusers
+		when /^the admin adminusers page$/i then "/admin/admin_users"
+		when /^the admin adminuser page for (.*)$/ then "/admin/admin_users/#{AdminUser.find_by_email($1).id}"
+		when /^the edit admin adminuser page for (.*)$/i then "/admin/admin_users/#{AdminUser.find_by_email($1).id}/edit"
+
+		#admin users
+		when /^the admin users page$/i then "/admin/users"
+		when /^the admin user page for (.*)$/i then "/admin/users/#{User.find_by_username($1).id}"
+		when /^the edit admin user page for (.*)$/i then "/admin/users/#{User.find_by_username($1).id}/edit"
+		
+		#admin tags
+		when /^the admin tags page$/i then "/admin/tags"
+		when /^the admin tag page for (.*)$/i then "/admin/tags/#{Tag.find_by_name($1).id}"
+		when /^the edit admin tag page for (.*)$/i then "/admin/tags/#{Tag.find_by_name($1).id}/edit"
+
+		#admin projects
+		when /^the admin projects page$/i then "/admin/projects"
+		when /^the admin project page for (.*)$/i then "/admin/projects/#{Project.find_by_title($1).id}"
+		when /^the edit admin project page for (.*)$/i then "/admin/projects/#{Project.find_by_title($1).id}/edit"
+
+
     else
       begin
         page_name =~ /^the (.*) page$/

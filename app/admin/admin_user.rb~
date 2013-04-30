@@ -1,0 +1,34 @@
+ActiveAdmin.register AdminUser do   
+	
+	controller do
+		alias_method :destroy_admin_user, :destroy
+		def destroy
+    	if AdminUser.all.count == 1
+				flash[:notice] = "You can not delete the last admin!"
+				flash.keep
+				redirect_to '/admin/admin_users'
+			else
+				destroy_admin_user
+			end
+  	end
+
+  
+  index do                            
+    column :email                     
+    column :current_sign_in_at        
+    column :last_sign_in_at           
+    column :sign_in_count             
+    default_actions                   
+  end                                 
+
+  filter :email                       
+
+  form do |f|                         
+    f.inputs "Admin Details" do       
+      f.input :email                  
+      f.input :password               
+      f.input :password_confirmation  
+    end                               
+    f.actions                         
+  end                                 
+end                                   

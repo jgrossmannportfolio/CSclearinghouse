@@ -24,3 +24,10 @@
   = text_field :tag, :name
   %br/
   = submit_tag 'Update Project Info'
+<<<<<<< HEAD
+
+=link_to 'Back to all projects', projects_path
+=link_to "Back to Clearinghouse Home", home_index_path
+=======
+= link_to "Back to #{@project.title}", project_path(@project)
+>>>>>>> 2cf413cd6bb66b88b8f74345abcc6dc91fd44ec4
