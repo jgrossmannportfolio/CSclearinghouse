@@ -3,7 +3,7 @@ db/test.sqlite3
 db/schema
 tmp/
 log/
-*.coverage
+coverage/
 config/local_env.yml
 
 *.log
