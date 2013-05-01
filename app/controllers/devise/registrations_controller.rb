@@ -55,24 +55,6 @@ class Devise::RegistrationsController < DeviseController
     end
   end
 
-  # DELETE /resource
-  def destroy
-    resource.destroy
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-    set_flash_message :notice, :destroyed if is_navigational_format?
-    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
-  end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  def cancel
-    expire_session_data_after_sign_in!
-    redirect_to new_registration_path(resource_name)
-  end
-
   protected
 
   def update_needs_confirmation?(resource, previous)
