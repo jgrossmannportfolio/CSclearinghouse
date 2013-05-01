@@ -10,18 +10,83 @@
  *
  *= require_self
  *= require_tree .
- */
+771D1C */
+
+#homeimage{
+background-image: url(cslounge.jpeg);
+background-position: 0  -70 ;
+height:270px;
+width:100%;
+border-bottom: 4px solid black;
+}
+
+th{
+	margin-right: 10px;
+}
+
+.bottomlinks a{
+margin-right:15px;
+}
+
+.bottomlinks{
+margin-top:20px;
+}
+
+#account_info{
+float:right;
+position:relative;
+top:-25px;
+}
+
+a{
+color:orange;
+text-decoration: none;
+}
+
+#sidebar{
+padding: 7px;
+margin-right:20px;
+float:left;
+position:relative;
+height: 100%;
+list-style-type: none;
+}
+
+.content{
+float:left;
+margin-left: 15px;
+position:relative;
+}
+
+
+#header{
+clear: left;
+}
+
+#sidebar li{
+width: 100%;	
+border-left: 4px;
+margin-top:1em;
+font-weight:bold;
+}
+
 
  h1.title {
   margin: 0 0 1em;
   padding: 10px;
-  background-color: darkred;
+	background-image: url(red-grid-tile.png);
   color: white;
   border-bottom: 4px solid black;
   font-size: 2em;
   font-style: normal;
+	margin-bottom:0px;
 }
  #titlelink {
   text-decoration: none;
 	color: white;
+	padding-left: 0px;
+	
+}
+ table#users th.hilite,table#projects th.hilite  {
+	background-color: #992020;
 }

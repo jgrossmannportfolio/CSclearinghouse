@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20130430021909) do
     t.string   "title"
     t.text     "description"
     t.string   "owner"
-    t.string   "deadline"
     t.datetime "confirmed_at"
+    t.date     "deadline"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "user_id"

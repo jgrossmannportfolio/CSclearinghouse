@@ -14,7 +14,7 @@ Background: projects on website
 
 Scenario: Go to projects page from home page
 	Given I am on the home page
-	When I follow "View Projects"
+	When I follow "All Projects"
 	Then I should be on the projects page
 
 Scenario: Display all posted projects

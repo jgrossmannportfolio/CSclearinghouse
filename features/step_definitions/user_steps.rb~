@@ -11,6 +11,22 @@ Given /the test users exist/ do
 	FactoryGirl.create(:user, username: 'testuser3', firstname: 'user3first', lastname: 'user3last', email: 'user3@yahoo.com')
 end
 
+When /I print page/ do
+	puts page.body
+end
+
+Given /the sort test users exist/ do
+	FactoryGirl.create(:user, username: 'atestuser1', firstname: 'buser1first', lastname: 'cuser1last')
+	FactoryGirl.create(:user, username: 'btestuser2', firstname: 'cuser2first', lastname: 'auser2last', email: 'user2@colgate.edu')
+	FactoryGirl.create(:user, username: 'ctestuser3', firstname: 'auser3first', lastname: 'buser3last', email: 'user3@yahoo.com')
+end
+	
+When /the user (.*) gets confirmed/ do |user|
+	user = user.find_by_username(user)
+	user.confirmed_at = Time.now
+	user.save
+end
+
 Then /I should see user details/ do
 	user_attr = User.accessible_attributes
 	user_attr.each do |attribute|

@@ -15,6 +15,25 @@ Background:
 
 #Admin can not make new projects from admin page
 
+Scenario: creating a new admin project
+	Given I am on the admin dashboard
+	When I follow "Projects"
+	Then I should be on the admin projects page
+	When I follow "New Project"
+	And I fill in the following:
+		|Title|adminproject|
+		|Description|admins rock|
+		|Owner|admin|
+
+	#And I select "2000" from "Year"
+	And I select "June" from "Month"
+	And I select "1" from "Day"
+	And I check "testtag1"
+	And I press "Create Project"
+	Then I should be on the admin project page for adminproject
+	And I should see "Project was successfully created."
+	And I should see "testtag1"
+
 Scenario: Viewing admin project attributes
 	Given I am on the admin projects page
 	When I follow View for admin project Project4
@@ -29,7 +48,10 @@ Scenario: editing an admin project
 		|Title|adminproject|
 		|Description|admins rock|
 		|Owner|admin|
-		|Deadline|now|
+	
+	#And I select "2000" from "Year"
+	And I select "June" from "Month"
+	And I select "1" from "Day"
 	And I check "testtag1"
 	And I press "Update Project"
 	Then I should be on the admin project page for adminproject

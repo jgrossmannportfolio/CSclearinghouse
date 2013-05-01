@@ -39,5 +39,5 @@ Scenario: Add project to projects page
  Then I should see "Pancakes"
  And I should see "An incredibly exciting project!"
  And I should see "Mrs. Buttersworth"
- And I should see "5-Aug-2013"
+ And I should see "August 5, 2013"
  And I should see "new tag"

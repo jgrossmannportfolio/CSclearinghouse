@@ -9,7 +9,7 @@
     = @project.owner
   %li
     Deadline:
-    = @project.deadline
+    = @project.deadline.to_formatted_s(:long) unless @project.deadline == nil
   %li
     Tags:
     - @project.tags.each do |tag|

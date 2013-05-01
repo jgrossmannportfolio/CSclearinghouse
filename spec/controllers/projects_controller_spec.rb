@@ -18,6 +18,7 @@ describe ProjectsController do
 			post :show, {:id => 1}
 		end
 	end
+
 	describe 'updating a project' do
 		it 'should update a project' do
 			controller.stub!(:confirmed_project).with("1")
@@ -26,7 +27,7 @@ describe ProjectsController do
 			@fake_project.stub!(:update_attributes!).and_return(true)
 			@tags = @fake_project.stub!(:tags).and_return([])
       		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}, :tags => {}}
-     		response.should redirect_to(edit_project_path(@fake_project))
+     		response.should redirect_to(project_path(@fake_project))
      		flash[:notice].should == "project1 was successfully updated."
 		end
 	end
@@ -47,11 +48,27 @@ describe ProjectsController do
 		    flash[:notice].should == "Fake Project 1 deleted."
     	end
 	end	
-
-	describe 'list all projects in the data base on the projects page' do
-    	it 'should pull the projects from the model' do
-      		Project.should_receive(:where).with("projects.confirmed_at IS NOT NULL")
-      		post :index
-    	end
-  	end
+			describe 'should order the projects based on current sort' do
+				it 'when sort is -title-' do
+					session[:projectsort] = 'title'
+					Project.stub_chain(:where, :order)
+					post :index, {:projectsort=>'title'}
+				end
+				it 'when sort is -owner-' do
+					Project.stub_chain(:where, :order)
+					session[:projectsort] = 'owner'
+					post :index, {:projectsort=>'owner'}
+				end
+				it 'when sort is -deadline-' do
+					Project.stub_chain(:where, :order)
+					session[:projectsort] = 'deadline'
+					post :index, {:projectsort=>'deadline'}
+				end
+			end
+			it 'should update the session if params and session sort are not =' do
+				post :index, {:projectsort=>'owner'}
+				response.should redirect_to("/projects?projectsort=owner")
+				assigns(:session['owner']).should_not be_nil
+			end
+		
 end

@@ -1,7 +1,24 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
-		@users = User.where("users.confirmed_at IS NOT NULL")
+		usersort = params[:usersort] || session[:usersort]
+		case usersort
+    when 'username'
+    	ordering,@username_header = :username, 'hilite'
+    when 'firstname'
+    	ordering,@first_name_header = :firstname, 'hilite'
+    when 'lastname'
+      ordering,@last_name_header = :lastname, 'hilite'
+    when 'email'
+      ordering,@email_header = :email, 'hilite'
+    end
+    if params[:usersort] != session[:usersort]
+      session[:usersort] = usersort
+			flash.keep
+      redirect_to :usersort => usersort and return
+    end
+		ordering = "lower(#{ordering})" unless ordering == nil
+    @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
 	end
 	
 	def show

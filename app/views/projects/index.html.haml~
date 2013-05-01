@@ -1,32 +1,28 @@
+%div{:class => 'content'}
+  %h1 All Projects
+  %hr
+  %table#projects
 
-%h1 All Projects
-
-= link_to "Back to Clearinghouse Home", home_index_path
-
-
-
-%table#projects
-
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Project Owner
-      %th Deadline
-      %th Details
-      %th Tags
-
-  %tbody
-    - @projects.each do |project|
+    %thead
       %tr
-        %td= project.title 
-        %td= project.description
-        %td= project.owner
-        %td= project.deadline
-        %td= link_to "More about #{project.title}", project_path(project)
-        - project.tags.each do |tag|
-          %td  tag.name
-        
+        %th{:class => @title_header}= link_to 'Title', projects_path( :projectsort => 'title')
+        %th Description
+        %th{:class => @owner_header}= link_to 'Project Owner', projects_path( :projectsort => 'owner')
+        %th{:class => @deadline_header}= link_to 'Deadline', projects_path( :projectsort => 'deadline')
+        %th Details
+        %th Tags
 
-=link_to 'Add New Project', new_project_path
+    %tbody
+      - @projects.each do |project|
+        %tr
+          %td= project.title 
+          %td= project.description
+          %td= project.owner
+          %td= project.deadline.to_formatted_s(:long) unless project.deadline == nil
+          %td= link_to "More about #{project.title}", project_path(project)
+          - project.tags.each do |tag|
+            %td= tag.name
+  %hr
+  %div{:class=>'bottomlinks'}
+  =link_to 'Add New Project', new_project_path
  

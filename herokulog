@@ -1,0 +1,203 @@
+2013-04-09T02:06:38.436274+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+2013-04-09T02:06:38.436274+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+2013-04-09T02:06:38.437153+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+2013-04-09T02:06:38.437153+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+2013-04-09T02:06:38.437153+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+2013-04-09T02:06:38.724933+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=secret-ocean-1055.herokuapp.com fwd="149.43.120.180" dyno=web.1 connect=2ms service=11ms status=304 bytes=0
+2013-04-09T02:06:40.746160+00:00 app[web.1]: Started GET "/auth/twitter" for 149.43.120.180 at 2013-04-09 02:06:40 +0000
+2013-04-09T02:06:40.748556+00:00 app[web.1]: (twitter) Request phase initiated.
+2013-04-09T02:06:40.937944+00:00 app[web.1]: 
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/oauth-0.4.7/lib/oauth/consumer.rb:216:in `token_request'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-oauth-1.0.1/lib/omniauth/strategies/oauth.rb:29:in `request_phase'
+2013-04-09T02:06:40.937944+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-twitter-0.0.16/lib/omniauth/strategies/twitter.rb:63:in `request_phase'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/oauth-0.4.7/lib/oauth/consumer.rb:136:in `get_request_token'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:181:in `call!'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+2013-04-09T02:06:40.937944+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:214:in `request_call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+2013-04-09T02:06:40.938311+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+2013-04-09T02:06:40.938566+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__746937605406099284__call__1269103224752480340__callbacks'
+2013-04-09T02:06:40.938822+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/application.rb:223:in `call'
+2013-04-09T02:06:40.939337+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/engine.rb:479:in `call'
+2013-04-09T02:06:40.939337+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2013-04-09T02:06:40.939337+00:00 app[web.1]: 
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:
+in `lookup'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2013-04-09T02:06:40.939079+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+2013-04-09T02:06:40.939337+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2013-04-09T02:06:40.939337+00:00 app[web.1]: 
+2013-04-09T02:06:40.941403+00:00 heroku[router]: at=info method=GET path=/auth/twitter host=secret-ocean-1055.herokuapp.com fwd="149.43.120.180" dyno=web.1 connect=4ms service=198ms status=500 bytes=643
+2013-04-09T02:06:46.166631+00:00 app[web.1]: Started POST "/projects" for 149.43.101.16 at 2013-04-09 02:06:46 +0000
+2013-04-09T02:06:46.169860+00:00 app[web.1]: Processing by ProjectsController#create as HTML
+2013-04-09T02:06:46.169860+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"SO9i4azKwhE1LNFfjFPRc6d5M3wSjhBcwYvRunrgeik=", "project"=>{"title"=>"NEw site for cool people", "description"=>"itll be a great website", "owner"=>"sean Bjornsson", "deadline"=>"10-10-2012"}, "commit"=>"Save Changes"}
+2013-04-09T02:06:46.176424+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
+2013-04-09T02:06:46.176424+00:00 app[web.1]: 
+2013-04-09T02:06:46.176424+00:00 app[web.1]: :             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2013-04-09T02:06:46.176424+00:00 app[web.1]:                                         ^
+2013-04-09T02:06:46.176424+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::Error: ERROR:  relation "projects" does not exist
+2013-04-09T02:06:46.176424+00:00 app[web.1]: LINE 5:              WHERE a.attrelid = '"projects"'::regclass
+2013-04-09T02:06:46.176424+00:00 app[web.1]:               FROM pg_attribute a LEFT JOIN pg_attrdef d
+2013-04-09T02:06:46.176843+00:00 app[web.1]: 
+2013-04-09T02:06:46.176424+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2013-04-09T02:06:46.176843+00:00 app[web.1]:                AND a.attnum > 0 AND NOT a.attisdropped
+2013-04-09T02:06:46.176424+00:00 app[web.1]:                 ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2013-04-09T02:06:46.176424+00:00 app[web.1]:              WHERE a.attrelid = '"projects"'::regclass
+2013-04-09T02:06:46.176843+00:00 app[web.1]:              ORDER BY a.attnum
+2013-04-09T02:06:46.176843+00:00 app[web.1]: ):
+2013-04-09T02:06:46.176843+00:00 app[web.1]:   app/controllers/projects_controller.rb:16:in `create'
+2013-04-09T02:06:46.176843+00:00 app[web.1]: 
+2013-04-09T02:06:46.275043+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=secret-ocean-1055.herokuapp.com fwd="149.43.101.16" dyno=web.1 connect=1ms service=6ms status=304 bytes=0
+2013-04-09T02:06:46.181879+00:00 heroku[router]: at=info method=POST path=/projects host=secret-ocean-1055.herokuapp.com fwd="149.43.101.16" dyno=web.1 connect=6ms service=27ms status=500 bytes=643
+2013-04-09T02:06:48.272134+00:00 app[web.1]: Started GET "/auth/twitter" for 149.43.120.180 at 2013-04-09 02:06:48 +0000
+2013-04-09T02:06:48.275205+00:00 app[web.1]: (twitter) Request phase initiated.
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/oauth-0.4.7/lib/oauth/consumer.rb:216:in `token_request'
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-oauth-1.0.1/lib/omniauth/strategies/oauth.rb:29:in `request_phase'
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/oauth-0.4.7/lib/oauth/consumer.rb:136:in `get_request_token'
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-twitter-0.0.16/lib/omniauth/strategies/twitter.rb:63:in `request_phase'
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:181:in `call!'
+2013-04-09T02:06:48.552624+00:00 app[web.1]: 
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:214:in `request_call'
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+2013-04-09T02:06:48.552624+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+2013-04-09T02:06:48.552624+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
+2013-04-09T02:06:48.563837+00:00 heroku[router]: at=info method=GET path=/auth/twitter host=secret-ocean-1055.herokuapp.com fwd="149.43.120.180" dyno=web.1 connect=9ms service=295ms status=500 bytes=643
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+2013-04-09T02:06:48.552998+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__746937605406099284__call__1269103224752480340__callbacks'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+2013-04-09T02:06:48.553252+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+2013-04-09T02:06:48.553605+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/engine.rb:479:in `call'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+2013-04-09T02:06:48.554114+00:00 app[web.1]: 
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+2013-04-09T02:06:48.554114+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2013-04-09T02:06:48.554114+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/application.rb:223:in `call'
+2013-04-09T02:06:48.554114+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2013-04-09T02:06:48.554114+00:00 app[web.1]: 
+2013-04-09T02:06:48.553866+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2013-04-09T02:06:51.569488+00:00 app[web.1]: Started GET "/auth/twitter" for 149.43.120.180 at 2013-04-09 02:06:51 +0000
+2013-04-09T02:06:51.572277+00:00 app[web.1]: (twitter) Request phase initiated.
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/oauth-0.4.7/lib/oauth/consumer.rb:216:in `token_request'
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-twitter-0.0.16/lib/omniauth/strategies/twitter.rb:63:in `request_phase'
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/oauth-0.4.7/lib/oauth/consumer.rb:136:in `get_request_token'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+2013-04-09T02:06:51.853172+00:00 app[web.1]: 
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:181:in `call!'
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+2013-04-09T02:06:51.853172+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-oauth-1.0.1/lib/omniauth/strategies/oauth.rb:29:in `request_phase'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:214:in `request_call'
+2013-04-09T02:06:51.853172+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+2013-04-09T02:06:51.858501+00:00 heroku[router]: at=info method=GET path=/auth/twitter host=secret-ocean-1055.herokuapp.com fwd="149.43.120.180" dyno=web.1 connect=5ms service=291ms status=500 bytes=643
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__746937605406099284__call__1269103224752480340__callbacks'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+2013-04-09T02:06:51.854746+00:00 app[web.1]: 
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2013-04-0
+9T02:06:51.854746+00:00 app[web.1]: 
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/engine.rb:479:in `call'
+2013-04-09T02:06:51.854746+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/application.rb:223:in `call'
+2013-04-09T02:06:51.853853+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+2013-04-09T02:06:51.854746+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2013-04-09T02:06:51.853578+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+2013-04-09T02:06:51.854234+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+2013-04-09T02:06:51.854472+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2013-04-09T02:06:51.854746+00:00 app[web.1]:   /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'

@@ -1,0 +1,37 @@
+Feature: sort users by various attributes
+
+As a site user
+So that I can find information about users faster
+I want to be able to sort all the users by attributes, such as title, owner name, and deadline.
+
+Background:
+
+	Given the sort test projects exist
+	
+	Given the sort test users exist 
+	  	
+	Given I am signed in as the following authenticated user:
+		|username |firstname |lastname |email          |password|password_confirmation|
+		|atestuser1|buser1first|cuser1last|user1@gmail.com|password|password   |
+
+Scenario: Sort all users by username
+	Given I am on the users page
+	And I should be on the users page
+	And I follow "Username"
+	When I print page
+	Then I should see "atestuser1" before "ctestuser3"
+
+Scenario: Sort all users by firstname
+	Given I am on the users page
+	And I follow "First Name"
+	Then I should see "ctestuser3" before "atestuser1"
+
+Scenario: Sort all users by lastname
+	Given I am on the users page
+	And I follow "Last Name"
+	Then I should see "ctestuser3" before "atestuser1"
+
+Scenario: Sort all users by email
+	Given I am on the users page
+	And I follow "Email"
+	Then I should see "atestuser1" before "ctestuser3"

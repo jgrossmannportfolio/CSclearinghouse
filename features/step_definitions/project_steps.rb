@@ -11,6 +11,12 @@ Given /the test projects exist/ do
 	FactoryGirl.create(:project, title: 'Project5', description: 'Test Project 5', owner: 'Fake Person 2', deadline: '22-Dec-2013')
 end
 	
+Given /the sort test projects exist/ do
+	FactoryGirl.create(:project, title: 'Project4', description: "This is john's", owner: 'John', deadline: "May-10-2013")
+	FactoryGirl.create(:project, title: 'Project5', description: "sean's project", owner: "Sean", deadline: "Jun-03-2014")
+	FactoryGirl.create(:project, title: "Sixth proj", description: "Tom's project", owner: "Tom", deadline: "Jun-03-1992")
+end
+
 Given /(.*) has not created (.*)/ do |username, project_title|
 	project = Project.find_by_title(project_title)
 	user = User.find_by_username(username)

@@ -1,7 +1,22 @@
 class ProjectsController < ApplicationController
 	before_filter :auth_user
 	def index
-		@projects = Project.where("projects.confirmed_at IS NOT NULL")
+		projectsort = params[:projectsort] || session[:projectsort]
+    case projectsort
+    when 'title'
+      ordering,@title_header = :title, 'hilite'
+    when 'owner'
+      ordering,@owner_header = :owner, 'hilite'
+    when 'deadline'
+      ordering,@deadline_header = :deadline, 'hilite'
+    end
+    if params[:projectsort] != session[:projectsort]
+      session[:projectsort] = projectsort
+      flash.keep
+      redirect_to :projectsort => projectsort and return
+    end
+		ordering = "lower(#{ordering})" unless ordering == nil
+    @projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
 	end
 	
 	def show  
@@ -46,7 +61,7 @@ class ProjectsController < ApplicationController
 			end
 			@tags = @project.tags
       flash[:notice] = "#{@project.title} was successfully updated."
-      redirect_to edit_project_path(@project)
+      redirect_to project_path(@project)
   end
 
 	def destroy

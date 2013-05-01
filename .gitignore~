@@ -1,2 +1,5 @@
-log
-coverage
+/db/development.sqlite3
+/db/test.sqlite3
+/log
+/coverage
+/config/local_env.yml

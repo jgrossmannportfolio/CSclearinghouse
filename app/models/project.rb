@@ -1,3 +1,4 @@
+require '/home/cosc480/CSclearinghouse/config/initializers/time_formats.rb'
 class Project < ActiveRecord::Base
 	attr_accessible :title, :body, :description, :owner, :deadline, :tag_ids, :user_id, :confirmed_at
 	has_and_belongs_to_many :tags
@@ -25,5 +26,8 @@ def self.confirm_project(params)
 		else
 			@project.destroy
 		end
+end
+	def deadlineslash
+		self.deadline.to_formatted_s(:slash)
 	end
 end
