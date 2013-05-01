@@ -1,1 +1,2 @@
-Date::DATE_FORMATS[:slash] = "%d/%m/%Y"
+Date::DATE_FORMATS[:slashes] = "%d/%m/%Y"
+Time::DATE_FORMATS[:default] = "%Y-%m-%d %H:%M"
