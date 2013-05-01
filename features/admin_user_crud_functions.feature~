@@ -34,6 +34,7 @@ Scenario: editing an admin user
 		|Lastname|testeditlast|
 	And I press "Update User"
 	Then I should be on the admin user page for testuser1
+	And I should see "User was successfully updated."
 	And I should see "testeditfirst"
 	And I should see "testeditlast"
 

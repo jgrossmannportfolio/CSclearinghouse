@@ -1,8 +1,8 @@
-Feature: login or out as an admin
+Feature: login as an admin
 
 As a website owner or operator
 In order to moderate the website activity and function
-I wish to be able to sign in or out as an administrator
+I wish to be able to sign in as an administrator
 
 Background:
 	Given the following users exist:

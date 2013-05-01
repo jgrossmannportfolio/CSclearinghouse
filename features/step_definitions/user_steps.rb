@@ -5,6 +5,18 @@ Given /the following users exist/ do |users_table|
 	users_table.hashes.size.should == User.all.count
 end
 
+Given /the test users exist/ do
+	FactoryGirl.create(:user)
+	FactoryGirl.create(:user, username: 'testuser2', firstname: 'user2first', lastname: 'user2last', email: 'user2@gmail.com')
+	FactoryGirl.create(:user, username: 'testuser3', firstname: 'user3first', lastname: 'user3last', email: 'user3@yahoo.com')
+end
+
+When /the user (.*) gets confirmed/ do |user|
+	user = user.find_by_username(user)
+	user.confirmed_at = Time.now
+	user.save
+end
+
 Then /I should see user details/ do
 	user_attr = User.accessible_attributes
 	user_attr.each do |attribute|

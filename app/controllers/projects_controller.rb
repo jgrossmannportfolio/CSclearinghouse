@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 	end
 	
 	def show  
-		confirmed_project
+		confirmed_project(params[:id])
 		id = params[:id]
     @project = Project.find(id)
 		@update_and_delete = (@project.user == current_user)		
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-			confirmed_project('/projects', params)
+			confirmed_project(params[:id])
       @project = Project.find params[:id] 
       @project.update_attributes! params[:project] 
 			if(params[:tags] != nil)
@@ -58,5 +58,12 @@ class ProjectsController < ApplicationController
     flash[:notice] = "#{@project.title} deleted."
     redirect_to projects_path
   end
+
+	def confirmed_project(id)
+		if(!Project.find(id).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to '/projects'
+		end
+	end
 
 end

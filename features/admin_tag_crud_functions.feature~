@@ -53,6 +53,7 @@ Scenario: editing an admin tag
 	And I check "Project4"
 	And I press "Update Tag"
 	Then I should be on the admin tag page for edittesttag1
+	And I should see "Tag was successfully updated."
 	And I should see "Project4"
 
 Scenario: deleting an admin tag

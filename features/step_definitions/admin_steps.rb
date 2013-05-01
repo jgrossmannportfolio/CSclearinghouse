@@ -5,6 +5,11 @@ Given /I am not logged in as an admin/ do
 		end
 end
 
+Given /the test admins exist/ do
+	FactoryGirl.create(:admin_user)
+	FactoryGirl.create(:admin_user, email: 'testadmin2@gmail.com')
+end
+
 Given /I am logged in as an admin/ do
 	step %{I go to the admin dashboard}
 	step %{I should see "Logout"}

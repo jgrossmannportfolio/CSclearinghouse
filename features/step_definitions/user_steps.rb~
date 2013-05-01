@@ -5,6 +5,12 @@ Given /the following users exist/ do |users_table|
 	users_table.hashes.size.should == User.all.count
 end
 
+Given /the test users exist/ do
+	FactoryGirl.create(:user)
+	FactoryGirl.create(:user, username: 'testuser2', firstname: 'user2first', lastname: 'user2last', email: 'user2@gmail.com')
+	FactoryGirl.create(:user, username: 'testuser3', firstname: 'user3first', lastname: 'user3last', email: 'user3@yahoo.com')
+end
+
 Then /I should see user details/ do
 	user_attr = User.accessible_attributes
 	user_attr.each do |attribute|
@@ -17,6 +23,10 @@ Then /I should not be able to click (.*)/ do |button|
 	page.should_not have_button(button)
 end
 	
+Then /I should not be able to follow (.*)/ do |link|
+	page.should_not have_link(link)
+end
+
 Given /I am signed in as the following authenticated user/ do |user_table|
 	user_table.hashes.each do |user|
 		visit '/users/sign_in'

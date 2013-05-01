@@ -4,3 +4,8 @@ Given /the following tags exist:/ do |tag_table|
 	end
 	assert tag_table.hashes.size.should == Tag.all.count
 end
+
+Given /the test tags exist/ do
+	FactoryGirl.create(:tag)
+	FactoryGirl.create(:tag, name: 'testtag2')
+end

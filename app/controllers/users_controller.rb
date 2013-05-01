@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
-	before_filter :confirmed_user, :except => [:index, :create, :new, :destroy]
 	def index 
 		@users = User.where("users.confirmed_at IS NOT NULL")
 	end
 	
 	def show
+		confirmed_user(params[:id])
 		id = params[:id]
 		@user = User.find(id)
 		@edit_and_delete = (@user == current_user)
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 	#end
 
 	def update
+			confirmed_user(params[:id])
 	    @user = User.find params[:id]
 	    @user.update_attributes!(params[:user])
 			if(params[:tags] != nil)
@@ -53,5 +54,12 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@user.username} deleted."
     redirect_to users_path
   end
+
+	def confirmed_user(id)
+		if(!User.find(id).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to '/users'
+		end
+	end
 end
 

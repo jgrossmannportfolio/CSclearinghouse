@@ -13,19 +13,5 @@ class ApplicationController < ActionController::Base
 			@sign_in_status = "Currently not signed in"
 		end
 	end
-	
-	def confirmed_project
-		if(!Project.find(params[:id]).confirmed_at)
-			flash[:notice] = "This is an invalid project address"
-			redirect_to '/projects'
-		end
-	end
-
-	def confirmed_user
-		if(!User.find(params[:id]).confirmed_at)
-			flash[:notice] = "This is an invalid project address"
-			redirect_to '/users'
-		end
-	end
 
 end

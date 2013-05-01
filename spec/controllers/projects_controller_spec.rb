@@ -8,8 +8,11 @@ describe ProjectsController do
 	end
 		
 	describe 'going to a project details page' do
-		it 'should return the project details' do
+		before do
 			fake_project = mock("project1")
+		end
+		it 'should return the project details' do
+			controller.stub!(:confirmed_project).with("1")
 			Project.should_receive(:find).with("1").and_return(@fake_project)
 			@project.stub(:user).and_return(@fake_user)
 			post :show, {:id => 1}
@@ -17,6 +20,7 @@ describe ProjectsController do
 	end
 	describe 'updating a project' do
 		it 'should update a project' do
+			controller.stub!(:confirmed_project).with("1")
 			@fake_project = mock(Project, :title => "project1", :id =>"1")
 			Project.stub!(:find).with("1").and_return(@fake_project)
 			@fake_project.stub!(:update_attributes!).and_return(true)
@@ -36,6 +40,7 @@ describe ProjectsController do
 		it 'delete a project' do
 		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Your mom", :deadline => "12-Dec-2013", :id => "1")
 		    Project.stub!(:find).with("1").and_return(fake_project)
+				fake_project.stub!(:admin_notification).and_return(nil)
 		    fake_project.should_receive(:destroy)
 		    delete :destroy, {:id => "1"}
 		    response.should redirect_to("/projects")
@@ -45,7 +50,7 @@ describe ProjectsController do
 
 	describe 'list all projects in the data base on the projects page' do
     	it 'should pull the projects from the model' do
-      		Project.should_receive(:all)
+      		Project.should_receive(:where).with("projects.confirmed_at IS NOT NULL")
       		post :index
     	end
   	end
