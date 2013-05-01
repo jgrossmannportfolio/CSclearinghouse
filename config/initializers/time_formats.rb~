@@ -1,1 +1,1 @@
-Date::DATE_FORMATS[:slash] = "%m/%d/%Y"
+Date::DATE_FORMATS[:slash] = "%d/%m/%Y"
