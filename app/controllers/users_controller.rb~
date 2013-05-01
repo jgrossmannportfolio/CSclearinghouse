@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 			flash.keep
       redirect_to :usersort => usersort and return
     end
-    @users = User.order("lower(#{ordering})")
+		if ordering!=nil ordering = "lower(#{ordering})"
+    @users = User.order(ordering)
 	end
 	
 	def show

@@ -13,8 +13,8 @@
 771D1C */
 
 #homeimage{
-background-image: url(cslounge.jpeg);
-background-position: 0  -70 ;
+background-image: url(csloungethin.jpeg);
+background-size:cover;
 height:270px;
 width:100%;
 border-bottom: 4px solid black;

@@ -15,6 +15,17 @@ describe ProjectsController do
 			post :show, {:id => 1}
 		end
 	end
+	
+=begin 
+	describe 'editing a project' do
+		it 'should update instance variables'
+			Project.should_receive(:find)
+			get :edit, {:id => 1}
+			assigns(@project).should_not be_nil
+			assigns(@tags).should_not be_nil
+		end
+	end
+=end
 
 	describe 'updating a project' do
 		it 'should update a project' do
@@ -35,7 +46,7 @@ describe ProjectsController do
 		end
 
 		it 'delete a project' do
-		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Your mom", :deadline => "12-Dec-2013", :id => "1")
+		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Mickey Mouse", :deadline => "12-Dec-2013", :id => "1")
 		    Project.stub!(:find).with("1").and_return(fake_project)
 		    fake_project.should_receive(:destroy)
 		    delete :destroy, {:id => "1"}
