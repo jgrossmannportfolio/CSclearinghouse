@@ -30,10 +30,10 @@ ActiveAdmin::Dashboards.build do
 				n.project.user.username
 			end
 			t.column do |n|
-				link_to "Confirm", admin_notifications_path(n, :path => "/admin", :status => "true", :user => n.user), :method => :delete
+				link_to "Confirm", admin_notifications_path(n, :path => "/admin", :status => "true", :project => n.project), :method => :delete
 			end
 			column do |n|
-				link_to "Deny", notifications_path(n, :path => "/admin", :status => "false", :user => n.user), :method => :delete
+				link_to "Deny", notifications_path(n, :path => "/admin", :status => "false", :project => n.project), :method => :delete
 			end
 		end
 	end

@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
 	end
 
 def self.unconfirmed_project(project, user)
-	@notification = AdminNotification.create!(:message => "#{user.firstname} #{user.lastname} wants to post a new project: '#{project.title}'. Confirme or deny the project please!", :admin_type => "project")
+	@notification = AdminNotification.create!(:message => "#{user.firstname} #{user.lastname} wants to post a new project: '#{project.title}'. Confirm or deny the project please!", :admin_type => "project")
 	project.admin_notification = @notification
 	project.save!
 end

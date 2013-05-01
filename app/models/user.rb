@@ -41,9 +41,11 @@ class User < ActiveRecord::Base
 			if @user.confirmation_token == nil
 				@user.confirmation_token
 			end
-			@user.send_confirmation_instructions
-			#@user.confirmed_at = Time.now
-			#@user.save!
+			#This is to make the user confirm account via email
+			#@user.send_confirmation_instructions
+			
+			@user.confirmed_at = Time.now
+			@user.save!
 		else
 			@user.destroy
 		end

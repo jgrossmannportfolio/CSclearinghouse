@@ -37,6 +37,32 @@ When /I follow (.*) for admin user (.*)/ do |link, user|
 	end
 end
 
+Then /I should see (.*) for admin user (.*)/ do |string, user|
+	within("tr#user_#{User.find_by_username(user).id}") do
+		assert page.should have_content(string)
+	end
+end
+
+When /I (.*) the admin user notification for (.*)/ do |link, user|
+	id = User.find_by_username(user).admin_notification.id
+	within("tr#admin_notification_#{id}") do
+		click_link(link)
+	end
+end
+
+When /I (.*) the admin project notification for (.*)/ do |link, project|
+	id = Project.find_by_title(project).admin_notification.id
+	within("tr#admin_notification_#{id}") do
+		click_link(link)
+	end
+end
+
+Then /I should see (.*) for admin project (.*)/ do |string, project|
+	within("tr#project_#{Project.find_by_title(project).id}") do
+		assert page.should have_content(string)
+	end
+end
+
 When /I follow (.*) for admin tag (.*)/ do |link, tag|
 	within("tr#tag_#{Tag.find_by_name(tag).id}") do
 		click_link(link)
