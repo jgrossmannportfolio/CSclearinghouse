@@ -13,8 +13,7 @@
 771D1C */
 
 #homeimage{
-background-image: url(cslounge.jpeg);
-background-size: ;
+background-image: url(csloungethin.jpeg);
 background-position: 0  -70 ;
 height:270px;
 width:100%;
@@ -75,11 +74,7 @@ font-weight:bold;
  h1.title {
   margin: 0 0 1em;
   padding: 10px;
-<<<<<<< HEAD
-  background-color: pink;
-=======
 	background-image: url(red-grid-tile.png);
->>>>>>> views
   color: white;
   border-bottom: 4px solid black;
   font-size: 2em;
@@ -89,12 +84,9 @@ font-weight:bold;
  #titlelink {
   text-decoration: none;
 	color: white;
-<<<<<<< HEAD
-=======
 	padding-left: 0px;
 	
 }
  table#users th.hilite,table#projects th.hilite  {
 	background-color: #992020;
->>>>>>> views
 }

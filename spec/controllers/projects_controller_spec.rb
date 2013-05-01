@@ -39,7 +39,7 @@ describe ProjectsController do
 		end
 
 		it 'delete a project' do
-		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Your mom", :deadline => "12-Dec-2013", :id => "1")
+		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Mickey Mouse", :deadline => "12-Dec-2013", :id => "1")
 		    Project.stub!(:find).with("1").and_return(fake_project)
 				fake_project.stub!(:admin_notification).and_return(nil)
 		    fake_project.should_receive(:destroy)

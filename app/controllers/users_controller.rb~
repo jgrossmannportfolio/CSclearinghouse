@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
-		@users = User.
 		usersort = params[:usersort] || session[:usersort]
 		case usersort
     when 'username'
@@ -19,7 +18,11 @@ class UsersController < ApplicationController
       redirect_to :usersort => usersort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
+<<<<<<< HEAD
     @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
+=======
+    @users = User.order(ordering)
+>>>>>>> b6e7999a4cba09459a35a290daf1f7d29da277b9
 	end
 	
 	def show

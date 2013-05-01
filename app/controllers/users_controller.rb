@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
     @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
+
 	end
 	
 	def show

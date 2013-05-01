@@ -16,9 +16,7 @@ Background:
 
 Scenario: Sort all users by username
 	Given I am on the users page
-	And I should be on the users page
 	And I follow "Username"
-	When I print page
 	Then I should see "atestuser1" before "ctestuser3"
 
 Scenario: Sort all users by firstname
