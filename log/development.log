@@ -4125,3 +4125,19 @@ Connecting to database specified by database.yml
   [1m[35m (39.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423024107')
   [1m[36m (28.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130426000355')[0m
   [1m[35m (26.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130424024113')
+Connecting to database specified by database.yml
+  [1m[36m (70.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProjects (20130323183206)
+Migrating to CreateUsers (20130404001559)
+Migrating to AddDeviseToUsers (20130412011817)
+Migrating to AddProjectsTagsTable (20130423024107)
+Migrating to CreateTags (20130423024419)
+Migrating to AddUserIdToProjects (20130423051318)
+Migrating to DeviseCreateAdminUsers (20130424024113)
+Migrating to CreateAdminNotes (20130424024148)
+Migrating to MoveAdminNotesToComments (20130424024149)
+Migrating to CreateTagsUsersTable (20130426000355)
+Migrating to AddAboutMeToUsers (20130426193933)
+Migrating to CreateNotifications (20130430021909)
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
