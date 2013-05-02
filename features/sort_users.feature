@@ -6,19 +6,10 @@ I want to be able to sort all the users by attributes, such as title, owner name
 
 Background:
 
-	Given the following projects exist: 
-	| title       | description    | owner | deadline    |
-    | Project4    | This is john's | John  | May-10-2013 |
-    | Project5    | sean's project | Sean  | Jun-03-2014 |
-    | Sixth proj  | Tom's project  | Tom   | Jun-03-1992 |
-
-	Given the following users exist: 
-	  	| username  | firstname  | lastname  | email           | password | password_confirmation|
-		|atestuser1 |buser1first |cuser1last |user1@gmail.com  | password | password |
-		|btestuser2 |cuser2first |auser2last |user2@colgate.edu| password | password |
-		|ctestuser3 |auser3first |buser3last |user3@yahoo.com  | password | password |
-		
-
+	Given the sort test projects exist
+	
+	Given the sort test users exist 
+	  	
 	Given I am signed in as the following authenticated user:
 		|username |firstname |lastname |email          |password|password_confirmation|
 		|atestuser1|buser1first|cuser1last|user1@gmail.com|password|password   |

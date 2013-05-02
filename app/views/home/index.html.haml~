@@ -1,7 +1,11 @@
 = javascript_include_tag :defaults
-%div#homeimage
-%h1 Home Page
+<<<<<<< HEAD
+=======
 
+%h1 Home Page
+>>>>>>> 5fe02f7f253e06b14c26fb0492230bd22ab238cb
+
+%h1 Home Page
 = link_to 'View Projects', projects_path
 = link_to 'View Contributors', users_path
 = link_to 'Add Project', new_project_path

@@ -1,0 +1,4 @@
+class UnconfirmedUserNotification < Notification
+	attr_accessible :user_id
+	belongs_to :user
+end

@@ -1,14 +1,9 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery
 	before_filter :sign_in_status_message
-	before_filter :render_user_session_nav
 
 	def auth_user
 		redirect_to new_user_session_path unless user_signed_in?
-	end
-
-	def render_user_session_nav
-		render :partial => '_user_session_nav.html.haml'
 	end
 
 	def sign_in_status_message
@@ -16,6 +11,13 @@ class ApplicationController < ActionController::Base
 			@sign_in_status = "Signed in as #{current_user.username}"
 		else
 			@sign_in_status = "Currently not signed in"
+		end
+	end
+	
+	def confirmed_project(id)
+		if(!Project.find(id).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to '/projects'
 		end
 	end
 

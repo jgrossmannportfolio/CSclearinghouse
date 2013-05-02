@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-coverage
-=======
-log
-coverage
->>>>>>> 32cd26709a60c3e80303cfd8f815015e547816b1
-=======
-/log
-/coverage
-/config/local_env.yml
->>>>>>> 2cf413cd6bb66b88b8f74345abcc6dc91fd44ec4
+
+db/test.sqlite3
+db/schema
+tmp/
+log/
+coverage/
+config/local_env.yml
+
+*.log
+.*tmp

@@ -12,12 +12,9 @@
     %h1.title= link_to "Colgate's Computer Science Clearinghouse", '/home', :id => 'titlelink'
     
     #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-      - elsif flash[:alert]
-        #alert.message= flash[:alert]
+      - [:notice, :error, :success].each do |key|
+        - unless flash[key].blank?
+          %p{ :class => "flash #{key}" }= flash[key] 
 
       %div#account_info
         #{@sign_in_status}

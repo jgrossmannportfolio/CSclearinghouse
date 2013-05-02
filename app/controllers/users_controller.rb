@@ -18,10 +18,12 @@ class UsersController < ApplicationController
       redirect_to :usersort => usersort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-    @users = User.order(ordering)
+    @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
+
 	end
 	
 	def show
+		confirmed_user(params[:id])
 		id = params[:id]
 		@user = User.find(id)
 		@edit_and_delete = (@user == current_user)
@@ -44,6 +46,7 @@ class UsersController < ApplicationController
 	#end
 
 	def update
+			confirmed_user(params[:id])
 	    @user = User.find params[:id]
 	    @user.update_attributes!(params[:user])
 			if(params[:tags] != nil)
@@ -61,10 +64,20 @@ class UsersController < ApplicationController
   	end
 
 	def destroy
-  	@user = User.find(params[:id])
-  	@user.destroy
-  	flash[:notice] = "#{@user.username} deleted."
-  	redirect_to users_path
+    @user = User.find(params[:id])
+		if @notification = @user.admin_notification
+			@notification.destroy
+		end
+    @user.destroy
+    flash[:notice] = "#{@user.username} deleted."
+    redirect_to users_path
   end
+
+	def confirmed_user(id)
+		if(!User.find(id).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to '/users'
+		end
+	end
 end
 

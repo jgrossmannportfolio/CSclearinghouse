@@ -23,9 +23,5 @@ Scenario: log out of the website
 	Then I should be on the Home Page
 	And I am not signed in
 
-Scenario: can't log out if you are not logged in
-	Given I am on the Home Page
-	And I am not signed in
-	Then I should not see "Logout"
 	
 

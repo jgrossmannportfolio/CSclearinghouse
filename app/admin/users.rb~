@@ -1,4 +1,10 @@
 ActiveAdmin.register User do
+	before_filter :only => [:destroy] do
+		@user = User.find(params[:id])
+		if @user.admin_notification != nil
+			@user.admin_notification.destroy
+		end
+	end
 	actions :all, :except => :new
 	filter :username
 	filter :firstname
@@ -15,6 +21,13 @@ ActiveAdmin.register User do
 	index do
 		selectable_column
 		column :id
+		column "Status" do |user|
+			if user.confirmed_at == nil
+				link_to("Confirm", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => true, :user => user), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user), :method => :delete)
+			else
+				"CONFIRMED"
+			end
+		end
 		column :username
 		column :firstname
 		column :lastname
@@ -28,6 +41,13 @@ ActiveAdmin.register User do
     show do |ad|
       attributes_table do
 				row :id
+				row "Status" do |user|
+			if user.confirmed_at == nil
+				link_to("Confirm", admin_notifications_path(user.admin_notification, :path => "/admin/users/#{user.id}", :status => true, :user => user), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user), :method => :delete)
+			else
+				"CONFIRMED"
+			end
+		end
         row :username
         row :firstname
 				row :lastname
@@ -56,14 +76,7 @@ ActiveAdmin.register User do
 				f.input :lastname
 				f.input :projects, :as => :check_boxes
 				f.input :email
-				f.input :encrypted_password
 				f.input :reset_password_token
-				f.input :reset_password_sent_at, :as => :datetime_select
-				f.input :remember_created_at, :as => :datetime_select
-				f.input :current_sign_in_at, :as => :datetime_select
-				f.input :last_sign_in_at, :as => :datetime_select
-				f.input :current_sign_in_ip
-				f.input :last_sign_in_ip
       end
 		f.actions
 	end

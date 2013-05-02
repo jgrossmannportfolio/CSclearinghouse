@@ -4,7 +4,13 @@ class CreateProjects < ActiveRecord::Migration
       t.string 'title'
       t.text 'description'
       t.string 'owner'
-      t.DateTime 'deadline'
+<<<<<<< HEAD
+      t.string 'deadline'
+      t.datetime :confirmed_at
+
+=======
+      t.date 'deadline'
+>>>>>>> 5fe02f7f253e06b14c26fb0492230bd22ab238cb
       t.timestamps
     end
   end

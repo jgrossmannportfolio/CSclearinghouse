@@ -25,7 +25,7 @@ Scenario: Edit account info
 	Given I am on the edit account info page for testuser1
 	When I fill in the following:
 		|user_email|editemail@gmail.com|
-		|username|edituser|
+		|user_username|edituser|
 		|user_password|editpassword|
 		|user_password_confirmation|editpassword|
 		|user_current_password|password|

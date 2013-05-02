@@ -1,0 +1,3 @@
+class UnconfirmedUser < User
+	has_one :unconfirmed_user_notification, :dependent => :destroy
+end

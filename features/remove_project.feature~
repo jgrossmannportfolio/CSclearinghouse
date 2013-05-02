@@ -29,3 +29,7 @@ Scenario: Delete a project from projects page
 	Then I should be on the projects page
 	Then I should see "Project4 deleted."
 	And I should not see "Fake Person 1"
+
+Scenario: Unauthorized user should not be able to delete a project
+	Given I am on the details page for Project5
+	Then I should not be able to click Delete

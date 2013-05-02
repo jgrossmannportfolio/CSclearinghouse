@@ -16,10 +16,11 @@ class ProjectsController < ApplicationController
       redirect_to :projectsort => projectsort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-    @projects = Project.order(ordering)
+    @projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
 	end
 	
-	def show   
+	def show  
+		confirmed_project(params[:id])
 		id = params[:id]
     @project = Project.find(id)
 		@update_and_delete = (@project.user == current_user)		
@@ -30,12 +31,13 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.create!(params[:project])
+		@user = current_user
+		Project.unconfirmed_project(@project, @user)
 		if (params[:tag][:name] != '' && params[:tag][:name] != nil)
 			@project.tags.create!(params[:tag])
 		end
-		@user = current_user
 		@user.projects << @project
-    	flash[:notice] = "#{@project.title} was successfully created."
+    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
     	redirect_to projects_path
 	end
 
@@ -45,6 +47,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
+			confirmed_project(params[:id])
       @project = Project.find params[:id] 
       @project.update_attributes! params[:project] 
 			if(params[:tags] != nil)
@@ -63,8 +66,19 @@ class ProjectsController < ApplicationController
 
 	def destroy
     @project = Project.find(params[:id])
+		if @project.admin_notification != nil
+			@project.admin_notification.destroy
+		end
     @project.destroy
     flash[:notice] = "#{@project.title} deleted."
     redirect_to projects_path
   end
+
+	def confirmed_project(id)
+		if(!Project.find(id).confirmed_at)
+			flash[:notice] = "This is an invalid project address"
+			redirect_to '/projects'
+		end
+	end
+
 end

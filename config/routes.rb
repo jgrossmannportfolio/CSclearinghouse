@@ -7,8 +7,13 @@ Clearinghouse::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
-  resources :projects, :users
+  resources :projects, :users, :notifications
   resources :home, :only => [:index]
+	resources :admin_notifications, :controller => "admin_notifications_controller"
+	match "notifications.:id" => "notifications#destroy"
+	match "admin_notifications.:id" => "admin_notifications#destroy"	
+
+	default_url_options :host => "localhost:3000"
 
 	namespace :admin do
 		resources :projects do 
@@ -19,6 +24,9 @@ Clearinghouse::Application.routes.draw do
 		end
 		resources :users do
 			resources :projects
+		end
+		resources :users do
+			resources :admin_notifications
 		end
 	end
   # The priority is based upon order of creation:

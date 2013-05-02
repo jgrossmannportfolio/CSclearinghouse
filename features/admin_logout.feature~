@@ -20,7 +20,7 @@ Background:
 Scenario: Logging out as admin
 	Given I am logged in as an admin
 	And I am on the admin dashboard
-	When I press "Logout"
+	When I follow "Logout"
 	Then I should be on the admin login page
 	And I should not be logged in as an admin
 	

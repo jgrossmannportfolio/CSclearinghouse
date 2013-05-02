@@ -255,6 +255,6 @@ end
 
 
 Then /^I should see "(.*?)" before "(.*?)"$/ do |arg1, arg2|
-  assert page.body=~ /#{arg1}.*#{arg2}/m
+  assert (page.body=~ /#{arg1}.*#{arg2}/m)
 end
 

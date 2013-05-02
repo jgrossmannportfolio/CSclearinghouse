@@ -1,2 +1,10 @@
-log
-coverage
+
+db/test.sqlite3
+db/schema
+tmp/
+log/
+*.coverage
+config/local_env.yml
+
+*.log
+.*tmp

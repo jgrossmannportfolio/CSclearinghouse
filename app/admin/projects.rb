@@ -1,7 +1,35 @@
 ActiveAdmin.register Project do
+	
+	actions :all, :except => :new
+	index do |t|
+		@action = true
+		t.selectable_column
+		t.column :id
+		t.column "Status" do |project|
+			if project.confirmed_at == nil
+				link_to("Confirm", admin_notifications_path(project.admin_notification, :path => "/admin/projects", :status => true, :project => project), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(project.admin_notification, :path => "/admin/projects", :status => false, :project => project), :method => :delete)
+			else
+				"CONFIRMED"
+			end
+		end
+		t.column :title
+		t.column :description
+		t.column :owner
+		t.column :deadline
+		t.column :created_at
+		t.column :updated_at
+		default_actions
+	end
   show do |ad|
       attributes_table do
 				row :id
+				row "Status" do |project|
+			if project.confirmed_at == nil
+				link_to("Confirm", admin_notifications_path(project.admin_notification, :path => "/admin/projects/#{project.id}", :status => true, :project => project), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(project.admin_notification, :path => "/admin/projects", :status => false, :project => project), :method => :delete)
+			else
+				"CONFIRMED"
+			end
+		end
         row :title
         row :description
 				row :owner
@@ -26,7 +54,7 @@ ActiveAdmin.register Project do
 				f.input :tags, :as => :check_boxes
       end
 		f.actions
-end
+	end
 	
 end
 

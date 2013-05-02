@@ -37,6 +37,10 @@ Scenario: Update a project from projects page
 	And I should see "testtag"
 	When I follow "Update"
 	Then I should be on the Edit Page for Project4
+<<<<<<< HEAD
+	And I should see "testtag"
+=======
+>>>>>>> 5fe02f7f253e06b14c26fb0492230bd22ab238cb
 	When I check "testtag"
 	And I press "Update Project Info"
 	Then I follow "Back to Project4"

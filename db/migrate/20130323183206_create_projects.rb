@@ -4,7 +4,9 @@ class CreateProjects < ActiveRecord::Migration
       t.string 'title'
       t.text 'description'
       t.string 'owner'
+      t.datetime :confirmed_at
       t.date 'deadline'
+
       t.timestamps
     end
   end
