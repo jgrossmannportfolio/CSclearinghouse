@@ -3,9 +3,36 @@
 #
 # Examples:
 #
-	projects = [{:title => 'Project1',:description => 'Test project1', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013', :confirmed_at => '2013-04-03 13:13:04'},
-								{:title => 'Project2',:description => 'Test project2', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013', :confirmed_at => Time.now},
-								{:title => 'Project3',:description => 'Test project3', :owner => 'Mrs. Buttersworth', :deadline => 'Jun-06-2013', :confirmed_at => Time.now}]
+	projects = [
+{:title => 'SOMAC',
+:description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at risus eu dolor ultricies consectetur id ut elit. Phasellus in arcu tellus, eu elementum magna. Etiam vel enim sed nisi lobortis eleifend. Quisque mollis commodo neque, in venenatis orci dapibus eget. Nam id mattis leo. Mauris et arcu enim, vel tincidunt ante. Aliquam a neque mauris. Sed pretium mauris at nunc consequat ut consequat lorem pretium. Nullam magna lacus, suscipit sed tempor aliquam, convallis vitae elit. Pellentesque porta sodales ante sit amet laoreet. Nullam sodales pretium lorem vel mollis. Nunc mollis, est quis gravida ultrices, enim ante semper felis, at egestas elit erat sed nibh. Fusce suscipit accumsan ligula. Mauris tincidunt elit ut nisi venenatis vel viverra elit tristique. Maecenas turpis turpis, iaculis at ultricies ac, tristique quis orci. Donec blandit auctor augue sit amet egestas.',
+ :owner => 'Sean Bjornsson',
+ :deadline => 'Feb-02-2014',
+ :confirmed_at => Time.now},
+
+{:title => 'Colgate Calendar',
+:description => 'Curabitur ut massa diam, sit amet bibendum tellus. Morbi consequat faucibus odio, et elementum ipsum molestie ac. Nam faucibus vulputate lacus, sed porttitor metus mattis non. Curabitur consequat facilisis augue non pulvinar. Phasellus eu posuere nisl. Cras felis odio, varius quis tristique sit amet, malesuada a urna. Morbi augue erat, lobortis eu consequat in, venenatis sit amet mi. Donec et mi sit amet eros congue ultricies. Duis eget mollis metus. Quisque a sapien nec neque porta luctus.',
+ :owner => 'Sean Bjornsson',
+ :deadline => 'Jun-06-2013',
+ :confirmed_at => Time.now},
+
+{:title => 'Cool New Website',
+:description => 'Pellentesque diam risus, pharetra et sollicitudin ac, lobortis in sapien. Nam a mauris arcu, ac lacinia felis. Fusce sed lorem sem, quis elementum enim. Sed non egestas magna. Suspendisse porttitor, arcu et ullamcorper lobortis, elit metus molestie purus, id feugiat nisi velit eget risus. Quisque sit amet risus eget metus tincidunt lacinia non nec risus. Phasellus sit amet tempus turpis. Cras eget lectus quis felis varius consectetur. In in lorem tincidunt lacus adipiscing rutrum. Vivamus sit amet laoreet arcu. Aenean ac tortor et nisi lacinia mattis non ut purus. Maecenas massa neque, gravida non porta elementum, fermentum ac risus.',
+ :owner => 'Sean Bjornsson',
+ :deadline => 'Jun-06-2013',
+ :confirmed_at => Time.now},
+
+{:title => 'Zoc Doc web page',
+:description => 'Nullam sagittis vehicula nunc, in hendrerit justo lobortis eget. Suspendisse eget blandit elit. Vivamus vitae erat neque. In sapien enim, pulvinar non fermentum quis, rhoncus id sapien. Sed vehicula porta mauris id tincidunt. Integer dolor purus, interdum at cursus sed, dapibus vel nibh. Aliquam suscipit dictum metus, ac ullamcorper urna dapibus a. Sed turpis odio, sodales vitae volutpat vel, adipiscing id turpis. Praesent imperdiet ullamcorper auctor. Proin eget libero erat, quis cursus urna. Proin malesuada posuere nunc condimentum ultricies. Sed dignissim risus quis purus tempus tincidunt accumsan est laoreet. Suspendisse ac velit mi. Mauris at lectus sed massa vulputate euismod quis sed metus. In hac habitasse platea dictumst.',
+ :owner => 'Sean Bjornsson',
+ :deadline => 'Jun-06-2013',
+ :confirmed_at => Time.now},
+
+{:title => 'Project3',
+:description => 'Aliquam quis nulla at dolor varius pulvinar vitae sit amet orci. Maecenas malesuada, magna vitae fermentum tincidunt, mi nunc semper leo, sit amet scelerisque turpis eros et risus. Pellentesque egestas dolor in augue fermentum a dictum orci volutpat. Pellentesque nec sapien metus, eu fringilla mauris. Morbi ultrices, quam sed fermentum placerat, libero neque euismod justo, molestie imperdiet tellus ligula ut tortor. Suspendisse sodales massa fermentum tortor vehicula condimentum. Etiam vel nisl sed lorem ornare pulvinar.',
+ :owner => 'Mrs. Buttersworth',
+ :deadline => 'Jun-06-2013',
+ :confirmed_at => Time.now}]
 
 	projects.each do |project|
 		Project.create!(project)

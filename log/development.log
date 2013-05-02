@@ -4388,3 +4388,172 @@ Served asset /red-grid-tile.png - 200 OK (53ms)
 Started GET "/assets/csloungethin.jpeg" for 127.0.0.1 at 2013-05-01 14:07:15 -0400
 Served asset /csloungethin.jpeg - 200 OK (36ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (56.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (89.5ms)[0m  [1mINSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["confirmed_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["created_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["deadline", Sun, 02 Feb 2014], ["description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at risus eu dolor ultricies consectetur id ut elit. Phasellus in arcu tellus, eu elementum magna. Etiam vel enim sed nisi lobortis eleifend. Quisque mollis commodo neque, in venenatis orci dapibus eget. Nam id mattis leo. Mauris et arcu enim, vel tincidunt ante. Aliquam a neque mauris. Sed pretium mauris at nunc consequat ut consequat lorem pretium. Nullam magna lacus, suscipit sed tempor aliquam, convallis vitae elit. Pellentesque porta sodales ante sit amet laoreet. Nullam sodales pretium lorem vel mollis. Nunc mollis, est quis gravida ultrices, enim ante semper felis, at egestas elit erat sed nibh. Fusce suscipit accumsan ligula. Mauris tincidunt elit ut nisi venenatis vel viverra elit tristique. Maecenas turpis turpis, iaculis at ultricies ac, tristique quis orci. Donec blandit auctor augue sit amet egestas."], ["owner", "Sean Bjornsson"], ["title", "SOMAC"], ["updated_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["user_id", nil]]
+  [1m[35m (128.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["confirmed_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["created_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Curabitur ut massa diam, sit amet bibendum tellus. Morbi consequat faucibus odio, et elementum ipsum molestie ac. Nam faucibus vulputate lacus, sed porttitor metus mattis non. Curabitur consequat facilisis augue non pulvinar. Phasellus eu posuere nisl. Cras felis odio, varius quis tristique sit amet, malesuada a urna. Morbi augue erat, lobortis eu consequat in, venenatis sit amet mi. Donec et mi sit amet eros congue ultricies. Duis eget mollis metus. Quisque a sapien nec neque porta luctus."], ["owner", "Sean Bjornsson"], ["title", "Colgate Calendar"], ["updated_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["user_id", nil]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["confirmed_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["created_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Pellentesque diam risus, pharetra et sollicitudin ac, lobortis in sapien. Nam a mauris arcu, ac lacinia felis. Fusce sed lorem sem, quis elementum enim. Sed non egestas magna. Suspendisse porttitor, arcu et ullamcorper lobortis, elit metus molestie purus, id feugiat nisi velit eget risus. Quisque sit amet risus eget metus tincidunt lacinia non nec risus. Phasellus sit amet tempus turpis. Cras eget lectus quis felis varius consectetur. In in lorem tincidunt lacus adipiscing rutrum. Vivamus sit amet laoreet arcu. Aenean ac tortor et nisi lacinia mattis non ut purus. Maecenas massa neque, gravida non porta elementum, fermentum ac risus."], ["owner", "Sean Bjornsson"], ["title", "Cool New Website"], ["updated_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["user_id", nil]]
+  [1m[35m (13.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["confirmed_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["created_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Nullam sagittis vehicula nunc, in hendrerit justo lobortis eget. Suspendisse eget blandit elit. Vivamus vitae erat neque. In sapien enim, pulvinar non fermentum quis, rhoncus id sapien. Sed vehicula porta mauris id tincidunt. Integer dolor purus, interdum at cursus sed, dapibus vel nibh. Aliquam suscipit dictum metus, ac ullamcorper urna dapibus a. Sed turpis odio, sodales vitae volutpat vel, adipiscing id turpis. Praesent imperdiet ullamcorper auctor. Proin eget libero erat, quis cursus urna. Proin malesuada posuere nunc condimentum ultricies. Sed dignissim risus quis purus tempus tincidunt accumsan est laoreet. Suspendisse ac velit mi. Mauris at lectus sed massa vulputate euismod quis sed metus. In hac habitasse platea dictumst."], ["owner", "Sean Bjornsson"], ["title", "Zoc Doc web page"], ["updated_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["user_id", nil]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["confirmed_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["created_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Aliquam quis nulla at dolor varius pulvinar vitae sit amet orci. Maecenas malesuada, magna vitae fermentum tincidunt, mi nunc semper leo, sit amet scelerisque turpis eros et risus. Pellentesque egestas dolor in augue fermentum a dictum orci volutpat. Pellentesque nec sapien metus, eu fringilla mauris. Morbi ultrices, quam sed fermentum placerat, libero neque euismod justo, molestie imperdiet tellus ligula ut tortor. Suspendisse sodales massa fermentum tortor vehicula condimentum. Etiam vel nisl sed lorem ornare pulvinar."], ["owner", "Mrs. Buttersworth"], ["title", "Project3"], ["updated_at", Thu, 02 May 2013 15:35:35 UTC +00:00], ["user_id", nil]]
+  [1m[35m (11.1ms)[0m  commit transaction
+  [1m[36m (2.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'tcharron@colgate.edu' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'tcharron480' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (138.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (64.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (5.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProjects (20130323183206)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.8ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "owner" varchar(255), "confirmed_at" datetime, "deadline" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130323183206')[0m
+  [1m[35m (32.0ms)[0m  commit transaction
+Migrating to CreateUsers (20130404001559)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130404001559')[0m
+  [1m[35m (18.5ms)[0m  commit transaction
+Migrating to AddDeviseToUsers (20130412011817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "email" varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "encrypted_password" varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "reset_password_token" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "remember_created_at" datetime
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "current_sign_in_at" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "current_sign_in_ip" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "last_sign_in_ip" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "confirmation_token" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "confirmed_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "confirmation_sent_at" datetime
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130412011817')[0m
+  [1m[35m (35.3ms)[0m  commit transaction
+Migrating to AddProjectsTagsTable (20130423024107)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "projects_tags" ("project_id" integer, "tag_id" integer) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130423024107')[0m
+  [1m[35m (14.2ms)[0m  commit transaction
+Migrating to CreateTags (20130423024419)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130423024419')[0m
+  [1m[35m (26.0ms)[0m  commit transaction
+Migrating to AddUserIdToProjects (20130423051318)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "projects" ADD "user_id" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130423051318')[0m
+  [1m[35m (44.0ms)[0m  commit transaction
+Migrating to DeviseCreateAdminUsers (20130424024113)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")
+  [1m[36mAdminUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admin_users" WHERE "admin_users"."email" = 'admin@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "admin_users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 15:37:41 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "admin@example.com"], ["encrypted_password", "$2a$10$/dn09AJosml5biK9hxHT8eLajKYYrWhFuV8b0VOJTrICh1ljgCY9S"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 02 May 2013 15:37:41 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130424024113')[0m
+  [1m[35m (15.8ms)[0m  commit transaction
+Migrating to CreateAdminNotes (20130424024148)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "admin_notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "resource_id" varchar(255) NOT NULL, "resource_type" varchar(255) NOT NULL, "admin_user_id" integer, "admin_user_type" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_admin_notes_on_resource_type_and_resource_id" ON "admin_notes" ("resource_type", "resource_id")[0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_admin_notes_on_admin_user_type_and_admin_user_id" ON "admin_notes" ("admin_user_type", "admin_user_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130424024148')[0m
+  [1m[35m (21.7ms)[0m  commit transaction
+Migrating to MoveAdminNotesToComments (20130424024149)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  DROP INDEX "index_admin_notes_on_admin_user_type_and_admin_user_id"
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "admin_notes" RENAME TO "active_admin_comments"[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "altered_active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "resource_id" varchar(255) NOT NULL, "resource_type" varchar(255) NOT NULL, "admin_user_id" integer, "author_type" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "temp_index_admin_notes_on_resource_type_and_resource_id" ON "altered_active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "active_admin_comments"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "active_admin_comments"[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "resource_id" varchar(255) NOT NULL, "resource_type" varchar(255) NOT NULL, "admin_user_id" integer, "author_type" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_admin_notes_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_active_admin_comments"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "altered_active_admin_comments"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "altered_active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "resource_id" varchar(255) NOT NULL, "resource_type" varchar(255) NOT NULL, "author_id" integer, "author_type" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "temp_index_admin_notes_on_resource_type_and_resource_id" ON "altered_active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "active_admin_comments"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "active_admin_comments"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "resource_id" varchar(255) NOT NULL, "resource_type" varchar(255) NOT NULL, "author_id" integer, "author_type" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_admin_notes_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "altered_active_admin_comments"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "altered_active_admin_comments"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "active_admin_comments" ADD "namespace" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")
+  [1m[36m (0.1ms)[0m  [1mUPDATE active_admin_comments SET namespace='admin'[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130424024149')
+  [1m[36m (70.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTagsUsersTable (20130426000355)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "tags_users" ("tag_id" integer, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130426000355')
+  [1m[36m (22.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddAboutMeToUsers (20130426193933)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.5ms)[0m  [1mALTER TABLE "users" ADD "aboutme" text[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130426193933')
+  [1m[36m (34.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNotifications (20130430021909)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "notifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "message" varchar(255), "user_id" integer, "project_id" integer, "admin_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130430021909')
+  [1m[36m (46.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (3.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (75.9ms)[0m  [1mINSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["deadline", Sun, 02 Feb 2014], ["description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at risus eu dolor ultricies consectetur id ut elit. Phasellus in arcu tellus, eu elementum magna. Etiam vel enim sed nisi lobortis eleifend. Quisque mollis commodo neque, in venenatis orci dapibus eget. Nam id mattis leo. Mauris et arcu enim, vel tincidunt ante. Aliquam a neque mauris. Sed pretium mauris at nunc consequat ut consequat lorem pretium. Nullam magna lacus, suscipit sed tempor aliquam, convallis vitae elit. Pellentesque porta sodales ante sit amet laoreet. Nullam sodales pretium lorem vel mollis. Nunc mollis, est quis gravida ultrices, enim ante semper felis, at egestas elit erat sed nibh. Fusce suscipit accumsan ligula. Mauris tincidunt elit ut nisi venenatis vel viverra elit tristique. Maecenas turpis turpis, iaculis at ultricies ac, tristique quis orci. Donec blandit auctor augue sit amet egestas."], ["owner", "Sean Bjornsson"], ["title", "SOMAC"], ["updated_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["user_id", nil]]
+  [1m[35m (47.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Curabitur ut massa diam, sit amet bibendum tellus. Morbi consequat faucibus odio, et elementum ipsum molestie ac. Nam faucibus vulputate lacus, sed porttitor metus mattis non. Curabitur consequat facilisis augue non pulvinar. Phasellus eu posuere nisl. Cras felis odio, varius quis tristique sit amet, malesuada a urna. Morbi augue erat, lobortis eu consequat in, venenatis sit amet mi. Donec et mi sit amet eros congue ultricies. Duis eget mollis metus. Quisque a sapien nec neque porta luctus."], ["owner", "Sean Bjornsson"], ["title", "Colgate Calendar"], ["updated_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["user_id", nil]]
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Pellentesque diam risus, pharetra et sollicitudin ac, lobortis in sapien. Nam a mauris arcu, ac lacinia felis. Fusce sed lorem sem, quis elementum enim. Sed non egestas magna. Suspendisse porttitor, arcu et ullamcorper lobortis, elit metus molestie purus, id feugiat nisi velit eget risus. Quisque sit amet risus eget metus tincidunt lacinia non nec risus. Phasellus sit amet tempus turpis. Cras eget lectus quis felis varius consectetur. In in lorem tincidunt lacus adipiscing rutrum. Vivamus sit amet laoreet arcu. Aenean ac tortor et nisi lacinia mattis non ut purus. Maecenas massa neque, gravida non porta elementum, fermentum ac risus."], ["owner", "Sean Bjornsson"], ["title", "Cool New Website"], ["updated_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["user_id", nil]]
+  [1m[35m (17.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Nullam sagittis vehicula nunc, in hendrerit justo lobortis eget. Suspendisse eget blandit elit. Vivamus vitae erat neque. In sapien enim, pulvinar non fermentum quis, rhoncus id sapien. Sed vehicula porta mauris id tincidunt. Integer dolor purus, interdum at cursus sed, dapibus vel nibh. Aliquam suscipit dictum metus, ac ullamcorper urna dapibus a. Sed turpis odio, sodales vitae volutpat vel, adipiscing id turpis. Praesent imperdiet ullamcorper auctor. Proin eget libero erat, quis cursus urna. Proin malesuada posuere nunc condimentum ultricies. Sed dignissim risus quis purus tempus tincidunt accumsan est laoreet. Suspendisse ac velit mi. Mauris at lectus sed massa vulputate euismod quis sed metus. In hac habitasse platea dictumst."], ["owner", "Sean Bjornsson"], ["title", "Zoc Doc web page"], ["updated_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["user_id", nil]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("confirmed_at", "created_at", "deadline", "description", "owner", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["deadline", Thu, 06 Jun 2013], ["description", "Aliquam quis nulla at dolor varius pulvinar vitae sit amet orci. Maecenas malesuada, magna vitae fermentum tincidunt, mi nunc semper leo, sit amet scelerisque turpis eros et risus. Pellentesque egestas dolor in augue fermentum a dictum orci volutpat. Pellentesque nec sapien metus, eu fringilla mauris. Morbi ultrices, quam sed fermentum placerat, libero neque euismod justo, molestie imperdiet tellus ligula ut tortor. Suspendisse sodales massa fermentum tortor vehicula condimentum. Etiam vel nisl sed lorem ornare pulvinar."], ["owner", "Mrs. Buttersworth"], ["title", "Project3"], ["updated_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["user_id", nil]]
+  [1m[35m (12.4ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'tcharron@colgate.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'tcharron480' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("aboutme", "confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["aboutme", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:57 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "tcharron@colgate.edu"], ["encrypted_password", "$2a$10$q92BK7RB2NVFkJ.9xXnZi.RVb4lgErjSfaajorKhCViawUrc02Wga"], ["firstname", "Thomas"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", "Charron"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 02 May 2013 15:37:57 UTC +00:00], ["username", "tcharron480"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jgrossmann@colgate.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" = 'jgrossmann' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("aboutme", "confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["aboutme", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:57 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "jgrossmann@colgate.edu"], ["encrypted_password", "$2a$10$GoqbybNVjVICaD9BA4/fT.myEsj9hmMyifgOxpdZVaTIlnudgMUkW"], ["firstname", "John"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", "Grossmann"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 02 May 2013 15:37:57 UTC +00:00], ["username", "jgrossmann"]]
+  [1m[35m (12.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'sbjornsson@colgate.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."username" = 'sbjornsson' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("aboutme", "confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["aboutme", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", Thu, 02 May 2013 15:37:56 UTC +00:00], ["created_at", Thu, 02 May 2013 15:37:57 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "sbjornsson@colgate.edu"], ["encrypted_password", "$2a$10$yfPHuv4SdgT3W/3AtRZVeuyIpnAcbm3YVgOBIlqWGFR8OgNnJ2Diu"], ["firstname", "Sean"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", "Bjornsson"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 02 May 2013 15:37:57 UTC +00:00], ["username", "sbjornsson"]]
+  [1m[36m (12.6ms)[0m  [1mcommit transaction[0m
