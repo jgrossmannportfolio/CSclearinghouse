@@ -7,10 +7,6 @@
     %br/
     = text_field :project, 'title'
     %br/
-    = label :project, :description, 'Description'
-    %br/
-    = text_field :project, 'description'
-    %br/
     = label :project, :owner, 'Owner'
     %br/
     = text_field :project, 'owner'
@@ -22,12 +18,17 @@
     Tags:
     %br/
     Check to Delete:
+    %br/
     - @tags.each do |tag|
       = tag.name
       = check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
     %br/
     = label :tag, :name, 'New Tag'
     = text_field :tag, :name
+    %br/
+    = label :project, :description, 'Description'
+    %br/
+    = text_area :project, 'description'
     %br/
     = submit_tag 'Update Project Info'
 

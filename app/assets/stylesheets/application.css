@@ -11,6 +11,21 @@
  *= require_self
  *= require_tree .
 771D1C */
+
+ul{
+list-style-type: none;
+}
+
+textarea{
+width:100%;
+font-family:"Times New Roman", Times, serif;
+font-size:0.875em;
+}
+
+.small_text_area{
+height:5em;
+}
+
 .content_body{
 float:left;
 }
@@ -35,6 +50,9 @@ font-weight:bold;
 .spacing{
 padding:1em;
 }
+.tag{
+padding:.3em;
+}
 
 #homeimage{
 background-image: url(csloungethin.jpeg);
@@ -48,7 +66,7 @@ th{
 	margin-right: 10px;
 }
 
-.toplinks a{
+.page_links a{
 margin-right:15px;
 }
 

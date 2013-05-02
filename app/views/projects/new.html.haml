@@ -8,23 +8,27 @@
     %br/
     = text_field :project, 'title'
     %br/
-    = label :project, :description, 'Description'
-    %br/
-    = text_field :project, 'description'
-    %br/
+    .spacing
     = label :project, :owner, 'Owner'
     %br/
     = text_field :project, 'owner'
     %br/
+    .spacing
     = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
     %br/
     = text_field :project, 'deadline'
     %br/
+    .spacing
     = label :tag, :name, "Tag"
     %br/
     = text_field :tag, 'name'
     %br/
-
+    .spacing
+    = label :project, :description, 'Description'
+    %br/
+    = text_area :project, 'description'
+    %br/
+    .spacing
     = submit_tag 'Save Changes'
 
   =link_to 'Back to all projects', projects_path

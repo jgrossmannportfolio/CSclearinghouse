@@ -2,12 +2,11 @@
   %h1 All Users
   %hr
   %table#users
-
-
+    %thead
       %tr
         %th{:class => @username_header}= link_to 'Username', users_path( :usersort => 'username')
-        %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'first_name')
-        %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'last_name')
+        %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'firstname')
+        %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'lastname')
         %th{:class => @email_header}= link_to 'Email', users_path(:usersort => 'email')
 
     %tbody

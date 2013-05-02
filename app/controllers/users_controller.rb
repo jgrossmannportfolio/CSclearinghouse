@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 			end
 			@tags = @user.tags
 	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
-	    redirect_to edit_user_path(@user)
+	    redirect_to user_path(@user)
   	end
 
 	def destroy
