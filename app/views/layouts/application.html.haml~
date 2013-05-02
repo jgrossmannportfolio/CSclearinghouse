@@ -15,12 +15,12 @@
       %div#account_info
         %span.sign_in_status #{@sign_in_status}
         - if user_signed_in?
-          = link_to 'Logout', destroy_user_session_path, :method => :delete
-          = link_to 'Edit account info', edit_user_registration_path
-          = link_to 'My Profile', user_path(current_user)
+          %span.page_links= link_to 'Logout', destroy_user_session_path, :method => :delete
+          %span.page_links= link_to 'Edit account info', edit_user_registration_path
+          %span.page_links= link_to 'My Profile', user_path(current_user)
         - else
-          = link_to 'Login', new_user_session_path 
-          = link_to 'Create an Account', new_user_registration_path
+          %span.page_links= link_to 'Login', new_user_session_path 
+          %span.page_links= link_to 'Create an Account', new_user_registration_path
         %br/
       %div#homeimage
       - if flash[:notice]
