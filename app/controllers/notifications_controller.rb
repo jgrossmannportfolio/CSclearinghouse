@@ -1,6 +1,8 @@
 class NotificationsController < ApplicationController
+	before_filter :auth_user
 	def index
 		@notifications = Notification.all
+		@user = current_user
 	end
 	
 	def show   

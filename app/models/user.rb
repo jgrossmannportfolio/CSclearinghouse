@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	attr_accessible :reset_password_token, :confirmed_at
 
 	has_many :projects, :dependent => :destroy
+	has_many :notifications, :dependent => :destroy
 	has_and_belongs_to_many :tags
 	has_one :admin_notification, :dependent => :destroy
 

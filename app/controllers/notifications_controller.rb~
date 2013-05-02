@@ -1,6 +1,8 @@
 class NotificationsController < ApplicationController
+	before_filter :auth_user
 	def index
 		@notifications = Notification.all
+		@user = User.find(params[:id])
 	end
 	
 	def show   
@@ -27,7 +29,7 @@ class NotificationsController < ApplicationController
 	def destroy
     @notification = Notification.find(params[:id])
 		@user = @notification.user
-		if params[:status] == true
+		if params[:status] == "true"
 			User.confirm_user(@user)
 		else
 			@user.destroy

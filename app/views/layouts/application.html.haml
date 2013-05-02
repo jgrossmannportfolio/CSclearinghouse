@@ -22,6 +22,7 @@
           = link_to 'Logout', destroy_user_session_path, :method => :delete
           = link_to 'Edit account info', edit_user_registration_path
           = link_to 'My Profile', user_path(current_user)
+          = link_to 'Notifications', notifications_path(current_user)
         - else
           = link_to 'Login', new_user_session_path 
           = link_to 'Create an Account', new_user_registration_path

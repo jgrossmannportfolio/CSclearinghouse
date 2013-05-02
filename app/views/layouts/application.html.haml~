@@ -12,37 +12,21 @@
     %h1.title= link_to "Colgate's Computer Science Clearinghouse", '/home', :id => 'titlelink'
     
     #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-      - elsif flash[:alert]
-        #alert.message= flash[:alert]
+      - [:notice, :error, :success].each do |key|
+        - unless flash[key].blank?
+          %p{ :class => "flash #{key}" }= flash[key] 
 
-<<<<<<< HEAD
-      #{@sign_in_status}
-      %br/
-      - if user_signed_in?
-        = link_to 'Logout', destroy_user_session_path, :method => :delete
-        = link_to 'Edit account info', edit_user_registration_path
-        = link_to 'My Profile', user_path(current_user)
-      - else
-        = link_to 'Login', new_user_session_path 
-        = link_to 'Create an Account', new_user_registration_path
-      %br/
-      = yield
-=======
       %div#account_info
         #{@sign_in_status}
         - if user_signed_in?
           = link_to 'Logout', destroy_user_session_path, :method => :delete
           = link_to 'Edit account info', edit_user_registration_path
           = link_to 'My Profile', user_path(current_user)
+					= link_to 'Notifications', notifications_path(current_user)
         - else
           = link_to 'Login', new_user_session_path 
           = link_to 'Create an Account', new_user_registration_path
         %br/
-			%div#homeimage
+      %div#homeimage
       = render "shared/sidebar"
   = yield
->>>>>>> 5fe02f7f253e06b14c26fb0492230bd22ab238cb
