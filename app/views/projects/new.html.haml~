@@ -4,19 +4,27 @@
 = form_tag projects_path do
 
   = label :project, :title, 'Title'
+  %br/
   = text_field :project, 'title'
   %br/
   = label :project, :description, 'Description'
+  %br/
   = text_field :project, 'description'
   %br/
   = label :project, :owner, 'Owner'
+  %br/
   = text_field :project, 'owner'
   %br/
   = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
+  %br/
   = text_field :project, 'deadline'
   %br/
   = label :tag, :name, "Tag"
+  %br/
   = text_field :tag, 'name'
   %br/
 
   = submit_tag 'Save Changes'
+
+=link_to 'Back to all projects', projects_path
+=link_to "Back to Clearinghouse Home", home_index_path

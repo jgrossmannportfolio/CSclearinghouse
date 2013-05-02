@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
 771D1C */
-.toplinks, .content_body{
+.content_body{
 float:left;
 }
 

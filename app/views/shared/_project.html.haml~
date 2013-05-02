@@ -9,6 +9,7 @@
 			%span.project_detail
 				Owner:
 			= project.owner
+			%span.spacing
 			%span.project_detail
 				Deadline:
 			= project.deadline.to_formatted_s(:long) unless project.deadline == nil

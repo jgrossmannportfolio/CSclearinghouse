@@ -12,13 +12,6 @@
     %h1.title= link_to "Colgate's Computer Science Clearinghouse", '/home', :id => 'titlelink'
     
     #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-      - elsif flash[:alert]
-        #alert.message= flash[:alert]
-
       %div#account_info
         #{@sign_in_status}
         - if user_signed_in?
@@ -30,5 +23,11 @@
           = link_to 'Create an Account', new_user_registration_path
         %br/
       %div#homeimage
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+      - elsif flash[:alert]
+        #alert.message= flash[:alert]
       = render "shared/sidebar"
       = yield
