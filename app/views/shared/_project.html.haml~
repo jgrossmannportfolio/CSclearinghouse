@@ -1,8 +1,15 @@
-#needs to have  a project variable passed in, called project
-
-%div{:class => 'project}
-	%div{:class=> 'project_tile'}
+%div{:class => 'project'}
+	%div{:class=> 'project_title'}
 		= project.title
 	%div{:class => 'project_content'}
+		%dl{:class => 'project_info'}
+			%dt
+				Project Owner
+			%dd
+				= "#{project.owner}"
+			%dt
+				Project Deadline
+			%dd
+				= "project.deadline.to_formatted_s(:long) unless project.deadline == nil"
 		
 	

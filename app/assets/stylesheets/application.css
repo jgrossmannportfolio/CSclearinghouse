@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
 771D1C */
+.project{
+border: 2px solid #FFD796;
+padding: 20px;
+width: 100%;
+}
 
 #homeimage{
 background-image: url(csloungethin.jpeg);
@@ -56,6 +61,7 @@ list-style-type: none;
 float:left;
 margin-left: 15px;
 position:relative;
+width:100%;
 }
 
 

@@ -14,15 +14,10 @@
 
     %tbody
       - @projects.each do |project|
-        %tr
-          %td= project.title 
-          %td= project.description
-          %td= project.owner
-          %td= project.deadline.to_formatted_s(:long) unless project.deadline == nil
-          %td= link_to "More about #{project.title}", project_path(project)
-          - project.tags.each do |tag|
-            %td= tag.name
+        = render "shared/project"
+        - project.tags.each do |tag|
+          %td= tag.name
   %hr
   %div{:class=>'bottomlinks'}
-  =link_to 'Add New Project', new_project_path
+    =link_to 'Add New Project', new_project_path
  
