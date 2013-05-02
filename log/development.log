@@ -4387,3 +4387,4 @@ Served asset /red-grid-tile.png - 200 OK (53ms)
 
 Started GET "/assets/csloungethin.jpeg" for 127.0.0.1 at 2013-05-01 14:07:15 -0400
 Served asset /csloungethin.jpeg - 200 OK (36ms)
+Connecting to database specified by database.yml
