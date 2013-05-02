@@ -1,4 +1,3 @@
-
 class Project < ActiveRecord::Base
 	attr_accessible :title, :body, :description, :owner, :deadline, :tag_ids, :user_id, :confirmed_at
 	has_and_belongs_to_many :tags
