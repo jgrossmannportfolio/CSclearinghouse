@@ -11,6 +11,23 @@ Given /the test projects exist/ do
 	FactoryGirl.create(:project, title: 'Project5', description: 'Test Project 5', owner: 'Fake Person 2', deadline: '22-Dec-2013')
 end
 	
+Given /I create unconfirmed projects/ do
+	visit '/projects/new'
+	fill_in "Title", :with => "testproject"
+	fill_in "Description", :with => "test unconfirmed project"
+	fill_in "Owner", :with => "testman"
+	fill_in "Deadline (dd/mm/yyyy)", :with => "01/01/2013"
+	fill_in "Tag", :with => "test tag"
+	click_on "Create Project"
+	visit '/projects/new'
+	fill_in "Title", :with => "test2project"
+	fill_in "Description", :with => "test unconfirmed project2"
+	fill_in "Owner", :with => "testman2"
+	fill_in "Deadline (dd/mm/yyyy)", :with => "02/01/2013"
+	fill_in "Tag", :with => "test tag2"
+	click_on "Create Project"
+end
+
 Given /the sort test projects exist/ do
 	FactoryGirl.create(:project, title: 'Project4', description: "This is john's", owner: 'John', deadline: "May-10-2013")
 	FactoryGirl.create(:project, title: 'Project5', description: "sean's project", owner: "Sean", deadline: "Jun-03-2014")

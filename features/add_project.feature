@@ -31,7 +31,7 @@ Scenario: Add project to projects page
  And I fill in "Owner" with "Mrs. Buttersworth"
  And I fill in "Deadline" with "5-Aug-2013"
  And I fill in "Tag" with "new tag"
- And I press "Save Changes"
+ And I press "Create Project"
  Then I should be on the Projects Page
  And I should see "'Pancakes' was submitted to an administrator for approval."
  When project Pancakes gets approved

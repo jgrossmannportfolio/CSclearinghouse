@@ -16,7 +16,7 @@ ActiveAdmin::Dashboards.build do
 				link_to "Confirm", admin_notifications_path(n, :path => "/admin", :status => "true", :user => n.user), :method => :delete
 			end
 			column do |n|
-				link_to "Deny", notifications_path(n, :path => "/admin", :status => "false", :user => n.user), :method => :delete
+				link_to "Deny", admin_notifications_path(n, :path => "/admin", :status => "false", :user => n.user), :method => :delete
 			end
 		end
 		table_for AdminNotification.find_all_by_admin_type("project") do |t|
@@ -33,7 +33,7 @@ ActiveAdmin::Dashboards.build do
 				link_to "Confirm", admin_notifications_path(n, :path => "/admin", :status => "true", :project => n.project), :method => :delete
 			end
 			column do |n|
-				link_to "Deny", notifications_path(n, :path => "/admin", :status => "false", :project => n.project), :method => :delete
+				link_to "Deny", admin_notifications_path(n, :path => "/admin", :status => "false", :project => n.project), :method => :delete
 			end
 		end
 	end

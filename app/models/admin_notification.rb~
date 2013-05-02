@@ -1,5 +1,8 @@
 class AdminNotification < Notification
-	attr_accessible :user_id, :project_id
+	attr_accessible :user_id, :project_id, :admin_type
 	belongs_to :user
 	belongs_to :project
+
+	def self.user_destroy_notification(user)
+		self.create!(:message => "#{user.username} has removed his/her account from CSclearinghouse", :subject => 'Account Removal', :from => 'Automated', :admin_type => 'general')
 end

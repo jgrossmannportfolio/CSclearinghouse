@@ -1,12 +1,10 @@
-db/development.sqlite3
+
 db/test.sqlite3
 db/schema
-tmp
-log
-coverage
+tmp/
+log/
+*.coverage
 config/local_env.yml
 
 *.log
-.*sql
-.*sqlite
 .*tmp

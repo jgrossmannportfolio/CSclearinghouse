@@ -6,24 +6,18 @@ class NotificationsController < ApplicationController
 	end
 	
 	def show   
-		id = params[:id]
-    @notification = Notification.find(id)	
 	end
 	
 	def new
 	end
 
 	def create
-		@notification= Notification.create!(params[:notification])
 	end
 
   def edit
-      @notification = Notification.find params[:id] 
   end
 
-  def update
-      @notification = Notification.find params[:id] 
-      @notification.update_attributes! params[:notification] 
+  def update 
 	end
 
 	def destroy

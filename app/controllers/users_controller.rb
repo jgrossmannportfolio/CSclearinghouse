@@ -68,6 +68,7 @@ class UsersController < ApplicationController
 		if @notification = @user.admin_notification
 			@notification.destroy
 		end
+		AdminNotification.user_destroy_message(@user)
     @user.destroy
     flash[:notice] = "#{@user.username} deleted."
     redirect_to users_path

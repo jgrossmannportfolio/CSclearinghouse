@@ -13,6 +13,8 @@ Clearinghouse::Application.routes.draw do
 	match "notifications.:id" => "notifications#destroy"
 	match "admin_notifications.:id" => "admin_notifications#destroy"	
 
+	default_url_options :host => "localhost:3000"
+
 	namespace :admin do
 		resources :projects do 
 			resources :tags

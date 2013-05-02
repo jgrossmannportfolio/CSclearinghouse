@@ -42,9 +42,13 @@ class User < ActiveRecord::Base
 			if @user.confirmation_token == nil
 				@user.confirmation_token
 			end
-			@user.send_confirmation_instructions
-			#@user.confirmed_at = Time.now
-			#@user.save!
+			#send user email notification
+			#user_email = {:email => @user.email}
+			#send_devise_notification(:user_email)
+			@notificaiton = Notification.welcome_message(@user)
+			@user.notifications << @notification
+			@user.confirmed_at = Time.now
+			@user.save!
 		else
 			@user.destroy
 		end

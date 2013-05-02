@@ -20,3 +20,6 @@
   %br/
 
   = submit_tag 'Save Changes'
+
+=link_to 'Back to all projects', projects_path
+=link_to "Back to Clearinghouse Home", home_index_path

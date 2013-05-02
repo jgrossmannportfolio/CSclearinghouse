@@ -1,4 +1,4 @@
-db/development.sqlite3
+
 db/test.sqlite3
 db/schema
 tmp/
@@ -7,6 +7,4 @@ coverage/
 config/local_env.yml
 
 *.log
-.*sql
-.*sqlite
 .*tmp

@@ -26,11 +26,11 @@ class AdminNotificationsController < ApplicationController
 
 	def destroy
     @notification = AdminNotification.find(params[:id])
-		@user = @notification.user
-		if params[:status] == "true"
-			User.confirm_user(@user)
-		else
-			@user.destroy
+		if params[:user]
+			User.confirm_user(params)
+		end
+		if params[:project]
+			Project.confirm_project(params)
 		end
     @notification.destroy
 		redirect_to(params[:path])

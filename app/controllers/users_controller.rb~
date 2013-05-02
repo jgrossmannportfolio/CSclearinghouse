@@ -18,11 +18,8 @@ class UsersController < ApplicationController
       redirect_to :usersort => usersort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-<<<<<<< HEAD
     @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
-=======
-    @users = User.order(ordering)
->>>>>>> b6e7999a4cba09459a35a290daf1f7d29da277b9
+
 	end
 	
 	def show
@@ -71,6 +68,7 @@ class UsersController < ApplicationController
 		if @notification = @user.admin_notification
 			@notification.destroy
 		end
+		AdminNotification.user_destroy_notification(@user)
     @user.destroy
     flash[:notice] = "#{@user.username} deleted."
     redirect_to users_path
