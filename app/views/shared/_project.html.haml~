@@ -1,4 +1,4 @@
-.project
+.project{:id=>"project"+project.id}
 	%span.project_title
 		= project.title
 	%span 
@@ -17,7 +17,7 @@
 			.project_detail
 				Description:			
 			%span.project_description
-				= project.description
+				= (project.description.first(200) + "...") unless project.description == nil
 			%br
 			%span.project_detail
 				Tags:

@@ -7,9 +7,9 @@ I want to be able to view details of a specific project
 Background:
 
 	Given the following projects exist: 
-		| title       | description    | owner | deadline    |
-    | Project4    | Test Project 4 | John  | May-10-2013 |
-    | Project5    | Test Project 5 | Sean  | Jun-03-2014 |
+		|id	| title       | description    | owner | deadline    |
+    |1	| Project4    | Test Project 4 | John  | May-10-2013 |
+    |2	|Project5    | Test Project 5 | Sean  | Jun-03-2014 |
 
 	Given the following users exist: 
 	  | username | firstname | lastname | email           | password | password_confirmation|
@@ -24,7 +24,7 @@ Background:
 
 Scenario: Go to project details page
 	Given I am on the projects page
-	And I follow "More about Project4"
+	And I follow "Details" within ".project#project1"
 	Then I should be on the details page for Project4	
 	And I should see project details
 

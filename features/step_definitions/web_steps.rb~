@@ -57,6 +57,12 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
+When /^(?:|I )follow "([^"]*)" within "([^"]*)"$/ do |link, element|
+  within(element) do
+		click_link(link)
+	end
+end
+
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
@@ -255,6 +261,6 @@ end
 
 
 Then /^I should see "(.*?)" before "(.*?)"$/ do |arg1, arg2|
-  assert page.body=~ /"#{arg1}".*"#{arg2}"/
+  assert page.body=~ /#{arg1}.*#{arg2}/m
 end
 
