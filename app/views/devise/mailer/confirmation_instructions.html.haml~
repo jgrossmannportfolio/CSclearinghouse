@@ -2,4 +2,4 @@
   Welcome #{@email}!
 %p Your Account has been confirmed by an administrator!
 %p Click the link below to log in to the Clearinghouse:
-%p= link_to 'CSclearinghouse', new_user_session_path
+%p= link_to 'CSclearinghouse', user_session_path

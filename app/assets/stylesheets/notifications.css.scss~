@@ -1,33 +1,45 @@
 .header h2 {
-	position: absolute;
 	background-color: pink;
-	left: 150;
+	margin-left: 120;
 }
 
-.table_head h3#del {
-	position: absolute;
-	left: 150;
-	bottom: -20;
+.content {
+	width: 100%;
+	margin-left: 0;
 }
 
-.table_head h3#subj {
-	position: absolute;
-	bottom: -20;
-	left: 380;
+.table {
+	float: left;
 }
 
-.table_head h3#from {
-	position: absolute;
-	bottom: -20;
-	left: 230;
+#from {
+	position: relative;
+	left: 15;
 }
 
-.table_head h3#mess {
-	position: absolute;
-	bottom: -20;
+#subj {
+	position: relative;
+	left: 100;
 }
 
-#notification_message {
-	position: absolute;
+#mess {
+	position: relative;
+}
 
+#notification_delete{
+	position: relative;
+	left: 10;
+}
+
+#notification_subject{
+	position: relative;
+}
+
+#notification_from{
+	position: relative;
+}
+
+#notification_message{
+	position: relative;
+	
 }

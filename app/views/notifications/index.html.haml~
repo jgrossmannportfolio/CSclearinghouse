@@ -3,18 +3,15 @@
   %h2 Notifications for #{@user.username}
 %section.table
   .table_head
-    %h3 Delete
-    %h3 Subject
-    %h3 From
-    %h3 Message
+    %span#del Delete
+    %span#from From
+    %span#subj Subject
+    %span#mess Message
   - @notifications.each do |notification|
     .content
-      = link_to 'X', notifications_path(@user), :method => :delete, :id => 'notification_delete'
-      #notification_subject
-        %t #{notification.subject}
-      #notification_from
-        %t #{notification.from}
-      #notification_message
-        %t #{notification.message}
+      = link_to 'X', notifications_path(:notification => notification), :method => :delete, :id => 'notification_delete'
+      %span#notification_from #{notification.from}
+      %span#notification_subject #{notification.subject}
+      %span#notification_message #{notification.message}
       
 
