@@ -1,15 +1,24 @@
-%div{:class => 'project'}
-	%div{:class=> 'project_title'}
+.project
+	%span.project_title
 		= project.title
-	%div{:class => 'project_content'}
-		%dl{:class => 'project_info'}
-			%dt
-				Project Owner
-			%dd
-				= "#{project.owner}"
-			%dt
-				Project Deadline
-			%dd
-				= "project.deadline.to_formatted_s(:long) unless project.deadline == nil"
-		
-	
+	%span 
+		=link_to 'Details', project_path(project)
+	%hr
+	.project_content
+		.project_info
+			%span.project_detail
+				Owner:
+			= project.owner
+			%span.project_detail
+				Deadline:
+			= project.deadline.to_formatted_s(:long) unless project.deadline == nil
+			%br/
+			.project_detail
+				Description:			
+			%span.project_description
+				= project.description
+			%br
+			%span.project_detail
+				Tags:
+			-project.tags.each do |tag|
+				%span.tag=tag.name

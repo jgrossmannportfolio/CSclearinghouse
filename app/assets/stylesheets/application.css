@@ -11,10 +11,29 @@
  *= require_self
  *= require_tree .
 771D1C */
+.content_body{
+float:left;
+}
+
 .project{
-border: 2px solid #FFD796;
+border: 2px inset #FFD796;
 padding: 20px;
 width: 100%;
+margin:5px;
+
+}
+
+.project_detail{
+font-weight: bold;
+
+}
+.project_title{
+font-size:large;
+font-weight:bold;
+}
+
+.spacing{
+padding:1em;
 }
 
 #homeimage{
@@ -29,13 +48,10 @@ th{
 	margin-right: 10px;
 }
 
-.bottomlinks a{
+.toplinks a{
 margin-right:15px;
 }
 
-.bottomlinks{
-margin-top:20px;
-}
 
 #account_info{
 float:right;
@@ -50,18 +66,21 @@ text-decoration: none;
 
 #sidebar{
 padding: 7px;
-margin-right:20px;
+margin-right:0px;
 float:left;
 position:relative;
 height: 100%;
 list-style-type: none;
+width:7em;
 }
+
+
 
 .content{
 float:left;
 margin-left: 15px;
 position:relative;
-width:100%;
+width:70%;
 }
 
 
@@ -93,6 +112,7 @@ font-weight:bold;
 	padding-left: 0px;
 	
 }
- table#users th.hilite,table#projects th.hilite  {
-	background-color: #992020;
+.hilite  {
+	text-decoration: none;
+	color: #992020;
 }

@@ -1,23 +1,16 @@
-%div{:class => 'content'}
-  %h1 All Projects
-  %hr
-  %table#projects
-
-    %thead
-      %tr
-        %th{:class => @title_header}= link_to 'Title', projects_path( :projectsort => 'title')
-        %th Description
-        %th{:class => @owner_header}= link_to 'Project Owner', projects_path( :projectsort => 'owner')
-        %th{:class => @deadline_header}= link_to 'Deadline', projects_path( :projectsort => 'deadline')
-        %th Details
-        %th Tags
-
-    %tbody
-      - @projects.each do |project|
-        = render "shared/project", :project => project
-        - project.tags.each do |tag|
-          %td= tag.name
-  %hr
-  %div{:class=>'bottomlinks'}
+%div.content
+  %h1.content_title All Projects
+    
+  %span.toplinks 
     =link_to 'Add New Project', new_project_path
+  %br/
+  Sort By: 
+  = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
+  = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
+  = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
+  %hr
+  - @projects.each do |project|
+    = render "shared/project", :project => project
+  
+  %hr
  
