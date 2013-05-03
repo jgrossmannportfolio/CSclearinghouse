@@ -1,0 +1,45 @@
+.header h2 {
+	background-color: pink;
+	margin-left: 120;
+}
+
+.content {
+	width: 100%;
+	margin-left: 0;
+}
+
+.table {
+	float: left;
+}
+
+#from {
+	position: relative;
+	left: 15;
+}
+
+#subj {
+	position: relative;
+	left: 100;
+}
+
+#mess {
+	position: relative;
+}
+
+#notification_delete{
+	position: relative;
+	left: 10;
+}
+
+#notification_subject{
+	position: relative;
+}
+
+#notification_from{
+	position: relative;
+}
+
+#notification_message{
+	position: relative;
+	
+}

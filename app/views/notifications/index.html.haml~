@@ -1,0 +1,17 @@
+
+%section.header
+  %h2 Notifications for #{@user.username}
+%section.table
+  .table_head
+    %span#del Delete
+    %span#from From
+    %span#subj Subject
+    %span#mess Message
+  - @notifications.each do |notification|
+    .content
+      = link_to 'X', notifications_path(:notification => notification), :method => :delete, :id => 'notification_delete'
+      %span#notification_from #{notification.from}
+      %span#notification_subject #{notification.subject}
+      %span#notification_message #{notification.message}
+      
+

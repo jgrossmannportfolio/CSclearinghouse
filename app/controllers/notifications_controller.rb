@@ -1,5 +1,8 @@
 class NotificationsController < ApplicationController
+	before_filter :auth_user
 	def index
+		@user = current_user
+		@notifications = @user.notifications
 	end
 	
 	def show   
@@ -18,5 +21,9 @@ class NotificationsController < ApplicationController
 	end
 
 	def destroy
+    @notification = Notification.find(params[:id])
+		@user = @notification.user
+    @notification.destroy
+		redirect_to(notifications_path)
   end
 end

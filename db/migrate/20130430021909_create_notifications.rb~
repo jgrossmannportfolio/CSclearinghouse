@@ -5,6 +5,8 @@ class CreateNotifications < ActiveRecord::Migration
       t.string :message
 			t.integer :user_id
 			t.integer :project_id
+			t.string :admin_type
+			t.string :subject
 
       t.timestamps
     end
