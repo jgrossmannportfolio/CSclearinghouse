@@ -19,7 +19,7 @@
 			%span.project_description
 				= (project.description.first(200) + "...") unless project.description == nil
 			%br
-			%span.project_detail
+			.project_detail.tags
 				Tags:
-			-project.tags.each do |tag|
-				%span.tag=tag.name
+				-project.tags.each do |tag|
+					%span.tag=tag.name

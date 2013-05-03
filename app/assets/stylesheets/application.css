@@ -12,10 +12,19 @@
  *= require_tree .
 771D1C */
 
-.tag{
+.tags{
+margin-top:1em;
+}
+
+span.tag{
 	border-radius:7px;
 	background-color:orange;
-opacity:.5;
+	margin:1em;
+	margin-right:0;
+	margin-top:2em;
+	
+	color:white;
+
 }
 
 .details_button{
