@@ -12,6 +12,9 @@
 	= label :user, :aboutme, 'About Me'
 	= text_field :user, :aboutme
 
+	=label :user, :avatar, 'Change your avatar.'
+	= file_field, :user, :avatar
+
 	%h4 Tags:
 	Check to Delete:
 	- @tags.each do |tag|

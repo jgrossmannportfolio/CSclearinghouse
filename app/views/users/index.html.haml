@@ -1,10 +1,14 @@
 %div{:class => 'content'}
   %h1 All Users
   %hr
+  = form_tag users_path, :method => 'GET' do 
+    = text_field_tag :search, params[:search]
+    = submit_tag 'Search for a specific user', :name => nil
   %table#users
     %thead
       %tr
         %th{:class => @username_header}= link_to 'Username', users_path( :usersort => 'username')
+        %th 'Avatar'
         %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'firstname')
         %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'lastname')
         %th{:class => @email_header}= link_to 'Email', users_path(:usersort => 'email')
@@ -13,6 +17,7 @@
       - @users.each do |user|
         %tr
           %td= user.username 
+          %td= image_tag user.avatar.url(:medium)
           %td= user.firstname
           %td= user.lastname
           %td= user.email

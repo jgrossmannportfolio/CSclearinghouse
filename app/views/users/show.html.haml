@@ -2,6 +2,8 @@
 
 %ul#profile
   %li
+    = image_tag @user.avatar.url(:medium)
+  %li
     First Name:
     = @user.firstname
   %li
