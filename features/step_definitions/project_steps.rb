@@ -58,7 +58,7 @@ Then /I should see project details/ do
 	project_attr = Project.accessible_attributes
 	project_attr.each do |attribute|
 		attribute = attribute.capitalize
-		page.body =~ /#{attribute}/
+		assert page.body =~ /#{attribute}/
 	end
 end
 
@@ -67,7 +67,9 @@ When /^I confirm popup$/ do
 end
 
 Then /I should see all the projects/ do
-	(page.all('table#projects tr').count-1).should == Project.count
+	Project.all.each do |p|
+		assert page.body =~ /#{p.title}/
+	end
 end
 
 

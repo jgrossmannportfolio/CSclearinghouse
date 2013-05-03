@@ -9,7 +9,7 @@
     %span#mess Message
   - @notifications.each do |notification|
     .content
-      = link_to 'X', notifications_path(:notification => notification), :method => :delete, :id => 'notification_delete'
+      = link_to 'X', notifications_path(notification), :method => :delete, :id => 'notification_delete'
       %span#notification_from #{notification.from}
       %span#notification_subject #{notification.subject}
       %span#notification_message #{notification.message}

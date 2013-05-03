@@ -1,8 +1,25 @@
-#needs to have  a project variable passed in, called project
-
-%div{:class => 'project}
-	%div{:class=> 'project_tile'}
+.project{:id=>"project"+project.id.to_s}
+	%span.project_title
 		= project.title
-	%div{:class => 'project_content'}
-		
-	
+	%span 
+		=link_to 'Details', project_path(project)
+	%hr
+	.project_content
+		.project_info
+			%span.project_detail
+				Owner:
+			= project.owner
+			%span.spacing
+			%span.project_detail
+				Deadline:
+			= project.deadline.to_formatted_s(:long) unless project.deadline == nil
+			%br/
+			.project_detail
+				Description:			
+			%span.project_description
+				= (project.description.first(200) + "...") unless project.description == nil
+			%br
+			%span.project_detail
+				Tags:
+			-project.tags.each do |tag|
+				%span.tag=tag.name

@@ -18,8 +18,12 @@ class UsersController < ApplicationController
       redirect_to :usersort => usersort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
+<<<<<<< HEAD
     @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
 
+=======
+    @users = User.order(ordering)
+>>>>>>> views
 	end
 	
 	def show

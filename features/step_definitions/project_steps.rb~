@@ -48,12 +48,15 @@ Given /(.*) has created (.*)/ do |username, project_title|
 	user.projects << project
 end
 
+<<<<<<< HEAD
 When /project (.*) gets approved/i do |project|
 	@project = Project.find_by_title(project)
 	@project.confirmed_at = Time.now
 	@project.save
 end
 
+=======
+>>>>>>> views
 Then /I should see project details/ do
 	project_attr = Project.accessible_attributes
 	project_attr.each do |attribute|

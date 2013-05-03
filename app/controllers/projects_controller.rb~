@@ -16,7 +16,11 @@ class ProjectsController < ApplicationController
       redirect_to :projectsort => projectsort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
+<<<<<<< HEAD
     @projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
+=======
+    @projects = Project.order(ordering)
+>>>>>>> views
 	end
 	
 	def show  

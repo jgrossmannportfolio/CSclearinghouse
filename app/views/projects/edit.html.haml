@@ -1,34 +1,37 @@
-%h1 Update  #{@project.title}
+.content
+  %h1 Update  #{@project.title}
 
-= form_tag project_path(@project), :method => :put do
+  = form_tag project_path(@project), :method => :put do
 
-  = label :project, :title, 'Title'
-  %br/
-  = text_field :project, 'title'
-  %br/
-  = label :project, :description, 'Description'
-  %br/
-  = text_field :project, 'description'
-  %br/
-  = label :project, :owner, 'Owner'
-  %br/
-  = text_field :project, 'owner'
-  %br/
-  = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
-  %br/
-  = text_field :project, 'deadline', :value => "#{@project.deadlineslash}"unless @project.deadline == nil
-  %br/
-  %h4 Tags:
-  Check to Delete:
-  - @tags.each do |tag|
-    = tag.name
-    = check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
-  %br/
-  = label :tag, :name, 'New Tag'
-  = text_field :tag, :name
-  %br/
-  = submit_tag 'Update Project Info'
-
-=link_to 'Back to all projects', projects_path
-=link_to "Back to Clearinghouse Home", home_index_path
-= link_to "Back to #{@project.title}", project_path(@project)
+    = label :project, :title, 'Title'
+    %br/
+    = text_field :project, 'title'
+    %br/
+    = label :project, :owner, 'Owner'
+    %br/
+    = text_field :project, 'owner'
+    %br/
+    = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
+    %br/
+    = text_field :project, 'deadline', :value=> (@project.deadline == nil ? @project.deadline : @project.deadlineslash)
+    %br/
+    Tags:
+    %br/
+    Check to Delete:
+    %br/
+    - @tags.each do |tag|
+      = tag.name
+      = check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+    %br/
+    = label :tag, :name, 'New Tag'
+    = text_field :tag, :name
+    %br/
+    = label :project, :description, 'Description'
+    %br/
+    = text_area :project, 'description'
+    %br/
+    = submit_tag 'Update Project Info'
+  .page_links
+    =link_to 'Back to all projects', projects_path
+    =link_to "Back to Clearinghouse Home", home_index_path
+    = link_to "Back to #{@project.title}", project_path(@project)

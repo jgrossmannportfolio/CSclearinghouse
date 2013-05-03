@@ -24,6 +24,7 @@
 
 #mess {
 	position: relative;
+	left: 400;
 }
 
 #notification_delete{

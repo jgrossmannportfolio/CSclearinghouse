@@ -12,8 +12,76 @@
  *= require_tree .
 771D1C */
 
+.tag{
+	border-radius:7px;
+	background-color:orange;
+opacity:.5;
+}
+
+.details_button{
+border-radius: 5px;
+background-color:orange;
+border-style:inset;
+border-color:orange;
+}
+.details_button a {
+color:white;
+font-weight:bold;
+padding:5px;
+}
+
+.sign_in_status{
+font-weight: bold;
+margin-right:15px;
+}
+
+ul{
+list-style-type: none;
+}
+
+textarea{
+width:100%;
+font-family:"Times New Roman", Times, serif;
+font-size:0.875em;
+height:15em;
+border: 3px inset;
+}
+
+.small_text_area{
+height:5em;
+}
+
+.content_body{
+float:left;
+}
+
+.project{
+border: 3px inset #FFD796;
+padding: 20px;
+width: 100%;
+margin:5px;
+
+}
+
+.project_detail{
+font-weight: bold;
+
+}
+.project_title{
+font-size:large;
+font-weight:bold;
+margin-right: 1em;
+}
+
+.spacing{
+padding:1em;
+}
+.tag{
+padding:.3em;
+}
+
 #homeimage{
-background-image: url(csloungethin.jpeg);
+background-image: url(coscbanner.jpg);
 background-size:cover;
 height:270px;
 width:100%;
@@ -24,13 +92,10 @@ th{
 	margin-right: 10px;
 }
 
-.bottomlinks a{
+.page_links a{
 margin-right:15px;
 }
 
-.bottomlinks{
-margin-top:20px;
-}
 
 #account_info{
 float:right;
@@ -45,17 +110,21 @@ text-decoration: none;
 
 #sidebar{
 padding: 7px;
-margin-right:20px;
+margin-right:0px;
 float:left;
 position:relative;
 height: 100%;
 list-style-type: none;
+width:7em;
 }
+
+
 
 .content{
 float:left;
 margin-left: 15px;
 position:relative;
+width:70%;
 }
 
 
@@ -87,6 +156,7 @@ font-weight:bold;
 	padding-left: 0px;
 	
 }
- table#users th.hilite,table#projects th.hilite  {
-	background-color: #992020;
+.hilite  {
+	text-decoration: none;
+	color: #992020;
 }
