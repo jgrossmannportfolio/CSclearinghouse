@@ -12,6 +12,24 @@
  *= require_tree .
 771D1C */
 
+.tag{
+	border-radius:7px;
+	background-color:orange;
+opacity:.5;
+}
+
+.details_button{
+border-radius: 5px;
+background-color:orange;
+border-style:inset;
+border-color:orange;
+}
+.details_button a {
+color:white;
+font-weight:bold;
+padding:5px;
+}
+
 .sign_in_status{
 font-weight: bold;
 margin-right:15px;
@@ -36,7 +54,7 @@ float:left;
 }
 
 .project{
-border: 2px inset #FFD796;
+border: 3px inset #FFD796;
 padding: 20px;
 width: 100%;
 margin:5px;
@@ -50,6 +68,7 @@ font-weight: bold;
 .project_title{
 font-size:large;
 font-weight:bold;
+margin-right: 1em;
 }
 
 .spacing{

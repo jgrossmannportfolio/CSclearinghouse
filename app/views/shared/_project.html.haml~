@@ -1,4 +1,4 @@
-.project{:id=>"project"+project.id}
+.project{:id=>"project"+project.id.to_s}
 	%span.project_title
 		= project.title
 	%span 
