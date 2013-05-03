@@ -1,10 +1,5 @@
 ActiveAdmin.register User do
-	before_filter :only => [:destroy] do
-		@user = User.find(params[:id])
-		if @user.admin_notification != nil
-			@user.admin_notification.destroy
-		end
-	end
+
 	actions :all, :except => :new
 	filter :username
 	filter :firstname

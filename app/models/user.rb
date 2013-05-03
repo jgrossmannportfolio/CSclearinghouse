@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
 	def self.unconfirmed_user(user)
 		@user = user
-		@notification = AdminNotification.create!(:message => "#{@user.firstname} #{@user.lastname} wishes to register for the CSclearinghouse! Confirm or deny the account please!", :admin_type => "user")
+		@notification = AdminNotification.new_user_message(@user)
 		user.admin_notification = @notification
 		user.save!
 	end

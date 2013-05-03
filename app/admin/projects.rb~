@@ -1,10 +1,5 @@
 ActiveAdmin.register Project do
-	before_filter :only => [:destroy] do
-		@project = Project.find(params[:id])
-		if @project.admin_notification != nil
-			@project.admin_notification.destroy
-		end
-	end
+	
 	actions :all, :except => :new
 	index do |t|
 		@action = true

@@ -1,11 +1,8 @@
 class AdminNotificationsController < ApplicationController
 	def index
-		@notifications = AdminNotification.all
 	end
 	
 	def show   
-		id = params[:id]
-    @notification = AdminNotification.find(id)	
 	end
 	
 	def new
@@ -16,12 +13,9 @@ class AdminNotificationsController < ApplicationController
 	end
 
   def edit
-      @notification = AdminNotification.find params[:id] 
   end
 
   def update
-      @notification = AdminNotification.find params[:id] 
-      @notification.update_attributes! params[:notification] 
 	end
 
 	def destroy
