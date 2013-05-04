@@ -72,7 +72,7 @@ describe UsersController do
 			@fake_user.stub!(:update_attributes).and_return(true)
 			@tags= @fake_user.stub!(:tags).and_return([])
 			put :update, {:id => @fake_user.id, :firstname => fake_user2.firstname, :lastname => fake_user2.lastname, :email => fake_user2.email, :tag => {:name => ""}, :tags => {}}
-			response.should redirect_to(edit_user_path(@fake_user))
+			response.should redirect_to(user_path(@fake_user))
 			flash[:notice].should == "#{@fake_user.username}'s profile was successfully updated."
 		end
 	end
