@@ -1,28 +1,26 @@
 .content
 	%h2 Details about #{@project.title}
 
-	.project_info
-		%span.project_detail
+	.info
+		%span.bold
 			Owner:
 		= @project.owner
 		%span.spacing
-		%span.project_detail
+		%span.bold
 			Deadline:
 		= @project.deadline.to_formatted_s(:long) unless @project.deadline == nil
-		%br/
 		.spacing
-		.project_detail
+		.bold
 			Description:			
-		%span.project_description
+		%span.description
 			= @project.description
 		%br/
 		.spacing
-		%span.project_detail
+		%span.bold
 			Tags:
 		-@project.tags.each do |tag|
 			%span.tag
 				=tag.name
-				%span.small_spacing
 		.spacing
 	.buttons
 		-if @update_and_delete

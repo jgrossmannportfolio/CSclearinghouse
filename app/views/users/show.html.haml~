@@ -1,28 +1,35 @@
-%h2 #{@user.username}'s Profile
+.content 
+  %h2 #{@user.username}'s Profile
 
-%ul#profile
-  %li
-    First Name:
+  .info#profile
+    %span.bold
+      First Name:
     = @user.firstname
-  %li
-    Last Name:
+    .small_spacing
+    %span.bold
+      Last Name:
     = @user.lastname
-  %li
-    Email:
+    .small_spacing
+    %span.bold
+      Email:
     = @user.email
-  %li
-    Projects:
+    .small_spacing
+    %span.bold
+      Projects:
     - @user.projects.each do |project|
-      = link_to "#{project.title}", project_path(project)
-  %li
-    About Me:
+      %span.page_links= link_to "#{project.title}", project_path(project)
+    .small_spacing
+    %span.bold
+      About Me:
     = @user.aboutme
-  %li
-    Tags:
+    .small_spacing
+    %span.bold
+      Tags:
     - @user.tags.each do |tag|
-      = tag.name
-
--if @edit_and_delete
-  = button_to 'Edit', edit_user_path(@user),:method=>:get
-  = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to user list', users_path
+      %span.tag= tag.name
+  .small_spacing
+  -if @edit_and_delete
+    .buttons
+      = button_to 'Edit', edit_user_path(@user), :method => :get
+      = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
+  = link_to 'Back to user list', users_path

@@ -1,6 +1,5 @@
 .content
-  %h1 Create New Project
-
+  .header Create New Project
 
   = form_tag projects_path do
 
@@ -30,6 +29,6 @@
     %br/
     .spacing
     = submit_tag 'Create Project'
-
-  =link_to 'Back to all projects', projects_path
-  =link_to "Back to Clearinghouse Home", home_index_path
+  .page_links
+    =link_to 'Back to all projects', projects_path
+    =link_to "Back to Clearinghouse Home", home_index_path

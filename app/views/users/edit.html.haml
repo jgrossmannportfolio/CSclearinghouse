@@ -18,14 +18,13 @@
 		= text_area :user, :aboutme, :class => 'small_text_area'
 		%br/
 		.spacing
-		Skill Tags:
 		-if @tags.size!=0
-			Check to Delete:
+			Check to Delete Skill Tag:
 			- @tags.each do |tag|
 				%span.tag
 					= tag.name
 				= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
-		%br/
+			.spacing
 		= label :tag, :name, 'New Skill Tag'
 		= text_field :tag, :name
 		%br/
