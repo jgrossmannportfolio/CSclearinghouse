@@ -1,9 +1,6 @@
 class ProjectsController < ApplicationController
 	before_filter :auth_user
 	def index
-<<<<<<< HEAD
-		@projects = Project.where("projects.confirmed_at IS NOT NULL")
-=======
 		projectsort = params[:projectsort] || session[:projectsort]
     case projectsort
     when 'title'
@@ -19,8 +16,7 @@ class ProjectsController < ApplicationController
       redirect_to :projectsort => projectsort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-    @projects = Project.order(ordering)
->>>>>>> 5fe02f7f253e06b14c26fb0492230bd22ab238cb
+    @projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
 	end
 	
 	def show  

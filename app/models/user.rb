@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	attr_accessible :reset_password_token, :confirmed_at
 
 	has_many :projects, :dependent => :destroy
+	has_many :notifications, :dependent => :destroy
 	has_and_belongs_to_many :tags
 	has_one :admin_notification, :dependent => :destroy
 
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
 
 	def self.unconfirmed_user(user)
 		@user = user
-		@notification = AdminNotification.create!(:message => "#{@user.firstname} #{@user.lastname} wishes to register for the CSclearinghouse! Confirm or deny the account please!", :admin_type => "user")
+		@notification = AdminNotification.new_user_message(@user)
 		user.admin_notification = @notification
 		user.save!
 	end
@@ -41,9 +42,11 @@ class User < ActiveRecord::Base
 			if @user.confirmation_token == nil
 				@user.confirmation_token
 			end
-			#This is to make the user confirm account via email
-			#@user.send_confirmation_instructions
-			
+			#send user email notification
+			#user_email = {:email => @user.email}
+			#send_devise_notification(:user_email)
+			@notificaiton = Notification.welcome_message(@user)
+			@user.notifications << @notification
 			@user.confirmed_at = Time.now
 			@user.save!
 		else

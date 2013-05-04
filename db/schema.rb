@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20130503012901) do
     t.integer  "user_id"
     t.integer  "project_id"
     t.string   "admin_type"
+    t.string   "subject"
+    t.string   "from"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

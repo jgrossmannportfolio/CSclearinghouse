@@ -5,36 +5,23 @@ end
 
 ActiveAdmin::Dashboards.build do
 	section "Notifications" do
-		table_for AdminNotification.find_all_by_admin_type("user") do |t|
-			t.column "New User Message" do |n|
-				n.message
-			end
-			t.column "User" do |n|
-				n.user.username
+		table_for AdminNotification.all do |t|
+			t.column do |n|
+				link_to "Delete", admin_notifications_delete_path(n, :path => '/admin/dashboard'), :method => :delete
 			end
 			t.column do |n|
-				link_to "Confirm", admin_notifications_path(n, :path => "/admin", :status => "true", :user => n.user), :method => :delete
+				if n.admin_type == 'user' || n.admin_type == 'project'
+					link_to "Confirm", admin_notifications_delete_path(n, :path => "/admin", :status => "true", :project => n.project), :method => :delete
+				end
 			end
 			column do |n|
-				link_to "Deny", admin_notifications_path(n, :path => "/admin", :status => "false", :user => n.user), :method => :delete
+				if n.admin_type == 'user' || n.admin_type == 'project'
+				link_to "Deny", admin_notifications_delete_path(n, :path => "/admin", :status => "false", :project => n.project), :method => :delete
+				end
 			end
-		end
-		table_for AdminNotification.find_all_by_admin_type("project") do |t|
-			t.column "New Project Message" do |n|
-				n.message
-			end
-			t.column "Project" do |n|
-				n.project.title
-			end
-			t.column "User" do |n|
-				n.project.user.username
-			end
-			t.column do |n|
-				link_to "Confirm", admin_notifications_path(n, :path => "/admin", :status => "true", :project => n.project), :method => :delete
-			end
-			column do |n|
-				link_to "Deny", admin_notifications_path(n, :path => "/admin", :status => "false", :project => n.project), :method => :delete
-			end
+			t.column :subject
+			t.column :from
+			t.column :message
 		end
 	end
 end

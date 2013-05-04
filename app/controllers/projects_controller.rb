@@ -70,6 +70,7 @@ class ProjectsController < ApplicationController
 		if @project.admin_notification != nil
 			@project.admin_notification.destroy
 		end
+		AdminNotification.project_destroy_message(@project)
     @project.destroy
     flash[:notice] = "#{@project.title} deleted."
     redirect_to projects_path
