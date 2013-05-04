@@ -1,16 +1,35 @@
+.content
+	%h2 Edit #{@user.username}'s Profile page
 
-%h2 Edit #{@user.username}'s Profile page
+	= form_tag user_path(@user), :method => :put do
 
-= form_tag user_path(@user), :method => :put do
-
-	= label :user, :firstname, 'First Name'
-	= text_field :user, :firstname
-
-	= label :user, :lastname, 'Last Name'
-	= text_field :user, :lastname
+		= label :user, :firstname, 'First Name'
+		%br/
+		= text_field :user, :firstname
+		%br/
 	
-	= label :user, :aboutme, 'About Me'
-	= text_field :user, :aboutme
+		= label :user, :lastname, 'Last Name'
+		%br/
+		= text_field :user, :lastname
+		%br/
+		
+		= label :user, :aboutme, 'About Me'
+		%br/
+		= text_area :user, :aboutme, :class => 'small_text_area'
+		%br/
+		.spacing
+		-if @tags.size!=0
+			Check to Delete Skill Tag:
+			- @tags.each do |tag|
+				%span.tag
+					= tag.name
+				= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+			.spacing
+		= label :tag, :name, 'New Skill Tag'
+		= text_field :tag, :name
+		%br/
+		.spacing
+		= submit_tag 'Update Profile'
 
 	=label :user, :avatar, 'Change your avatar.'
 	= file_field, :user, :avatar
@@ -25,5 +44,6 @@
 	= text_field :tag, :name
 	%br/
 	= submit_tag 'Update Profile Page'
+	=link_to 'Back to Profile', user_path(@user)
 	
 

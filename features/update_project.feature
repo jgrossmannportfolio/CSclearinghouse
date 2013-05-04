@@ -15,17 +15,17 @@ Background: projects on website and users registered
 Scenario: Update a project from projects page
 	Given testuser1 has created Project4
 	And I am on the Projects Page
-	When I follow "More about Project4"
+	When I follow "Details" for "Project4"
 	And I should see "Project4"	
 	Then I should be on the Details Page for Project4
-	When I follow "Update"
+	When I press "Update"
 	Then I should be on the Edit Page for Project4
 	And I fill in "Owner" with "Santa Claus"
 	And I fill in "New Tag" with "testtag"
 	When I press "Update Project Info"
 	Then I should be on the Details Page for Project4
 	And I should see "testtag"
-	When I follow "Update"
+	When I press "Update"
 	Then I should be on the Edit Page for Project4
 	When I check "testtag"
 	And I press "Update Project Info"
@@ -35,6 +35,6 @@ Scenario: Update a project from projects page
 
 Scenario: unauthorized user should not be able to update a project
 	Given I am on the Projects Page
-	And I follow "More about Project5"
+	And I follow "Details" for "Project5"
 	Then I should be on the details page for Project5
-	And I should not be able to follow Update
+	And I should not be able to press Update

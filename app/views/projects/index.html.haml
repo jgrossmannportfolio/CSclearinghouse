@@ -1,5 +1,13 @@
-%div{:class => 'content'}
-  %h1 All Projects
+.content
+  .header All Projects
+    
+  %span.page_links 
+    =link_to 'Add New Project', new_project_path
+  %br/
+  Sort By: 
+  = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
+  = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
+  = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
   %hr
   = form_tag projects_path, :method => 'GET' do 
     = text_field_tag :search, params[:search]
@@ -25,7 +33,8 @@
           %td= link_to "More about #{project.title}", project_path(project)
           - project.tags.each do |tag|
             %td= tag.name
-  %hr
-  %div{:class=>'bottomlinks'}
-    =link_to 'Add New Project', new_project_path
+
+  - @projects.each do |project|
+    = render "shared/project", :project => project
+
  

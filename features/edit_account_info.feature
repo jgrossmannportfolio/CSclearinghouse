@@ -12,7 +12,8 @@ Background: users registered
 		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
 
 Scenario: Go to the edit account info page
-	When I follow "Edit account info"
+	Given I am on the Home page
+	When I follow "Edit Account Info"
 	Then I should be on the edit account info page for testuser1
 
 Scenario: Edit account info

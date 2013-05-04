@@ -1,28 +1,16 @@
-%div{:class => 'content'}
-  %h1 All Projects
+.content
+  %h1.content_title All Projects
+    
+  %span.page_links 
+    =link_to 'Add New Project', new_project_path
+  %br/
+  Sort By: 
+  = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
+  = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
+  = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
   %hr
-  %table#projects
-
-    %thead
-      %tr
-        %th{:class => @title_header}= link_to 'Title', projects_path( :projectsort => 'title')
-        %th Description
-        %th{:class => @owner_header}= link_to 'Project Owner', projects_path( :projectsort => 'owner')
-        %th{:class => @deadline_header}= link_to 'Deadline', projects_path( :projectsort => 'deadline')
-        %th Details
-        %th Tags
-
-    %tbody
-      - @projects.each do |project|
-        %tr
-          %td= project.title 
-          %td= project.description
-          %td= project.owner
-          %td= project.deadline.to_formatted_s(:long) unless project.deadline == nil
-          %td= link_to "More about #{project.title}", project_path(project)
-          - project.tags.each do |tag|
-            %td= tag.name
+  - @projects.each do |project|
+    = render "shared/project", :project => project
+  
   %hr
-  %div{:class=>'bottomlinks'}
-  =link_to 'Add New Project', new_project_path
  

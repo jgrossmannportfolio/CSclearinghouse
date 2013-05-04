@@ -1,20 +1,30 @@
-%h2 Details about #{@project.title}
+.content
+	.header Details about #{@project.title}
 
-%ul#details
-  %li
-    Description:
-    = @project.description
-  %li
-    Owner:
-    = @project.owner
-  %li
-    Deadline:
-    = @project.deadline.to_formatted_s(:long) unless @project.deadline == nil
-  %li
-    Tags:
-    - @project.tags.each do |tag|
-      = tag.name
--if @update_and_delete
-  = link_to 'Update', edit_project_path(@project)
-  = button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to project list', projects_path
+	.info
+		%span.bold
+			Owner:
+		= @project.owner
+		%span.spacing
+		%span.bold
+			Deadline:
+		= @project.deadline.to_formatted_s(:long) unless @project.deadline == nil
+		.spacing
+		.bold
+			Description:			
+		%span.description
+			= @project.description
+		%br/
+		.spacing
+		%span.bold
+			Tags:
+		-@project.tags.each do |tag|
+			%span.tag
+				=tag.name
+		.spacing
+	.buttons
+		-if @update_and_delete
+			= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'			
+			= button_to 'Update', edit_project_path(@project), :method => :get
+	.page_links 
+		= link_to 'Back to project list', projects_path

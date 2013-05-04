@@ -8,14 +8,15 @@ Background:
 
 	Given the test users exist
 	Given the test projects exist
+
 	Given I am signed in as the following authenticated user:
 		|username |firstname |lastname |email          |password|password_confirmation|
 		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
 
 Scenario: Go to project details page
 	Given I am on the projects page
-	And I follow "More about Project4"
+	And I follow "Details" within ".project#project1"
 	Then I should be on the details page for Project4	
-	And I should see project details
+	And I should see details for Project4
 
 

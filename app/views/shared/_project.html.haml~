@@ -1,0 +1,25 @@
+.project{:id=>"project"+project.id.to_s}
+	%span.title
+		= project.title
+	%span.button 
+		=link_to 'Details', project_path(project)
+	%hr
+	.project_content
+		.project_info
+			%span.bold
+				Owner:
+			= project.owner
+			%span.spacing
+			%span.bold
+				Deadline:
+			= project.deadline.to_formatted_s(:long) unless project.deadline == nil
+			%br/
+			.bold
+				Description:			
+			%span.description
+				= (project.description.first(200) + "...") unless project.description == nil
+			%br
+			.detail.tags
+				Tags:
+				-project.tags.each do |tag|
+					%span.tag=tag.name

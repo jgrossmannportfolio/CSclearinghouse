@@ -30,12 +30,12 @@ describe UsersController do
 					post :index, {:usersort=>'firstname'}
 				end
 				it 'when sort is -lastname-' do
-					User.should_receive(:where).with("users.confirmed_at IS NOT NULL").should_receive(:order).with("lower(lastname)")
+					User.stub_chain(:where, :order)
 					session[:usersort] = 'lastname'
 					post :index, {:usersort=>'lastname'}
 				end
 				it 'when sort is -email-' do
-					User.should_receive(:where).with("users.confirmed_at IS NOT NULL").should_receive(:order).with("lower(email)")
+					User.stub_chain(:where, :order)
 					session[:usersort] = 'email'
 					post :index, {:usersort=>'email'}
 				end
