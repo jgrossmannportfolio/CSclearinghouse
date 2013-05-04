@@ -6,23 +6,9 @@ I want to be able to view details of a specific project
 
 Background:
 
-<<<<<<< HEAD
 	Given the test users exist
 	Given the test projects exist
-=======
-	Given the following projects exist: 
-		|id	| title       | description    | owner | deadline    |
-    |1	| Project4    | Test Project 4 | John  | May-10-2013 |
-    |2	|Project5    | Test Project 5 | Sean  | Jun-03-2014 |
 
-	Given the following users exist: 
-	  | username | firstname | lastname | email           | password | password_confirmation|
-		|testuser1 |user1first |user1last |user1@gmail.com  | password | password             |
-		|testuser2 |user2first |user2last |user2@colgate.edu| password | password             |
-		|testuser3 |user3first |user3last |user3@yahoo.com  | password | password             |
-		
-
->>>>>>> views
 	Given I am signed in as the following authenticated user:
 		|username |firstname |lastname |email          |password|password_confirmation|
 		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
@@ -31,6 +17,6 @@ Scenario: Go to project details page
 	Given I am on the projects page
 	And I follow "Details" within ".project#project1"
 	Then I should be on the details page for Project4	
-	And I should see project details
+	And I should see details for Project4
 
 

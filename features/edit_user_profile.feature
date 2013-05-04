@@ -23,12 +23,14 @@ Scenario: Edit a user's profile page
 	Given I am on the edit profile page for testuser1
 	When I fill in "Last Name" with "user1last"
 	And I fill in "New Skill Tag" with "testtag"
-	And I press "Update Profile Page"
+	And I press "Update Profile"
+	Then I should be on the profile page for testuser1
+	When I press "Edit"
 	Then I should be on the edit profile page for testuser1
 	And I should see "testtag"
 	When I check "testtag"
 	And I press "Update Profile"
-	Then I should be on the edit profile page for testuser1
+	Then I should be on the profile page for testuser1
 	Then I follow "My Profile"
 	And I should see "user1last"
 	And I should not see "testtag"

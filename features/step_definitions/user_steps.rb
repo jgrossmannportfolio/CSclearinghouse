@@ -61,6 +61,9 @@ end
 Then /I should not be able to follow (.*)/ do |link|
 	page.should_not have_link(link)
 end
+Then /I should not be able to press (.*)/ do |button|
+	page.should_not have_button(button)
+end
 
 Given /I am signed in as the following authenticated user/ do |user_table|
 	user_table.hashes.each do |user|

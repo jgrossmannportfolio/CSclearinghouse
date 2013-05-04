@@ -54,12 +54,15 @@ When /project (.*) gets approved/i do |project|
 	@project.save
 end
 
-Then /I should see project details/ do
-	project_attr = Project.accessible_attributes
-	project_attr.each do |attribute|
-		attribute = attribute.capitalize
-		assert page.body =~ /#{attribute}/
-	end
+Then /I should see details for (.*)/ do |title|
+		project = Project.find_by_title(title)
+		assert page.body =~ /#{project.title}/
+		assert page.body =~ /#{project.description}/
+		assert page.body =~ /#{project.owner}/
+		assert page.body =~ /#{project.deadline.to_formatted_s(:long) unless project.deadline == nil}/
+		project.tags.each do |tag|
+			assert page.body =~ /#{tag.name}/
+		end
 end
 
 When /^I confirm popup$/ do
@@ -72,4 +75,8 @@ Then /I should see all the projects/ do
 	end
 end
 
+When /I follow "(.*)" for "(.*)"/ do |link, project_title|
+	parent = "div#main div.content div#project#{Project.find_by_title(project_title).id}.project"
+  step "I follow \"#{link}\" within \"#{parent}\""
+end
 

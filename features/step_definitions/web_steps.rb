@@ -32,8 +32,8 @@ end
 World(WithinHelpers)
 
 # Single-line step scoper
-When /^(.*) within (.*[^:])$/ do |step, parent|
-  with_scope(parent) { When step }
+When /^(.*) within (.*[^:])$/ do |step_to_do, parent|
+  with_scope(parent) { step step_to_do }
 end
 
 # Multi-line step scoper
@@ -258,4 +258,5 @@ end
 Then /^I should see "(.*?)" before "(.*?)"$/ do |arg1, arg2|
   assert (page.body=~ /#{arg1}.*#{arg2}/m)
 end
+
 

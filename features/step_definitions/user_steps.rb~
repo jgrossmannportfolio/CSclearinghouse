@@ -41,7 +41,7 @@ Given /the sort test users exist/ do
 end
 	
 When /the user (.*) gets confirmed/ do |user|
-	user = user.find_by_username(user)
+	user = User.find_by_username(user)
 	user.confirmed_at = Time.now
 	user.save
 end
