@@ -44,7 +44,5 @@
       = f.password_field :current_password
     .small_spacing
     %div= f.submit "Update"
-  %p
-    %br/
     = button_to "Cancel my account", user_path(current_user), :confirm => "Are you sure?", :method => :delete
   = link_to "Back", :back

@@ -6,7 +6,7 @@
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
   = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
   %br/
-  = form_tag projects_path, :method => 'GET' do , :id => 'project_search_bar' 
+  = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
     = text_field_tag :search, params[:search]
     = submit_tag 'Search Clearinghouse', :name => nil
   %span.button 

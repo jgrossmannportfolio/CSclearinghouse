@@ -19,9 +19,7 @@
 		%br/
 		.spacing
 		-if @tags.size!=0
-			Skill Tags:
-			.spacing
-			Check to Delete:
+			Check to Delete Skill Tag:
 			- @tags.each do |tag|
 				%span.tag
 					= tag.name
@@ -33,6 +31,17 @@
 		.spacing
 		= submit_tag 'Update Profile'
 
+
+	%h4 Tags:
+	Check to Delete:
+	- @tags.each do |tag|
+		= tag.name
+		= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+	%br/
+	= label :tag, :name, 'New Tag'
+	= text_field :tag, :name
+	%br/
+	= submit_tag 'Update Profile Page'
 	=link_to 'Back to Profile', user_path(@user)
 	
 

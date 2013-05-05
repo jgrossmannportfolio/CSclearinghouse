@@ -1,6 +1,10 @@
 .content 
-  %h2 #{@user.username}'s Profile
-
+  .header #{@user.username}'s Profile
+%ul#profile
+  %li
+    = image_tag @user.avatar.url(:medium)
+  %li
+    First Name:
   .info#profile
     %span.bold
       First Name:

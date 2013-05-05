@@ -28,12 +28,11 @@
     = @user.aboutme
     .small_spacing
     %span.bold
-      Tags:
+      Skill Tags:
     - @user.tags.each do |tag|
       %span.tag= tag.name
   .small_spacing
   -if @edit_and_delete
     .buttons
       = button_to 'Edit', edit_user_path(@user), :method => :get
-      = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
   = link_to 'Back to user list', users_path

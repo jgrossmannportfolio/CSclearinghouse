@@ -1,5 +1,5 @@
 .content
-	%h2 Details about #{@project.title}
+	.header Details about #{@project.title}
 
 	.info
 		%span.bold
@@ -26,5 +26,9 @@
 		-if @update_and_delete
 			= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'			
 			= button_to 'Update', edit_project_path(@project), :method => :get
+		-else
+			If you are interested in this project, let the owner know:
+			%span.button 
+				= link_to 'Notify Owner', new_notification_path, :project => @project, :type=>"notify_project_owner_of_interest", :link => "/project/#{@project.id}"
 	.page_links 
 		= link_to 'Back to project list', projects_path
