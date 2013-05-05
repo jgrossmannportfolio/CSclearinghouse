@@ -2,9 +2,9 @@
   %h1 All Users
   = form_tag users_path, :method => 'GET' do 
     Search Users
-    = text_field_tag :search, params[:search]
+    = text_field_tag :search_string, params[:search]
     By
-    = select(:search_type, :selected, options_for_select([["First Name", "First Name"], ["Last Name", "Last Name"], ["Email", "Email"],["Username","Username"],["Tags","Tags"]]))
+    = select(:search_type, :selected, options_for_select([["First Name", "firstname"], ["Last Name", "lastname"], ["Email", "Email"],["Username","Username"],["Tags","Tags"]]))
     = submit_tag 'Search users', :name => nil
   %hr
   %table#users

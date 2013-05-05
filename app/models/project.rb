@@ -34,7 +34,12 @@ end
 
 def self.search(search,category)		
 	if search
-		find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
+		if category =~ /tags/i
+			tag = Tag.find_by_name(search)
+			tag.projects
+		else
+			find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
+		end
 	else
 		find(:all)
 	end

@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
       redirect_to :projectsort => projectsort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-		if params[:search_string]
+		if params[:search_string] != nil
 			attrib = params[:search_type][:selected]
 			search = params[:search_string]
 			@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering).search(search,attrib)
