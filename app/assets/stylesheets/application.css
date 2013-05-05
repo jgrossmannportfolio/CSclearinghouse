@@ -12,6 +12,14 @@
  *= require_tree .
 771D1C */
 
+th{
+text-align:left;
+}
+
+td,th{
+padding-right:10px;
+}
+
 .header{
   font-size: 2em;
   font-weight: bold;

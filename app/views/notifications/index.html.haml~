@@ -1,16 +1,19 @@
 .content
-  %h2 Notifications for #{@user.username}
-  %section.table#notifications
-    .table_head
-      %span#del Delete
-      %span#from From
-      %span#subj Subject
-      %span#mess Message
-    - @notifications.each do |notification|
-      .notification_content
-        = link_to 'X', notifications_path(notification), :method => :delete, :id => 'notification_delete'
-        %span#notification_from #{notification.from}
-        %span#notification_subject #{notification.subject}
-        %span#notification_message #{notification.message}
-      
-
+  .header Notifications for #{@user.username}
+  -if @notifications.size == 0
+    You have no notifications at this time.
+  -else
+    %table#notifications
+      %thead
+        %tr
+          %th.bold Delete
+          %th.bold From
+          %th.bold Subject
+          %td.bold Message
+      %tbody
+        - @notifications.each do |notification|
+          %tr
+            %td= link_to 'X', notifications_path(notification), :method => :delete, :id => 'notification_delete'
+            %td= notification.from
+            %td= notification.subject
+            %td= notification.message

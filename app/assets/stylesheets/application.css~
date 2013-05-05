@@ -12,6 +12,14 @@
  *= require_tree .
 771D1C */
 
+th{
+text-align:left;
+}
+
+td,th{
+margin-right:10px;
+}
+
 .header{
   font-size: 2em;
   font-weight: bold;
@@ -71,9 +79,6 @@ border: 3px inset;
 height:5em;
 }
 
-.content_body{
-float:left;
-}
 
 .project{
 border: 3px inset #FFD796;
