@@ -6,31 +6,36 @@
       = f.label 'First name'
       %br/
       = f.text_field :firstname, :autofocus => true
-    .spacing
+    .small_spacing
     %div
       = f.label 'Last name'
       %br/
       = f.text_field :lastname
-    .spacing
+    .small_spacing
     %div
       = f.label :email
       %br/
       = f.email_field :email
-    .spacing
+    .small_spacing
     %div
       = f.label :username
       %br/
       = f.text_field :username
-    .spacing
+    .small_spacing
     %div
       = f.label :password
       %br/
       = f.password_field :password
-    .spacing
+    .small_spacing
     %div
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation
+    .spacing
+    %div
+      = label :user, :avatar, 'Upload an avatar!'
+      %br/
+      = file_field :user, 'avatar'
     .spacing
     %div= f.submit "Sign up"
   = render "devise/shared/links"

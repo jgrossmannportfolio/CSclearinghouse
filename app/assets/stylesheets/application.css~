@@ -17,7 +17,7 @@ text-align:left;
 }
 
 td,th{
-margin-right:10px;
+padding-right:10px;
 }
 
 .header{
@@ -51,6 +51,7 @@ border-radius: 5px;
 background-color:orange;
 border-style:inset;
 border-color:orange;
+margin-right:10px;
 }
 .button a {
 color:white;
