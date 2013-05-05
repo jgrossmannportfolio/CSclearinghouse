@@ -31,4 +31,8 @@ class Notification < ActiveRecord::Base
 		@project_owner.notifications << @notification
 		flash[:notice] = "#{@project_owner} was just sent a notification of your interest."
 	end
+
+	def self.owner_notify_user_interest(params)
+	
+	end
 end

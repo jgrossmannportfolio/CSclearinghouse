@@ -15,7 +15,8 @@ class NotificationsController < ApplicationController
 		@notification_type = params[:type]
 		if @notification_type == 'notify_project_owner_of_interest'
 			Notification.notify_user_project_interest(params)
-		end
+		elsif @notification_type == 'owner notify user of interest'
+		flash.keep
 		redirect_to params[:link]
 	end
 
