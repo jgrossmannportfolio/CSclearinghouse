@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
 	attr_accessible :avatar
   	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/rails.png"
 
-  	validates_attachment :avatar, :presence => true,
+  	validates_attachment :avatar,
   		:content_type => { :content_type => "image/jpg" },
   		:size => { :in => 0..10.kilobytes }
 

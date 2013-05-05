@@ -12,6 +12,12 @@ class NotificationsController < ApplicationController
 	end
 
 	def create
+		@notification_type = params[:type]
+		if @notification_type == 'notify_project_owner_of_interest'
+			Notification.notify_user_project_interest(params)
+		end
+		flash.keep
+		redirect_to params[:link]
 	end
 
   def edit

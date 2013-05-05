@@ -25,7 +25,9 @@ def self.confirm_project(params)
 		if params[:status] == "true"
 			@project.confirmed_at = Time.now
 			@project.save!
+			Notification.notify_user_project_status(@project, 'approved')
 		else
+			Notification.notify_user_project_status(@project, 'denied')
 			@project.destroy
 		end
 end
