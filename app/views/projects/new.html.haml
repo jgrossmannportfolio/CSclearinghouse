@@ -10,12 +10,13 @@
     .spacing
     = label :project, :owner, 'Owner'
     %br/
-    = text_field :project, 'owner'
+    = text_field :project, 'owner', :disabled => 'disabled'
     %br/
     .spacing
-    = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
+    = label :project, :deadline, 'Deadline'
     %br/
-    = text_field :project, 'deadline'
+    = date_select(:project,:deadline, {:start_year => Time.now.year})
+    Note: you must select a date in the future
     %br/
     .spacing
     = label :tag, :name, "Tag"

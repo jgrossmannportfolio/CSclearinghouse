@@ -36,18 +36,35 @@ class ProjectsController < ApplicationController
 	end
 	
 	def new
+		@user = current_user
+		@project = Project.new :owner => @user.username
+	end
+
+	def deadline_validator(month, day)
+		current_month = Time.now.month
+		current_day = Time.now.day
+		if month <= current_month
+			if day < current_day
+				return false
+			end
+		end
+		return true
 	end
 
 	def create
-		@project = Project.create!(params[:project])
-		@user = current_user
-		Project.unconfirmed_project(@project, @user)
-		if (params[:tag][:name] != '' && params[:tag][:name] != nil)
-			@project.tags.create!(params[:tag])
-		end
-		@user.projects << @project
-    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
-    	redirect_to projects_path
+		#if !deadline_validator(params[:project][:deadline(2i)],params[:project][:deadline(3i)])
+			#redirect_to new_projects_path
+		#else
+			@project = Project.create!(params[:project])
+			@user = current_user
+			Project.unconfirmed_project(@project, @user)
+			if (params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@project.tags.create!(params[:tag])
+			end
+			@user.projects << @project
+	    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
+	    	redirect_to projects_path
+	    #end
 	end
 
   def edit
