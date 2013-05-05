@@ -1,11 +1,14 @@
 .content
-  %h2 Notifications for #{@user.username}
-  %section.table#notifications
+  .header Notifications for #{@user.username}
+  .table#notifications
     .table_head
-      %span#del Delete
-      %span#from From
-      %span#subj Subject
-      %span#mess Message
+      - if @notifications.count != 0
+        %span#del Delete
+        %span#from From
+        %span#subj Subject
+        %span#mess Message
+      else
+        %span#no_notifications You Have No Notifications
     - @notifications.each do |notification|
       .notification_content
         = link_to 'X', notifications_path(notification), :method => :delete, :id => 'notification_delete'
