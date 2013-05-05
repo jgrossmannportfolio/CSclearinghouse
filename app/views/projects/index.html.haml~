@@ -1,14 +1,26 @@
 .content
+<<<<<<< HEAD
   .header All Projects
     
   %span.page_links 
     =link_to 'Add New Project', new_project_path
   %br/
+=======
+  %div
+    .header All Projects
+>>>>>>> 8950f08fd46aa0a5bcb64c9b1c25af893da19e38
   Sort By: 
   = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
   = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
+  %br/
+  = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
+    = text_field_tag :search, params[:search]
+    = submit_tag 'Search Clearinghouse', :name => nil
+  %span.button 
+    =link_to 'Add New Project', new_project_path
   %hr
+<<<<<<< HEAD
   = form_tag projects_path, :method => 'GET' do 
     = text_field_tag :search, params[:search]
     = submit_tag 'Search Clearinghouse', :name => nil
@@ -33,6 +45,8 @@
           %td= link_to "More about #{project.title}", project_path(project)
           - project.tags.each do |tag|
             %td= tag.name
+=======
+>>>>>>> 8950f08fd46aa0a5bcb64c9b1c25af893da19e38
 
   - @projects.each do |project|
     = render "shared/project", :project => project

@@ -49,8 +49,8 @@
 {:title => 'Startup Website',
 :description => 'Vivamus sit amet nibh non arcu vestibulum iaculis. Quisque dictum, sapien vitae dignissim semper, felis felis interdum lacus, non tincidunt lectus elit sed diam. Cras et metus dui, at fringilla risus. Sed nisl turpis, luctus aliquet tincidunt ut, tempor at eros. Proin nec tortor ligula. Vestibulum adipiscing, diam non pellentesque commodo, libero libero elementum nulla, ac ornare ipsum magna non risus. Vestibulum odio diam, feugiat in suscipit non, malesuada in leo. Proin quis justo ante. Morbi sit amet magna diam, ut dictum eros.', 
 :owner => 'Sean Bjornsson', 
-:deadline => 'Feb-1-2014'},
- :confirmed_at => Time.now]
+:deadline => 'Feb-1-2014',
+ :confirmed_at => Time.now}]
 
 
 	projects.each do |project|
