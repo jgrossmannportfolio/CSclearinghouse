@@ -1,6 +1,10 @@
 .content 
-  %h2 #{@user.username}'s Profile
-
+  .header #{@user.username}'s Profile
+%ul#profile
+  %li
+    = image_tag @user.avatar.url(:medium)
+  %li
+    First Name:
   .info#profile
     %span.bold
       First Name:
@@ -24,12 +28,18 @@
     = @user.aboutme
     .small_spacing
     %span.bold
-      Tags:
+      Skill Tags:
     - @user.tags.each do |tag|
       %span.tag= tag.name
   .small_spacing
   -if @edit_and_delete
     .buttons
       = button_to 'Edit', edit_user_path(@user), :method => :get
-      = button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
+  -else
+    %div
+      Let this user know you are interested in colaborating with them:
+      %span.button 
+        = link_to 'Notify User', notifications_path(:project => @project, :type=>"owner notify user of interest", :link => "/users/#{@user.id}", :current_user => current_user), :method => :post
+    .small_spacing
+  .page_links 
   = link_to 'Back to user list', users_path

@@ -9,9 +9,17 @@ class NotificationsController < ApplicationController
 	end
 	
 	def new
+		
 	end
 
 	def create
+		@notification_type = params[:type]
+		if @notification_type == 'notify_project_owner_of_interest'
+			Notification.notify_user_project_interest(params)
+			flash[:notice] = "#{Project.find(params[:project]).user} was just sent a notification of your interest."
+		end
+		flash.keep
+		redirect_to params[:link]
 	end
 
   def edit
@@ -21,12 +29,9 @@ class NotificationsController < ApplicationController
 	end
 
 	def destroy
-<<<<<<< HEAD
     @notification = Notification.find(params[:id])
 		@user = @notification.user
     @notification.destroy
 		redirect_to(notifications_path)
-=======
->>>>>>> master
   end
 end

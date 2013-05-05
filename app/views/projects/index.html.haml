@@ -1,38 +1,20 @@
 .content
-  .header All Projects
-    
-  %span.page_links 
-    =link_to 'Add New Project', new_project_path
-  %br/
+  %div
+    .header All Projects
   Sort By: 
   = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
   = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
+  %br/
+  = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
+    Search Projects
+    = text_field_tag :search_string, params[:search]
+    By
+    = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tags","Tags"]]))
+    = submit_tag 'Submit search', :name => nil
+  %span.button  
+    =link_to 'Add New Project', new_project_path
   %hr
-  = form_tag projects_path, :method => 'GET' do 
-    = text_field_tag :search, params[:search]
-    = submit_tag 'Search Clearinghouse', :name => nil
-  %table#projects
-
-    %thead
-      %tr
-        %th{:class => @title_header}= link_to 'Title', projects_path( :projectsort => 'title')
-        %th Description
-        %th{:class => @owner_header}= link_to 'Project Owner', projects_path( :projectsort => 'owner')
-        %th{:class => @deadline_header}= link_to 'Deadline', projects_path( :projectsort => 'deadline')
-        %th Details
-        %th Tags
-
-    %tbody
-      - @projects.each do |project|
-        %tr
-          %td= project.title 
-          %td= project.description
-          %td= project.owner
-          %td= project.deadline.to_formatted_s(:long) unless project.deadline == nil
-          %td= link_to "More about #{project.title}", project_path(project)
-          - project.tags.each do |tag|
-            %td= tag.name
 
   - @projects.each do |project|
     = render "shared/project", :project => project

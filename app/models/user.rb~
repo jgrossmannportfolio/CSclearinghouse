@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
 	def self.unconfirmed_user(user)
 		@user = user
-		@notification = AdminNotification.create!(:message => "#{@user.firstname} #{@user.lastname} wishes to register for the CSclearinghouse! Confirm or deny the account please!", :admin_type => "user", :subject => "New User", :from => @user.username)
+		@notification = AdminNotification.new_user_message(@user)
 		user.admin_notification = @notification
 		user.save!
 	end
@@ -64,5 +64,26 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	
+	#adding user avatar
+	attr_accessible :avatar
+  	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/rails.png"
+
+<<<<<<< HEAD
+  	validates_attachment :avatar,
+=======
+  	validates_attachment :avatar, 
+#:presence => true,
+>>>>>>> 8950f08fd46aa0a5bcb64c9b1c25af893da19e38
+  		:content_type => { :content_type => "image/jpg" },
+  		:size => { :in => 0..10.kilobytes }
+
+	#simple user search method
+	def self.search(search)
+		if search
+			find(:all, :conditions => ['firstname LIKE ? OR lastname LIKE ? OR username LIKE ? OR aboutme LIKE ? OR email LIKE ?',"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
+		else
+			find(:all)
+		end
+	end
+
 end

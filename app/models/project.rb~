@@ -15,7 +15,7 @@ class Project < ActiveRecord::Base
 	end
 
 def self.unconfirmed_project(project, user)
-	@notification = AdminNotification.create!(:message => "#{user.firstname} #{user.lastname} wants to post a new project: '#{project.title}'. Confirm or deny the project please!", :admin_type => "project")
+	@notification = AdminNotification.new_project_message(user, project)
 	project.admin_notification = @notification
 	project.save!
 end
@@ -25,10 +25,30 @@ def self.confirm_project(params)
 		if params[:status] == "true"
 			@project.confirmed_at = Time.now
 			@project.save!
+			Notification.notify_user_project_status(@project)
 		else
+			Notification.notify_user_project_status(@project)
 			@project.destroy
 		end
 end
+
+def self.search(search)		
+	if search
+<<<<<<< HEAD
+
+		user_results = find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
+	else
+		user_results = find(:all)
+=======
+		find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
+	else
+		find(:all)
+>>>>>>> e5f33cdf042dceecab26df3fc1631793bc761944
+	end
+end
+
+
+
 	def deadlineslash
 		self.deadline.to_formatted_s(:slash)
 	end

@@ -25,19 +25,20 @@ def self.confirm_project(params)
 		if params[:status] == "true"
 			@project.confirmed_at = Time.now
 			@project.save!
+			Notification.notify_user_project_status(@project, 'approved')
 		else
+			Notification.notify_user_project_status(@project, 'denied')
 			@project.destroy
 		end
 end
 
-def self.search(search)		
+def self.search(search,category)		
 	if search
-		find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
+		find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
 	else
 		find(:all)
 	end
 end
-
 
 
 	def deadlineslash

@@ -1,7 +1,7 @@
 .content
 	%h2 Edit #{@user.username}'s Profile page
 
-	= form_tag user_path(@user), :method => :put do
+	= form_tag user_path(@user), :html => {:method => :put, :multipart => true} do
 
 		= label :user, :firstname, 'First Name'
 		%br/
@@ -13,9 +13,8 @@
 		= text_field :user, :lastname
 		%br/
 
-		= label :user, :avatar, 'Upload a customized avatar!'
 		%br/
-		= image_field :avatar
+		= file_field :user, :avatar
 		%br/
 		
 		= label :user, :aboutme, 'About Me'
@@ -34,21 +33,11 @@
 		= text_field :tag, :name
 		%br/
 		.spacing
+		
+		%br/
 		= submit_tag 'Update Profile'
 
-	=label :user, :avatar, 'Change your avatar.'
-	= file_field, :user, :avatar
-
-	%h4 Tags:
-	Check to Delete:
-	- @tags.each do |tag|
-		= tag.name
-		= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
-	%br/
-	= label :tag, :name, 'New Tag'
-	= text_field :tag, :name
-	%br/
-	= submit_tag 'Update Profile Page'
 	=link_to 'Back to Profile', user_path(@user)
+	=debug params
 	
 

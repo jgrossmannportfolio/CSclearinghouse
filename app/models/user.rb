@@ -54,6 +54,11 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def self.avatar
+		@user=User.find(param[:user])
+		@user.avatar_url = default_url
+	end
+
 	#creating log_in authentication by username or email
 	def self.find_first_by_auth_conditions(warden_conditions)
 		conditions = warden_conditions.dup
@@ -64,13 +69,13 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	mount_uploader :avatar, AvatarUploader
-	attr_accessible :avatar
+	
+
 
 	#simple user search method
-	def self.search(search)
+	def self.search(search,category)
 		if search
-			find(:all, :conditions => ['firstname LIKE ? OR lastname LIKE ? OR username LIKE ? OR aboutme LIKE ? OR email LIKE ? OR fullname LIKE ?',"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
+			find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
 		else
 			find(:all)
 		end

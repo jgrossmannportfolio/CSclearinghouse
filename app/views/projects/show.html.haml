@@ -16,15 +16,20 @@
 			= @project.description
 		%br/
 		.spacing
-		%span.bold
-			Tags:
-		-@project.tags.each do |tag|
-			%span.tag
-				=tag.name
-		.spacing
+		-if @project.tags.size != 0
+			%span.bold
+				Tags:
+			-@project.tags.each do |tag|
+				%span.tag
+					=tag.name
+			.spacing
 	.buttons
 		-if @update_and_delete
 			= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'			
 			= button_to 'Update', edit_project_path(@project), :method => :get
+		-else
+			If you are interested in this project, let the owner know:
+			%span.button 
+				= link_to 'Notify Owner', notifications_path(:project => @project, :type=>"notify_project_owner_of_interest", :link => "/projects/#{@project.id}", :current_user => current_user), :method => :post
 	.page_links 
 		= link_to 'Back to project list', projects_path

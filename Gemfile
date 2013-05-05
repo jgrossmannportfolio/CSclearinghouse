@@ -62,3 +62,4 @@ gem 'devise'
 gem 'haml'
 gem "paperclip", "~> 3.0"
 gem 'carrierwave'
+gem 'rmagick'

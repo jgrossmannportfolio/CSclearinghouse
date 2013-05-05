@@ -12,6 +12,26 @@
  *= require_tree .
 771D1C */
 
+#notification_count{
+display:inline-block;
+color:white;
+font-size:1.2em;
+position:relative;
+left:-16px;
+}
+
+#project_search_bar{
+display:inline-block;
+}
+
+th{
+text-align:left;
+}
+
+td,th{
+padding-right:10px;
+}
+
 .header{
   font-size: 2em;
   font-weight: bold;
@@ -43,6 +63,7 @@ border-radius: 5px;
 background-color:orange;
 border-style:inset;
 border-color:orange;
+margin-right:10px;
 }
 .button a {
 color:white;
@@ -71,9 +92,6 @@ border: 3px inset;
 height:5em;
 }
 
-.content_body{
-float:left;
-}
 
 .project{
 border: 3px inset #FFD796;

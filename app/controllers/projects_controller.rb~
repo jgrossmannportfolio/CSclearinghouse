@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_filter :auth_user
+	#before_filter :auth_user
 	def index
 		projectsort = params[:projectsort] || session[:projectsort]
     case projectsort
@@ -16,11 +16,8 @@ class ProjectsController < ApplicationController
       redirect_to :projectsort => projectsort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-<<<<<<< HEAD
-    @projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
-=======
-    @projects = Project.order(ordering)
->>>>>>> views
+    	@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering).search(params[:search])
+
 	end
 	
 	def show  
@@ -73,6 +70,7 @@ class ProjectsController < ApplicationController
 		if @project.admin_notification != nil
 			@project.admin_notification.destroy
 		end
+		AdminNotification.project_destroy_message(@project)
     @project.destroy
     flash[:notice] = "#{@project.title} deleted."
     redirect_to projects_path

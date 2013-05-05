@@ -8,7 +8,6 @@
 		.project_info
 			%span.bold
 				Owner:
-			= project.owner
 			%span.spacing
 			%span.bold
 				Deadline:
@@ -19,7 +18,7 @@
 			%span.description
 				= (project.description.first(200) + "...") unless project.description == nil
 			%br
-			.detail.tags
+			.bold.tags
 				Tags:
 				-project.tags.each do |tag|
 					%span.tag=tag.name

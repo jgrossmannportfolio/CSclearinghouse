@@ -20,7 +20,8 @@ class UsersController < ApplicationController
 		ordering = "lower(#{ordering})" unless ordering == 
 
 		if params[:search]
-    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(params[:search])
+			attrib = params[:search_type][:selected]
+    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(params[:search],attrib)
     	else
     		@users = User.all
     	end
