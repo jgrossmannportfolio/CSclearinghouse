@@ -29,6 +29,17 @@ def self.confirm_project(params)
 			@project.destroy
 		end
 end
+
+def self.search(search)		
+	if search
+		find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
+	else
+		find(:all)
+	end
+end
+
+
+
 	def deadlineslash
 		self.deadline.to_formatted_s(:slash)
 	end
