@@ -1,0 +1,10 @@
+%p #{@owner.username} would like you to consider working on their project!
+%br/
+%p Project details:
+%p Title: #{@project.title}
+%p Project owner: #{@owner.firstname} #{@owner.lastname}
+%p Owner contact: #{@owner.email}
+%p Deadline: #{@project.deadline}
+%p Description: #{@project.description}
+%br/
+%p Please respond back to the project owner as soon as possible.

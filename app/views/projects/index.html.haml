@@ -8,9 +8,12 @@
 
   %br/
   = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
-    = text_field_tag :search, params[:search]
-    = submit_tag 'Search Clearinghouse', :name => nil
-  %span.button 
+    Search Projects
+    = text_field_tag :search_string, params[:search]
+    By
+    = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tags","Tags"]]))
+    = submit_tag 'Submit search', :name => nil
+  %span.button  
     =link_to 'Add New Project', new_project_path
   %hr
   - @projects.each do |project|

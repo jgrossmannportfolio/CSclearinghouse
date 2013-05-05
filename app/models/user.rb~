@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :firstname, :lastname, :aboutme, :username, :tag_ids, :project_ids
-	attr_accessible :reset_password_token, :confirmed_at
+  attr_accessible :reset_password_token, :confirmed_at
 
 	has_many :projects, :dependent => :destroy
 	has_many :notifications, :dependent => :destroy
@@ -45,6 +45,7 @@ class User < ActiveRecord::Base
 			#send user email notification
 			#user_email = {:email => @user.email}
 			#send_devise_notification(:user_email)
+			UserMailer.welcome_email(@user)
 			@notificaiton = Notification.welcome_message(@user)
 			@user.notifications << @notification
 			@user.confirmed_at = Time.now
@@ -52,6 +53,11 @@ class User < ActiveRecord::Base
 		else
 			@user.destroy
 		end
+	end
+
+	def self.avatar
+		@user=User.find(param[:user])
+		@user.avatar_url = default_url
 	end
 
 	#creating log_in authentication by username or email
@@ -64,23 +70,18 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	#adding user avatar
-	attr_accessible :avatar
-  	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/rails.png"
+	
 
-<<<<<<< HEAD
-  	validates_attachment :avatar,
-=======
-  	validates_attachment :avatar, 
-#:presence => true,
->>>>>>> 8950f08fd46aa0a5bcb64c9b1c25af893da19e38
-  		:content_type => { :content_type => "image/jpg" },
-  		:size => { :in => 0..10.kilobytes }
 
 	#simple user search method
-	def self.search(search)
+	def self.search(search,category)
 		if search
-			find(:all, :conditions => ['firstname LIKE ? OR lastname LIKE ? OR username LIKE ? OR aboutme LIKE ? OR email LIKE ?',"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
+			if category =~ /tags/i 
+				tag = Tag.find_by_name(search)
+				tag.users
+			else
+				find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
+			end
 		else
 			find(:all)
 		end
