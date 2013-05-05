@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :firstname, :lastname, :aboutme, :username, :tag_ids, :project_ids
-	attr_accessible :reset_password_token, :confirmed_at
+  attr_accessible :reset_password_token, :confirmed_at
 
 	has_many :projects, :dependent => :destroy
 	has_many :notifications, :dependent => :destroy
@@ -64,18 +64,13 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	#adding user avatar
+	mount_uploader :avatar, AvatarUploader
 	attr_accessible :avatar
-  	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/rails.png"
-
-  	validates_attachment :avatar, :presence => true,
-  		:content_type => { :content_type => "image/jpg" },
-  		:size => { :in => 0..10.kilobytes }
 
 	#simple user search method
 	def self.search(search)
 		if search
-			find(:all, :conditions => ['firstname LIKE ? OR lastname LIKE ? OR username LIKE ? OR aboutme LIKE ? OR email LIKE ?',"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
+			find(:all, :conditions => ['firstname LIKE ? OR lastname LIKE ? OR username LIKE ? OR aboutme LIKE ? OR email LIKE ? OR fullname LIKE ?',"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
 		else
 			find(:all)
 		end
