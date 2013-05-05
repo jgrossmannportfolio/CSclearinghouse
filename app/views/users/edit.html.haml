@@ -31,6 +31,19 @@
 		.spacing
 		= submit_tag 'Update Profile'
 
+	=label :user, :avatar, 'Change your avatar.'
+	= file_field, :user, :avatar
+
+	%h4 Tags:
+	Check to Delete:
+	- @tags.each do |tag|
+		= tag.name
+		= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+	%br/
+	= label :tag, :name, 'New Tag'
+	= text_field :tag, :name
+	%br/
+	= submit_tag 'Update Profile Page'
 	=link_to 'Back to Profile', user_path(@user)
 	
 

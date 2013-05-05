@@ -17,9 +17,13 @@ class UsersController < ApplicationController
 			flash.keep
       redirect_to :usersort => usersort and return
     end
-		ordering = "lower(#{ordering})" unless ordering == nil
-    @users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
+		ordering = "lower(#{ordering})" unless ordering == 
 
+		if params[:search]
+    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(params[:search])
+    	else
+    		@users = User.all
+    	end
 	end
 	
 	def show
@@ -37,14 +41,7 @@ class UsersController < ApplicationController
 
 	def new
 	end
-
-	#def create
-	#	@user = User.create!(params[:user])
-   # 	flash[:notice] = "Congratulations #{@user.username}! You have
-   # 	sucessfully registered to the CS clearinghouse!"
-   # 	redirect_to users_path
-	#end
-
+	
 	def update
 			confirmed_user(params[:id])
 	    @user = User.find params[:id]
