@@ -1,5 +1,6 @@
 .content
   .header Notifications for #{@user.username}
+<<<<<<< HEAD
   -if @notifications.size == 0
     You have no notifications at this time.
   -else
@@ -13,7 +14,8 @@
       %tbody
         - @notifications.each do |notification|
           %tr
-            %td= link_to 'X', notifications_path(notification), :method => :delete, :id => 'notification_delete'
+            %td= link_to 'X', notification_path(notification), :method => :delete, :id => 'notification_delete'
             %td= notification.from
             %td= notification.subject
             %td= notification.message
+
