@@ -19,6 +19,9 @@
           %span.page_links= link_to 'Edit Account Info', edit_user_registration_path
           %span.page_links= link_to 'My Profile', user_path(current_user)
           %span.page_links= link_to 'Notifications', notifications_path
+          %span
+            #notification_count
+              = "(#{current_user.notifications.size})"
         - else
           %span.page_links= link_to 'Login', new_user_session_path 
           %span.page_links= link_to 'Create an Account', new_user_registration_path

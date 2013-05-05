@@ -30,6 +30,6 @@
 		-else
 			If you are interested in this project, let the owner know:
 			%span.button 
-				= link_to 'Notify Owner', new_notification_path, :project => @project, :type=>"notify_project_owner_of_interest", :link => "/project/#{@project.id}"
+				= link_to 'Notify Owner', notifications_path(:project => @project, :type=>"notify_project_owner_of_interest", :link => "/projects/#{@project.id}", :current_user => current_user), :method => :post
 	.page_links 
 		= link_to 'Back to project list', projects_path

@@ -21,24 +21,24 @@ class Notification < ActiveRecord::Base
 	end
 
 	def self.notify_user_project_interest(params)
-		@project_owner = params[:project].user
-		@user = current_user
-		@link = link_to "#{@user.username}", user_path(@user) 
-		@message = "#{@link} is interested in your project: #{params[:project].title}"
-		@subject = "Interest in #{params[:project]}"
-		@from = params[:project].user
+		@project = Project.find(params[:project])
+		@project_owner = @project.user
+		@user = User.find(params[:current_user])
+		@message = "#{@user.username} is interested in your project: #{@project.title}"
+		@subject = "Interest in #{@project.title}"
+		@from = @user.username
 		@notification = Notification.create!(:from => @from, :subject => @subject, :message => @message)
 		@project_owner.notifications << @notification
-		flash[:notice] = "#{@project_owner} was just sent a notification of your interest."
+		
 	end
 
 	def self.owner_notify_user_interest(params)
 		@project = Project.find(params[:project])
 		@owner = @project.user
 		@user = User.find(params[:user])
-		@message = "#{@user.username} wants you to work on their project: '#{@project.title}'!"
+		@message = "#{@owner.username} wants you to work on their project: '#{@project.title}'!"
 		@subject = "Are you interested?"
-		@from = @owner
+		@from = @owner.username
 		@notification = Notification.create!(:from => @from, :subject => @subject, :message => @message)
 		@user.notifications << @notification
 	end

@@ -1,9 +1,7 @@
-= javascript_include_tag :defaults
-<<<<<<< HEAD
-
-%h1 Home Page
-
-=======
 .content
-	%h1 Home Page
->>>>>>> views
+	.header Home Page
+	.bold
+		Most Recent Projects:
+	%hr
+	-Project.order("created_at").first(3).each do |project|
+		= render "shared/project", :project => project

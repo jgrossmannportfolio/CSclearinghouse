@@ -34,9 +34,16 @@ end
 
 def self.search(search)		
 	if search
+<<<<<<< HEAD
+
+		user_results = find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
+	else
+		user_results = find(:all)
+=======
 		find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
 	else
 		find(:all)
+>>>>>>> e5f33cdf042dceecab26df3fc1631793bc761944
 	end
 end
 

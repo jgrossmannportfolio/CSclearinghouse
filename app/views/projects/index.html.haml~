@@ -6,11 +6,9 @@
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
   = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
 <<<<<<< HEAD
-  = form_tag projects_path, :method => 'GET' do 
-    = text_field_tag :search, params[:search]
-    = submit_tag 'Search Clearinghouse', :name => nil
-  %hr
+
 =======
+>>>>>>> 92d4e000063cdeb285959bdf5a9a7890598033f8
   %br/
   = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
     = text_field_tag :search, params[:search]
@@ -18,8 +16,10 @@
   %span.button 
     =link_to 'Add New Project', new_project_path
   %hr
+<<<<<<< HEAD
+=======
 
->>>>>>> 8950f08fd46aa0a5bcb64c9b1c25af893da19e38
+>>>>>>> 92d4e000063cdeb285959bdf5a9a7890598033f8
   - @projects.each do |project|
     = render "shared/project", :project => project
 

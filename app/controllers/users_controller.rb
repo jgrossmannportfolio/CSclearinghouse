@@ -31,6 +31,8 @@ class UsersController < ApplicationController
 		id = params[:id]
 		@user = User.find(id)
 		@edit_and_delete = (@user == current_user)
+		@current_user_projects = current_user.projects.where("confirmed_at IS NOT NULL")
+    @current_user_projects = @current_user_projects.map {|project| [project.title, project.id] }
 	end
 	
 	def edit
