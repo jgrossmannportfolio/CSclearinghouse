@@ -6,4 +6,29 @@ class Notification < ActiveRecord::Base
 		Notification.create!(:message => "Welcome to CSclearinghouse!", :subject => 'Welcome', :from => 'CSclearinghouse')
 	end
 
+	def self.notify_user_project_status(project, status)
+		@user = project.user
+		if(status == 'approved')
+			@message = "Your project: '#{project.title}' has been approved by an administrator! It will now appear on the website."
+			@subject = "Project Approved"
+		else
+			@message = "Your project: '#{project.title}' has been denied by an administrator! You should receive an email from the administrator informing you of the reason for the project being denied."
+			@subject = "Project Denied"
+		end
+		@from = 'Automated'
+		@notification = Notification.create!(:from => @from, :subject => @subject, :message => @message)
+		@user.notifications << @notification
+	end
+
+	def self.notify_user_project_interest(params)
+		@project = Project.find(params[:project])
+		@project_owner = @project.user
+		@user = User.find(params[:current_user])
+		@message = "#{@user.username} is interested in your project: #{@project.title}"
+		@subject = "Interest in #{@project.title}"
+		@from = @user.username
+		@notification = Notification.create!(:from => @from, :subject => @subject, :message => @message)
+		@project_owner.notifications << @notification
+		
+	end
 end

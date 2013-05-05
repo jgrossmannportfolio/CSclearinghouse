@@ -58,9 +58,7 @@
 	end
 
 	users = [{:username => 'TCharron480', :firstname => 'Thomas', :lastname => 'Charron', :email => 'tcharron@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'JGrossmann', :firstname => 'John', :lastname => 'Grossmann', :email => 'jgrossmann@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'SBjornsson', :firstname => 'Sean', :lastname => 'Bjornsson', :email => 'sbjornsson@colgate.edu', :password => 'password', :confirmed_at => Time.now}]
-=begin
-	users = [{:username => 'TCharron480', :firstname => 'Thomas', :lastname => 'Charron', :email => 'tcharron@colgate.edu'}, {:username => 'JGrossmann', :firstname => 'John', :lastname => 'Grossmann', :email => 'jgrossmann@colgate.edu'}, {:username => 'SBjornsson', :firstname => 'Sean', :lastname => 'Bjornsson', :email => 'sbjornsson@colgate.edu'}]
-=end
+
 	users.each do |user|
 		User.create!(user)
 	end

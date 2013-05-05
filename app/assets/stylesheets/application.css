@@ -12,6 +12,14 @@
  *= require_tree .
 771D1C */
 
+#notification_count{
+display:inline-block;
+color:white;
+font-size:1.2em;
+position:relative;
+left:-16px;
+}
+
 #project_search_bar{
 display:inline-block;
 }
@@ -133,7 +141,7 @@ margin-right:15px;
 #account_info{
 float:right;
 position:relative;
-top:-25px;
+top:-27px;
 }
 
 a{

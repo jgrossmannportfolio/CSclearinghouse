@@ -29,7 +29,12 @@
 		= text_field :tag, :name
 		%br/
 		.spacing
+		
+		= label :user, :avatar, 'Change your avatar.'
+		= file_field :user, :avatar
+		%br/
 		= submit_tag 'Update Profile'
+
 	=link_to 'Back to Profile', user_path(@user)
 	
 
