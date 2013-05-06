@@ -1,6 +1,6 @@
 %div#sidebar
-	%li#homepage_link= link_to 'Home', home_index_path, :class => 'sidebarlink link'
-	%li#all_projects_link= link_to 'All Projects', projects_path, :class => 'sidebarlink link'
-	%li#new_project_link= link_to 'Add Project', new_project_path, :class => 'sidebarlink link'
-	%li#all_users_link= link_to 'All Users', users_path, :class => 'sidebarlink link'
-	%li= link_to 'CS Homepage', 'cs.colgate.edu', :class => 'sidebarlink link'
+	%li#homepage_link= link_to 'Home', home_index_path
+	%li#all_projects_link= link_to 'All Projects', projects_path
+	%li#new_project_link= link_to 'Add Project', new_project_path
+	%li#all_users_link= link_to 'All Users', users_path
+	%li= link_to 'CS Homepage', 'cs.colgate.edu'

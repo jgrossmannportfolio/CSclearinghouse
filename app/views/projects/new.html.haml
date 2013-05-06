@@ -7,27 +7,27 @@
     %br/
     = text_field :project, 'title'
     %br/
-    .spacing
+    .small_spacing
     = label :project, :owner, 'Owner'
     %br/
     = text_field :project, 'owner'
     %br/
-    .spacing
+    .small_spacing
     = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
     %br/
     = text_field :project, 'deadline'
     %br/
-    .spacing
+    .small_spacing
     = label :tag, :name, "Tag"
     %br/
     = text_field :tag, 'name'
     %br/
-    .spacing
+    .small_spacing
     = label :project, :description, 'Description'
     %br/
     = text_area :project, 'description'
     %br/
-    .spacing
+    .small_spacing
     = submit_tag 'Create Project'
   .page_links
     =link_to 'Back to all projects', projects_path
