@@ -21,12 +21,14 @@ describe ProjectsController do
 
 	describe 'updating a project' do
 		it 'should update a project' do
+			@fake_project = mock(Project, :title => "project1", :id =>"1", :deadline => "08-09-2014", :owner => @fake_user.username)
+			params = {:project=> {:deadline => "08-08-2014"} }
+			controller.stub!(:deadline_validator).with(params).and_return(true)
 			controller.stub!(:confirmed_project).with("1")
-			@fake_project = mock(Project, :title => "project1", :id =>"1")
 			Project.stub!(:find).with("1").and_return(@fake_project)
-			@fake_project.stub!(:update_attributes!).and_return(true)
+			@fake_project.stub!(:update_attributes!).with(@fake_project).and_return(true)
 			@tags = @fake_project.stub!(:tags).and_return([])
-      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}, :tags => {}}
+      		put :update, {:id => "1", :project => @fake_project, :tag => {:name => ""}, :tags => {}, :deadline => "08-08-2014", :owner => "testuser1"}
      		response.should redirect_to(project_path(@fake_project))
      		flash[:notice].should == "project1 was successfully updated."
 		end
@@ -34,8 +36,9 @@ describe ProjectsController do
 
 	describe 'creating and deleting projects' do
 		it 'should create a new project' do
+			controller.stub!(:deadline_validator).with([:project =>[:deadline => "09-09-2014"]]).and_return(true)
 			ProjectsController.stub(:create).and_return(mock('Project'))
-			post :create, {:id => "1", :tag => {:name => ""}}
+			post :create, {:id => "1", :tag => {:name => ""}, :deadline => "08-08-2014", :owner => @fake_user.username}
 		end
 
 		it 'delete a project' do

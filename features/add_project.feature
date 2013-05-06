@@ -28,8 +28,7 @@ Scenario: Add project to projects page
  Given I am on the Add Project Page
  When I fill in "Title" with "Pancakes"
  And I fill in "Description" with "An incredibly exciting project!"
- And I fill in "Owner" with "Mrs. Buttersworth"
- And I fill in "Deadline" with "5-Aug-2013"
+ And I fill in "Deadline" with "08-08-2013"
  And I fill in "Tag" with "new tag"
  And I press "Create Project"
  Then I should be on the Projects Page
@@ -38,6 +37,6 @@ Scenario: Add project to projects page
  And I am on the projects page
  Then I should see "Pancakes"
  And I should see "An incredibly exciting project!"
- And I should see "Mrs. Buttersworth"
- And I should see "August 5, 2013"
+ And I should see "testuser1"
+ And I should see "August 8, 2013"
  And I should see "new tag"

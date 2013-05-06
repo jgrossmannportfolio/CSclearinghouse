@@ -2,7 +2,6 @@
   .header Update  #{@project.title}
 
   = form_tag project_path(@project), :method => :put do
-
     .bold= label :project, :title, 'Title'
     = text_field :project, 'title'
     .small_spacing
@@ -10,7 +9,7 @@
     = text_field :project, 'owner', :disabled =>'disabled'
     .small_spacing
     .bold= label :project, :deadline, 'Deadline (dd-mm-yyyy)'
-    = text_field :project, 'deadline', :value=> (@project.deadline == nil ? @project.deadline : @project.deadlineslash)
+    = text_field :project, 'deadline', :value=> (@project.deadline.to_datetime.strftime("%d-%m-%Y"))
     .small_spacing
     -if @tags.size!=0
       .small_spacing

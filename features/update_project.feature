@@ -20,18 +20,12 @@ Scenario: Update a project from projects page
 	Then I should be on the Details Page for Project4
 	When I press "Update"
 	Then I should be on the Edit Page for Project4
-	And I fill in "Owner" with "Santa Claus"
-	And I fill in "New Tag" with "testtag"
+	And I fill in "Description" with "new update"
+	And I fill in "Deadline" with "06-06-2014"
 	When I press "Update Project Info"
-	Then I should be on the Details Page for Project4
-	And I should see "testtag"
-	When I press "Update"
-	Then I should be on the Edit Page for Project4
-	When I check "testtag"
-	And I press "Update Project Info"
-	Then I should see "Santa Claus"
-	And I should not see "Mrs. Buttersworth"
-	And I should not see "testtag"
+	Then I should be on the details page for Project4
+	And I should see "new update"
+	
 
 Scenario: unauthorized user should not be able to update a project
 	Given I am on the Projects Page

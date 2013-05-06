@@ -19,7 +19,7 @@ Scenario: Viewing admin project attributes
 	Given I am on the admin projects page
 	When I follow View for admin project Project4
 	Then I should be on the admin project page for Project4
-	And I should see "Fake Person 1"
+	And I should see "testuser1"
 
 Scenario: editing an admin project
 	Given I am on the admin projects page

@@ -8,6 +8,8 @@
 		.project_info
 			%span.bold
 				Owner:
+
+			= link_to "#{project.owner}", user_path(User.find_by_username(project.owner))
 			%span.spacing
 			%span.bold
 				Deadline:
