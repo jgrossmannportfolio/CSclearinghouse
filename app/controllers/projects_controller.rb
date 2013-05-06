@@ -23,9 +23,9 @@ class ProjectsController < ApplicationController
 		else
 			@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
 		end
-		
-    	
-
+		if @projects == nil
+			flash[:notice] = "Your search returned no matches."
+		end
 	end
 	
 	def show  
@@ -38,16 +38,35 @@ class ProjectsController < ApplicationController
 	def new
 	end
 
-	def create
-		@project = Project.create!(params[:project])
-		@user = current_user
-		Project.unconfirmed_project(@project, @user)
-		if (params[:tag][:name] != '' && params[:tag][:name] != nil)
-			@project.tags.create!(params[:tag])
+	def deadline_validator(deadline)
+		if deadline =~ /^([0-9][0-9])-([0-9][0-9])-([0-9][0-9][0-9][0-9])$/
+			if Date.parse(deadline) <= Date.today
+				return false
+			else
+				return true
+			end
+		else
+			return false
 		end
-		@user.projects << @project
-    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
-    	redirect_to projects_path
+	end
+
+	def create
+		if !deadline_validator(params[:project][:deadline])
+			flash[:notice] = "Invalid deadline."
+			redirect_to new_project_path
+		else
+			@project = Project.create!(params[:project])
+	 		@user = current_user
+			@project.owner = @user.username
+			@project.save!
+			Project.unconfirmed_project(@project, @user)
+			if (params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@project.tags.create!(params[:tag])
+			end
+			@user.projects << @project
+	    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
+	    	redirect_to projects_path
+	    end
 	end
 
   def edit
