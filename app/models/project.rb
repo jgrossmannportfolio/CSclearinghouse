@@ -3,6 +3,7 @@
 
 class Project < ActiveRecord::Base
 	attr_accessible :title, :body, :description, :owner, :deadline, :tag_ids, :user_id, :confirmed_at
+attr_accessible :tag
 	has_and_belongs_to_many :tags
 	belongs_to :user
 	has_one :admin_notification, :dependent => :destroy

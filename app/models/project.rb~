@@ -47,3 +47,5 @@ end
 		self.deadline.to_formatted_s(:slash)
 	end
 end
+
+Date::DATE_FORMATS[:slash] = "%d/%m/%Y"
