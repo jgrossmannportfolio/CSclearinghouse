@@ -54,11 +54,6 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def self.avatar
-		@user=User.find(param[:user])
-		@user.avatar_url = default_url
-	end
-
 	#creating log_in authentication by username or email
 	def self.find_first_by_auth_conditions(warden_conditions)
 		conditions = warden_conditions.dup
