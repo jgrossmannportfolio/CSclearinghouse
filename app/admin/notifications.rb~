@@ -1,5 +1,15 @@
 ActiveAdmin.register Notification do
 
+	index do 
+		selectable_column                           
+    column :subject
+		column :user
+		column :from
+		column :message
+		column :created_at
+		column :updated_at                                 
+    default_actions                   
+  end
 	controller do
 		def create
 			@notification = Notification.new(params[:notification])

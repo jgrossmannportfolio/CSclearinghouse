@@ -44,9 +44,6 @@ def self.search(search,category)
 	end
 end
 
-	def deadlineslash
-		self.deadline.to_formatted_s(:slash)
-	end
 end
 
 Date::DATE_FORMATS[:slash] = "%d/%m/%Y"

@@ -58,8 +58,12 @@ class UsersController < ApplicationController
 					@user.tags.find_by_name(tag).delete
 				end
 			end
-			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
-				@user.tags.create!(params[:tag])
+			if(params[:tag][:name] != '' && params[:tag][:name] != nil && @user.tags.find_by_name(params[:tag][:name]) == nil)
+				if @tag = Tag.find_by_name(params[:tag][:name])
+						@user.tags << @tag
+				else
+					@user.tags.create!(params[:tag])
+				end
 			end
 			@tags = @user.tags
 	    flash[:notice] = "#{@user.username}'s profile was successfully updated."

@@ -54,6 +54,10 @@ module NavigationHelpers
 		when /^the admin project page for (.*)$/i then "/admin/projects/#{Project.find_by_title($1).id}"
 		when /^the edit admin project page for (.*)$/i then "/admin/projects/#{Project.find_by_title($1).id}/edit"
 
+		#admin notifications
+		when /^the admin notifications page$/i then "/admin/notifications"
+		when /^the admin notification page for the notification of (.*)$/i then "/admin/notifications/#{Project.find_by_title($1).admin_notification.id}"
+
 
     else
       begin

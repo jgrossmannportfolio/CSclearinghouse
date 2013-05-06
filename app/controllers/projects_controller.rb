@@ -88,8 +88,12 @@ class ProjectsController < ApplicationController
 						@project.tags.find_by_name(tag).delete
 					end
 				end
-				if(params[:tag][:name] != '' && params[:tag][:name] != nil)
-					@project.tags.create!(params[:tag])
+				if(params[:tag][:name] != '' && params[:tag][:name] != nil && @project.tags.find_by_name(params[:tag][:name]) == nil)
+					if @tag = Tag.find_by_name(params[:tag][:name])
+						@project.tags << @tag
+					else
+						@project.tags.create!(params[:tag])
+					end
 				end
 				@tags = @project.tags
 	      flash[:notice] = "#{@project.title} was successfully updated."

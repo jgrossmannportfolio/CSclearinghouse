@@ -1,0 +1,31 @@
+Feature: contact other users in order to build working relationships
+
+As a site user
+So I can successfully work on projects
+I wish to be able to contact, or be contacted by other users
+
+Background:
+	Given the test projects exist
+
+	Given the test users exist
+		
+	Given I am signed in as the following authenticated user:
+		|username |firstname |lastname |email          |password|password_confirmation|
+		|testuser2|user2first|user2last|user2@gmail.com|password|password             |
+
+Scenario: Notify user of self interest in working on their project
+	Given I am on the details page for Project4
+	When I follow "Notify Owner"
+	Then I should be on the details page for Project4
+	And I should see "testuser1 was just sent a notification of your interest."
+	
+Scenario: Notify user of self interest in having them work on my project
+	Given I sign out
+	Given I am signed in as the following authenticated user:
+		|username |firstname |lastname |email          |password|password_confirmation|
+		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
+	Given I am on the profile page for testuser2
+	When I press "Notify User"
+	Then I should be on the profile page for testuser2
+	And I should see "testuser2 was sent a notification of your interest"
+	

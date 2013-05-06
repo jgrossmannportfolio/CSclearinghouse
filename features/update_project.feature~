@@ -21,6 +21,7 @@ Scenario: Update a project from projects page
 	When I press "Update"
 	Then I should be on the Edit Page for Project4
 	And I fill in "Description" with "new update"
+	And I fill in "Deadline" with "06-06-2014"
 	When I press "Update Project Info"
 	Then I should be on the details page for Project4
 	And I should see "new update"

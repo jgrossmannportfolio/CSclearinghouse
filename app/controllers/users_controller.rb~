@@ -14,11 +14,7 @@ class UsersController < ApplicationController
     end
     if params[:usersort] != session[:usersort]
     	session[:usersort] = usersort
-<<<<<<< HEAD
-		flash.keep
-=======
 			flash.keep
->>>>>>> 12b44007f72ef7e6e6ab998274d1f0b74f6d2fc3
     	redirect_to :usersort => usersort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
@@ -27,11 +23,7 @@ class UsersController < ApplicationController
 			search = params[:search_string]
     		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(search,attrib)
     	else
-<<<<<<< HEAD
-    		@users = User.where("users.confirmed_at IS NOT NULL")
-=======
-    		@users = User.where("projects.confirmed_at IS NOT NULL").order(ordering)
->>>>>>> 12b44007f72ef7e6e6ab998274d1f0b74f6d2fc3
+    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
     	end
 	end
 	

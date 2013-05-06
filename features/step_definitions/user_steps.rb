@@ -5,6 +5,11 @@ Given /the following users exist/ do |users_table|
 	users_table.hashes.size.should == User.all.count
 end
 
+Given /I sign out/ do
+	visit '/home'
+	click_link 'Logout'
+end
+
 Given /I register unconfirmed users/ do
 	visit '/users/sign_up'
 	fill_in "user_firstname", :with => 'testfirst'
@@ -83,5 +88,24 @@ Then /I am not signed in/ do
 	step %{I should see "Currently not signed in"}
 	step %{I should not see "Logout"}
 end
+
+Then /I should see all the users/ do
+	User.all.each do |user|
+		assert page.body =~ /#{user.username}/
+	end
+end
+
+Then /I should see all users with username "(.*)"/ do |username|
+	
+	@users = User.find_by_username(username)
+	if @users
+		@users.each do |user|
+			assert page.body =~ /#{user.firstname}/
+		end
+	else
+		nil
+	end
+end
+
 
 	

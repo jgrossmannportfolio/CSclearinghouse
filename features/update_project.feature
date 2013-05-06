@@ -29,6 +29,6 @@ Scenario: Update a project from projects page
 
 Scenario: unauthorized user should not be able to update a project
 	Given I am on the Projects Page
-	And I follow "Details" for "Project5"
-	Then I should be on the details page for Project5
+	And I follow "Details" for "Project6"
+	Then I should be on the details page for Project6
 	And I should not be able to press Update

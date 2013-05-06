@@ -21,5 +21,5 @@ Scenario: Delete a project from projects page
 	And I should not see "Fake Person 1"
 
 Scenario: Unauthorized user should not be able to delete a project
-	Given I am on the details page for Project5
+	Given I am on the details page for Project6
 	Then I should not be able to click Delete

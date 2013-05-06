@@ -8,7 +8,7 @@ end
 
 Given /the test projects exist/ do
 	FactoryGirl.create(:project)
-	FactoryGirl.create(:project, title: 'Project5', description: 'Test Project 5', owner: 'testuser1', deadline: '22-12-2013')
+	FactoryGirl.create(:project, title: 'Project5', description: 'Test Project 5', owner: 'testuser1', deadline: '22-12-2013', user_id: 1)
 end
 	
 Given /I create unconfirmed projects/ do
@@ -21,7 +21,7 @@ Given /I create unconfirmed projects/ do
 	visit '/projects/new'
 	fill_in "Title", :with => "test2project"
 	fill_in "Description", :with => "test unconfirmed project2"
-	fill_in "Deadline (dd-mm-yyyy)", :with => "02-01-2013"
+	fill_in "Deadline (dd-mm-yyyy)", :with => "02-08-2013"
 	fill_in "Tag", :with => "test tag2"
 	click_on "Create Project"
 end
@@ -78,3 +78,14 @@ When /I follow "(.*)" for "(.*)"/ do |link, project_title|
   step "I follow \"#{link}\" within \"#{parent}\""
 end
 
+Then /I should see all projects owned by "(.*)"/ do |username|
+	@user = User.find_by_username(username)
+	if @user
+		@projects = @user.projects
+		@projects.each do |project|
+			assert page.body =~ /#{project.title}/
+		end
+	else
+		nil
+	end
+end

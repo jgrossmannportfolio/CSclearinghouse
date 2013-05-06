@@ -8,7 +8,8 @@ end
 
 Given /the test projects exist/ do
 	FactoryGirl.create(:project)
-	FactoryGirl.create(:project, title: 'Project5', description: 'Test Project 5', owner: 'testuser1', deadline: '22-12-2013')
+	FactoryGirl.create(:project, title: 'Project5', description: 'Test Project 5', owner: 'testuser1', deadline: '22-12-2013', user_id: 1)
+	FactoryGirl.create(:project, title: 'Project6', description: 'Test Project 6', owner: 'testuser2', deadline: '25-11-2014', user_id: 2)
 end
 	
 Given /I create unconfirmed projects/ do
@@ -78,3 +79,14 @@ When /I follow "(.*)" for "(.*)"/ do |link, project_title|
   step "I follow \"#{link}\" within \"#{parent}\""
 end
 
+Then /I should see all projects owned by "(.*)"/ do |username|
+	@user = User.find_by_username(username)
+	if @user
+		@projects = @user.projects
+		@projects.each do |project|
+			assert page.body =~ /#{project.title}/
+		end
+	else
+		nil
+	end
+end

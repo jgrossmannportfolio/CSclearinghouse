@@ -50,6 +50,7 @@ When /I (.*) the admin user notification for (.*)/ do |link, user|
 	end
 end
 
+
 When /I (.*) the admin project notification for (.*)/ do |link, project|
 	id = Project.find_by_title(project).admin_notification.id
 	within("tr#admin_notification_#{id}") do

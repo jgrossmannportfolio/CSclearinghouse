@@ -44,5 +44,16 @@ Scenario: new project sends a notification to admin to confirm or deny
 	Then I should be on the admin dashboard
 	And I should not see "test2project"
 	
+Scenario: view and act on notifications in admin notifications index
+	Given I am signed in as the following authenticated user:
+		|username |firstname |lastname |email          |password|password_confirmation|
+		|testuser1|user1first|user1last|user1@gmail.com|password|password             |
+	Given I create unconfirmed projects
+	When I go to the admin notifications page
+	Then I should see "testproject"
+	And I should see "test2project"
+	When I go to the admin notification page for the notification of testproject
+	Then I should see "New Project"
+
 	
 	
