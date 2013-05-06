@@ -42,6 +42,7 @@ describe ProjectsController do
 		    fake_project = mock(Project, :title => "Fake Project 1", :description => "Fun Stuff" , :owner => "Mickey Mouse", :deadline => "12-Dec-2013", :id => "1")
 		    Project.stub!(:find).with("1").and_return(fake_project)
 				fake_project.stub!(:admin_notification).and_return(nil)
+				AdminNotification.stub!(:project_destroy_message).with(fake_project)
 		    fake_project.should_receive(:destroy)
 		    delete :destroy, {:id => "1"}
 		    response.should redirect_to("/projects")

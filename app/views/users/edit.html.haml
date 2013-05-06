@@ -1,7 +1,7 @@
 .content
 	%h2 Edit #{@user.username}'s Profile page
 
-	= form_tag user_path(@user), :html => {:method => :put, :multipart => true} do
+	= form_tag user_path(@user), :method => :put, :html => {:method => :put, :multipart => true} do
 
 		= label :user, :firstname, 'First Name'
 		%br/
@@ -11,10 +11,6 @@
 		= label :user, :lastname, 'Last Name'
 		%br/
 		= text_field :user, :lastname
-		%br/
-
-		%br/
-		= file_field :user, :avatar
 		%br/
 		
 		= label :user, :aboutme, 'About Me'

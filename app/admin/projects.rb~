@@ -7,7 +7,7 @@ ActiveAdmin.register Project do
 		t.column :id
 		t.column "Status" do |project|
 			if project.confirmed_at == nil
-				link_to("Confirm", admin_notifications_path(project.admin_notification, :path => "/admin/projects", :status => true, :project => project), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(project.admin_notification, :path => "/admin/projects", :status => false, :project => project), :method => :delete)
+				link_to("Confirm", admin_notifications_delete_path(project.admin_notification, :path => "/admin/projects", :status => true, :project => project, :type => project.admin_notification.admin_type), :method => :delete) + "  " + link_to("Deny", admin_notifications_delete_path(project.admin_type, :path => "/admin/projects", :status => false, :project => project, :type => project.admin_notification.admin_type), :method => :delete)
 			else
 				"CONFIRMED"
 			end
@@ -25,7 +25,7 @@ ActiveAdmin.register Project do
 				row :id
 				row "Status" do |project|
 			if project.confirmed_at == nil
-				link_to("Confirm", admin_notifications_path(project.admin_notification, :path => "/admin/projects/#{project.id}", :status => true, :project => project), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(project.admin_notification, :path => "/admin/projects", :status => false, :project => project), :method => :delete)
+				link_to("Confirm", admin_notifications_delete_path(project.admin_notification, :path => "/admin/projects/#{project.id}", :status => true, :project => project, :type => project.admin_notification.admin_type), :method => :delete) + "  " + link_to("Deny", admin_notifications_delete_path(project.admin_notification, :path => "/admin/projects", :status => false, :project => project, :type => project.admin_notification.admin_type), :method => :delete)
 			else
 				"CONFIRMED"
 			end

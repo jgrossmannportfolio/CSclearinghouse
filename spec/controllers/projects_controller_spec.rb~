@@ -18,17 +18,6 @@ describe ProjectsController do
 			post :show, {:id => 1}
 		end
 	end
-	
-=begin 
-	describe 'editing a project' do
-		it 'should update instance variables'
-			Project.should_receive(:find)
-			get :edit, {:id => 1}
-			assigns(@project).should_not be_nil
-			assigns(@tags).should_not be_nil
-		end
-	end
-=end
 
 	describe 'updating a project' do
 		it 'should update a project' do

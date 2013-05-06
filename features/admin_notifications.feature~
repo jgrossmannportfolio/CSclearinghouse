@@ -20,10 +20,10 @@ Scenario: new user sends a notification to admin to confirm or deny
 	And I should see "test2first"
 	And I should see "Confirm"
 	And I should see "Deny"
-	When I follow Confirm for admin user notification for testman
+	When I Confirm the admin user notification for testman
 	Then I should be on the admin dashboard
 	And I should not see "testfirst"
-	When I follow Deny for admin user notification for testman2
+	When I Deny the admin user notification for testman2
 	Then I should be on the admin dashboard
 	And I should not see "test2first"
 
@@ -37,10 +37,10 @@ Scenario: new project sends a notification to admin to confirm or deny
 	And I should see "test2project"
 	And I should see "Confirm"
 	And I should see "Deny"
-	When I follow Confirm for admin project notification for testproject
+	When I Confirm the admin project notification for testproject
 	Then I should be on the admin dashboard
 	And I should not see "testproject"
-	When I follow Deny for admin project notification for test2project
+	When I Deny the admin project notification for test2project
 	Then I should be on the admin dashboard
 	And I should not see "test2project"
 	

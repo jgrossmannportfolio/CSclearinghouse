@@ -19,12 +19,15 @@
           %span.page_links= link_to 'Edit Account Info', edit_user_registration_path
           %span.page_links= link_to 'My Profile', user_path(current_user)
           %span.page_links= link_to 'Notifications', notifications_path
+          %span
+            #notification_count
+              = "(#{current_user.notifications.size})"
         - else
           %span.page_links= link_to 'Login', new_user_session_path 
           %span.page_links= link_to 'Create an Account', new_user_registration_path
         %br/
       %div#homeimage
-      - [:notice, :error, :success].each do |key|
+      - [:notice, :error, :success, :warning, :alert].each do |key|
         - unless flash[key].blank?
           %p{ :class => "flash #{key}" }= flash[key] 
 
@@ -35,6 +38,6 @@
           #warning.message= flash[:warning]
         - elsif flash[:alert]
           #alert.message= flash[:alert]
-
+      = devise_error_messages!
       = render "shared/sidebar"
       = yield

@@ -4,11 +4,11 @@
   %div
     = f.label 'First name'
     %br/
-    = f.text_field :firstname, :autofocus => true
+    = f.text_field :firstname, :autofocus => true, :required => true
   %div
     = f.label 'Last name'
     %br/
-    = f.text_field :lastname
+    = f.text_field :lastname, :required => true
   %div
     = f.label :email
     %br/

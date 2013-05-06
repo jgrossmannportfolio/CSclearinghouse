@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :tags
 	has_one :admin_notification, :dependent => :destroy
 
+	validates_presence_of :firstname
+	validates_presence_of :lastname
 	#virtual attribute for authenticating by either username or email
   attr_accessor :login
 	attr_accessible :login
@@ -42,9 +44,6 @@ class User < ActiveRecord::Base
 			if @user.confirmation_token == nil
 				@user.confirmation_token
 			end
-			#send user email notification
-			#user_email = {:email => @user.email}
-			#send_devise_notification(:user_email)
 			UserMailer.welcome_email(@user).deliver
 			@notificaiton = Notification.welcome_message(@user)
 			@user.notifications << @notification

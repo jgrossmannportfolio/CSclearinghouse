@@ -11,12 +11,12 @@ ActiveAdmin::Dashboards.build do
 			end
 			t.column do |n|
 				if n.admin_type == 'user' || n.admin_type == 'project'
-					link_to "Confirm", admin_notifications_delete_path(n, :path => "/admin", :status => "true", :project => n.project), :method => :delete
+					link_to "Confirm", admin_notifications_delete_path(n, :path => "/admin", :status => "true", :project => n.project, :type => n.admin_type, :user => n.user), :method => :delete
 				end
 			end
 			column do |n|
 				if n.admin_type == 'user' || n.admin_type == 'project'
-				link_to "Deny", admin_notifications_delete_path(n, :path => "/admin", :status => "false", :project => n.project), :method => :delete
+				link_to "Deny", admin_notifications_delete_path(n, :path => "/admin", :status => "false", :project => n.project, :type => n.admin_type, :user => n.user), :method => :delete
 				end
 			end
 			t.column :subject

@@ -45,27 +45,27 @@ Scenario: Confirming/denying an admin user via admin user index page
 	And I should see "test2first"
 	And I should see "Confirm"
 	And I should see "Deny"
-	When I follow Confirm for admin user testman
+	When I follow Confirm for admin user testman2
 	Then I should be on the admin users page
-	And I should see "test2first"
-	And I should see CONFIRMED for admin user testman
-	When I follow Deny for admin user testman2
+	And I should see "testfirst"
+	And I should see CONFIRMED for admin user testman2
+	When I follow Deny for admin user testman
 	Then I should be on the admin users page
-	And I should not see "test2first"
+	And I should not see "testfirst"
 
 Scenario: Confirming/denying an admin user via admin user page
 	Given I register unconfirmed users
-	When I go to the admin user page for testman
+	When I go to the admin user page for testman2
 	Then I should see "Confirm"
 	And I should see "Deny"
 	When I follow "Confirm"
-	Then I should be on the admin user page for testman
+	Then I should be on the admin user page for testman2
 	And I should see "CONFIRMED"
-	When I go to the admin user page for testman2
+	When I go to the admin user page for testman
 	Then I should see "Deny"
 	When I follow "Deny"
 	Then I should be on the admin users page
-	And I should not see "test2first"
+	And I should not see "testfirst"
 	
 Scenario: An unconfirmed user should not appear on the users index
 	Given I register unconfirmed users

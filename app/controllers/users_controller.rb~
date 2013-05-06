@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	before_filter :auth_user
 	def index 
 		usersort = params[:usersort] || session[:usersort]
-		case usersort
+	case usersort
     when 'username'
     	ordering,@username_header = :username, 'hilite'
     when 'firstname'
@@ -13,16 +13,17 @@ class UsersController < ApplicationController
       ordering,@email_header = :email, 'hilite'
     end
     if params[:usersort] != session[:usersort]
-      session[:usersort] = usersort
-			flash.keep
-      redirect_to :usersort => usersort and return
+    	session[:usersort] = usersort
+		flash.keep
+    	redirect_to :usersort => usersort and return
     end
-		ordering = "lower(#{ordering})" unless ordering == 
-
-		if params[:search]
-    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(params[:search])
+		ordering = "lower(#{ordering})" unless ordering == nil
+		if params[:search_string] != nil
+			attrib = params[:search_type][:selected]
+			search = params[:search_string]
+    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(search,attrib)
     	else
-    		@users = User.all
+    		@users = User.where("users.confirmed_at IS NOT NULL")
     	end
 	end
 	
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
 		id = params[:id]
 		@user = User.find(id)
 		@edit_and_delete = (@user == current_user)
-		@current_user_projects = current_user.projects.where("current_user.projects.confirmed_at IS NOT NULL")
+		@current_user_projects = current_user.projects.where("confirmed_at IS NOT NULL")
     @current_user_projects = @current_user_projects.map {|project| [project.title, project.id] }
 	end
 	
@@ -42,6 +43,9 @@ class UsersController < ApplicationController
 	end
 
 	def new
+		flash[:notice] = "Your account was sent to an administrator. You will be notified and be able to login once reviewed."
+		flash.keep
+		redirect_to '/home'
 	end
 	
 	def update

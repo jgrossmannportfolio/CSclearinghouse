@@ -20,10 +20,10 @@ class AdminNotificationsController < ApplicationController
 
 	def destroy
     @notification = AdminNotification.find(params[:id])
-		if params[:user]
+		if params[:type] == "user"
 			User.confirm_user(params)
 		end
-		if params[:project]
+		if params[:project] == "project"
 			Project.confirm_project(params)
 		end
     @notification.destroy

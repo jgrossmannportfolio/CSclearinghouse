@@ -20,12 +20,12 @@ Scenario: new user sends a notification to admin to confirm or deny
 	And I should see "test2first"
 	And I should see "Confirm"
 	And I should see "Deny"
-	When I Confirm the admin user notification for testman
-	Then I should be on the admin dashboard
-	And I should not see "testfirst"
-	When I Deny the admin user notification for testman2
+	When I Confirm the admin user notification for testman2
 	Then I should be on the admin dashboard
 	And I should not see "test2first"
+	When I Deny the admin user notification for testman
+	Then I should be on the admin dashboard
+	And I should not see "testfirst"
 
 Scenario: new project sends a notification to admin to confirm or deny
 	Given I am signed in as the following authenticated user:

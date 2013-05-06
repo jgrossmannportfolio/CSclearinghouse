@@ -18,7 +18,7 @@ ActiveAdmin.register User do
 		column :id
 		column "Status" do |user|
 			if user.confirmed_at == nil
-				link_to("Confirm", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => true, :user => user), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user), :method => :delete)
+				link_to("Confirm", admin_notifications_delete_path(user.admin_notification, :path => "/admin/users", :status => true, :user => user, :type => 'user'), :method => :delete) + "  " + link_to("Deny", admin_notifications_delete_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user, :type => 'user'), :method => :delete)
 			else
 				"CONFIRMED"
 			end
@@ -38,7 +38,7 @@ ActiveAdmin.register User do
 				row :id
 				row "Status" do |user|
 			if user.confirmed_at == nil
-				link_to("Confirm", admin_notifications_path(user.admin_notification, :path => "/admin/users/#{user.id}", :status => true, :user => user), :method => :delete) + "  " + link_to("Deny", admin_notifications_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user), :method => :delete)
+				link_to("Confirm", admin_notifications_delete_path(user.admin_notification, :path => "/admin/users/#{user.id}", :status => true, :user => user, :type => user.admin_notification.admin_type), :method => :delete) + "  " + link_to("Deny", admin_notifications_delete_path(user.admin_notification, :path => "/admin/users", :status => false, :user => user, :type => user.admin_notification.admin_type), :method => :delete)
 			else
 				"CONFIRMED"
 			end

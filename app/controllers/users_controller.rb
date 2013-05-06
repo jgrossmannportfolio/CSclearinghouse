@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 			search = params[:search_string]
     		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering).search(search,attrib)
     	else
-    		@users = User.all
+    		@users = User.where("users.confirmed_at IS NOT NULL").order(ordering)
     	end
 	end
 	
@@ -43,6 +43,9 @@ class UsersController < ApplicationController
 	end
 
 	def new
+		flash[:notice] = "Your account was sent to an administrator. You will be notified and be able to login once reviewed."
+		flash.keep
+		redirect_to '/home'
 	end
 	
 	def update
