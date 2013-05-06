@@ -12,6 +12,7 @@
     By
     = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tag","Tag"]]))
     = submit_tag 'Submit search', :name => nil
+  =debug params
   %span.button
     = link_to 'Clear search', projects_path
   %span.button  

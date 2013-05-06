@@ -1,6 +1,6 @@
 Feature: Confirm or deny newly created projects
 
-As a website owner
+As a website administrator
 In order to regulate the projects that are allowed on the website
 I want to confirm or deny newly created projects
 

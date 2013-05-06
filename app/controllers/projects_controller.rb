@@ -71,25 +71,30 @@ class ProjectsController < ApplicationController
 
   def edit
       @project = Project.find params[:id] 
-			@tags = @project.tags
+	  @tags = @project.tags
   end
 
   def update
-			confirmed_project(params[:id])
-      @project = Project.find params[:id] 
-      @project.update_attributes! params[:project] 
-			if(params[:tags] != nil)
-				tags = params[:tags].keys
-				tags.each do |tag|
-					@project.tags.find_by_name(tag).delete
+  	if !deadline_validator(params[:project][:deadline])
+			flash[:notice] = "Invalid deadline."
+			redirect_to edit_project_path
+	else
+		  confirmed_project(params[:id])
+	      @project = Project.find params[:id] 
+	      @project.update_attributes! params[:project] 
+				if(params[:tags] != nil)
+					tags = params[:tags].keys
+					tags.each do |tag|
+						@project.tags.find_by_name(tag).delete
+					end
 				end
-			end
-			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
-				@project.tags.create!(params[:tag])
-			end
-			@tags = @project.tags
-      flash[:notice] = "#{@project.title} was successfully updated."
-      redirect_to project_path(@project)
+				if(params[:tag][:name] != '' && params[:tag][:name] != nil)
+					@project.tags.create!(params[:tag])
+				end
+				@tags = @project.tags
+	      flash[:notice] = "#{@project.title} was successfully updated."
+	      redirect_to project_path(@project)
+  	end
   end
 
 	def destroy
