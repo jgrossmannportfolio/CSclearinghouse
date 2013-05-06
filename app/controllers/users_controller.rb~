@@ -17,7 +17,9 @@ class UsersController < ApplicationController
 			flash.keep
     	redirect_to :usersort => usersort and return
     end
-		ordering = "lower(#{ordering})" unless ordering == nil
+		if ordering != 'deadline'
+			ordering = "lower(#{ordering})" unless ordering == nil
+		end
 		if params[:search_string] != nil
 			attrib = params[:search_type][:selected]
 			search = params[:search_string]

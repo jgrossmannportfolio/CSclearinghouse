@@ -14,9 +14,6 @@ class Devise::RegistrationsController < DeviseController
 		
     if resource.save
 			User.unconfirmed_user(resource)
-			flash[:notice] = "Your account was sent to an administrator. You will be notified and be able to login once reviewed."
-			flash.keep
-			redirect_to '/home' and return
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_up(resource_name, resource)
@@ -61,6 +58,13 @@ class Devise::RegistrationsController < DeviseController
 
   protected
 
+	def destroy
+    resource.destroy
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    set_flash_message :notice, :destroyed if is_navigational_format?
+    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+  end
+
   def update_needs_confirmation?(resource, previous)
     resource.respond_to?(:pending_reconfirmation?) &&
       resource.pending_reconfirmation? &&
@@ -95,7 +99,7 @@ class Devise::RegistrationsController < DeviseController
   # The default url to be used after updating a resource. You need to overwrite
   # this method in your own RegistrationsController.
   def after_update_path_for(resource)
-    signed_in_root_path(resource)
+    root_path
   end
 
   # Authenticates the current scope and gets the current resource from the session.

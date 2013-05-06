@@ -54,6 +54,9 @@ class UsersController < ApplicationController
 			confirmed_user(params[:id])
 	    @user = User.find params[:id]
 	    @user.update_attributes!(params[:user])
+		if params[:password_confirmation]
+			redirect_to edit_user_registration_path
+		end
 			if(params[:tags] != nil)
 				tags = params[:tags].keys
 				tags.each do |tag|
