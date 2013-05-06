@@ -7,9 +7,9 @@
     = text_field :project, 'title'
     .small_spacing
     .bold= label :project, :owner, 'Owner'
-    = text_field :project, 'owner'
+    = text_field :project, 'owner', :disabled =>'disabled'
     .small_spacing
-    .bold= label :project, :deadline, 'Deadline (dd/mm/yyyy)'
+    .bold= label :project, :deadline, 'Deadline (dd-mm-yyyy)'
     = text_field :project, 'deadline', :value=> (@project.deadline == nil ? @project.deadline : @project.deadlineslash)
     .small_spacing
     -if @tags.size!=0

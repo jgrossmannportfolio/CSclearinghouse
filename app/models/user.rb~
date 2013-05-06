@@ -49,8 +49,6 @@ class User < ActiveRecord::Base
 			@user.notifications << @notification
 			@user.confirmed_at = Time.now
 			@user.save!
-			flash[:notice] = "Your account was sent to an administrator. You will be notified and be able to login once reviewed."
-			flash.keep
 		else
 			@user.destroy
 		end
@@ -87,5 +85,4 @@ class User < ActiveRecord::Base
 			find(:all)
 		end
 	end
-
 end

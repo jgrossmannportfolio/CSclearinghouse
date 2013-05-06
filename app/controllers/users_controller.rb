@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     end
     if params[:usersort] != session[:usersort]
     	session[:usersort] = usersort
-		flash.keep
+			flash.keep
     	redirect_to :usersort => usersort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil

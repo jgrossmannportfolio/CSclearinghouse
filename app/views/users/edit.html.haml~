@@ -1,23 +1,29 @@
 .content
 	%h2 Edit #{@user.username}'s Profile page
 
-	= form_tag edit_user_path(@user), :method => :put, :html => {:method => :put, :multipart => true} do
+<<<<<<< HEAD
+	= form_tag user_path(@user), :method => :put, :html => {:method => :put, :multipart => true} do
+=======
+	= form_tag user_path(@user), :method => :put do
+>>>>>>> 12b44007f72ef7e6e6ab998274d1f0b74f6d2fc3
 
 		= label :user, :firstname, 'First Name'
 		%br/
 		= text_field :user, :firstname
-		%br/
-	
+		.small_spacing
 		= label :user, :lastname, 'Last Name'
 		%br/
 		= text_field :user, :lastname
+<<<<<<< HEAD
 		%br/
 		
+=======
+		.small_spacing
+>>>>>>> 12b44007f72ef7e6e6ab998274d1f0b74f6d2fc3
 		= label :user, :aboutme, 'About Me'
 		%br/
 		= text_area :user, :aboutme, :class => 'small_text_area'
-		%br/
-		.spacing
+		.small_spacing
 		-if @tags.size!=0
 			Check to Delete Skill Tag:
 			- @tags.each do |tag|
@@ -27,13 +33,11 @@
 			.spacing
 		= label :tag, :name, 'New Skill Tag'
 		= text_field :tag, :name
-		%br/
 		.spacing
-		
 		%br/
 		= submit_tag 'Update Profile'
 
 	=link_to 'Back to Profile', user_path(@user)
-	=debug params
+
 	
 

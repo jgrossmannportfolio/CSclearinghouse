@@ -23,9 +23,9 @@ class ProjectsController < ApplicationController
 		else
 			@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
 		end
-		
-    	
-
+		if @projects == nil
+			flash[:notice] = "Your search returned no matches."
+		end
 	end
 	
 	def show  
@@ -38,39 +38,63 @@ class ProjectsController < ApplicationController
 	def new
 	end
 
-	def create
-		@project = Project.create!(params[:project])
-		@user = current_user
-		Project.unconfirmed_project(@project, @user)
-		if (params[:tag][:name] != '' && params[:tag][:name] != nil)
-			@project.tags.create!(params[:tag])
+	def deadline_validator(deadline)
+		if deadline =~ /^([0-9][0-9])-([0-9][0-9])-([0-9][0-9][0-9][0-9])$/
+			if Date.parse(deadline) <= Date.today
+				return false
+			else
+				return true
+			end
+		else
+			return false
 		end
-		@user.projects << @project
-    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
-    	redirect_to projects_path
+	end
+
+	def create
+		if !deadline_validator(params[:project][:deadline])
+			flash[:notice] = "Invalid deadline."
+			redirect_to new_project_path
+		else
+			@project = Project.create!(params[:project])
+	 		@user = current_user
+			@project.owner = @user.username
+			@project.save!
+			Project.unconfirmed_project(@project, @user)
+			if (params[:tag][:name] != '' && params[:tag][:name] != nil)
+				@project.tags.create!(params[:tag])
+			end
+			@user.projects << @project
+	    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
+	    	redirect_to projects_path
+	    end
 	end
 
   def edit
       @project = Project.find params[:id] 
-			@tags = @project.tags
+	  @tags = @project.tags
   end
 
   def update
-			confirmed_project(params[:id])
-      @project = Project.find params[:id] 
-      @project.update_attributes! params[:project] 
-			if(params[:tags] != nil)
-				tags = params[:tags].keys
-				tags.each do |tag|
-					@project.tags.find_by_name(tag).delete
+  	if !deadline_validator(params[:project][:deadline])
+			flash[:notice] = "Invalid deadline."
+			redirect_to edit_project_path
+	else
+		  confirmed_project(params[:id])
+	      @project = Project.find params[:id] 
+	      @project.update_attributes! params[:project] 
+				if(params[:tags] != nil)
+					tags = params[:tags].keys
+					tags.each do |tag|
+						@project.tags.find_by_name(tag).delete
+					end
 				end
-			end
-			if(params[:tag][:name] != '' && params[:tag][:name] != nil)
-				@project.tags.create!(params[:tag])
-			end
-			@tags = @project.tags
-      flash[:notice] = "#{@project.title} was successfully updated."
-      redirect_to project_path(@project)
+				if(params[:tag][:name] != '' && params[:tag][:name] != nil)
+					@project.tags.create!(params[:tag])
+				end
+				@tags = @project.tags
+	      flash[:notice] = "#{@project.title} was successfully updated."
+	      redirect_to project_path(@project)
+  	end
   end
 
 	def destroy
