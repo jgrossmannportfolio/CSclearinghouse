@@ -84,4 +84,23 @@ Then /I am not signed in/ do
 	step %{I should not see "Logout"}
 end
 
+Then /I should see all the users/ do
+	User.all.each do |user|
+		assert page.body =~ /#{user.username}/
+	end
+end
+
+Then /I should see all users with username "(.*)"/ do |username|
+	
+	@users = User.find_by_username(username)
+	if @users
+		@users.each do |user|
+			assert page.body =~ /#{user.firstname}/
+		end
+	else
+		nil
+	end
+end
+
+
 	

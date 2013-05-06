@@ -78,3 +78,14 @@ When /I follow "(.*)" for "(.*)"/ do |link, project_title|
   step "I follow \"#{link}\" within \"#{parent}\""
 end
 
+Then /I should see all projects owned by "(.*)"/ do |username|
+	@user = User.find_by_username(username)
+	if @user
+		@projects = @user.projects
+		@projects.each do |project|
+			assert page.body =~ /#{project.title}/
+		end
+	else
+		nil
+	end
+end
