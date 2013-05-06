@@ -1,22 +1,16 @@
 .content
   .header Create New Project
-
+  
   = form_tag projects_path do
 
     = label :project, :title, 'Title'
     %br/
-    = text_field :project, 'title'
+    = text_field :project, 'title', :required => true
     %br/
     .spacing
-    = label :project, :owner, 'Owner'
+    = label :project, :deadline, 'Deadline (mm-dd-yyyy)'
     %br/
-    = text_field :project, 'owner', :disabled => 'disabled'
-    %br/
-    .spacing
-    = label :project, :deadline, 'Deadline'
-    %br/
-    = date_select(:project,:deadline, {:start_year => Time.now.year})
-    Note: you must select a date in the future
+    = text_field :project, 'deadline', :required => true
     %br/
     .spacing
     = label :tag, :name, "Tag"

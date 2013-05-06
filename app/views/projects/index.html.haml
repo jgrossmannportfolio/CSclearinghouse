@@ -5,20 +5,20 @@
   = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
   = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
-  =debug params
-
   %br/
   = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
     Search Projects
     = text_field_tag :search_string, params[:search]
     By
-    = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tags","Tags"]]))
+    = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tag","Tag"]]))
     = submit_tag 'Submit search', :name => nil
-  = button_to 'Clear search', projects_path
+  %span.button
+    = link_to 'Clear search', projects_path
   %span.button  
     =link_to 'Add New Project', new_project_path
   %hr
-  - @projects.each do |project|
-    = render "shared/project", :project => project
+  -if @projects
+    - @projects.each do |project|
+      = render "shared/project", :project => project
 
  
