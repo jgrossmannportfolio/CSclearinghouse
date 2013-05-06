@@ -1,8 +1,5 @@
 .content 
   .header #{@user.username}'s Profile
-%ul#profile
-  %li
-    First Name:
   .info#profile
     %span.bold
       First Name:
@@ -38,7 +35,7 @@
       Let this user know you are interested in colaborating with them:
       = form_tag notifications_path(:user => @user, :type => "owner notify user of interest", :link => "/users/#{@user.id}", :current_user => current_user), :method => :post do
         = select_tag(:project, options_for_select(@current_user_projects))
-        %span.button= submit_tag "Notify User"
+        = submit_tag "Notify User"
     .small_spacing
   .page_links 
   = link_to 'Back to user list', users_path

@@ -1,34 +1,29 @@
 .content
   .header Create New Project
-
+  
   = form_tag projects_path do
 
     = label :project, :title, 'Title'
     %br/
-    = text_field :project, 'title'
+    = text_field :project, 'title', :required => true
     %br/
     .spacing
-    = label :project, :owner, 'Owner'
+    = label :project, :deadline, 'Deadline (mm-dd-yyyy)'
     %br/
-    = text_field :project, 'owner'
+    = text_field :project, 'deadline', :required => true
     %br/
-    .spacing
-    = label :project, :deadline, 'Deadline (dd/mm/yyyy)'
-    %br/
-    = text_field :project, 'deadline'
-    %br/
-    .spacing
-    = label :tag, :name, "Tag"
+    .small_spacing
+     = label :tag, :name, "Tag"
     %br/
     = text_field :tag, 'name'
     %br/
-    .spacing
+    .small_spacing
     = label :project, :description, 'Description'
     %br/
     = text_area :project, 'description'
     %br/
-    .spacing
+    .small_spacing
     = submit_tag 'Create Project'
-
-  =link_to 'Back to all projects', projects_path
-  =link_to "Back to Clearinghouse Home", home_index_path
+  .page_links
+    =link_to 'Back to all projects', projects_path
+    =link_to "Back to Clearinghouse Home", home_index_path

@@ -11,11 +11,11 @@ class Notification < ActiveRecord::Base
 		if(status == 'approved')
 			@message = "Your project: '#{project.title}' has been approved by an administrator! It will now appear on the website."
 			@subject = "Project Approved"
-			UserMailer.approved_project_email(@user,project)
+			UserMailer.approved_project_email(@user,project).deliver
 		else
 			@message = "Your project: '#{project.title}' has been denied by an administrator! You should receive an email from the administrator informing you of the reason for the project being denied."
 			@subject = "Project Denied"
-			UserMailer.denied_project_email(@user, project)
+			UserMailer.denied_project_email(@user, project).deliver
 		end
 		@from = 'Automated'
 		@notification = Notification.create!(:from => @from, :subject => @subject, :message => @message)
@@ -24,7 +24,7 @@ class Notification < ActiveRecord::Base
 
 	def self.notify_user_project_interest(params)
 		@project = Project.find(params[:project])
-		@project_owner = @project.user
+		@project_owner = Project.find(@project).user
 		@user = User.find(params[:current_user])
 		@message = "#{@user.username} is interested in your project: #{@project.title}"
 		@subject = "Interest in #{@project.title}"

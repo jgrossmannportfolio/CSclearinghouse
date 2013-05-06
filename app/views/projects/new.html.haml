@@ -12,17 +12,17 @@
     %br/
     = text_field :project, 'deadline', :required => true
     %br/
-    .spacing
+    .small_spacing
     = label :tag, :name, "Tag"
     %br/
     = text_field :tag, 'name'
     %br/
-    .spacing
+    .small_spacing
     = label :project, :description, 'Description'
     %br/
     = text_area :project, 'description'
     %br/
-    .spacing
+    .small_spacing
     = submit_tag 'Create Project'
   .page_links
     =link_to 'Back to all projects', projects_path
