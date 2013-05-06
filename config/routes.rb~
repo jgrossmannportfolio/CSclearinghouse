@@ -6,9 +6,7 @@ Clearinghouse::Application.routes.draw do
 
   devise_for :users
   ActiveAdmin.routes(self)
-	match '/users' => 'devise/registrations#update', :via => :put, :as => "registration_update"
-	match '/users' => 'devise/registratioins#destroy', :via => :delete, :as => "registration_delete"
-
+#
   resources :projects, :users, :notifications
   resources :home, :only => [:index]
 	resources :admin_notifications
