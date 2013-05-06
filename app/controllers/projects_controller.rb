@@ -16,14 +16,22 @@ class ProjectsController < ApplicationController
       redirect_to :projectsort => projectsort and return
     end
 		ordering = "lower(#{ordering})" unless ordering == nil
-    	@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering).search(params[:search])
+		if params[:search_string] != nil
+			attrib = params[:search_type][:selected]
+			search = params[:search_string]
+			@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering).search(search,attrib)
+		else
+			@projects = Project.where("projects.confirmed_at IS NOT NULL").order(ordering)
+		end
+		
+    	
 
 	end
 	
 	def show  
 		confirmed_project(params[:id])
 		id = params[:id]
-    @project = Project.find(id)
+    	@project = Project.find(id)
 		@update_and_delete = (@project.user == current_user)		
 	end
 	

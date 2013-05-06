@@ -16,6 +16,9 @@ class NotificationsController < ApplicationController
 		@notification_type = params[:type]
 		if @notification_type == 'notify_project_owner_of_interest'
 			Notification.notify_user_project_interest(params)
+			flash[:notice] = "#{User.find(params[:current_user]).username} was sent a notification of your interest"
+		elsif @notification_type == 'owner notify user of interest'
+			Notification.owner_notify_user_interest(params)
 			flash[:notice] = "#{Project.find(params[:project]).user.username} was just sent a notification of your interest."
 		end
 		flash.keep

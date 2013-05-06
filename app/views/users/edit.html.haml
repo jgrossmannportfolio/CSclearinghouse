@@ -1,7 +1,7 @@
 .content
 	%h2 Edit #{@user.username}'s Profile page
 
-	= form_tag user_path(@user), :method => :put do
+	= form_tag user_path(@user), :html => {:method => :put, :multipart => true} do
 
 		= label :user, :firstname, 'First Name'
 		%br/
@@ -11,6 +11,10 @@
 		= label :user, :lastname, 'Last Name'
 		%br/
 		= text_field :user, :lastname
+		%br/
+
+		%br/
+		= file_field :user, :avatar
 		%br/
 		
 		= label :user, :aboutme, 'About Me'
@@ -30,11 +34,10 @@
 		%br/
 		.spacing
 		
-		= label :user, :avatar, 'Change your avatar.'
-		= file_field :user, :avatar
 		%br/
 		= submit_tag 'Update Profile'
 
 	=link_to 'Back to Profile', user_path(@user)
+	=debug params
 	
 

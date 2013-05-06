@@ -32,14 +32,18 @@ def self.confirm_project(params)
 		end
 end
 
-def self.search(search)		
+def self.search(search,category)		
 	if search
-		find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR owner LIKE ?',"%#{search}%","%#{search}%","%#{search}%"])
+		if category =~ /tags/i
+			tag = Tag.find_by_name(search)
+			tag.projects
+		else
+			find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
+		end
 	else
 		find(:all)
 	end
 end
-
 
 
 	def deadlineslash
