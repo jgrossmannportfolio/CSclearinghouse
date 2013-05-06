@@ -6,9 +6,8 @@ end
 ActiveAdmin::Dashboards.build do
 	section "Notifications" do
 		table_for AdminNotification.all do |t|
-			selectable_column
 			t.column do |n|
-				link_to "Delete", admin_notifications_delete_path(n), :method => :delete
+				link_to "Delete", admin_notifications_delete_path(n, :path => '/admin/dashboard'), :method => :delete
 			end
 			t.column do |n|
 				if n.admin_type == 'user' || n.admin_type == 'project'
