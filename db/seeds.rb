@@ -70,3 +70,7 @@
 	users.each do |user|
 		User.create!(user)
 	end
+
+	#adminuser = {:username => 'admin', :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'}
+
+	#AdminUser.create!(adminuser)

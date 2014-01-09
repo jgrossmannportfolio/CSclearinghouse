@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
 				tag = Tag.find_by_name(search)
 				tag.users
 			else
-				find(:all, :conditions => ["#{category} LIKE ?","%#{search}%"])
+				find(:all, :conditions => ["LOWER(#{category}) LIKE ?","%#{search.downcase}%"])
 			end
 		else
 			find(:all)
