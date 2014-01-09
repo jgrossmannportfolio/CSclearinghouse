@@ -1,7 +1,12 @@
 .content
 	%h2 Edit #{@user.username}'s Profile page
 
-	= form_tag user_path(@user), :method => :put do
+	= form_tag user_path(@user), :multipart => true, :method => :put do
+
+		= label :user, 'File for Avatar'
+		%br/
+		= file_field :user,:avatar
+		.small_spacing
 
 		= label :user, :firstname, 'First Name'
 		%br/

@@ -1,6 +1,10 @@
 .content 
   .header #{@user.username}'s Profile
+
   .info#profile
+    %span
+    = image_tag @avatar
+    .small_spacing
     %span.bold
       First Name:
     = @user.firstname

@@ -1,6 +1,10 @@
 .content 
   .header #{@user.username}'s Profile
+
   .info#profile
+    %span
+    .avatar= image_tag @user.avatar_url.to_s if @user.avatar_url.present?
+    .small_spacing
     %span.bold
       First Name:
     = @user.firstname

@@ -36,6 +36,8 @@ class UsersController < ApplicationController
 		@edit_and_delete = (@user == current_user)
 		@current_user_projects = current_user.projects.where("confirmed_at IS NOT NULL")
     @current_user_projects = @current_user_projects.map {|project| [project.title, project.id] }
+		@avatar = (@user.avatar_url.present? ? @user.avatar_url : "defaultavatar.jpg")
+		else
 	end
 	
 	def edit
