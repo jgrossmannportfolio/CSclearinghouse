@@ -78,7 +78,6 @@ utilities/animate.o: utilities/animate.c wand/studio.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/i386-linux-gnu/bits/sched.h \
  /usr/include/i386-linux-gnu/bits/setjmp.h \
- /usr/lib/gcc/i686-linux-gnu/4.6/include/omp.h \
  /usr/include/i386-linux-gnu/sys/timeb.h /usr/include/dirent.h \
  /usr/include/i386-linux-gnu/bits/dirent.h \
  /usr/include/i386-linux-gnu/sys/wait.h \
@@ -340,8 +339,6 @@ magick/magick-baseconfig.h:
 /usr/include/i386-linux-gnu/bits/sched.h:
 
 /usr/include/i386-linux-gnu/bits/setjmp.h:
-
-/usr/lib/gcc/i686-linux-gnu/4.6/include/omp.h:
 
 /usr/include/i386-linux-gnu/sys/timeb.h:
 

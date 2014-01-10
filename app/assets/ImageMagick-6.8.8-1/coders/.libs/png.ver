@@ -1,0 +1,5 @@
+{ global:
+RegisterPNGImage;
+UnregisterPNGImage;
+sRGB_info;
+local: *; };

@@ -105,7 +105,7 @@ NM="/usr/bin/nm -B"
 LN_S="ln -s"
 
 # What is the maximum length of a command?
-max_cmd_len=1572864
+max_cmd_len=805306365
 
 # Object file suffix (normally "o").
 objext=o
@@ -167,7 +167,7 @@ lock_old_archive_extraction=no
 LTCC="gcc -std=gnu99 -std=gnu99"
 
 # LTCC compiler flags.
-LTCFLAGS="-fopenmp -g -O2 -Wall -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16"
+LTCFLAGS="-I/usr/include/glib-2.0 -I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/lqr-1 -I/usr/include/freetype2 -g -O2 -Wall -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=8"
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe="sed -n -e 's/^.*[	 ]\\([ABCDGIRSTW][ABCDGIRSTW]*\\)[	 ][	 ]*\\([_A-Za-z][_A-Za-z0-9]*\\)\$/\\1 \\2 \\2/p' | sed '/ __gnu_lto/d'"

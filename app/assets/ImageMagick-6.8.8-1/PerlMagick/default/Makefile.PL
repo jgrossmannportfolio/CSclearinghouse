@@ -161,11 +161,11 @@ foreach my $delegate (@tested_delegates) {
 }
 
 # defaults for LIBS & INC & CCFLAGS params that we later pass to Writemakefile
-my $INC_magick = '-I../.. -I../.. -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/libxml2 -I"' . $Config{'usrinc'} . '/ImageMagick"';
-my $LIBS_magick = '-L../../magick/.libs -lMagickCore-6.Q16 -lperl -lm';
-my $CCFLAGS_magick = "$Config{'ccflags'} -fopenmp -g -O2 -Wall -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16";
-my $LDFLAGS_magick   = "-L../../magick/.libs -lMagickCore-6.Q16 $Config{'ldflags'} ";
-my $LDDLFLAGS_magick = "-L../../magick/.libs -lMagickCore-6.Q16 $Config{'lddlflags'} ";
+my $INC_magick = '-I../.. -I../.. -I/usr/local/include -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=8 -I/usr/include/libxml2 -I"' . $Config{'usrinc'} . '/ImageMagick"';
+my $LIBS_magick = '-L../../magick/.libs -lMagickCore-6.Q8 -lperl -lm';
+my $CCFLAGS_magick = "$Config{'ccflags'} -I/usr/include/glib-2.0 -I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/lqr-1 -I/usr/include/freetype2 -g -O2 -Wall -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=8";
+my $LDFLAGS_magick   = "-L../../magick/.libs -lMagickCore-6.Q8 $Config{'ldflags'} -L/user/local/lib";
+my $LDDLFLAGS_magick = "-L../../magick/.libs -lMagickCore-6.Q8 $Config{'lddlflags'} -L/user/local/lib";
 
 if (($^O eq 'MSWin32') && ($Config{cc} =~ /gcc/)) {
   my($Ipaths, $Lpaths) = AutodetectWin32gcc();
@@ -174,7 +174,7 @@ if (($^O eq 'MSWin32') && ($Config{cc} =~ /gcc/)) {
   # Setup for strawberry perl.
   #
   $INC_magick       = "$Ipaths";
-  $LIBS_magick      = "-lMagickCore-6.Q16";
+  $LIBS_magick      = "-lMagickCore-6.Q8";
   $CCFLAGS_magick   = "$Config{'ccflags'}";
   $LDFLAGS_magick   = "$Config{'ldflags'} $Lpaths ";
   $LDDLFLAGS_magick = "$Config{'lddlflags'} $Lpaths ";
@@ -209,7 +209,7 @@ WriteMakefile
    #'CC' => 'gcc -std=gnu99 -std=gnu99',
 
    # C pre-processor flags (e.g. -I & -D options)
-   # 'CPPFLAGS' => "$Config{'cppflags'} -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/libxml2",
+   # 'CPPFLAGS' => "$Config{'cppflags'} -I/usr/local/include -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=8 -I/usr/include/libxml2",
 
    # C compiler flags (e.g. -O -g)
    'CCFLAGS' => $CCFLAGS_magick,
@@ -236,7 +236,7 @@ WriteMakefile
    # 'OPTIMIZE'	=> '',
 
    # Use same compiler as ImageMagick
-   'PERLMAINCC'	=> ' -fopenmp',
+   'PERLMAINCC'	=> ' ',
    'AR' => 'ar',
    'LD' => '',
 

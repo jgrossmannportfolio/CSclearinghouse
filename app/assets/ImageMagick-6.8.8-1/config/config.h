@@ -8,10 +8,10 @@
 /* #undef AUTOTRACE_DELEGATE */
 
 /* Define if coders and filters are to be built as modules. */
-/* #undef BUILD_MODULES */
+#define BUILD_MODULES 1
 
 /* Define if you have the bzip2 library */
-/* #undef BZLIB_DELEGATE */
+#define BZLIB_DELEGATE 1
 
 /* Define if you have CAIRO library */
 /* #undef CAIRO_DELEGATE */
@@ -33,7 +33,7 @@
 #define CONFIGURE_RELATIVE_PATH "ImageMagick-6"
 
 /* Define if you have DJVU library */
-/* #undef DJVU_DELEGATE */
+#define DJVU_DELEGATE 1
 
 /* Directory where ImageMagick documents live. */
 #define DOCUMENTATION_PATH "/usr/local/share/doc/ImageMagick-6/"
@@ -54,13 +54,13 @@
 #define FILTER_DIRNAME "filters"
 
 /* Define if you have FONTCONFIG library */
-/* #undef FONTCONFIG_DELEGATE */
+#define FONTCONFIG_DELEGATE 1
 
 /* Define if you have FlashPIX library */
 /* #undef FPX_DELEGATE */
 
 /* Define if you have FREETYPE library */
-/* #undef FREETYPE_DELEGATE */
+#define FREETYPE_DELEGATE 1
 
 /* Define if you have Ghostscript library or framework */
 /* #undef GS_DELEGATE */
@@ -90,7 +90,7 @@
 #define HAVE_ATOLL 1
 
 /* define if bool is a built-in type */
-#define HAVE_BOOL /**/
+/* #undef HAVE_BOOL */
 
 /* Define to 1 if you have the `cabs' function. */
 #define HAVE_CABS 1
@@ -250,7 +250,7 @@
 /* #undef HAVE_LCMS2_LCMS2_H */
 
 /* Define if you have the <lcms.h> header file. */
-/* #undef HAVE_LCMS_H */
+#define HAVE_LCMS_H 1
 
 /* Define if you have the <lcms/lcms.h> header file. */
 /* #undef HAVE_LCMS_LCMS_H */
@@ -314,10 +314,10 @@
 #define HAVE_MUNMAP 1
 
 /* define if the compiler implements namespaces */
-#define HAVE_NAMESPACES /**/
+/* #undef HAVE_NAMESPACES */
 
 /* Define if g++ supports namespace std. */
-#define HAVE_NAMESPACE_STD /**/
+/* #undef HAVE_NAMESPACE_STD */
 
 /* Define to 1 if you have the `nanosleep' function. */
 #define HAVE_NANOSLEEP 1
@@ -410,10 +410,10 @@
 #define HAVE_SETVBUF 1
 
 /* X11 server supports shape extension */
-/* #undef HAVE_SHAPE */
+#define HAVE_SHAPE 1
 
 /* X11 server supports shared memory extension */
-/* #undef HAVE_SHARED_MEMORY */
+#define HAVE_SHARED_MEMORY 1
 
 /* Define to 1 if you have the `sigaction' function. */
 #define HAVE_SIGACTION 1
@@ -446,7 +446,7 @@
 #define HAVE_STDLIB_H 1
 
 /* define if the compiler supports ISO C++ standard library */
-#define HAVE_STD_LIBS /**/
+/* #undef HAVE_STD_LIBS */
 
 /* Define to 1 if you have the `strcasecmp' function. */
 #define HAVE_STRCASECMP 1
@@ -574,31 +574,31 @@
 #define HAVE_TEMPNAM 1
 
 /* Define to 1 if you have the <tiffconf.h> header file. */
-/* #undef HAVE_TIFFCONF_H */
+#define HAVE_TIFFCONF_H 1
 
 /* Define to 1 if you have the `TIFFIsBigEndian' function. */
-/* #undef HAVE_TIFFISBIGENDIAN */
+#define HAVE_TIFFISBIGENDIAN 1
 
 /* Define to 1 if you have the `TIFFIsCODECConfigured' function. */
-/* #undef HAVE_TIFFISCODECCONFIGURED */
+#define HAVE_TIFFISCODECCONFIGURED 1
 
 /* Define to 1 if you have the `TIFFMergeFieldInfo' function. */
-/* #undef HAVE_TIFFMERGEFIELDINFO */
+#define HAVE_TIFFMERGEFIELDINFO 1
 
 /* Define to 1 if you have the `TIFFReadEXIFDirectory' function. */
-/* #undef HAVE_TIFFREADEXIFDIRECTORY */
+#define HAVE_TIFFREADEXIFDIRECTORY 1
 
 /* Define to 1 if you have the `TIFFSetErrorHandlerExt' function. */
-/* #undef HAVE_TIFFSETERRORHANDLEREXT */
+#define HAVE_TIFFSETERRORHANDLEREXT 1
 
 /* Define to 1 if you have the `TIFFSetTagExtender' function. */
-/* #undef HAVE_TIFFSETTAGEXTENDER */
+#define HAVE_TIFFSETTAGEXTENDER 1
 
 /* Define to 1 if you have the `TIFFSetWarningHandlerExt' function. */
-/* #undef HAVE_TIFFSETWARNINGHANDLEREXT */
+#define HAVE_TIFFSETWARNINGHANDLEREXT 1
 
 /* Define to 1 if you have the `TIFFSwabArrayOfTriples' function. */
-/* #undef HAVE_TIFFSWABARRAYOFTRIPLES */
+#define HAVE_TIFFSWABARRAYOFTRIPLES 1
 
 /* Define to 1 if you have the `times' function. */
 #define HAVE_TIMES 1
@@ -723,13 +723,13 @@
 /* #undef JBIG_DELEGATE */
 
 /* Define if you have JPEG version 2 "Jasper" library */
-/* #undef JP2_DELEGATE */
+#define JP2_DELEGATE 1
 
 /* Define if you have JPEG library */
-/* #undef JPEG_DELEGATE */
+#define JPEG_DELEGATE 1
 
 /* Define if you have LCMS (v1.11 or later) library */
-/* #undef LCMS_DELEGATE */
+#define LCMS_DELEGATE 1
 
 /* Directory where architecture-dependent files live. */
 #define LIBRARY_PATH "/usr/local/lib/ImageMagick-6.8.8/"
@@ -743,10 +743,10 @@
 #define LIB_BIN_BASEDIRNAME "bin"
 
 /* Define if you have LQR library */
-/* #undef LQR_DELEGATE */
+#define LQR_DELEGATE 1
 
 /* Define if using libltdl to support dynamically loadable modules */
-/* #undef LTDL_DELEGATE */
+#define LTDL_DELEGATE 1
 
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
@@ -783,7 +783,7 @@
 /* #undef NDEBUG */
 
 /* Define if you have OPENEXR library */
-/* #undef OPENEXR_DELEGATE */
+#define OPENEXR_DELEGATE 1
 
 /* Name of package */
 #define PACKAGE "ImageMagick"
@@ -807,13 +807,13 @@
 #define PACKAGE_VERSION "6.8.8-1"
 
 /* Define if you have PANGOCAIRO library */
-/* #undef PANGOCAIRO_DELEGATE */
+#define PANGOCAIRO_DELEGATE 1
 
 /* Define if you have PANGO library */
-/* #undef PANGO_DELEGATE */
+#define PANGO_DELEGATE 1
 
 /* Define if you have PNG library */
-/* #undef PNG_DELEGATE */
+#define PNG_DELEGATE 1
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -823,7 +823,7 @@
 /* #undef PixelCacheThreshold */
 
 /* Number of bits in a pixel Quantum (8/16/32/64) */
-#define QUANTUM_DEPTH_OBSOLETE_IN_H 16
+#define QUANTUM_DEPTH_OBSOLETE_IN_H 8
 
 /* Define as the return type of signal handlers (`int' or `void'). */
 #define RETSIGTYPE void
@@ -917,7 +917,7 @@
 #define THREAD_SUPPORT 1
 
 /* Define if you have TIFF library */
-/* #undef TIFF_DELEGATE */
+#define TIFF_DELEGATE 1
 
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #define TIME_WITH_SYS_TIME 1
@@ -981,13 +981,13 @@
 #define X11_CONFIGURE_PATH ""
 
 /* Define if you have X11 library */
-/* #undef X11_DELEGATE */
+#define X11_DELEGATE 1
 
 /* Define if you have XML library */
 #define XML_DELEGATE 1
 
 /* Define to 1 if the X Window System is missing or not being used. */
-#define X_DISPLAY_MISSING 1
+/* #undef X_DISPLAY_MISSING */
 
 /* Build self-contained, embeddable, zero-configuration ImageMagick */
 /* #undef ZERO_CONFIGURATION_SUPPORT */

@@ -1,0 +1,4 @@
+{ global:
+RegisterWPGImage;
+UnregisterWPGImage;
+local: *; };

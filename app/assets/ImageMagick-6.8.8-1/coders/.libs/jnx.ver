@@ -1,0 +1,4 @@
+{ global:
+RegisterJNXImage;
+UnregisterJNXImage;
+local: *; };

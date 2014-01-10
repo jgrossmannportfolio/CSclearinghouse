@@ -19,14 +19,14 @@ package Image::Magick;
 use strict;
 use Carp;
 
-use parent qw/Image::Magick::Q16/;
+use parent qw/Image::Magick::Q8/;
 
 1;
 __END__
 
 =head1 NAME
 
-Image::Magick - objected-oriented Perl interface to ImageMagick for default quantum (Q16). Use it to read, manipulate, or write an image or image sequence from within a Perl script.
+Image::Magick - objected-oriented Perl interface to ImageMagick for default quantum (Q8). Use it to read, manipulate, or write an image or image sequence from within a Perl script.
 
 =head1 SYNOPSIS
 

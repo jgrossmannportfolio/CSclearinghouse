@@ -1,4 +1,4 @@
-package Image::Magick::Q16;
+package Image::Magick::Q8;
 
 #  Copyright 1999-2014 ImageMagick Studio LLC, a non-profit organization
 #  dedicated to making software imaging solutions freely available.
@@ -68,14 +68,14 @@ sub AUTOLOAD {
     goto &$AUTOLOAD;
 }
 
-bootstrap Image::Magick::Q16 $VERSION;
+bootstrap Image::Magick::Q8 $VERSION;
 
 # Preloaded methods go here.
 
 sub new
 {
     my $this = shift;
-    my $class = ref($this) || $this || "Image::Magick::Q16";
+    my $class = ref($this) || $this || "Image::Magick::Q8";
     my $self = [ ];
     bless $self, $class;
     $self->set(@_) if @_;
@@ -85,7 +85,7 @@ sub new
 sub New
 {
     my $this = shift;
-    my $class = ref($this) || $this || "Image::Magick::Q16";
+    my $class = ref($this) || $this || "Image::Magick::Q8";
     my $self = [ ];
     bless $self, $class;
     $self->set(@_) if @_;
@@ -101,12 +101,12 @@ __END__
 
 =head1 NAME
 
-Image::Magick::Q16 - objected-oriented Perl interface to ImageMagick (Q16). Use it to create, edit, compose, or convert bitmap images from within a Perl script.
+Image::Magick::Q8 - objected-oriented Perl interface to ImageMagick (Q8). Use it to create, edit, compose, or convert bitmap images from within a Perl script.
 
 =head1 SYNOPSIS
 
-  use Image::Magick::Q16;
-  $p = new Image::Magick::Q16;
+  use Image::Magick::Q8;
+  $p = new Image::Magick::Q8;
   $p->Read("imagefile");
   $p->Set(attribute => value, ...)
   ($a, ...) = $p->Get("attribute", ...)

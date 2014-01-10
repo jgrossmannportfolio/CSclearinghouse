@@ -35,7 +35,7 @@ while test $# -gt 0; do
       echo $exec_prefix
       ;;
     --version)
-      echo '6.8.8 Q16 '
+      echo '6.8.8 Q8 '
       ;;
     --cflags)
       pkg-config --cflags MagickWand
