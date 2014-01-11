@@ -5,7 +5,7 @@
 
 		= label :user, 'File for Avatar'
 		%br/
-		= file_field :user,:avatar_url
+		= file_field :user,:avatar
 		.small_spacing
 
 		= label :user, :firstname, 'First Name'

@@ -11,6 +11,7 @@
   %table#users
     %thead
       %tr
+        %th
         %th{:class => @username_header}= link_to 'Username', users_path( :usersort => 'username')
         %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'firstname')
         %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'lastname')
@@ -19,6 +20,7 @@
     %tbody
       - @users.each do |user|
         %tr
+          %td#indeximage= image_tag user.avatar_url(:thumb)
           %td= link_to "#{user.username}", user_path(user.id)
           %td= user.firstname
           %td= user.lastname

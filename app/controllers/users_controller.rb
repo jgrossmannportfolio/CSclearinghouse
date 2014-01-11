@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :auth_user
-	def index 
+	def index
 		usersort = params[:usersort] || session[:usersort]
 	case usersort
     when 'username'
@@ -36,8 +36,7 @@ class UsersController < ApplicationController
 		@edit_and_delete = (@user == current_user)
 		@current_user_projects = current_user.projects.where("confirmed_at IS NOT NULL")
     @current_user_projects = @current_user_projects.map {|project| [project.title, project.id] }
-		@avatar = (@user.avatar_url.present? ? @user.avatar_url(:avatar) : "images/defaultavatar.jpg")
-		else
+		@resume = (@user.resume_url.present? ? @user.resume_url : "No Resume Uploaded")
 	end
 	
 	def edit
@@ -94,5 +93,6 @@ class UsersController < ApplicationController
 			redirect_to '/users'
 		end
 	end
+
 end
 

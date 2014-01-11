@@ -29,10 +29,6 @@ left:-16px;
 display:inline-block;
 }
 
-#avatar{
-max-width: 50px; background-color: orange;gg
-}
-
 th{
 text-align:left;
 }

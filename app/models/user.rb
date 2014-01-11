@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :firstname, :lastname, :aboutme, :username, :tag_ids, :project_ids
-  attr_accessible :reset_password_token, :confirmed_at, :avatar
+  attr_accessible :reset_password_token, :confirmed_at, :avatar, :resume
 
 	has_many :projects, :dependent => :destroy
 	has_many :notifications, :dependent => :destroy
@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 	has_one :admin_notification, :dependent => :destroy
 
 	mount_uploader :avatar, AvatarUploader
+	mount_uploader :resume, ResumeUploader
 
 	validates_presence_of :firstname
 	validates_presence_of :lastname

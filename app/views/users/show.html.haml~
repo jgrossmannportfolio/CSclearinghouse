@@ -2,7 +2,7 @@
   .header #{@user.username}'s Profile
 
   .info#profile
-    #avatar= image_tag @avatar
+    = image_tag @user.avatar_url(:avatar)
     .small_spacing
     %span.bold
       First Name:
@@ -29,6 +29,13 @@
       Skill Tags:
     - @user.tags.each do |tag|
       %span.tag= tag.name 
+    .small_spacing
+    %span.bold
+      Resume:
+      - if @user.resume_url.present?
+        = link_to('Click to Download', @user.resume_url)
+      - else
+        %span No Resume Uploaded
   .small_spacing
   -if @edit_and_delete
     .buttons
