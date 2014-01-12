@@ -1,0 +1,21 @@
+# Test environment
+top_srcdir='/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1'
+top_builddir='/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1'
+
+set -a
+COMPARE="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/compare"
+COMPOSITE="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/composite"
+CONJURE="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/conjure"
+CONVERT="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/convert"
+DISPLAY="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/display"
+IDENTIFY="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/identify"
+MONTAGE="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities/montage" 
+VALIDATE="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/tests/validate"
+DRAWTEST="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/tests/drawtest"
+WANDTEST="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/tests/wandtest"
+LD_LIBRARY_PATH="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/magick/.libs:${LD_LIBRARY_PATH}"
+MAGICK_CODER_MODULE_PATH="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/coders"
+MAGICK_CONFIGURE_PATH="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/config:/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/config"
+MAGICK_FILTER_MODULE_PATH="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/filters"
+PATH="/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/utilities:/home/cosc480/CSclearinghouse/app/assets/ImageMagick-6.8.8-1/tests:${PATH}"
+set +a

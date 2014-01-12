@@ -4,11 +4,11 @@
   %div
     = f.label 'First name'
     %br/
-    = f.text_field :firstname, :autofocus => true
+    = f.text_field :firstname, :autofocus => true, :required => true
   %div
     = f.label 'Last name'
     %br/
-    = f.text_field :lastname
+    = f.text_field :lastname, :required => true
   %div
     = f.label :email
     %br/
@@ -25,6 +25,8 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
+  %div
+    = f.hidden_field :avatar, value => "/uploads/user/avatar/default/defaultavatar.jpg"
   %div= f.submit "Sign up"
 = render "devise/shared/links"
 

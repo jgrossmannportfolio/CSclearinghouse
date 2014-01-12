@@ -1,7 +1,12 @@
 .content
 	%h2 Edit #{@user.username}'s Profile page
 
-	= form_tag user_path(@user), :method => :put do
+	= form_tag user_path(@user), :multipart => true, :method => :put do
+
+		= label :user, :avatar, 'File for Avatar'
+		%br/
+		= file_field :user,:avatar
+		.small_spacing
 
 		= label :user, :firstname, 'First Name'
 		%br/
@@ -27,6 +32,12 @@
 		= text_field :tag, :name
 		.spacing
 		%br/
+		
+		= label :user, :resume, 'Upload Resume (PDF Only)'
+		%br/
+		= file_field :user, :resume
+		.small_spacing
+
 		= submit_tag 'Update Profile'
 
 	=link_to 'Back to Profile', user_path(@user)

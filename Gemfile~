@@ -57,9 +57,9 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-<<<<<<< HEAD
-=======
 gem 'activeadmin'
->>>>>>> de918cf503bf686f1ec41ab23977eca3dccbc761
 gem 'devise'
 gem 'haml'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'mini_magick'

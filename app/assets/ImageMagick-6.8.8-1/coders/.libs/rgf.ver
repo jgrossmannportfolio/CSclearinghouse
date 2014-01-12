@@ -1,0 +1,4 @@
+{ global:
+RegisterRGFImage;
+UnregisterRGFImage;
+local: *; };

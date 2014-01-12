@@ -1,0 +1,4 @@
+{ global:
+RegisterPANGOImage;
+UnregisterPANGOImage;
+local: *; };
