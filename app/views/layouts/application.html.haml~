@@ -3,30 +3,19 @@
 %html
   %div#site_header
     %head
-      %title Colgate Computer Science Clearinghouse
+      %title Colgate University Computer Science Clearinghouse
+      = stylesheet_link_tag 'bootstrap'
       = stylesheet_link_tag 'application'
-      = javascript_include_tag 'application'
+      = javascript_include_tag 'bootstrap'
       = csrf_meta_tags 
 
   %body
-    %div#title= link_to "Colgate's Computer Science Clearinghouse", '/home', :id => 'titlelink'
-    
-    #main
-      %div#account_info
-        %span.sign_in_status #{@sign_in_status}
-        - if user_signed_in?
-          %span.page_links= link_to 'Logout', destroy_user_session_path, :method => :delete
-          %span.page_links= link_to 'Edit Account Info', edit_user_registration_path
-          %span.page_links= link_to 'My Profile', user_path(current_user)
-          %span.page_links= link_to 'Notifications', notifications_path
-          %span
-            #notification_count
-              = "(#{current_user.notifications.size})"
-        - else
-          %span.page_links= link_to 'Login', new_user_session_path 
-          %span.page_links= link_to 'Create an Account', new_user_registration_path
+    #main.container
+      = render "shared/sign_in_status"  
+      %div#title
+        = link_to "Colgate University", '/home', :id => 'titlelink'
         %br/
-      %div#homeimage
+        = link_to "Computer Science Clearinghouse", '/home', :id => 'titlelink_subtext'
       - [:notice, :error, :success, :warning, :alert].each do |key|
         - unless flash[key].blank?
           %p{ :class => "flash #{key}" }= flash[key] 
@@ -38,6 +27,5 @@
           #warning.message= flash[:warning]
         - elsif flash[:alert]
           #alert.message= flash[:alert]
-      = devise_error_messages!
       = render "shared/sidebar"
       = yield

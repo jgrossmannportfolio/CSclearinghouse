@@ -1,7 +1,8 @@
 .content
+  %div#homeimage
 	.header Home Page
 	.bold
 		Most Recent Projects:
 	%hr
-  -Project.order("created_at DESC").first(3).each do |project|
+	-Project.order("created_at DESC").first(3).each do |project|
 		= render "shared/project", :project => project
