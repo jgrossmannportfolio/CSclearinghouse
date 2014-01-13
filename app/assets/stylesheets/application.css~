@@ -1,10 +1,10 @@
 
 
 body{
-  background-color: #555555;
+  background-color: #eeeeee;
   padding-bottom: 20px;
-	/*padding-left:3em;
-	padding-right: 3em;*/
+	padding-left:3em;
+	padding-right: 3em;
 }
 
 
@@ -12,17 +12,13 @@ body{
 	height:2em;
 	background-color:#800000;
 	font-weight: bold;
+	font-size:1.3em;
 	color: #ba6565;
+	padding-top:.5em;
 	
 }
 
-#homeimage{
-	background-image: url(coscbanner.jpg);
-	background-size:cover;
-	height:270px;
-	width:100%;
-	border-bottom: 4px solid black;
-}
+
 a:hover,
 a:focus {
   color: #c44444;
@@ -42,7 +38,7 @@ color:#5a5a5a
 	padding-top:.4em;
 	color: #cc4444;
 	
-	/*float:right;
+	float:right;/*
 	position:relative;
 	top:-27px;*/
 }
@@ -61,6 +57,34 @@ color: #ba6565;
 	color: #ffffff;
 }
 
+#site_header{
+clear: left;
+}
+
+#title {
+  /*margin: 0 0 1em;*/
+	padding: 25px;
+	/*background-image: url(red-grid-tile.png);*/
+  background-color: #eeeeee;
+  /*border-bottom: 4px solid black;*/
+	font-family: Georgia, serif;
+  font-style: normal;
+	font-weight:normal;
+	margin-bottom:0px;
+}
+ #titlelink {
+  text-decoration: none;
+	color:#800000 ;
+	padding-left: 0px;
+	font-size: 3.5em;
+}
+#titlelink_subtext{
+	font-size:2em;
+	color: #704040;
+	padding-left:1em;
+}
+
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -76,10 +100,6 @@ color: #ba6565;
  *= require_tree .
 771D1C 
 */
-table#users th.hilite a {
-	text-decoration: none;
-	color: #992020;
-}
 
 
 
@@ -185,13 +205,7 @@ padding:.5em;
 padding:.3em;
 }
 
-#homeimage{
-background-image: url(coscbanner.jpg);
-background-size:cover;
-height:270px;
-width:100%;
-border-bottom: 4px solid black;
-}
+
 
 th{
 	margin-right: 10px;
@@ -202,62 +216,18 @@ margin-right:15px;
 }
 
 
-
-
-
-
-#sidebar{
-padding: 7px;
-margin-right:0px;
-float:left;
-position:relative;
-height: 100%;
-list-style-type: none;
-width:7em;
+#indeximage{
+display: block;
+margin-left: auto;
+margin-right: auto;
 }
 
-
-
 .content{
-float:left;
+/*float:left;*/
 margin-left: 15px;
 position:relative;
 width:70%;
 }
 
 
-#site_header{
-clear: left;
-}
-
-#sidebar li{
-width: 100%;	
-border-left: 4px;
-margin-top:1em;
-font-weight:bold;
-}
-
-
-#title {
-  /*margin: 0 0 1em;*/
-	padding: 25px;
-	/*background-image: url(red-grid-tile.png);*/
-  background-color: #eeeeee;
-  border-bottom: 4px solid black;
-	font-family: Georgia, serif;
-  font-style: normal;
-	font-weight:normal;
-	margin-bottom:0px;
-}
- #titlelink {
-  text-decoration: none;
-	color:#800000 ;
-	padding-left: 0px;
-	font-size: 3.5em;
-}
-#titlelink_subtext{
-	font-size:2em;
-	color: #805050;
-	padding-left:1em;
-{
 

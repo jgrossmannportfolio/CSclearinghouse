@@ -2,10 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#avatar{
-	height: 100px; width: auto;
+
+table#users th.hilite a {
+	text-decoration: none;
+	color: #992020;
 }
 
-#avatar{
-	height: auto; width: 100px;
-}

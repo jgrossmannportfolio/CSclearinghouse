@@ -1,4 +1,6 @@
 Clearinghouse::Application.routes.draw do
+  get "about/index"
+
 	root :to => redirect('/home')
 
   devise_for :admin_users, ActiveAdmin::Devise.config

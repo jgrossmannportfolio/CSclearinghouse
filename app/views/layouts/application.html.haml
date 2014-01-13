@@ -10,12 +10,16 @@
       = csrf_meta_tags 
 
   %body
+    %h1 
+      = params[:controller]
     #main
       = render "shared/sign_in_status"  
       %div#title
         = link_to "Colgate University", '/home', :id => 'titlelink'
-        %br/
+        -#%br/
         = link_to "Computer Science Clearinghouse", '/home', :id => 'titlelink_subtext'
+      = render "shared/main_navbar"
+      = yield
       - [:notice, :error, :success, :warning, :alert].each do |key|
         - unless flash[key].blank?
           %p{ :class => "flash #{key}" }= flash[key] 
@@ -27,5 +31,4 @@
           #warning.message= flash[:warning]
         - elsif flash[:alert]
           #alert.message= flash[:alert]
-      = render "shared/sidebar"
-      = yield
+      
