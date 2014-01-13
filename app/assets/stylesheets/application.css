@@ -101,7 +101,6 @@ height:5em;
 .project{
 border: 3px inset #FFD796;
 padding: 20px;
-width: 100%;
 margin:5px;
 
 }
@@ -209,3 +208,7 @@ font-weight:bold;
 	
 }
 
+ #line_separator {
+  height:1px;
+  border-bottom:1px solid gray;
+}
