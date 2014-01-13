@@ -6,7 +6,7 @@ Clearinghouse::Application.routes.draw do
 
   devise_for :users
   ActiveAdmin.routes(self)
-#
+
   resources :projects, :users, :notifications
   resources :home, :only => [:index]
 	resources :admin_notifications
