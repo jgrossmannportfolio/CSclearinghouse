@@ -1,5 +1,6 @@
-.content
-  %h1 All Users
+.container
+  %h4 
+    All Users
   = form_tag users_path, :method => 'GET' do 
     Search Users
     = text_field_tag :search_string, params[:search]

@@ -3,7 +3,8 @@
 	background-size:cover;
 	height:270px;
 	width:100%;
-	border-bottom: 4px solid #800000;
-	margin-bottom:3em;
+	border-bottom: 5px solid #800000;
+position:relative;
+top:-20
 }
 
