@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .content#show{
 background-color:maroon;
 font-family:Arial,Helvetica, sans-serif;
@@ -94,3 +95,9 @@ overflow:auto;
 font-size: 1.1em;
 margin-left:75px;
 }
+
+table#users th.hilite a {
+	text-decoration: none;
+	color: #992020;
+}
+

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery
 	before_filter :sign_in_status_message
+	before_filter :determine_current_controller
 
 	def auth_user
 		redirect_to new_user_session_path unless user_signed_in?
@@ -13,5 +14,8 @@ class ApplicationController < ActionController::Base
 			@sign_in_status = "Currently not signed in"
 		end
 	end
-
+	
+	def determine_current_controller
+		@current_controller = params[:controller]
+	end
 end
