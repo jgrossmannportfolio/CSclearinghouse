@@ -228,10 +228,10 @@ margin-right: auto;
 }
 
 .content{
-/*float:left;*/
-margin-left: 15px;
+/*float:left;
+margin-left: 15px;*/
 position:relative;
-width:70%;
+width:100%;
 }
 
 
@@ -259,9 +259,7 @@ a {
   color: #ba6565;
   text-decoration: none;
 }
-.currentpage > a {
-color:#ffffff;
-}
+
 a:hover,
 a:focus {
   color: #800000;
