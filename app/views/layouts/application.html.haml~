@@ -13,7 +13,7 @@
     
     #main
       = render "shared/sign_in_status"  
-      %div#title.progress.bar
+      %div#title
         = link_to "Colgate University", '/home', :id => 'titlelink'
         -#%br/
         = link_to "Computer Science Clearinghouse", '/home', :id => 'titlelink_subtext'

@@ -1,6 +1,7 @@
 .container
   %div
-    .header All Projects
+    %h3 
+      All Projects
   Sort By: 
   = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
@@ -11,10 +12,10 @@
     = text_field_tag :search_string, params[:search]
     By
     = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tag","Tag"]]))
-    = submit_tag 'Submit search', :name => nil
-  %span.button
+    %button= submit_tag 'Submit search', :name => nil
+  %button
     = link_to 'Clear search', projects_path
-  %span.button  
+  %button  
     =link_to 'Add New Project', new_project_path
   %hr
   -if @projects
