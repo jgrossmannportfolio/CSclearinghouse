@@ -1,51 +1,78 @@
-.content 
-  .header #{@user.username}'s Profile
+.content#show 
+  .headerblock
+    %div#avatar= image_tag @user.avatar_url(:avatar)
+    %div#headerinfo
+      %span#name.bold= @user.firstname
+      %span#name.bold= @user.lastname
+      %br/
+      %span#shortdescription
+      This is supposed to be a short description about myself limited to 150 characters.
+      %br/
+      %span#user_status "Should be status (student or whatev)"
+      / Include if statement, if student, give class year and status
+      / if not, include employment title, and description (physics department,etc)
+      .small_spacing
+      %div#contact_info
+        %span#emailheading Email:
+        %span#email= @user.email
+        %br/
+        %span#phoneheading Phone:
+        %span#phone (555)555-5555
+      .small_spacing
+      %div#skilltags
+        %span.bold Skill Tags:
+        - @user.tags.each do |tag|
+          %span.tag= tag.name
+      %br/
+      %div#contactbuttons
+        -if @edit_and_delete
+          .buttons
+            = button_to 'Edit', edit_user_path(@user), :method => :get
+        -else
+          %div#colaboration
+            Let this user know you are interested in colaborating with them:
+            = form_tag notifications_path(:user => @user, :type => "owner notify user of interest", :link => "/users/#{@user.id}", :current_user => current_user), :method => :post do
+              = select_tag(:project, options_for_select(@current_user_projects))
+              = submit_tag "Notify User"
 
-  .info#profile
-    = image_tag @user.avatar_url(:avatar)
-    .small_spacing
-    %span.bold
-      First Name:
-    = @user.firstname
-    .small_spacing
-    %span.bold
-      Last Name:
-    = @user.lastname
-    .small_spacing
-    %span.bold
-      Email:
-    = @user.email
-    .small_spacing
-    %span.bold
-      Projects:
-    - @user.projects.each do |project|
-      %span.page_links= link_to "#{project.title}", project_path(project)
-    .small_spacing
-    %span.bold
-      About Me:
-    = @user.aboutme
-    .small_spacing
-    %span.bold
-      Skill Tags:
-    - @user.tags.each do |tag|
-      %span.tag= tag.name 
-    .small_spacing
-    %span.bold
-      Resume:
+  .projects#profile
+    %div#header_title
+      PROJECTS
+    %div#projects_list
+      - if @user.projects
+        - @user.projects.each do |project|
+          = render "shared/project", :project => project
+      -else
+        No Projects
+    %br/
+
+  .background
+    %div#header_title
+      BACKGROUND
+    %br/
+    %div#aboutme
+      #capstitle ABOUT ME
+      %br/
+      = @user.aboutme
+    %br/
+    %div#line_separator
+    %br/
+    %div#experience
+      #capstitle EXPERIENCE
+      %br/
+      Put in experience model. an experience is one entry, job title, description, skills gained, etc.
+    %br/
+    %div#line_separator
+    %br/
+    %div#resume
+      #capstitle RESUME
+      %br/
     - if @user.resume_url.present?
       = link_to('Click to Download', @user.resume_url)
+      Should probably put in the name of the file to download
     - else
       No Resume Uploaded
   .small_spacing
-  -if @edit_and_delete
-    .buttons
-      = button_to 'Edit', edit_user_path(@user), :method => :get
-  -else
-    %div
-      Let this user know you are interested in colaborating with them:
-      = form_tag notifications_path(:user => @user, :type => "owner notify user of interest", :link => "/users/#{@user.id}", :current_user => current_user), :method => :post do
-        = select_tag(:project, options_for_select(@current_user_projects))
-        = submit_tag "Notify User"
-    .small_spacing
+
   .page_links 
   = link_to 'Back to user list', users_path

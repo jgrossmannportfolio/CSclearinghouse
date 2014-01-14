@@ -1,32 +1,33 @@
 .content
-  %h1 All Users
-  = form_tag users_path, :method => 'GET' do 
-    Search Users
-    = text_field_tag :search_string, params[:search]
-    By
-    = select(:search_type, :selected, options_for_select([["First Name", "firstname"], ["Last Name", "lastname"], ["Email", "Email"],["Username","Username"],["Tags","Tags"]]))
-    = submit_tag 'Search users', :name => nil
-    = link_to 'Clear search', users_path
-  %hr
-  %table#users
-    %thead
-      %tr
-        %th
-        %th{:class => @username_header}= link_to 'Username', users_path( :usersort => 'username')
-        %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'firstname')
-        %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'lastname')
-        %th{:class => @email_header}= link_to 'Email', users_path(:usersort => 'email')
-
-    %tbody
-      - @users.each do |user|
+  .contentindex
+    %h1 All Users
+    = form_tag users_path, :method => 'GET' do 
+      Search Users
+      = text_field_tag :search_string, params[:search]
+      By
+      = select(:search_type, :selected, options_for_select([["First Name", "firstname"], ["Last Name", "lastname"], ["Email", "Email"],["Username","Username"],["Tags","Tags"]]))
+      = submit_tag 'Search users', :name => nil
+      = link_to 'Clear search', users_path
+    %hr
+    %table#users
+      %thead
         %tr
-          %td#indeximage= image_tag user.avatar_url(:thumb)
-          %td= link_to "#{user.username}", user_path(user.id)
-          %td= user.firstname
-          %td= user.lastname
-          %td= user.email
-          %td= link_to "More about #{user.username}", user_path(user)
-  %hr
-  .bottomlinks
+          %th
+          %th{:class => @username_header}= link_to 'Username', users_path( :usersort => 'username')
+          %th{:class => @first_name_header}= link_to 'First Name', users_path(:usersort => 'firstname')
+          %th{:class => @last_name_header}= link_to 'Last Name', users_path(:usersort => 'lastname')
+          %th{:class => @email_header}= link_to 'Email', users_path(:usersort => 'email')
+
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td#indeximage= image_tag user.avatar_url(:thumb)
+            %td= link_to "#{user.username}", user_path(user.id)
+            %td= user.firstname
+            %td= user.lastname
+            %td= user.email
+            %td= link_to "More about #{user.username}", user_path(user)
+    %hr
+    .bottomlinks
     
  
