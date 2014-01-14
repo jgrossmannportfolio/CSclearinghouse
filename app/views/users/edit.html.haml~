@@ -3,7 +3,7 @@
 
 	= form_tag user_path(@user), :multipart => true, :method => :put do
 
-		= label :user, 'File for Avatar'
+		= label :user, :avatar, 'File for Avatar'
 		%br/
 		= file_field :user,:avatar
 		.small_spacing
@@ -33,7 +33,7 @@
 		.spacing
 		%br/
 		
-		= label :user, 'Upload Resume (PDF Only)'
+		= label :user, :resume, 'Upload Resume (PDF Only)'
 		%br/
 		= file_field :user, :resume
 		.small_spacing

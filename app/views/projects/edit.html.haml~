@@ -2,8 +2,6 @@
   .header Update  #{@project.title}
 
   = form_tag project_path(@project), :method => :put do
-    = debug @project.deadline
-    = debug @d1
     .bold= label :project, :title, 'Title'
     = text_field :project, 'title'
     .small_spacing

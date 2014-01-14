@@ -1,4 +1,4 @@
-.content#show 
+.container#show 
   .headerblock
     %div#avatar= image_tag @user.avatar_url(:avatar)
     %div#headerinfo
@@ -60,7 +60,7 @@
     %div#experience
       #capstitle EXPERIENCE
       %br/
-      Put in experience in model. an experience is one entry, job title, description, skills gained, etc.
+      Put in experience model. an experience is one entry, job title, description, skills gained, etc.
     %br/
     %div#line_separator
     %br/

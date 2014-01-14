@@ -8,12 +8,12 @@
     = text_field :project, 'title', :required => true
     %br/
     .spacing
-    = label :project, :deadline, 'Deadline (mm-dd-yyyy)'
+    = label :project, :deadline, 'Deadline (dd-mm-yyyy)'
     %br/
     = text_field :project, 'deadline', :required => true
     %br/
     .small_spacing
-     = label :tag, :name, "Tag"
+    = label :tag, :name, "Tag"
     %br/
     = text_field :tag, 'name'
     %br/

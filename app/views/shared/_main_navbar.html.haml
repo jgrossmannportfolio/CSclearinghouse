@@ -1,27 +1,27 @@
 %div#main_navbar
 	%ul.inline.nav.nav-tabs#main_navbar_links
 		-if @current_controller == "home"
-			%li#homepage_link{:class => "currentpage"}= link_to 'Home', home_index_path
+			%li{:id => "currentpage"}= link_to 'Home', home_index_path
 		-else
-			%li#homepage_link= link_to 'Home', home_index_path
+			%li= link_to 'Home', home_index_path
 			
 		-if @current_controller ==	"about"	
-			%li#about_link{:class=> "currentpage"}= link_to 'About', about_index_path
+			%li{:id=> "currentpage"}= link_to 'About', about_index_path
 		-else
-			%li#about_link= link_to 'About', about_index_path
+			%li= link_to 'About', about_index_path
 		
 		-if @current_controller == "projects"
-			%li#all_projects_link{:class=> "currentpage"}= link_to 'Projects', projects_path
+			%li{:id=> "currentpage"}= link_to 'Projects', projects_path
 		-else
-			%li#all_projects_link= link_to 'Projects', projects_path
+			%li= link_to 'Projects', projects_path
 		
 		-if @current_controller == "users"
-			%li#all_users_link{:class=> "currentpage"}= link_to 'Users', users_path
+			%li{:id=> "currentpage"}= link_to 'Users', users_path
 		-else
-			%li#all_users_link= link_to 'Users', users_path
+			%li= link_to 'Users', users_path
 
 
 		%li= link_to 'CS Homepage', 'http://cs.colgate.edu'
 
-		-#%li#new_project_link= link_to 'Add Project', new_project_path
+		-#%li= link_to 'Add Project', new_project_path
 		
