@@ -1,11 +1,5 @@
 
 
-body{
-  background-color: #eeeeee;
-  padding-bottom: 20px;
-	padding-left:3em;
-	padding-right: 3em;
-}
 
 
 #main_navbar{
@@ -91,20 +85,7 @@ clear: left;
 
 
 
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-771D1C 
-*/
+
 
 
 
@@ -228,7 +209,7 @@ margin-right: auto;
 }
 
 .content{
-/*float:left;
+/*float:center;
 margin-left: 15px;*/
 position:relative;
 width:80%;
@@ -245,8 +226,12 @@ width:80%;
 	border-color: #800000;
 	background-color: #800000;
 }
+body{
+  background-color: #eeeeee;
+  padding-bottom: 20px;
+	padding-left:3em;
+	padding-right: 3em;
 
-body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -266,5 +251,18 @@ a:focus {
   text-decoration: none;
 }
 
-
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+771D1C 
+*/
 
