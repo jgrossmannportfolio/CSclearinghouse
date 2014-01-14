@@ -10,23 +10,28 @@ body{
 
 #main_navbar{
 	height:1.5em;
-	background-color:#800000;
 	font-weight: bold;
 	font-size:1.3em;
 	color: #ba6565;
-	padding-top:.5em;
+	background-color:#eeeeee;
+	/*padding-top:.5em;*/
 	
 }
+#main_navbar_links{
+	background-color:#eeeeee;/**/
+border-bottom:5px solid #800000;
+}
 
+}
 
 a:hover,
 a:focus {
-  color: #c44444;
-  text-decoration: none;
-  cursor: pointer;
+ text-decoration: none;
+ color: #c44444;
+ cursor: pointer;
 }
 a{
-color:#5a5a5a
+/*color:#5a5a5a;*/
 }
 #headerlinks{
 	width:100%;
@@ -227,6 +232,38 @@ margin-right: auto;
 margin-left: 15px;
 position:relative;
 width:70%;
+}
+
+
+
+
+/*BOOTSRAP OVERRIDES*/
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.currentpage > a {
+	color:#ffffff;  
+	border-color: #800000;
+	background-color: #800000;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  color: #ba6565;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #800000;
+  text-decoration: none;
 }
 
 
