@@ -53,7 +53,8 @@ margin-left:10px;
 
 .content#show #headerinfo #skilltags{
 max-height:60px;
-overflow:auto;
+/*overflow:auto;
+the overflow was clipping the tags. need to address this, cause we need to deal with tags stacking up, but overflow clips the colored area that is the tag*/
 }
 
 .projects#profile{

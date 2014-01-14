@@ -1,4 +1,4 @@
-.content
+.container
   .header Update  #{@project.title}
 
   = form_tag project_path(@project), :method => :put do
@@ -23,7 +23,7 @@
     = text_field :tag, :name
     .small_spacing
     .bold= label :project, :description, 'Description'
-    = text_area :project, 'description'
+    = text_area :project, 'description', :class =>widetextarea
     .small_spacing
     = submit_tag 'Update Project Info'
   .small_spacing

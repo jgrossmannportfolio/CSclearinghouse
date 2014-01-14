@@ -1088,7 +1088,7 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 206px;
+  width: 100%;
 }
 
 textarea {
@@ -4062,10 +4062,10 @@ input[type="submit"].btn.btn-mini {
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
-  color: #555555;
+  color: #ffffff;
   cursor: default;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
+  background-color: #800000;
+  border: 1px solid #800000;
   border-bottom-color: transparent;
 }
 

@@ -128,9 +128,9 @@ margin-top:1em;
 span.tag{
 	border-radius:7px;
 	background-color:#ba6565;
-	margin:1em;
+	/*margin:1em;
 	margin-right:0;
-	margin-top:2em;
+	margin-top:2em;*/
 	padding:.5em;
 	color:white;
 	font-weight:bold;
@@ -164,12 +164,9 @@ ul{
 list-style-type: none;
 }
 
-textarea{
+.widetextarea{
 width:100%;
-font-family:"Times New Roman", Times, serif;
-font-size:0.875em;
 height:15em;
-border: 3px inset;
 }
 
 .small_text_area{
