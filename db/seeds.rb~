@@ -65,7 +65,7 @@
 		Project.create!(project)
 	end
 
-	users = [{:username => 'TCharron480', :firstname => 'Thomas', :lastname => 'Charron', :email => 'tcharron@colgate.edu', :password => 'password', :confirmed_at => Time.now, :avatar => '/uploads/user/avatar/default/defaultavatar'}, {:username => 'JGrossmann', :firstname => 'John', :lastname => 'Grossmann', :email => 'jgrossmann@colgate.edu', :password => 'password', :confirmed_at => Time.now, :avatar => '/uploads/user/avatar/default/defaultavatar'}, {:username => 'SBjornsson', :firstname => 'Sean', :lastname => 'Bjornsson', :email => 'sbjornsson@colgate.edu', :password => 'password', :confirmed_at => Time.now, :avatar => '/uploads/user/avatar/default/defaultavatar'}]
+	users = [{:username => 'TCharron480', :firstname => 'Thomas', :lastname => 'Charron', :email => 'tcharron@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'JGrossmann', :firstname => 'John', :lastname => 'Grossmann', :email => 'jgrossmann@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'SBjornsson', :firstname => 'Sean', :lastname => 'Bjornsson', :email => 'sbjornsson@colgate.edu', :password => 'password', :confirmed_at => Time.now}]
 
 	users.each do |user|
 		User.create!(user)
