@@ -82,12 +82,16 @@ clear: left;
   font-style: normal;
 	font-weight:normal;
 	margin-bottom:0px;
+display:inline-block;
+  white-space: nowrap;
+  overflow:hidden !important;
 }
  #titlelink {
   text-decoration: none;
 	color:#800000 ;
 	padding-left: 0px;
 	font-size: 3.5em;
+
 }
 #titlelink_subtext{
 	font-size:2em;
@@ -191,9 +195,6 @@ font-weight: bold;
 font-size:large;
 font-weight:bold;
 margin-right: 1em;
-width:10;
-overflow:hidden;
-text-overflow:ellipsis;
 }
 
 .spacing{
@@ -264,5 +265,6 @@ a:focus {
 .light_maroon{
   color: #ba6565;
 }
+
 
 

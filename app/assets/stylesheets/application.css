@@ -82,12 +82,14 @@ clear: left;
   font-style: normal;
 	font-weight:normal;
 	margin-bottom:0px;
+
 }
  #titlelink {
   text-decoration: none;
 	color:#800000 ;
 	padding-left: 0px;
 	font-size: 3.5em;
+
 }
 #titlelink_subtext{
 	font-size:2em;
@@ -261,5 +263,6 @@ a:focus {
 .light_maroon{
   color: #ba6565;
 }
+
 
 

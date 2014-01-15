@@ -84,9 +84,13 @@
   text-overflow: ellipsis;
 }
 
-.home_project > a:hover,
-.home_project > a:focus{
+.home_project  a:hover,
+.home_project  a:focus{
 	color:#fff;
+}
+.home_project  button a:hover,
+.home_project  button a:focus{
+	color:#800;
 }
 
 

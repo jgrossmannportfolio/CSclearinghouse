@@ -13,9 +13,9 @@
     By
     = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tag","Tag"]]))
     = submit_tag 'Submit search', :name => nil
-  %button
+  %button.btn.btn-default
     = link_to 'Clear search', projects_path
-  %button  
+  %button.btn.btn-default  
     =link_to 'Add New Project', new_project_path
   %hr
   -if @projects
