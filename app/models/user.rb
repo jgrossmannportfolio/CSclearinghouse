@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :firstname, :lastname, :aboutme, :username, :tag_ids, :project_ids
-  attr_accessible :reset_password_token, :confirmed_at, :avatar, :resume
+  attr_accessible :reset_password_token, :confirmed_at, :avatar, :resume, :phone
+  attr_accessible :shortdescription
 
 	has_many :projects, :dependent => :destroy
 	has_many :notifications, :dependent => :destroy
@@ -35,9 +36,12 @@ class User < ActiveRecord::Base
 	end
 
 	def self.unconfirmed_user(user)
-		@user = user
-		@notification = AdminNotification.new_user_message(@user)
-		user.admin_notification = @notification
+    #uncomment when you want admin to confirm each user via admin dashboard comment out
+		#confirmed_at line
+		#@user = user
+		#@notification = AdminNotification.new_user_message(@user)
+		#user.admin_notification = @notification
+		user.confirmed_at = Time.now
 		user.save!
 	end
 

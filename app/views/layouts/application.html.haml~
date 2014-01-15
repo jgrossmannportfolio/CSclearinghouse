@@ -18,7 +18,7 @@
         -#%br/
         = link_to "Computer Science Clearinghouse", '/home', :id => 'titlelink_subtext'
       = render "shared/main_navbar"
-      = yield
+      
       - [:notice, :error, :success, :warning, :alert].each do |key|
         - unless flash[key].blank?
           %p{ :class => "flash #{key}" }= flash[key] 
@@ -30,4 +30,4 @@
           #warning.message= flash[:warning]
         - elsif flash[:alert]
           #alert.message= flash[:alert]
-      
+      = yield
