@@ -3,8 +3,27 @@
 	background-size:cover;
 	height:270px;
 	width:100%;
-	border-bottom: 5px solid #800000;
-position:relative;
-top:-16;
+	border-bottom: 10px solid #800000;
+	position:relative;
+	top:-16;
 }
-
+#woodimage{
+	background-image: url(darkwood.JPG);
+	background-size:cover;
+	height:500px;
+	width:100%;
+	position:relative;
+	top:-16;
+	border-top: 3px solid #500;
+	border-bottom: 3px solid #500;
+}
+#createdby{
+	height: 20px;
+	background-color: #800;
+	width: 100%;
+	color:#c44;
+	position:relative;
+	top:-16;
+	float:right;
+	
+}
