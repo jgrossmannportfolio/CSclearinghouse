@@ -12,7 +12,7 @@
     = text_field_tag :search_string, params[:search]
     By
     = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tag","Tag"]]))
-    %button= submit_tag 'Submit search', :name => nil
+    = submit_tag 'Submit search', :name => nil
   %button
     = link_to 'Clear search', projects_path
   %button  
