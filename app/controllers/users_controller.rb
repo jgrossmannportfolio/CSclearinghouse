@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 		@edit_and_delete = (@user == current_user)
 		@current_user_projects = current_user.projects.where("confirmed_at IS NOT NULL")
     @current_user_projects = @current_user_projects.map {|project| [project.title, project.id] }
+		@usertype = @user.usertype.gsub(/\s+/,"")
 		@resume = (@user.resume_url.present? ? @user.resume_url : "No Resume Uploaded")
 	end
 	

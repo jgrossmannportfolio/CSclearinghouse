@@ -1,4 +1,7 @@
-.container#show 
+
+= render "shared/#{@user.usertype}_account", :user => @user, :edit_and_delete => @edit_and_delete, :current_user_projects => @current_user_projects
+
+.content#show 
   .headerblock
     %div#avatar= image_tag @user.avatar_url(:avatar)
     %div#headerinfo

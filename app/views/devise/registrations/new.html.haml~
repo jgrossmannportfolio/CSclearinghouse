@@ -1,32 +1,60 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name))   do |f|
-  = devise_error_messages!
-  %div
-    = f.label 'First name'
-    %br/
-    = f.text_field :firstname, :autofocus => true, :required => true
-  %div
-    = f.label 'Last name'
-    %br/
-    = f.text_field :lastname, :required => true
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label :username
-    %br/
-    = f.text_field :username
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div
-    = f.hidden_field :avatar, value => "/uploads/user/avatar/default/defaultavatar.jpg"
-  %div= f.submit "Sign up"
+= javascript_include_tag :registrations
+
+%h2#signup_start Sign up
+- if @usertype == nil
+  %br/
+  Choose Your Account Type
+  %br/
+  = link_to "Colgate Student", new_user_registration_path(:usertype => "student")
+  %br/
+  = link_to "Non-Student", new_user_registration_path(:usertype => "non student")
+  .small_spacing
+%div
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name))   do |f|
+    = devise_error_messages!
+
+    %div
+      = "Account Type: #{@usertype}"
+      = f.hidden_field(:usertype, :value => @usertype)
+      %br/
+    %div
+      = f.label 'First name'
+      = f.text_field :firstname, :required => true
+    %div
+      = f.label 'Last name'
+      = f.text_field :lastname, :required => true
+    %div
+      = f.label :email
+      = f.email_field :email
+    %div
+      = f.label 'Phone Number'
+      = f.text_field :phone
+    - if @usertype == "student"
+      %div
+        = f.label 'Graduating Year'
+        = f.select :graduatingyear, @years, :prompt => "Choose One"
+      %div
+        = f.label 'Major'
+        = f.text_field :major1
+      %div
+        = f.label 'Second Major'
+        = f.text_field :major2
+      %div
+        = f.label 'Minor'
+        = f.text_field :minor
+    - else
+      %div
+        = f.label 'Job Title'
+        = f.text_field :jobtitle 
+    %div
+      = f.label :username
+      = f.text_field :username
+    %div
+      = f.label :password
+      = f.password_field :password
+    %div
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    %div= f.submit "Sign up"
 = render "devise/shared/links"
 

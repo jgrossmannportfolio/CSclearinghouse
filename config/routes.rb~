@@ -1,4 +1,6 @@
 Clearinghouse::Application.routes.draw do
+  get "about/index"
+
 	root :to => redirect('/home')
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -11,6 +13,7 @@ Clearinghouse::Application.routes.draw do
   resources :home, :only => [:index]
 	resources :admin_notifications
 	match "/admin_notifications/:id" => "admin_notifications#destroy", :as => "admin_notifications_delete", :via => :delete
+	match "users/sign_up/form" => "devise/registrations#show", :as => "show_user_registration", :via => :get
 	default_url_options :host => "localhost:3000"
 
   # The priority is based upon order of creation:
