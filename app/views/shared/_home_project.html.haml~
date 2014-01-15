@@ -1,25 +1,25 @@
-.project{:id=>"project"+project.id.to_s}
+.home_project{:id=>"project"+project.id.to_s}
 	%span.title
 		= project.title
 	%button.btn.btn-default
 		=link_to 'Details', project_path(project)
-	%hr
+	%hr.light_maroon
 	.project_content
 		.project_info
-			%span.bold
-				Owner:
-
-			= link_to "#{project.owner}", user_path(User.find_by_username(project.owner))
-			%span.spacing
-			%span.bold
-				Deadline:
-			= project.deadline.to_formatted_s(:long) unless project.deadline == nil
-			%br/
+			
 			.bold
 				Description:			
 			%span.description
 				= (project.description.first(200) + "...") unless project.description == nil
-			%br
+			%br/
+			%span.bold
+				Owner:
+			= link_to "#{project.owner}", user_path(User.find_by_username(project.owner))
+			%br/
+			%span.bold
+				Deadline:
+			= project.deadline.to_formatted_s(:long) unless project.deadline == nil
+			%br/
 			.bold.tags
 				Tags:
 				-project.tags.each do |tag|

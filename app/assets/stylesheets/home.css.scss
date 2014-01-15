@@ -17,6 +17,32 @@
 	border-top: 3px solid #500;
 	border-bottom: 3px solid #500;
 }
+#wood_partition2{
+height:75%;
+}
+#wood_partition1{
+height:25%;
+background-color:white;
+}
+
+.home_project span.title{
+width:60%;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+.home_project{
+color:#ba6565;
+background-color:#800;
+border-radius:2em;
+height:90%;
+width:25%;
+vertical-allign:middle;
+float:left;
+padding:2em;
+margin:1em;
+}
+
+
 #createdby{
 	height: 20px;
 	background-color: #800;
@@ -24,6 +50,9 @@
 	color:#c44;
 	position:relative;
 	top:-16;
-	float:right;
 	
+}
+#bottomtext{
+	float:right;
+	margin-right:5px;
 }

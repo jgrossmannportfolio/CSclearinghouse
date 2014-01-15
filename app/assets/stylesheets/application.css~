@@ -128,9 +128,9 @@ margin-top:1em;
 span.tag{
 	border-radius:7px;
 	background-color:#ba6565;
-	margin:1em;
+	/*margin:1em;
 	margin-right:0;
-	margin-top:2em;
+	margin-top:2em;*/
 	padding:.5em;
 	color:white;
 	font-weight:bold;
@@ -181,6 +181,7 @@ padding: 20px;
 margin:1.5em;
 
 }
+
 
 .bold{
 font-weight: bold;
