@@ -7,8 +7,6 @@ gem 'rails', '3.2.11'
 
 group :development, :test do
   gem 'sqlite3'
-	gem 'hpricot'
-	gem 'ruby_parser'
   gem 'debugger'
   gem 'database_cleaner'
   gem 'capybara'
