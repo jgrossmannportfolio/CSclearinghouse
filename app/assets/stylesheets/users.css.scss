@@ -15,6 +15,7 @@ location: relative;
 margin-top: 20px;
 margin-left: 20px;
 margin-right:20px;
+min-height: 220px;
 }
 
 #avatar{
@@ -24,9 +25,22 @@ height:200px;
 width:200px;
 }
 
+#avatar_upload{
+max-width: 250px;
+overflow:clip
+}
+
 #headerinfo{
 padding:10px;
-margin-left:200px;
+margin-left:260px;
+}
+
+#namelabel{
+display: inline-block;
+}
+
+.last{
+margin-left: 135px;
 }
 
 #name{
@@ -39,6 +53,14 @@ font-size:2em;
 #user_status{
 font-size:.8em;
 color:Gray;
+}
+
+#major{
+display: inline-block;
+}
+
+.major2{
+margin-left: 170px;
 }
 
 #contact_buttons{
@@ -56,6 +78,28 @@ margin-left:10px;
 max-height:60px;
 /*overflow:auto;
 the overflow was clipping the tags. need to address this, cause we need to deal with tags stacking up, but overflow clips the colored area that is the tag*/
+}
+
+#skilltag_input{
+margin-left: 20px;
+}
+
+#skilltag_hint{
+margin-left: 110px;
+max-width: 200px;
+font-size: .6em;
+margin-top: -10px;
+max-height: 10px;
+line-height: 10px;
+text-align: center;
+}
+
+#button{
+display: inline-block;
+}
+
+.cancel{
+margin-left:5px;
 }
 
 .projects#profile{

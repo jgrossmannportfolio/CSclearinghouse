@@ -5,9 +5,12 @@
       %span#name.bold= user.firstname
       %span#name.bold= user.lastname
       %br/
-      %span#shortdescription= user.shortdescription
-      %br/
+      -if user.shortdescription?
+        %span#shortdescription= user.shortdescription
+        %br/
       %span#user_status= "Class of #{user.graduatingyear}" if user.graduatingyear?
+      %span#user_status= " | #{major} major" if major != nil
+      %span#user_status= " with a minor in #{user.minor}" if user.minor?
       .small_spacing
       %div#contact_info
         %span#emailheading Email:

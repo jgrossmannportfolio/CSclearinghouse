@@ -36,13 +36,26 @@ class UsersController < ApplicationController
 		@edit_and_delete = (@user == current_user)
 		@current_user_projects = current_user.projects.where("confirmed_at IS NOT NULL")
     @current_user_projects = @current_user_projects.map {|project| [project.title, project.id] }
+		@usertype = @user.usertype.gsub(/\s+/,"_")
 		@resume = (@user.resume_url.present? ? @user.resume_url : "No Resume Uploaded")
+    @major = "#{@user.major1}"
+		@major = @major + "and #{@user.major2}" if @user.major2?
 	end
 	
 	def edit
 		id = params[:id]
 		@user = User.find(id)
+		if @user != current_user
+			flash[:notice] = "#{current_user.id} sucks}"
+			redirect_to root_path
+		end
 		@tags = @user.tags
+		@usertype = @user.usertype.gsub(/\s+/,"_")
+		@editblock = params[:editblock]
+		@avatar = @user.avatar_url(:avatar)
+    @year = Time.now.year
+    @years = [@year, @year+1, @year+2, @year+3, @year+4]
+	  @years = @years.collect{|i| i.to_s}
 	end
 
 	def new
@@ -72,7 +85,9 @@ class UsersController < ApplicationController
 				end
 			end
 			@tags = @user.tags
-	    flash[:notice] = "#{@user.username}'s profile was successfully updated."
+			if !params[:cancel]
+	    	flash[:notice] = "#{@user.username}'s profile was successfully updated."
+			end
 	    redirect_to user_path(@user)
   	end
 
