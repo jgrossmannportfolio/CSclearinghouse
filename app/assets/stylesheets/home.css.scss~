@@ -31,6 +31,7 @@
 	float:left;
 	height:25%;
 	width:60%;
+	margin-left:1em;
 }
 #add_project_button{
 	float:left;
