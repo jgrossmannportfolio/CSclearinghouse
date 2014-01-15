@@ -1,15 +1,22 @@
 %div#homeimage
 .container#woodimage
-	%span#wood_partition1
-	#wood_partition1_content
-		%h1 wasssuuupppp
+	#wood_partition1
+		#wp1background
+			&nbsp;
+		#wp1text 
+			%h3
+				wasssuuupppp
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere elit sed nibh malesuada consectetur. Maecenas vel arcu varius, cursus nibh sit amet, dapibus nulla. Aenean non tincidunt eros.
+		%span.btn.btn-default#add_project_button
+			Post a New Project
 	#wood_partition2
-		%h4.light_maroon
-			Recent Projects:
 		%table
 			%tr
 				-Project.order("created_at DESC").first(3).each do |project|
-					%td= render "shared/home_project", :project => project
+					%td
+						.wp2bacground
+							&nbsp;
+						.wp2content= render "shared/home_project", :project => project
 		
 			
 %div#createdby 

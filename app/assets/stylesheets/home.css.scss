@@ -17,37 +17,74 @@
 	border-top: 3px solid #500;
 	border-bottom: 3px solid #500;
 }
+
+#wp1background{
+	height:25%;
+	width:100%;
+	background-color:#800;
+	opacity:.5;
+	position:absolute;
+	top:-3;
+}
+#wp1text{
+	color:#fff;
+	float:left;
+	height:25%;
+	width:60%;
+	margin-left:1em;
+}
+#add_project_button{
+	float:left;
+	color: #ba6565;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 1em;
+	margin-left:2em;
+	margin-top: .6em;
+	border-radius: 2em;
+	position: absolute;
+}	
+#add_project_button:hover{
+	color:#800;
+}
 #wood_partition2{
-height:60%;
+	position:relative;
+	height:62%;
 }
-#wood_partition1{
-height:25%;
-background-color:#800;
-opacity:.5;
-position:absolute;
+.home_project{
+	padding:2em;
+	margin:1em;
 }
-#wood_partition1_content{
-height:25%;
-position:absolute;
+.wp2bacground{
+	color:#ba6565;
+	background-color:#800;
+	border-radius:2em;
+	height:110%;
+	width:30%;
+	vertical-allign:middle;
+	opacity:.5;
+	position:absolute;
+	z-index:1;
+	margin:1em;
 }
+.wp2content{
+	position:relative;
+	z-index:2;
+	color:white;
+}
+
 
 .home_project span.title{
 	display:inline-block;
-  width:180px;
+  width:160px;
   white-space: nowrap;
   overflow:hidden !important;
   text-overflow: ellipsis;
 }
-.home_project{
-color:#ba6565;
-background-color:#800;
-border-radius:2em;
-height:100%;
-width:70%;
-vertical-allign:middle;
 
-padding:2em;
-margin:1em;
+.home_project > a:hover,
+.home_project > a:focus{
+	color:#fff;
 }
 
 
