@@ -182,6 +182,7 @@ margin:1.5em;
 
 }
 
+
 .bold{
 font-weight: bold;
 
@@ -190,6 +191,9 @@ font-weight: bold;
 font-size:large;
 font-weight:bold;
 margin-right: 1em;
+width:10;
+overflow:hidden;
+text-overflow:ellipsis;
 }
 
 .spacing{
@@ -257,6 +261,8 @@ a:focus {
   color: #800000;
   text-decoration: none;
 }
-
+.light_maroon{
+  color: #ba6565;
+}
 
 

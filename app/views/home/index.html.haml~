@@ -1,11 +1,29 @@
 %div#homeimage
-%div#woodimage
-%div#createdby
-	Created by J. Grossman '14, S. Bjornsson '14, and T. Charron '14 
+.container#woodimage
+	#wood_partition1
+		#wp1background
+			&nbsp;
+		#wp1text 
+			%h3
+				wasssuuupppp
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere elit sed nibh malesuada consectetur. Maecenas vel arcu varius, cursus nibh sit amet, dapibus nulla. Aenean non tincidunt eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam eu posuere lectus. Phasellus eget ligula mauris. Proin ut egestas quam. Etiam mauris diam, convallis ut turpis vel, rutrum consectetur ante. Morbi ornare mauris eu ante mattis porttitor.
+		%span.btn.btn-default#add_project_button
+			Post a New Project
+	#wood_partition2
+		%table
+			%tr
+				-Project.order("created_at DESC").first(3).each do |project|
+					%td
+						.wp2bacground
+							&nbsp;
+						.wp2content= render "shared/home_project", :project => project
+		
+			
+%div#createdby 
+	%div#bottomtext
+		Created by J. Grossman '14, S. Bjornsson '14, and T. Charron '14  
 .container
-	%h4
-		Recent Projects:
-	-Project.order("created_at DESC").first(3).each do |project|
-		= render "shared/project", :project => project
+	
+	
 
 

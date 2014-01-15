@@ -14,9 +14,79 @@
 	width:100%;
 	position:relative;
 	top:-16;
-	border-top: 2px solid #500;
-	border-bottom: 2px solid #500;
+	border-top: 3px solid #500;
+	border-bottom: 3px solid #500;
 }
+
+#wp1background{
+	height:25%;
+	width:100%;
+	background-color:#800;
+	opacity:.5;
+	position:absolute;
+	top:-3;
+}
+#wp1text{
+	color:#fff;
+	float:left;
+	height:25%;
+	width:60%;
+}
+#add_project_button{
+	float:left;
+	color: #ba6565;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 1em;
+	margin-left:2em;
+	margin-top: .6em;
+	border-radius: 2em;
+	position: absolute;
+}	
+#add_project_button:hover{
+	color:#800;
+}
+#wood_partition2{
+	position:relative;
+	height:62%;
+}
+.home_project{
+	padding:2em;
+	margin:1em;
+}
+.wp2bacground{
+	color:#ba6565;
+	background-color:#800;
+	border-radius:2em;
+	height:110%;
+	width:30%;
+	vertical-allign:middle;
+	opacity:.5;
+	position:absolute;
+	z-index:1;
+	margin:1em;
+}
+.wp2content{
+	position:relative;
+	z-index:2;
+	color:white;
+}
+
+
+.home_project span.title{
+	display:inline-block;
+  width:160px;
+  white-space: nowrap;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+}
+
+.home_project > a:hover,
+.home_project > a:focus{
+	color:#fff;
+}
+
+
 #createdby{
 	height: 20px;
 	background-color: #800;
@@ -24,6 +94,9 @@
 	color:#c44;
 	position:relative;
 	top:-16;
-	float:right;
 	
+}
+#bottomtext{
+	float:right;
+	margin-right:5px;
 }
