@@ -1,10 +1,14 @@
 = javascript_include_tag :registrations
 
 %h2#signup_start Sign up
+= "#{@usertype}"
 - if @usertype == nil
   %br/
   Choose Your Account Type
   %br/
+
+  = select :usertype, :usertype, ["Colgate Student", "Non-Student"], :prompt => true
+
   = link_to "Colgate Student", new_user_registration_path(:usertype => "student")
   %br/
   = link_to "Non-Student", new_user_registration_path(:usertype => "non student")

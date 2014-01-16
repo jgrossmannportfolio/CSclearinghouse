@@ -4,8 +4,10 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/sign_up
   def new
-    resource = build_resource({})
-		if(params[:usertype] == "student" || params[:usertype] == "non student")
+		resource = build_resource({})
+		flash[:notice] = "hello #{params[:usertype]}"
+		render :partial => 'student_account' and return if request.xhr?
+		if(params[:usertype] != nil)
 			@usertype = params[:usertype]
 			@year = Time.now.year
       @years = [@year, @year+1, @year+2, @year+3, @year+4]
