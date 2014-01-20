@@ -7,11 +7,17 @@ class Devise::RegistrationsController < DeviseController
 		resource = build_resource({})
 		flash[:notice] = "hello #{params[:usertype]}"
 		if(params[:usertype] != nil)
-			@usertype = params[:usertype]
+			if(params[:usertype] == "Colgate Student")
+				@usertype = "colgate_student"
+			else
+				@usertype = "non_student"
+			end
 			@year = Time.now.year
       @years = [@year, @year+1, @year+2, @year+3, @year+4]
 			@years = @years.collect{|i| i.to_s}
 		end
+    puts "#{@usertype} this shit is whack"
+    render :partial => "shared/#{@usertype}_registration", :resource => resource, :@usertype => @usertype, :@years => @years and return if request.xhr?
 		respond_with resource
   end
 

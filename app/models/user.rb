@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :aboutme, :username, :tag_ids, :project_ids
   attr_accessible :reset_password_token, :confirmed_at, :avatar, :resume, :phone
   attr_accessible :shortdescription, :graduatingyear, :major1, :major2, :minor, :usertype
-  attr_accessible :jobtitle
+  attr_accessible :jobtitle, :organization
 
 	has_many :projects, :dependent => :destroy
 	has_many :notifications, :dependent => :destroy
@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
 	attr_accessible :login
 	validates_uniqueness_of :username
   validates_uniqueness_of :email
+	validates :phone, :allow_blank => true, format: { with: /\d{3}-\d{3}-\d{4}/, message: "Bad Phone Number Format"}
  
 	#hacking devise to ensure user does not recieve confirmation email
 	#until admin clears them

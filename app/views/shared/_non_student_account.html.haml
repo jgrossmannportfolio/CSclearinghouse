@@ -5,25 +5,18 @@
       %span#name.bold= @user.firstname
       %span#name.bold= @user.lastname
       %br/
-      %span#shortdescription
-      This is supposed to be a short description about myself limited to 150 characters.
-      %br/
-      %span#user_status "Should be status (student or whatev)"
-      / Include if statement, if student, give class year and status
-      / if not, include employment title, and description (physics department,etc)
+      - if @user.shortdescription?
+        %span#shortdescription= @user.shortdescription
+        %br/
+      %span#user_status= @organization
       .small_spacing
       %div#contact_info
         %span#emailheading Email:
         %span#email= @user.email
         %br/
         %span#phoneheading Phone:
-        %span#phone (555)555-5555
+        %span#phone= @user.phone
       .small_spacing
-      %div#skilltags
-        %span.bold Skill Tags:
-        - @user.tags.each do |tag|
-          %span.tag= tag.name
-      %br/
       %div#contactbuttons
         -if @edit_and_delete
           .buttons
@@ -39,11 +32,11 @@
     %div#header_title
       PROJECTS
     %div#projects_list
-      - if @user.projects
+      - if @user.projects.length > 0
         - @user.projects.each do |project|
           = render "shared/project", :project => project
       -else
-        No Projects
+        #projectstatus= "No Projects"
   .small_spacing
 
   .page_links 

@@ -1,0 +1,43 @@
+.content#show 
+  .headerblock
+    %div#avatar= image_tag @user.avatar_url(:avatar)
+    %div#headerinfo
+      %span#name.bold= @user.firstname
+      %span#name.bold= @user.lastname
+      %br/
+      - if @user.shortdescription?
+        %span#shortdescription= @user.shortdescription
+        %br/
+      %span#user_status= @user.organization
+      .small_spacing
+      %div#contact_info
+        %span#emailheading Email:
+        %span#email= @user.email
+        %br/
+        %span#phoneheading Phone:
+        %span#phone= @user.phone
+      .small_spacing
+      %div#contactbuttons
+        -if @edit_and_delete
+          .buttons
+            = button_to 'Edit', edit_user_path(@user), :method => :get
+        -else
+          %div#colaboration
+            Let this user know you are interested in colaborating with them:
+            = form_tag notifications_path(:user => @user, :type => "owner notify user of interest", :link => "/users/#{@user.id}", :current_user => current_user), :method => :post do
+              = select_tag(:project, options_for_select(@current_user_projects))
+              = submit_tag "Notify User"
+
+  .projects#profile
+    %div#header_title
+      PROJECTS
+    %div#projects_list
+      - if @user.projects.length > 0
+        - @user.projects.each do |project|
+          = render "shared/project", :project => project
+      -else
+        #projectstatus= "No Projects"
+  .small_spacing
+
+  .page_links 
+  = link_to 'Back to user list', users_path

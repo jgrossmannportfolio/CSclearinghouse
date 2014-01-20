@@ -5,14 +5,17 @@ class Devise::RegistrationsController < DeviseController
   # GET /resource/sign_up
   def new
 		resource = build_resource({})
-		flash[:notice] = "hello #{params[:usertype]}"
-		render :partial => 'student_account' and return if request.xhr?
 		if(params[:usertype] != nil)
-			@usertype = params[:usertype]
+			if(params[:usertype] == "Colgate Student")
+				@usertype = "colgate_student"
+			else
+				@usertype = "non_student"
+			end
 			@year = Time.now.year
       @years = [@year, @year+1, @year+2, @year+3, @year+4]
 			@years = @years.collect{|i| i.to_s}
 		end
+    render :partial => "shared/#{@usertype}_registration", :resource => resource, :@usertype => @usertype, :@years => @years and return if request.xhr?
 		respond_with resource
   end
 

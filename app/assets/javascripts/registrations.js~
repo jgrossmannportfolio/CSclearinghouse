@@ -1,31 +1,18 @@
 $('document').ready(function() {
-  $('<div id="formdata"></div>').hide().appendTo($('body')),
+  $('<div id="formdata"></div>').hide().insertAfter($('#usertype_usertype')),
   $('#usertype_usertype').change(function() {
     $.ajax({type: 'GET',
             url: "/users/sign_up",
-            data: {usertype: $(this).val().to_s},
-            success: showFormData,
+            data: {usertype: $("#usertype_usertype option:selected").text()},
+            success: function(result) {
+              $('#formdata').html(result).show() },
             timeout: 5000 });
     return false;
   })
 });
-showFormData: function(data) {
-  $('#formdata').html(data).css({'top': 300}).show();
-  return false;
-}
-$('#accounttype').select(function() {
-  window.location = "/users"
-});
-$('#type').click(function() {
-});
-$('document').ready(function() {
-  if ($('body').length) {
-    console.log("RIGHT HERE IT ACTUALLY WORKED");
-  }
-});
 $('document').ready(function() {
   $('#usertype_usertype').change(function() {
-    console.log("AGAIN it actually worked");
+    console.log($("#usertype_usertype option:selected").text());
     return false;
   });
 });
