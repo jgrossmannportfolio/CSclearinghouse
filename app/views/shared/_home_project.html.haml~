@@ -3,7 +3,7 @@
 		= project.title
 	%button.btn.btn-default
 		=link_to 'Details', project_path(project)
-	%hr.light_maroon
+	%hr
 	.project_content
 		.project_info
 			
