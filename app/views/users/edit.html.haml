@@ -1,46 +1,4 @@
-.container
-	%h2 Edit #{@user.username}'s Profile page
-
-	= form_tag user_path(@user), :multipart => true, :method => :put do
-
-		= label :user, :avatar, 'File for Avatar'
-		%br/
-		= file_field :user,:avatar
-		.small_spacing
-
-		= label :user, :firstname, 'First Name'
-		%br/
-		= text_field :user, :firstname
-		.small_spacing
-		= label :user, :lastname, 'Last Name'
-		%br/
-		= text_field :user, :lastname
-
-		.small_spacing
-		= label :user, :aboutme, 'About Me'
-		%br/
-		= text_area :user, :aboutme, :class => 'small_text_area'
-		.small_spacing
-		-if @tags.size!=0
-			Check to Delete Skill Tag:
-			- @tags.each do |tag|
-				%span.tag
-					= tag.name
-				= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
-			.spacing
-		= label :tag, :name, 'New Skill Tag'
-		= text_field :tag, :name
-		.spacing
-		%br/
-		
-		= label :user, :resume, 'Upload Resume (PDF Only)'
-		%br/
-		= file_field :user, :resume
-		.small_spacing
-
-		= submit_tag 'Update Profile'
-
-	=link_to 'Back to Profile', user_path(@user)
+= render "shared/edit_#{@usertype}_account", :@user => @user, :@tags => @tags, :@avatar => @avatar, :@years => @years
 
 	
 

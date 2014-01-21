@@ -1,0 +1,13 @@
+= javascript_include_tag :users
+- if @user.tags.size != 0
+  Check to Delete Skill Tag
+  - @user.tags.each do |tag|
+    %span.tag= tag.name
+    %span#skilltagcheck= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+  .spacing
+
+= form_tag user_path(@user), :method => "get", :class => 'skilltagform', :remote => true do
+  %span#skilltag_label New Skill Tag:
+  %span#skilltag_input= text_field :tag, :name
+  %div#skilltag_hint Put in any skills you think may be useful for a potential employer to see ie: java, .net, SaaS, etc
+  #newskilltag= submit_tag "Add Skill Tag"

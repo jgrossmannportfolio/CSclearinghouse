@@ -1,0 +1,120 @@
+.content#show 
+  .headerblock
+    = form_tag @user_path(@user), :multipart => true, :method => :put do
+      %div#avatar= image_tag user.avatar_url(:avatar)
+      = label :user, :avatar, "Change Avatar"
+      #avatar_upload= file_field :user, :avatar
+      %div#headerinfo
+        %span#name.bold= user.firstname
+        %span#name.bold= user.lastname
+        %br/
+        %span#shortdescription= user.shortdescription
+        %br/
+        %span#user_status= "Class of #{user.graduatingyear}" if user.graduatingyear?
+        .small_spacing
+        %div#contact_info
+          %span#emailheading Email:
+          %span#email= user.email
+          %br/
+          %span#phoneheading Phone:
+          %span#phone (555)555-5555
+        .small_spacing
+        %div#skilltags
+          %span.bold Skill Tags:
+          - user.tags.each do |tag|
+            %span.tag= tag.name
+        %br/
+        = submit_tag "Update Profile"
+
+  .projects#profile
+    %div#header_title
+      PROJECTS
+    %div#projects_list
+      - if user.projects
+        - user.projects.each do |project|
+          = render "shared/project", :project => project
+      -else
+        No Projects
+    %br/
+
+  .background
+    %div#header_title
+      BACKGROUND
+    %br/
+    %div#aboutme
+      #capstitle ABOUT ME
+      %br/
+      = user.aboutme
+    %br/
+    %div#line_separator
+    %br/
+    %div#experience
+      #capstitle EXPERIENCE
+      %br/
+      Put in experience model. an experience is one entry, job title, description, skills gained, etc.
+    %br/
+    %div#line_separator
+    %br/
+    %div#resume
+      #capstitle RESUME
+      %br/
+    - if user.resume_url.present?
+      = link_to('Click to Download', user.resume_url)
+      Should probably put in the name of the file to download
+    - else
+      No Resume Uploaded
+  .small_spacing
+
+  .page_links 
+  = link_to 'Back to user list', users_path
+
+
+
+
+
+
+
+
+.container
+	%h2 Edit #{@user.username}'s Profile page
+
+	= form_tag user_path(@user), :multipart => true, :method => :put do
+
+		= label :user, :avatar, 'File for Avatar'
+		%br/
+		= file_field :user,:avatar
+		.small_spacing
+
+		= label :user, :firstname, 'First Name'
+		%br/
+		= text_field :user, :firstname
+		.small_spacing
+		= label :user, :lastname, 'Last Name'
+		%br/
+		= text_field :user, :lastname
+
+		.small_spacing
+		= label :user, :aboutme, 'About Me'
+		%br/
+		= text_area :user, :aboutme, :class => 'small_text_area'
+		.small_spacing
+		-if @tags.size!=0
+			Check to Delete Skill Tag:
+			- @tags.each do |tag|
+				%span.tag
+					= tag.name
+				= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+			.spacing
+		= label :tag, :name, 'New Skill Tag'
+		= text_field :tag, :name
+		.spacing
+		%br/
+		
+		= label :user, :resume, 'Upload Resume (PDF Only)'
+		%br/
+		= file_field :user, :resume
+		.small_spacing
+
+		= submit_tag 'Update Profile'
+
+	=link_to 'Back to Profile', user_path(@user)

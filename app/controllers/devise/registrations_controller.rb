@@ -4,8 +4,19 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/sign_up
   def new
-    resource = build_resource({})
-    respond_with resource
+		resource = build_resource({})
+		if(params[:usertype] != nil)
+			if(params[:usertype] == "Colgate Student")
+				@usertype = "colgate_student"
+			else
+				@usertype = "non_student"
+			end
+			@year = Time.now.year
+      @years = [@year, @year+1, @year+2, @year+3, @year+4]
+			@years = @years.collect{|i| i.to_s}
+		end
+    render :partial => "shared/#{@usertype}_registration", :resource => resource, :@usertype => @usertype, :@years => @years and return if request.xhr?
+		respond_with resource
   end
 
   # POST /resource
@@ -34,7 +45,8 @@ class Devise::RegistrationsController < DeviseController
   def edit
     render :edit
   end
-
+			
+	
   # PUT /resource
   # We need to use a copy of the resource because we don't want to change
   # the current user in place.
@@ -87,7 +99,8 @@ class Devise::RegistrationsController < DeviseController
   # The path used after sign up. You need to overwrite this method
   # in your own RegistrationsController.
   def after_sign_up_path_for(resource)
-		after_sign_in_path_for(resource)
+		#after_sign_in_path_for(resource)
+		user_path(current_user.id)
   end
 
   # The path used after sign up for inactive accounts. You need to overwrite

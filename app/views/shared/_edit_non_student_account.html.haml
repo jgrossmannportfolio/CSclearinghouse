@@ -1,0 +1,50 @@
+.content#show 
+  .headerblock
+    = form_tag user_path(@user), :multipart => true, :method => :put do
+      %div#avatar
+        = image_tag @avatar
+        #avatar_upload= file_field :user, :avatar
+      %div#headerinfo
+        .first#namelabel= label :user, :firstname, "First Name"
+        .last#namelabel= label :user, :lastname, "Last Name"
+        %br/
+        %span#name.bold= text_field :user, :firstname
+        %span#name.bold= text_field :user, :lastname
+        %br/
+        = label :user, :shortdescription, "Short Description of Yourself"
+        %span#shortdescription#small_text_area= text_field :user, :shortdescription
+        %br/
+        = label :user, :organization, "Organization or Affiliation"
+        = text_field :user, :organization
+        %br/
+        = label :user, :jobtitle, "Job Title"
+        = text_field :user, :jobtitle
+        .small_spacing
+        %div#contact_info
+          %span#emailheading Email:
+          %span#email= text_field :user, :email
+          %br/
+          %span#phoneheading Phone:
+          %span#phone= text_field :user, :phone
+          %br/
+          %span#phonehint xxx-xxx-xxxx
+        .small_spacing
+      #submitprofile= submit_tag "Update Profile"
+    %div#cancel
+      = form_tag user_path(@user), :method => :put do
+        = hidden_field :cancel, :value => 1
+        = submit_tag "Cancel"
+
+  .projects#profile
+    %div#header_title
+      PROJECTS
+    %div#projects_list
+      - if @user.projects.length > 0
+        - @user.projects.each do |project|
+          = render "shared/project", :project => project
+      -else
+        #newprojectlink= link_to "Start a New Project", new_project_path
+    %br/
+
+  .page_links 
+  = link_to 'Back to user list', users_path
