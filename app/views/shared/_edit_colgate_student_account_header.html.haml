@@ -1,0 +1,43 @@
+= form_tag user_path(@user), :multipart => true, :class => 'updateprofile', :method => :put do
+  %div#avatar
+    = image_tag @avatar
+    #avatar_upload= file_field :user, :avatar
+  %div#headerinfo
+    .first#namelabel= label :user, :firstname, "First Name"
+    .last#namelabel= label :user, :lastname, "Last Name"
+    %br/
+    %span#name.bold= text_field :user, :firstname
+    %span#name.bold= text_field :user, :lastname
+    %br/
+    = label :user, :shortdescription, "Short Description of Yourself"
+    %span#shortdescription#small_text_area= text_field :user, :shortdescription
+    %br/
+    %span= "Class of"
+    = select :user, :graduatingyear, @years, :prompt => "Choose One"
+    %br/
+    %span#major= label :user, :major, 'Major'
+    %span.major2#major= label :user, :major2, 'Second Major'
+    %br/
+    %span#major1= text_field :user, :major1
+    %span#major2= text_field :user, :major2
+    %br/
+    %span= label :user, :minor, 'Minor'
+    #minor= text_field :user, :minor
+    .small_spacing
+    %div#contact_info
+      %span#emailheading Email:
+      %span#email= text_field :user, :email
+      %br/
+      %span#phoneheading Phone:
+      %span#phone= text_field :user, :phone
+      %br/
+      %span#phonehint xxx-xxx-xxxx
+    .small_spacing
+  #submitprofile= submit_tag "Update Profile"
+%div#cancel
+  = form_tag user_path(@user), :method => :get do
+    = hidden_field :cancel, :value => 1
+    = submit_tag "Cancel"
+%div#skilltags
+  = render :partial => 'shared/skill_tags', :@user => @user
+

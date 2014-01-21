@@ -65,7 +65,7 @@
 		Project.create!(project)
 	end
 
-	users = [{:username => 'TCharron480', :firstname => 'Thomas', :lastname => 'Charron', :email => 'tcharron@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'JGrossmann', :firstname => 'John', :lastname => 'Grossmann', :email => 'jgrossmann@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'SBjornsson', :firstname => 'Sean', :lastname => 'Bjornsson', :email => 'sbjornsson@colgate.edu', :password => 'password', :confirmed_at => Time.now}, {:username => 'empty', :firstname => 'John', :lastname => 'smith', :email => 'jgrossmann@students.colgate.edu', :password => 'password', :confirmed_at => Time.now}]
+	users = [{:username => 'TCharron480', :firstname => 'Thomas', :lastname => 'Charron', :email => 'tcharron@colgate.edu', :password => 'password', :confirmed_at => Time.now, :usertype => "colgate_student"}, {:username => 'JGrossmann', :firstname => 'John', :lastname => 'Grossmann', :email => 'jgrossmann@colgate.edu', :password => 'password', :confirmed_at => Time.now, :usertype => "colgate_student"}, {:username => 'SBjornsson', :firstname => 'Sean', :lastname => 'Bjornsson', :email => 'sbjornsson@colgate.edu', :password => 'password', :confirmed_at => Time.now, :usertype => "colgate_student"}, {:username => 'empty', :firstname => 'John', :lastname => 'smith', :email => 'jgrossmann@students.colgate.edu', :password => 'password', :confirmed_at => Time.now, :usertype => "colgate_student"}, {:username => 'professor', :firstname => 'jim', :lastname => 'moriarty', :email => 'killsherlock@villain.com', :password => 'password', :confirmed_at => Time.now, :usertype => "non_student"}]
 
 	users.each do |user|
 		User.create!(user)

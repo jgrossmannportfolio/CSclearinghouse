@@ -1,0 +1,45 @@
+.content#show 
+  .headerblock
+    = render "shared/colgate_student_account_header", :user => @user, :edit_and_delete => @edit_and_delete, :current_user_projects => @current_user_projects, :major => @major
+
+  .projects#profile
+    %div#header_title
+      PROJECTS
+    %div#projects_list
+      - if user.projects
+        - user.projects.each do |project|
+          = render "shared/project", :project => project
+      -else
+        No Projects
+    %br/
+
+  .background
+    %div#header_title
+      BACKGROUND
+    %br/
+    %div#aboutme
+      #capstitle ABOUT ME
+      %br/
+      = user.aboutme
+    %br/
+    %div#line_separator
+    %br/
+    %div#experience
+      #capstitle EXPERIENCE
+      %br/
+      Put in experience model. an experience is one entry, job title, description, skills gained, etc.
+    %br/
+    %div#line_separator
+    %br/
+    %div#resume
+      #capstitle RESUME
+      %br/
+    - if user.resume_url.present?
+      = link_to('Click to Download', user.resume_url)
+      Should probably put in the name of the file to download
+    - else
+      No Resume Uploaded
+  .small_spacing
+
+  .page_links 
+  = link_to 'Back to user list', users_path

@@ -1,0 +1,36 @@
+.content#registration
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name))   do |f|
+    = devise_error_messages!
+
+    %div
+      = "Account Type: Non-Student"
+      = f.hidden_field(:usertype, :value => @usertype)
+      %br/
+    %div
+      = f.label 'First name'
+      = f.text_field :firstname, :required => true
+    %div
+      = f.label 'Last name'
+      = f.text_field :lastname, :required => true
+    %div
+      = f.label :email
+      = f.email_field :email
+    %div
+      = f.label 'Phone Number'
+      = f.text_field :phone, :placeholder => "xxx-xxx-xxxx"
+    %div
+      = f.label 'Organization or Affiliation'
+      = f.text_field :organization
+    %div
+      = f.label 'Job Title'
+      = f.text_field :jobtitle
+    %div
+      = f.label :username
+      = f.text_field :username
+    %div
+      = f.label :password
+      = f.password_field :password
+    %div
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    %div= f.submit "Sign up"
