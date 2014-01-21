@@ -32,7 +32,13 @@
 	height:25%;
 	width:60%;
 	margin-left:1em;
+<<<<<<< HEAD
+=======
+	position:relative;
+	z-index:10;
+>>>>>>> newlook
 }
+
 #add_project_button{
 	float:left;
 	color: #ba6565;
@@ -43,10 +49,9 @@
 	margin-top: .6em;
 	border-radius: 2em;
 	position: absolute;
+	z-index:10;
 }	
-#add_project_button:hover{
-	color:#800;
-}
+
 #wood_partition2{
 	position:relative;
 	height:62%;
@@ -69,7 +74,7 @@
 }
 .wp2content{
 	position:relative;
-	z-index:2;
+	z-index:10;
 	color:white;
 }
 
@@ -82,9 +87,13 @@
   text-overflow: ellipsis;
 }
 
-.home_project > a:hover,
-.home_project > a:focus{
+.home_project  a:hover,
+.home_project  a:focus{
 	color:#fff;
+}
+.home_project  button a:hover,
+.home_project  button a:focus{
+	color:#800;
 }
 
 

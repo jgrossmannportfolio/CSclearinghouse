@@ -1,10 +1,14 @@
 .container
   %div
-    %h3 
+    %h3
       All Projects
+      %button.btn.btn-default
+        =link_to 'Add New Project', new_project_path
   Sort By: 
   = link_to 'Title', projects_path( :projectsort => 'title'), :class => @title_header
+  |
   = link_to 'Project Owner', projects_path( :projectsort => 'owner'), :class => @owner_header
+  |
   = link_to 'Deadline', projects_path( :projectsort => 'deadline'), :class => @deadline_header
   %br/
   = form_tag projects_path, :method => 'GET' , :id => 'project_search_bar'  do
@@ -12,11 +16,10 @@
     = text_field_tag :search_string, params[:search]
     By
     = select(:search_type, :selected, options_for_select([["Title", "Title"], ["Owner", "Owner"], ["Description", "Description"],["Tag","Tag"]]))
-    = submit_tag 'Submit search', :name => nil
-  %button
+    %button.btn.btn-default{:type => 'submit', :value => 'Search Projects', :name => nil}
+      Search Projects
+  %button.btn.btn-default
     = link_to 'Clear search', projects_path
-  %button  
-    =link_to 'Add New Project', new_project_path
   %hr
   -if @projects
     - @projects.each do |project|

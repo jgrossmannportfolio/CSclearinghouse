@@ -8,8 +8,9 @@
     = select(:search_type, :selected, options_for_select([["First Name", "firstname"], ["Last Name", "lastname"], ["Email", "Email"],["Username","Username"],["Tags","Tags"]]))
     %button.btn.btn-default{:type => 'submit', :value => 'Search Users', :name => nil}
       Search Users
-    -#= submit_tag 'Search users', :name => nil
-    %button.btn.btn-default= link_to 'Clear search', users_path
+    -#***^^^changed it to a button so it would mesh with the other buttons
+    -#***= submit_tag 'Search users', :name => nil
+    %button.btn.btn-default= link_to 'Clear search', users_path, 
   %hr
   %table#users
     %thead

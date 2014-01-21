@@ -1088,7 +1088,7 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 100%;
+  width: 206px;
 }
 
 textarea {
@@ -3176,7 +3176,7 @@ button.close {
   *margin-left: .3em;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
+  color: #ba6565;/****************************************************************************************/
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
@@ -3211,7 +3211,7 @@ button.close {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-  color: #333333;
+  color: ##800;/****************************************************************************************/
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
