@@ -82,9 +82,7 @@ clear: left;
   font-style: normal;
 	font-weight:normal;
 	margin-bottom:0px;
-display:inline-block;
-  white-space: nowrap;
-  overflow:hidden !important;
+
 }
  #titlelink {
   text-decoration: none;
@@ -131,8 +129,8 @@ margin-top:1em;
 
 span.tag{
 	border-radius:7px;
-	background-color:#ba6565;
-	/*margin:1em;
+	background-color:#800;
+	margin:.5em;/*
 	margin-right:0;
 	margin-top:2em;*/
 	padding:.5em;
@@ -265,6 +263,4 @@ a:focus {
 .light_maroon{
   color: #ba6565;
 }
-
-
 

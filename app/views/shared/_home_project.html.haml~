@@ -1,7 +1,7 @@
 .home_project{:id=>"project"+project.id.to_s}
 	%span.title
 		= project.title
-	%button.btn.btn-default.details
+	%button.btn.btn-default
 		=link_to 'Details', project_path(project)
 	%hr
 	.project_content
