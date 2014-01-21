@@ -263,4 +263,7 @@ a:focus {
 .light_maroon{
   color: #ba6565;
 }
+.in_line{
+display:inline;
+}
 
