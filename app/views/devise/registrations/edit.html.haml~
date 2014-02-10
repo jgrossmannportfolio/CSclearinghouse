@@ -1,26 +1,22 @@
-.content  
+.container 
   .header
-    Edit #{resource_name.to_s.humanize}
+    Edit #{resource_name.to_s.humanize} Info
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :method => :put) do |f|
-    = devise_error_messages!
+    %h4= devise_error_messages!
     %div
       = f.label 'First name'
-      %br/
       = f.text_field :firstname, :autofocus => true
     .small_spacing
     %div
       = f.label 'Last name'
-      %br/
       = f.text_field :lastname
     .small_spacing
     %div
       = f.label :username
-      %br/
       = f.text_field :username
     .small_spacing
     %div
       = f.label :email
-      %br/
       = f.email_field :email
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %div
@@ -28,21 +24,19 @@
     .small_spacing
     %div
       = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
       = f.password_field :password, :autocomplete => "off"
+      %i (leave blank if you don't want to change it)
     .small_spacing
     %div
       = f.label :password_confirmation
-      %br/
       = f.password_field :password_confirmation
     .small_spacing
     %div
       = f.label :current_password
-      %i (we need your current password to confirm your changes)
-      %br/
       = f.password_field :current_password
+      %i (we need your current password to confirm your changes)
     .small_spacing
     %div= f.submit "Update"
   = button_to "Cancel my account", user_path(current_user), :confirm => "Are you sure?", :method => :delete
+  %br/
   = link_to "Back", :back
