@@ -5,7 +5,7 @@
   .projects#profile
     %div#header_title
       Projects
-    %br/
+
     %hr
     %div#projects_list
       - if user.projects
@@ -18,7 +18,7 @@
   .background
     %div#header_title
       Background
-    %br/
+
     %hr
     %div
       .backgroundtitle
@@ -49,7 +49,8 @@
       Should probably put in the name of the file to download
     - else
       No Resume Uploaded
-  .small_spacing
+  .spacing
+  .spacing
 
   .page_links 
   = link_to 'Back to user list', users_path

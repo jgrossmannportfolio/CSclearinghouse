@@ -87,6 +87,11 @@ overflow:auto;
 /*the overflow was clipping the tags. need to address this, cause we need to deal with tags stacking up, but overflow clips the colored area that is the tag*/
 }
 
+.skillPadding{
+
+line-height:300%;
+}
+
 #skilltag_input{
 margin-left: 20px;
 }
@@ -157,14 +162,7 @@ border-radius: .5em;
 padding: .5em;
 }
 
-.background{
-margin-top:10px;
-margin-right:20px;
-padding:10px;
-background-color:white;
-max-height: 600px;
-overflow:auto;
-}
+
 
 .backgroundtitle{
 font-size: 1.1em;

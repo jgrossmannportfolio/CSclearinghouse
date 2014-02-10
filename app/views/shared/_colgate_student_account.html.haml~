@@ -24,6 +24,7 @@
       .backgroundtitle
         About Me:
       %br/
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui est, bibendum eu dui sed, viverra consequat massa. Donec scelerisque libero vel tortor tempor laoreet. Nunc rutrum ac leo quis tempor. Cras faucibus ultricies urna. Nunc ultrices libero et eros lacinia laoreet. Proin sed nunc placerat, pretium mi ut, bibendum.
       = user.aboutme
     %br/
     %div#line_separator
@@ -32,19 +33,24 @@
       .backgroundtitle
         Experience:
       %br/
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui est, bibendum eu dui sed, viverra consequat massa. Donec scelerisque libero vel tortor tempor laoreet. Nunc rutrum ac leo quis tempor. Cras faucibus ultricies urna. Nunc ultrices libero et eros lacinia laoreet. Proin sed nunc placerat, pretium mi ut, bibendum.
+
       Put in experience model. an experience is one entry, job title, description, skills gained, etc.
+
     %br/
     %div#line_separator
     %br/
     %div
-      .backgroundtitleResume:
+      .backgroundtitle
+        Resume:
       %br/
     - if user.resume_url.present?
       = link_to('Click to Download', user.resume_url)
       Should probably put in the name of the file to download
     - else
       No Resume Uploaded
-  .small_spacing
+  .spacing
+  .spacing
 
   .page_links 
   = link_to 'Back to user list', users_path

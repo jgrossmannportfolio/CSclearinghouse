@@ -82,9 +82,14 @@ margin-left: 115px;
 }
 
 #show #headerinfo #skilltags{
-max-height:60px;
+max-height:40px;
 overflow:auto;
 /*the overflow was clipping the tags. need to address this, cause we need to deal with tags stacking up, but overflow clips the colored area that is the tag*/
+}
+
+.skillPadding{
+
+line-height:300%;
 }
 
 #skilltag_input{

@@ -18,15 +18,16 @@
     %span#phoneheading Phone:
     %span#phone (555)555-5555
   .small_spacing
+  %span.bold Skill Tags:
   %div#skilltags
-    %span.bold Skill Tags:
-    - user.tags.each do |tag|
+    .skillPadding
+      - user.tags.each do |tag|
       %span.tag= tag.name
   %br/
   %div#contactbuttons
     -if edit_and_delete
       .buttons
-        #edit= button_to 'Edit', edit_user_path(user), :method => :get, :remote => true
+        #editheader= button_to 'Edit', edit_user_path(user), :method => :get, :remote => true
     -else
       %div#colaboration
         Let this user know you are interested in colaborating with them:

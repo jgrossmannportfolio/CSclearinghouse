@@ -18,10 +18,11 @@
     %span#phoneheading Phone:
     %span#phone (555)555-5555
   .small_spacing
+  %span.bold Skill Tags:
   %div#skilltags
-    %span.bold Skill Tags:
-    - user.tags.each do |tag|
-      %span.tag= tag.name
+    .skillPadding
+      - user.tags.each do |tag|
+        %span.tag= tag.name
   %br/
   %div#contactbuttons
     -if edit_and_delete
