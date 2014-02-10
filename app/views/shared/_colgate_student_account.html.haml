@@ -5,10 +5,9 @@
   .projects#profile
     %div#header_title
       Projects
-
     %hr
     %div#projects_list
-      - if user.projects
+      - if user.projects.length > 0
         - user.projects.each do |project|
           = render "shared/project", :project => project
       -else
@@ -18,7 +17,6 @@
   .background
     %div#header_title
       Background
-
     %hr
     %div
       .backgroundtitle
