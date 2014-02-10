@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.content#show{
+/*.content#show{
 background-color:maroon;
 font-family:Arial,Helvetica, sans-serif;
 padding:1px;
-}
+}*/
 
 .headerblock{
 background-color:white;
@@ -81,10 +81,10 @@ line-height:1px;
 margin-left: 115px;
 }
 
-.content#show #headerinfo #skilltags{
+#show #headerinfo #skilltags{
 max-height:60px;
-/*overflow:auto;
-the overflow was clipping the tags. need to address this, cause we need to deal with tags stacking up, but overflow clips the colored area that is the tag*/
+overflow:auto;
+/*the overflow was clipping the tags. need to address this, cause we need to deal with tags stacking up, but overflow clips the colored area that is the tag*/
 }
 
 #skilltag_input{
@@ -103,6 +103,7 @@ text-align: center;
 
 .skilltagform{
 margin-left: 200px;
+padding: 10px;
 }
 
 
@@ -128,32 +129,36 @@ display:inline-block;
 
 .projects#profile{
 margin-top:10px;
-margin-left:20px;
 margin-right:20px;
 padding:10px;
 background-color:white;
 }
 
-.content#show #header_title{
-margin-top:-10px;
+#show #header_title{
+margin-top:10px;
+border-radius:.5em;
 padding:4px;
 width: 30%;
 margin-left:auto;
 margin-right:auto;
 text-align:center;
-font-size:1.1em;
+font-size:1.4em;
 background-color:maroon;
 color:white;
+font-weight:bold;
 }
 
 .projects#profile #projects_list{
 overflow:auto;
-max-height:300px;
+max-height:265px;
+border-style: solid;
+border-color: rgb(201, 201, 201);
+border-radius: .5em;
+padding: .5em;
 }
 
 .background{
 margin-top:10px;
-margin-left:20px;
 margin-right:20px;
 padding:10px;
 background-color:white;
@@ -161,9 +166,11 @@ max-height: 600px;
 overflow:auto;
 }
 
-.background #capstitle{
+.backgroundtitle{
 font-size: 1.1em;
-margin-left:75px;
+color: maroon;
+font-weight:bold;
+
 }
 
 table#users th.hilite a {

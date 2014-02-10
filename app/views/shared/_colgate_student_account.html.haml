@@ -4,7 +4,9 @@
 
   .projects#profile
     %div#header_title
-      PROJECTS
+      Projects
+    %br/
+    %hr
     %div#projects_list
       - if user.projects
         - user.projects.each do |project|
@@ -15,24 +17,32 @@
 
   .background
     %div#header_title
-      BACKGROUND
+      Background
     %br/
-    %div#aboutme
-      #capstitle ABOUT ME
+    %hr
+    %div
+      .backgroundtitle
+        About Me:
       %br/
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui est, bibendum eu dui sed, viverra consequat massa. Donec scelerisque libero vel tortor tempor laoreet. Nunc rutrum ac leo quis tempor. Cras faucibus ultricies urna. Nunc ultrices libero et eros lacinia laoreet. Proin sed nunc placerat, pretium mi ut, bibendum.
       = user.aboutme
     %br/
     %div#line_separator
     %br/
-    %div#experience
-      #capstitle EXPERIENCE
+    %div
+      .backgroundtitle
+        Experience:
       %br/
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui est, bibendum eu dui sed, viverra consequat massa. Donec scelerisque libero vel tortor tempor laoreet. Nunc rutrum ac leo quis tempor. Cras faucibus ultricies urna. Nunc ultrices libero et eros lacinia laoreet. Proin sed nunc placerat, pretium mi ut, bibendum.
+
       Put in experience model. an experience is one entry, job title, description, skills gained, etc.
+
     %br/
     %div#line_separator
     %br/
-    %div#resume
-      #capstitle RESUME
+    %div
+      .backgroundtitle
+        Resume:
       %br/
     - if user.resume_url.present?
       = link_to('Click to Download', user.resume_url)
