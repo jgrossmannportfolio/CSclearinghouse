@@ -8,6 +8,7 @@
   .spacing
 
 %span#projecttag_label New Skill Tag:
+%\br
 %span#projecttag_input= text_field :tag, :name
-= hidden_field_tag :tags, :value => @tags
+= hidden_field_tag :tags, @tags
 %button#newprojecttag Add Tag

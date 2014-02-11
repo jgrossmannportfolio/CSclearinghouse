@@ -87,7 +87,8 @@ class ProjectsController < ApplicationController
         end
 			end
 			@user.projects << @project
-	    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
+          flash[:notice] = "Your project: '#{@project.title}', was just created!"
+	    	# flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
 	    	redirect_to projects_path
 	  end
 	end
