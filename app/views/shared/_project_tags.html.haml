@@ -1,0 +1,13 @@
+= javascript_include_tag :projects
+= tag :meta, :name => "tags", :content => @tags
+- if @tags.size != 0
+  Check to Delete Skill Tag
+  - @tags.each do |tag|
+    %span.tag= tag
+    %span#projecttagcheck= check_box_tag "tags[#{tag}]", tag, checked = false, :id => "#{tag}"
+  .spacing
+
+%span#projecttag_label New Skill Tag:
+%span#projecttag_input= text_field :tag, :name
+= hidden_field_tag :tags, @tags
+%button#newprojecttag Add Tag

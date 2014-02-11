@@ -11,6 +11,9 @@
     = text_field :project, 'deadline', :required => true
     .small_spacing
 
+    %div#projecttags
+      = render :partial => 'shared/project_tags', :@tags => @tags
+
     = label :tag, :name, "Tag"
     = text_field :tag, 'name'
     .small_spacing

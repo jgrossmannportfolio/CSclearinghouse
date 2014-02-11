@@ -1,20 +1,29 @@
 .container
   .header Create New Project
+
+  = tag :meta, :name => "tags", :content => @tags
   
   = form_tag projects_path do
 
     = label :project, :title, 'Title'
     = text_field :project, 'title', :required => true
     .small_spacing
+
     = label :project, :deadline, 'Deadline (dd-mm-yyyy)'
     = text_field :project, 'deadline', :required => true
     .small_spacing
+
+    %div#projecttags
+      = render :partial => 'shared/project_tags', :@tags => @tags
+
     = label :tag, :name, "Tag"
     = text_field :tag, 'name'
     .small_spacing
+
     = label :project, :description, 'Description'
     = text_area :project, 'description', :class => 'widetextarea'
     .small_spacing
+
     = submit_tag 'Create Project'
   .page_links
     =link_to 'Back to all projects', projects_path
