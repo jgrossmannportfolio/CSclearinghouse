@@ -3,7 +3,11 @@
 %div#headerinfo
   %span#name.bold= user.firstname
   %span#name.bold= user.lastname
+  -if edit_and_delete
+    .buttons
+      #editheader= button_to 'Edit', edit_user_path(user), :method => :get, :remote => true
   %br/
+  %hr
   -if user.shortdescription?
     %span#shortdescription= user.shortdescription
     %br/
@@ -26,12 +30,9 @@
   %br/
   %div#contactbuttons
     -if edit_and_delete
-      .buttons
-        #editheader= button_to 'Edit', edit_user_path(user), :method => :get, :remote => true
     -else
       %div#colaboration
         Let #{user.firstname} know if you are interested in colaborating on a project:
-        .small_spacing
         = form_tag notifications_path(:user => user, :type => "owner notify user of interest", :link => "/users/#{user.id}", :current_user => current_user), :method => :post do
           = select_tag(:project, options_for_select(current_user_projects))
           = submit_tag "Notify User"

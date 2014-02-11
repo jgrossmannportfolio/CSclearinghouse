@@ -3,7 +3,11 @@
 %div#headerinfo
   %span#name.bold= user.firstname
   %span#name.bold= user.lastname
+  -if edit_and_delete
+    %span.buttons
+      #editheader= button_to 'Edit', edit_user_path(user), :method => :get, :remote => true
   %br/
+  %hr
   -if user.shortdescription?
     %span#shortdescription= user.shortdescription
     %br/
@@ -26,8 +30,6 @@
   %br/
   %div#contactbuttons
     -if edit_and_delete
-      .buttons
-        #editheader= button_to 'Edit', edit_user_path(user), :method => :get, :remote => true
     -else
       %div#colaboration
         Let #{user.firstname} know if you are interested in colaborating on a project:

@@ -1,10 +1,12 @@
-= javascript_include_tag :users
-- if @user.tags.size != 0
-  Check to Delete Skill Tag
-  - @user.tags.each do |tag|
-    %span.tag= tag.name
-    %span#skilltagcheck= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
-  .spacing
+.skillpadding
+  = javascript_include_tag :users
+  - if @user.tags.size != 0
+    Check to Delete Skill Tag
+    %br/
+    - @user.tags.each do |tag|
+      %span.tag= tag.name
+      %span#skilltagcheck= check_box_tag "tags[#{tag.name}]", tag, checked = false, :id => "#{tag.name}"
+    .spacing
 
 = form_tag user_path(@user), :method => "get", :class => 'skilltagform', :remote => true do
   %span#skilltag_label New Skill Tag:
