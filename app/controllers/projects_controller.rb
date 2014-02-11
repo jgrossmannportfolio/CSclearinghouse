@@ -38,6 +38,18 @@ class ProjectsController < ApplicationController
 	end
 	
 	def new
+    if params[:tags] == nil
+      @tags = ""
+    else
+      #FIX IT SO THAT A TAG WITH A SPACE DOES NOT GET TURNED INTO 2 TAGS
+      @tags = params[:tags].split(",")
+      if(params[:deletetag] != nil)
+        @tags.delete(:deletetag)
+      else
+        @tags << params[:tag]
+      end
+    end
+    render :partial => "shared/project_tags", :@tags => @tags and return if request.xhr?
 	end
 
 	def deadline_validator(deadline)
@@ -61,14 +73,24 @@ class ProjectsController < ApplicationController
 	 		@user = current_user
 			@project.owner = @user.username
 			@project.save!
-			Project.unconfirmed_project(@project, @user)
-			if (params[:tag][:name] != '' && params[:tag][:name] != nil)
-				@project.tags.create!(params[:tag])
+			# Project.unconfirmed_project(@project, @user)
+      # This will make it so projects need to be authorized, get rid of line below
+      @project.confirmed_at = Time.now
+      if (params[:tags] != nil && params[:tags].size != 0)
+        @tags = params[:tags].split(" ")
+        @tags.each do |tag|
+          if @tag = Tag.find_by_name(tag)
+						@project.tags << @tag
+					else
+				    @project.tags.create!(:name => tag)
+          end
+        end
 			end
 			@user.projects << @project
-	    	flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
+          flash[:notice] = "Your project: '#{@project.title}', was just created!"
+	    	# flash[:notice] = "'#{@project.title}' was submitted to an administrator for approval. You will receive notification once confirmed or denied."
 	    	redirect_to projects_path
-	    end
+	  end
 	end
 
   def edit

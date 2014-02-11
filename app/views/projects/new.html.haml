@@ -11,9 +11,8 @@
     = text_field :project, 'deadline', :required => true
     .small_spacing
 
-    = label :tag, :name, "Tag"
-    = text_field :tag, 'name'
-    .small_spacing
+    %div#projecttags
+      = render :partial => 'shared/project_tags', :@tags => @tags
 
     = label :project, :description, 'Description'
     = text_area :project, 'description', :class => 'widetextarea'
