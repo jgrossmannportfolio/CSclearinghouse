@@ -38,6 +38,7 @@
   = form_tag user_path(@user), :method => :get do
     = hidden_field :cancel, :value => 1
     = submit_tag "Cancel"
-%div#skilltags
-  = render :partial => 'shared/skill_tags', :@user => @user
+#taginfo
+  %div#skilltags
+    = render :partial => 'shared/skill_tags', :@user => @user
 

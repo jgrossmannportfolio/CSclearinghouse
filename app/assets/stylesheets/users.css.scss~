@@ -18,6 +18,14 @@ margin-right:20px;
 min-height: 220px;
 }
 
+#editheader{
+display: inline-block;
+margin-bottom:-25px;
+margin-left: 10;
+position:relative;
+top:-5;
+}
+
 #avatar{
 float:left;
 padding:10px;
@@ -31,7 +39,7 @@ max-width: 250px;
 overflow:clip
 }
 
-#headerinfo{
+#headerinfo, #taginfo{
 padding:10px;
 margin-left:260px;
 }
@@ -107,7 +115,7 @@ text-align: center;
 }
 
 .skilltagform{
-margin-left: 200px;
+/*margin-left: 200px;*/
 padding: 10px;
 }
 
@@ -124,6 +132,7 @@ margin-left:5px;
 #cancel{
 display:inline-block;
 margin-top:-20px;
+margin-left:10px;
 }
 
 #submitprofile{

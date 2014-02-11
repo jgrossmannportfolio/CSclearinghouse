@@ -1,4 +1,4 @@
-.content#show 
+.container#show 
   .headerblock
     = form_tag @user_path(@user), :multipart => true, :method => :put do
       %div#avatar= image_tag user.avatar_url(:avatar)
