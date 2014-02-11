@@ -4,7 +4,7 @@
 	.info
 		%span.bold
 			Owner:
-		= @project.owner
+		= link_to "#{@project.owner}", user_path(User.find_by_username(@project.owner))
 		%span.spacing
 		%span.bold
 			Deadline:
@@ -29,7 +29,7 @@
 			= button_to 'Update', edit_project_path(@project), :method => :get
 		-else
 			If you are interested in this project, let the owner know:
-			%span.button 
+			%button 
 				= link_to 'Notify Owner', notifications_path(:project => @project, :type=>"notify_project_owner_of_interest", :link => "/projects/#{@project.id}", :current_user => current_user), :method => :post
 	.page_links 
 		= link_to 'Back to project list', projects_path
