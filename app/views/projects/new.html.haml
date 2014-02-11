@@ -14,10 +14,6 @@
     %div#projecttags
       = render :partial => 'shared/project_tags', :@tags => @tags
 
-    = label :tag, :name, "Tag"
-    = text_field :tag, 'name'
-    .small_spacing
-
     = label :project, :description, 'Description'
     = text_area :project, 'description', :class => 'widetextarea'
     .small_spacing

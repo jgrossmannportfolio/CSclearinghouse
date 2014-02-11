@@ -1,7 +1,5 @@
 .container
   .header Create New Project
-
-  = tag :meta, :name => "tags", :content => @tags
   
   = form_tag projects_path do
 
